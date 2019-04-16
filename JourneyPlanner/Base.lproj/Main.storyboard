@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="87.000000000000014" y="384.66666666666669" width="201.33333333333337" height="43"/>
+                                <rect key="frame" x="87" y="384.66666666666669" width="201" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -126,14 +126,48 @@
                     <view key="view" contentMode="scaleToFill" id="vWY-sM-wdr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMK-yu-755">
+                                <rect key="frame" x="153" y="70" width="68" height="29.666666666666671"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-dj-FYT" userLabel="History Plan">
+                                <rect key="frame" x="39" y="117" width="296" height="72"/>
+                                <state key="normal" image="User-History Plan"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-85-Ve0" userLabel="Preference">
+                                <rect key="frame" x="39" y="209.66666666666666" width="296" height="71.999999999999972"/>
+                                <state key="normal" image="User-Preference"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocU-XZ-TpY">
+                                <rect key="frame" x="39" y="301.66666666666669" width="296" height="72"/>
+                                <state key="normal" image="User-About"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Kf-nh-Rsx" firstAttribute="trailing" secondItem="rme-dj-FYT" secondAttribute="trailing" constant="40" id="3rc-dP-iwW"/>
+                            <constraint firstItem="ocU-XZ-TpY" firstAttribute="leading" secondItem="2Kf-nh-Rsx" secondAttribute="leading" constant="39" id="8JS-VA-dQA"/>
+                            <constraint firstItem="rme-dj-FYT" firstAttribute="leading" secondItem="2Kf-nh-Rsx" secondAttribute="leading" constant="39" id="9NO-K0-8dX"/>
+                            <constraint firstItem="AMK-yu-755" firstAttribute="leading" secondItem="2Kf-nh-Rsx" secondAttribute="leading" constant="153" id="DFO-zh-QC8"/>
+                            <constraint firstItem="2Kf-nh-Rsx" firstAttribute="trailing" secondItem="jGA-85-Ve0" secondAttribute="trailing" constant="40" id="Hpd-Z4-bxd"/>
+                            <constraint firstItem="rme-dj-FYT" firstAttribute="top" secondItem="AMK-yu-755" secondAttribute="bottom" constant="17.333333333333329" id="IyU-Vf-fc7"/>
+                            <constraint firstItem="2Kf-nh-Rsx" firstAttribute="trailing" secondItem="AMK-yu-755" secondAttribute="trailing" constant="154" id="VnY-ag-wBe"/>
+                            <constraint firstItem="jGA-85-Ve0" firstAttribute="firstBaseline" secondItem="rme-dj-FYT" secondAttribute="baseline" constant="20.666666666666657" id="aRi-MA-Wp9"/>
+                            <constraint firstItem="jGA-85-Ve0" firstAttribute="leading" secondItem="2Kf-nh-Rsx" secondAttribute="leading" constant="39" id="aY9-9t-d9c"/>
+                            <constraint firstItem="AMK-yu-755" firstAttribute="top" secondItem="2Kf-nh-Rsx" secondAttribute="top" constant="26" id="bbD-7V-KLw"/>
+                            <constraint firstItem="ocU-XZ-TpY" firstAttribute="top" secondItem="jGA-85-Ve0" secondAttribute="bottom" constant="20" id="dLg-Op-faj"/>
+                            <constraint firstItem="2Kf-nh-Rsx" firstAttribute="trailing" secondItem="ocU-XZ-TpY" secondAttribute="trailing" constant="40" id="x2E-FZ-5vA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Kf-nh-Rsx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="User" image="Tab - User" id="2hE-Uk-g1y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PST-j7-zbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="430"/>
+            <point key="canvasLocation" x="1776.8" y="429.31034482758622"/>
         </scene>
     </scenes>
     <resources>
@@ -141,5 +175,8 @@
         <image name="Tab - Favorite" width="25" height="23"/>
         <image name="Tab - Home" width="23" height="25"/>
         <image name="Tab - User" width="25" height="25"/>
+        <image name="User-About" width="296" height="72"/>
+        <image name="User-History Plan" width="296" height="72"/>
+        <image name="User-Preference" width="296" height="72"/>
     </resources>
 </document>
