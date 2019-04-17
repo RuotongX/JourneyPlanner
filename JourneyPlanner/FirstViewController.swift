@@ -12,40 +12,41 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {}
 
 class FirstViewController: ViewController {
-
-    @IBOutlet weak var testLabel: UILabel!
+    
+    @IBOutlet weak var City_Name: UILabel!
     
     override func viewDidLoad() {
         // used to load the view, after loading, it can customize items - Dalton Chen
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        locationPermission()
     }
     
     //location location information (Dalton 16/Apr/2019)
     let locationManager = CLLocationManager()
     //Define a function which obtain the current location information (therefore Dalton 16/Apr/2019)
-    @IBAction func ButtonPressed(_ sender: UIButton) {
-        getLocation()
-    }
     
-    func getLocation(){
-        let status = CLLocationManager.authorizationStatus()
+    func locationPermission(){
+        var status = CLLocationManager.authorizationStatus()
         
         //check the status of permission, if not determined,request the permission
         
         if status == .notDetermined{
-            locationManager.requestWhenInUseAuthorization();
+            locationManager.requestWhenInUseAuthorization()
         }
+        
+        status = CLLocationManager.authorizationStatus()
         
         if status == .denied || status == .restricted{
             present(displayLocationPermissionError(), animated: true) {
-                print("Unknown Location")
+                self.City_Name.text = "Unknown"
             }
         }
         
         if status == .authorizedWhenInUse{
             permissionGained()
         }
+        
     }
     
     func permissionGained(){
@@ -74,13 +75,10 @@ class FirstViewController: ViewController {
             let geoCoder: CLGeocoder = CLGeocoder()
             geoCoder.reverseGeocodeLocation(currentLocation) { (placemark, error) in
                 if(error != nil){
-                    print(error)
+                    print(error!)
                 } else {
-                    //print("coor: \(location.coordinate.latitude)")
                     let firstResponseLocation = placemark!.first
-                    //                print(firstResponseLocation?.subLocality)
-                    self.testLabel.text = (firstResponseLocation?.subLocality)!
-                    //                print(cityName)
+                    self.City_Name.text = (firstResponseLocation?.subLocality)!
                 }
             }
         }
