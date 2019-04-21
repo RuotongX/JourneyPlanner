@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4124D20F226C8335001CD1F2 /* CityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4124D20E226C8335001CD1F2 /* CityInformation.swift */; };
+		41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B448B0226C39E600763AE4 /* SelectCityViewController.swift */; };
+		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
 		E14265F822421C06006399D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F722421C06006399D2 /* AppDelegate.swift */; };
-		E14265FA22421C06006399D2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F922421C06006399D2 /* FirstViewController.swift */; };
+		E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F922421C06006399D2 /* Home_ViewController.swift */; };
 		E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265FB22421C06006399D2 /* SecondViewController.swift */; };
 		E14265FF22421C06006399D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14265FD22421C06006399D2 /* Main.storyboard */; };
 		E142660122421C06006399D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E142660022421C06006399D2 /* Assets.xcassets */; };
@@ -16,9 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4124D20E226C8335001CD1F2 /* CityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInformation.swift; sourceTree = "<group>"; };
+		41B448B0226C39E600763AE4 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
+		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
 		E14265F422421C05006399D2 /* JourneyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourneyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14265F722421C06006399D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E14265F922421C06006399D2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E14265F922421C06006399D2 /* Home_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_ViewController.swift; sourceTree = "<group>"; };
 		E14265FB22421C06006399D2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E14265FE22421C06006399D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E142660022421C06006399D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,13 +62,16 @@
 		E14265F622421C05006399D2 /* JourneyPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 				E14265F722421C06006399D2 /* AppDelegate.swift */,
-				E14265F922421C06006399D2 /* FirstViewController.swift */,
+				E14265F922421C06006399D2 /* Home_ViewController.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
 				E142660222421C06006399D2 /* LaunchScreen.storyboard */,
 				E142660522421C06006399D2 /* Info.plist */,
+				41DE7A982268846100CB9D79 /* CityGuideInfo.swift */,
+				4124D20E226C8335001CD1F2 /* CityInformation.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -139,8 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */,
+				41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */,
+				4124D20F226C8335001CD1F2 /* CityInformation.swift in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
-				E14265FA22421C06006399D2 /* FirstViewController.swift in Sources */,
+				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
+				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
