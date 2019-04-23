@@ -24,7 +24,11 @@ class Home_ViewController: ViewController{
     override func viewDidLoad() {
         // used to load the view, after loading, it can customize items - Dalton Chen
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         locationPermission()
     }
     
@@ -33,6 +37,13 @@ class Home_ViewController: ViewController{
             if let selectCityController = segue.destination as? SelectCityViewController{
                 selectCityController.city = self.CurrentCity
                 selectCityController.delegate = self
+            }
+        }
+        
+        if segue.identifier == "tranferCityInfo"{
+            if let mapviewController = segue.destination as? MapViewController{
+                mapviewController.selectedCity = CurrentCity
+                mapviewController.delegate = self
             }
         }
     }
@@ -50,7 +61,7 @@ class Home_ViewController: ViewController{
         }
         
         if status == .denied || status == .restricted{
-            present(displayLocationPermissionError(), animated: true) {
+            self.present(displayLocationPermissionError(), animated: true) {
                 self.City_Name.text = "Unknown"
             }
         }
@@ -100,6 +111,11 @@ class Home_ViewController: ViewController{
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error \(error)")
     }
+    
+    // if user changed the permission authorization, it will value it again for services
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        locationPermission()
+    }
 
 
 }
@@ -108,7 +124,10 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
     func didSelectNewCity(_ controller: SelectCityViewController, newCity city: CityInformation) {
         print("Hello")
     }
-    
-
 }
+
+extension Home_ViewController : MapViewControllerDelegate{
+    
+}
+
 
