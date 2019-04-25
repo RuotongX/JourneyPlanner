@@ -10,9 +10,11 @@
 		410AED48226EE51300998F9E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AED47226EE51200998F9E /* MapViewController.swift */; };
 		410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AED49226F13A400998F9E /* PlanViewController.swift */; };
 		4124D20F226C8335001CD1F2 /* CityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4124D20E226C8335001CD1F2 /* CityInformation.swift */; };
+		415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */; };
 		416AF92E226F1ECE00FF4FF6 /* SmallPlanInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */; };
 		416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92F226F21F700FF4FF6 /* TripPlan.swift */; };
 		416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */; };
+		41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2170B226FF2D700374707 /* PlanDetailViewController.swift */; };
 		41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B448B0226C39E600763AE4 /* SelectCityViewController.swift */; };
 		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
 		E14265F822421C06006399D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F722421C06006399D2 /* AppDelegate.swift */; };
@@ -27,9 +29,11 @@
 		410AED47226EE51200998F9E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		410AED49226F13A400998F9E /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		4124D20E226C8335001CD1F2 /* CityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInformation.swift; sourceTree = "<group>"; };
+		415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapTableViewController.swift; sourceTree = "<group>"; };
 		416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlanInformation.swift; sourceTree = "<group>"; };
 		416AF92F226F21F700FF4FF6 /* TripPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlan.swift; sourceTree = "<group>"; };
 		416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		41B2170B226FF2D700374707 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
 		41B448B0226C39E600763AE4 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
 		E14265F422421C05006399D2 /* JourneyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourneyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,8 @@
 				416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */,
 				416AF92F226F21F700FF4FF6 /* TripPlan.swift */,
 				416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */,
+				41B2170B226FF2D700374707 /* PlanDetailViewController.swift */,
+				415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 			files = (
 				416AF92E226F1ECE00FF4FF6 /* SmallPlanInformation.swift in Sources */,
 				E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */,
+				41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */,
 				41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */,
 				416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */,
 				4124D20F226C8335001CD1F2 /* CityInformation.swift in Sources */,
@@ -171,6 +178,7 @@
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
+				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
 				416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */,
 			);

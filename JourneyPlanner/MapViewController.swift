@@ -15,24 +15,48 @@ protocol MapViewControllerDelegate: class{
 
 class MapViewController: UIViewController {
 
+    var resultSearchController : UISearchController?
     var selectedCity: CityInformation?
     var delegate: MapViewControllerDelegate?
     @IBOutlet weak var mapView: MKMapView!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // change the current location icon to black Dalton 23/Apr/2019
-        mapView.tintColor = UIColor.black
         
+        addSearchController()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
     }
     
+    
+    func addSearchController(){
+        // load the table view and define it as searchresult tableview Dalton 24/Apr/2019
+        
+        // ResultTable -> SearchResultController -> UIsearchController. Dalton 24/Apr/2019
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SearchMapTableViewController") as! SearchMapTableViewController
+        locationSearchTable.mapView = self.mapView
+        
+        //resultSearchController -> UISearchController Dalton 24/Apr/2019
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search For Places"
+        
+        // set the title bar to this searchbar (connect two component together) Dalton 24/Apr/2019
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        
+        // set this to true can avoid the screen to be totally covered by the table view, by set this to true, it will only cover the part other than search bar - Dalton 24/Apr/2019
+        definesPresentationContext = true
+    }
     
     private func loadInformation(){
         if let selectedCity = selectedCity{
