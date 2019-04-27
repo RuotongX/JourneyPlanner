@@ -66,6 +66,11 @@ class PlanViewController: UIViewController {
         // Create a new plan
         if segue.identifier == "newPlanSegue"{
             if let planDetailViewController = segue.destination as? PlanDetailViewController{
+                
+                //using taptic engine to make vibration
+                let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
+                impactFeedBackGenerator.prepare()
+                impactFeedBackGenerator.impactOccurred()
                 planDetailViewController.delegate = self
             }
         }
@@ -97,14 +102,15 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
             cell.distanceLabel.text = "\(String(describing: item.distances)) Km"
             cell.planNameLabel.text = "\(String(describing: item.PlanName))"
         }
-        
-        print("hello")
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // deselect button (unhighlighted) - Dalton 27/Apr/2019
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         self.plan?.remove(at: indexPath.row)
