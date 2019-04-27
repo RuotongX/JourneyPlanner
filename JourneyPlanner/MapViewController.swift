@@ -16,7 +16,7 @@ protocol MapViewControllerDelegate: class{
 class MapViewController: UIViewController {
 
     var resultSearchController : UISearchController?
-    var selectedCity: CityInformation?
+    var selectedCity: LocationInformation?
     var delegate: MapViewControllerDelegate?
     @IBOutlet weak var mapView: MKMapView!
     
@@ -59,8 +59,8 @@ class MapViewController: UIViewController {
     }
     
     private func loadInformation(){
+        
         if let selectedCity = selectedCity{
-            
             // if user did not provide location information, then this app will not display the current user location.Dalton 23 Apr 2019
             if selectedCity.cityName == "Unknown"{
                 let alertController : UIAlertController = UIAlertController(title: "Unknown Location", message: "Unable to get your location, please allow this app to obtain your current location", preferredStyle: .alert)
@@ -71,12 +71,11 @@ class MapViewController: UIViewController {
                 // if user provide the current location, this will display the nearst 500 memter surroudings to user.Dalton 23 Apr 2019
             } else {
                 let regionRadius : CLLocationDistance = 500.0
-                let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.latitude, longitude: selectedCity.lontitude)
+                let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.location.coordinate.latitude, longitude: selectedCity.location.coordinate.longitude)
                 let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
                 
                 mapView.setRegion(region, animated: true)
             }
-            
         }
     }
     

@@ -40,7 +40,7 @@ class PlanViewController: UIViewController {
         testTrip.append(trip1)
         testTrip.append(trip2)
         
-        let testCityInfo = CityInformation(cityName: "test", lontitude: 0.00, latitude: 0.00, zipCode: "123")
+        let testCityInfo = LocationInformation(cityName: "test", lontitude: 0.00, latitude: 0.00, zipCode: "123")
         
         self.plan?.append(TripPlan(trips: testTrip, firstCity: testCityInfo, distances: 123, PlanName: "my trip to wellington"))
     }
