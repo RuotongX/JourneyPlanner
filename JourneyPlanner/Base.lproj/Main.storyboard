@@ -349,6 +349,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iji-sm-fPr">
                                 <rect key="frame" x="327" y="140" width="25" height="25"/>
                                 <state key="normal" image="Select City - Search Icon 1x"/>
+                                <connections>
+                                    <segue destination="Ojx-xo-EtC" kind="show" id="R0S-s2-nWT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1N-bM-IJM">
                                 <rect key="frame" x="120" y="210.66666666666666" width="134" height="24"/>
@@ -488,6 +491,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="har-2z-yJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632.8" y="-994.58128078817742"/>
+        </scene>
+        <!--Search Result-->
+        <scene sceneID="28S-2s-s0a">
+            <objects>
+                <tableViewController id="AgT-Yu-OQI" customClass="SeachResultTableViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="67y-Wc-mhO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ho0-t0-3h0" detailTextLabel="0Ee-eL-zhE" style="IBUITableViewCellStyleSubtitle" id="UI2-eD-70n" customClass="search">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UI2-eD-70n" id="jtW-gn-n1u">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ho0-t0-3h0">
+                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Ee-eL-zhE">
+                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="32.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AgT-Yu-OQI" id="OZJ-Ji-Arj"/>
+                            <outlet property="delegate" destination="AgT-Yu-OQI" id="74b-WT-1dP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search Result" largeTitleDisplayMode="always" id="LHd-WP-m00">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="38B-7t-XWG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mLs-dR-FbY">
+                                <rect key="frame" x="16" y="10.666666666666664" width="16" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PlanDetail-return key 1x"/>
+                                <connections>
+                                    <action selector="ReturnButtonPressed:" destination="AgT-Yu-OQI" eventType="touchUpInside" id="BE0-v2-mmE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="o7A-hh-hYO" id="3uD-nB-kMK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QxP-pL-jbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="o7A-hh-hYO">
+                    <connections>
+                        <outlet property="delegate" destination="AgT-Yu-OQI" id="Jnm-UF-NQa"/>
+                        <outlet property="searchContentsController" destination="AgT-Yu-OQI" id="Vh2-Zm-e64"/>
+                        <outlet property="searchResultsDataSource" destination="AgT-Yu-OQI" id="D3Y-zd-nwc"/>
+                        <outlet property="searchResultsDelegate" destination="AgT-Yu-OQI" id="zep-7V-XdP"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="3622" y="-995"/>
         </scene>
         <!--Plan-->
         <scene sceneID="Qi4-aC-9XM">
@@ -716,6 +787,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJT-ho-LJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-255.19999999999999" y="-700.49261083743841"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LNs-gC-iDr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ojx-xo-EtC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RtQ-7M-cwR">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AgT-Yu-OQI" kind="relationship" relationship="rootViewController" id="Ix9-Xw-00z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JSK-MG-TX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2713" y="-995"/>
         </scene>
     </scenes>
     <resources>
