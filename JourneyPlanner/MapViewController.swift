@@ -19,6 +19,7 @@ protocol MapViewControllerDelegate: class{
 
 class MapViewController: UIViewController {
 
+    var selectedPin : MKPlacemark? = nil
     var resultSearchController : UISearchController?
     var selectedCity: LocationInformation?
     var delegate: MapViewControllerDelegate?
@@ -29,11 +30,12 @@ class MapViewController: UIViewController {
         // change the current location icon to black Dalton 23/Apr/2019
         
         addSearchController()
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
+        
     }
     
     
@@ -60,6 +62,8 @@ class MapViewController: UIViewController {
         
         // set this to true can avoid the screen to be totally covered by the table view, by set this to true, it will only cover the part other than search bar - Dalton 24/Apr/2019
         definesPresentationContext = true
+        
+        locationSearchTable.handleMapSearchDelegate = self
     }
     
     private func loadInformation(){
@@ -113,4 +117,24 @@ class MapViewController: UIViewController {
 
 }
 
+extension MapViewController : HandleMapSearch{
+    func dropPinZoomIn(placemark: MKPlacemark) {
+        selectedPin = placemark
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea{
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05,longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: placemark.coordinate,span: span)
+        mapView.setRegion(region, animated: true)
+    }
+}
 

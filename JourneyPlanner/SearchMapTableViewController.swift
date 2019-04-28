@@ -15,6 +15,7 @@ import MapKit
 class SearchMapTableViewController: UITableViewController {
 
     var mapView : MKMapView?
+    var handleMapSearchDelegate:HandleMapSearch? = nil
     var matchingItems : [MKMapItem] = []
     
     func conversionToAddress(place : CLPlacemark) -> String{
@@ -55,6 +56,13 @@ class SearchMapTableViewController: UITableViewController {
         cell?.textLabel?.text = locationName
         cell?.detailTextLabel?.text = conversionToAddress(place:matchingItems[indexPath.row].placemark)
         return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = matchingItems[indexPath.row].placemark
+        handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+        
+        dismiss(animated: true, completion: nil)
     }
 
 }

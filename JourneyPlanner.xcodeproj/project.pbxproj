@@ -78,6 +78,7 @@
 			children = (
 				E14265F722421C06006399D2 /* AppDelegate.swift */,
 				E14265F922421C06006399D2 /* Home_ViewController.swift */,
+				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
@@ -85,14 +86,13 @@
 				E142660522421C06006399D2 /* Info.plist */,
 				41DE7A982268846100CB9D79 /* CityGuideInfo.swift */,
 				4124D20E226C8335001CD1F2 /* LocationInformation.swift */,
-				410AED47226EE51200998F9E /* MapViewController.swift */,
 				416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */,
 				416AF92F226F21F700FF4FF6 /* TripPlan.swift */,
 				410AED49226F13A400998F9E /* PlanViewController.swift */,
 				416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */,
 				41B2170B226FF2D700374707 /* PlanDetailViewController.swift */,
+				410AED47226EE51200998F9E /* MapViewController.swift */,
 				415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */,
-				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
