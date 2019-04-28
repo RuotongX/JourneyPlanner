@@ -40,9 +40,40 @@ class PlanViewController: UIViewController {
         testTrip.append(trip1)
         testTrip.append(trip2)
         
-        let testCityInfo = CityInformation(cityName: "test", lontitude: 0.00, latitude: 0.00, zipCode: "123")
+        let testCityInfo = LocationInformation(cityName: "test", lontitude: 0.00, latitude: 0.00, zipCode: "123")
         
-        self.plan?.append(TripPlan(trips: testTrip, firstCity: testCityInfo, distances: 123, PlanName: "My plan"))
+        self.plan?.append(TripPlan(trips: testTrip, firstCity: testCityInfo, distances: 123, PlanName: "my trip to wellington"))
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // View Plan detail
+        if segue.identifier == "PlanDetailSegue"{
+            if let plandetailViewController = segue.destination as?
+                PlanDetailViewController{
+                
+                if let cell = sender as? UITableViewCell{
+                    if let indexPath = tableView.indexPath(for: cell){
+                        let planDetail = plan?[indexPath.row]
+                        plandetailViewController.plan = planDetail
+                    }
+                }
+                plandetailViewController.delegate = self
+            }
+        }
+        
+        
+        // Create a new plan
+        if segue.identifier == "newPlanSegue"{
+            if let planDetailViewController = segue.destination as? PlanDetailViewController{
+                
+                //using taptic engine to make vibration
+                let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
+                impactFeedBackGenerator.prepare()
+                impactFeedBackGenerator.impactOccurred()
+                planDetailViewController.delegate = self
+            }
+        }
     }
     
     /*
@@ -71,15 +102,23 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
             cell.distanceLabel.text = "\(String(describing: item.distances)) Km"
             cell.planNameLabel.text = "\(String(describing: item.PlanName))"
         }
-        
-        print("hello")
+
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // deselect button (unhighlighted) - Dalton 27/Apr/2019
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         self.plan?.remove(at: indexPath.row)
         tableView.reloadData()
     }
-    
+
+}
+
+extension PlanViewController : PlanDetailViewControllerDelegate{
     
 }

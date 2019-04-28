@@ -9,24 +9,27 @@
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
 protocol MapViewControllerDelegate: class{
     
 }
 
 class MapViewController: UIViewController {
 
-    var selectedCity: CityInformation?
+    var resultSearchController : UISearchController?
+    var selectedCity: LocationInformation?
     var delegate: MapViewControllerDelegate?
     @IBOutlet weak var mapView: MKMapView!
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // change the current location icon to black Dalton 23/Apr/2019
-        mapView.tintColor = UIColor.black
         
+        addSearchController()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,9 +37,34 @@ class MapViewController: UIViewController {
     }
     
     
+    func addSearchController(){
+        // load the table view and define it as searchresult tableview Dalton 24/Apr/2019
+        
+        // ResultTable -> SearchResultController -> UIsearchController. Dalton 24/Apr/2019
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SearchMapTableViewController") as! SearchMapTableViewController
+        locationSearchTable.mapView = self.mapView
+        
+        //resultSearchController -> UISearchController Dalton 24/Apr/2019
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search For Places"
+        
+        // set the title bar to this searchbar (connect two component together) Dalton 24/Apr/2019
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        
+        // set this to true can avoid the screen to be totally covered by the table view, by set this to true, it will only cover the part other than search bar - Dalton 24/Apr/2019
+        definesPresentationContext = true
+    }
+    
     private func loadInformation(){
+        
         if let selectedCity = selectedCity{
-            
             // if user did not provide location information, then this app will not display the current user location.Dalton 23 Apr 2019
             if selectedCity.cityName == "Unknown"{
                 let alertController : UIAlertController = UIAlertController(title: "Unknown Location", message: "Unable to get your location, please allow this app to obtain your current location", preferredStyle: .alert)
@@ -47,12 +75,11 @@ class MapViewController: UIViewController {
                 // if user provide the current location, this will display the nearst 500 memter surroudings to user.Dalton 23 Apr 2019
             } else {
                 let regionRadius : CLLocationDistance = 500.0
-                let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.latitude, longitude: selectedCity.lontitude)
+                let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.location.coordinate.latitude, longitude: selectedCity.location.coordinate.longitude)
                 let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
                 
                 mapView.setRegion(region, animated: true)
             }
-            
         }
     }
     

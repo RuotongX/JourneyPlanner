@@ -12,11 +12,11 @@ import CoreLocation
 class TripPlan{
     
     var trips : [SmallPlanInformation] = []
-    var firstCity : CityInformation
+    var firstCity : LocationInformation
     var distances : Double
     var PlanName : String
     
-    init(trips : [SmallPlanInformation], firstCity : CityInformation, distances: Double, PlanName:String) {
+    init(trips : [SmallPlanInformation], firstCity : LocationInformation, distances: Double, PlanName:String) {
         self.trips = trips
         self.firstCity = firstCity
         self.distances = distances

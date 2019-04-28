@@ -7,17 +7,16 @@
 //
 // This class is storing the location information
 import Foundation
+import CoreLocation
 
-class CityInformation{
+class LocationInformation{
     var cityName : String
-    var lontitude : Double
-    var latitude : Double
+    var location : CLLocation
     var zipCode : String
     
     init(cityName:String, lontitude:Double, latitude:Double, zipCode:String) {
         self.cityName = cityName
-        self.lontitude = lontitude
-        self.latitude = latitude
+        self.location = CLLocation(latitude: latitude, longitude: lontitude)
         self.zipCode = zipCode
     }
     
