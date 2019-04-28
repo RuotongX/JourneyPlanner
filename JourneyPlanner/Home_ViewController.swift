@@ -46,6 +46,10 @@ class Home_ViewController: ViewController{
         if segue.identifier == "CurrentLocationProvider"{
             if let selectCityController = segue.destination as? SelectCityViewController{
                 selectCityController.CurrentLocationInformation = self.CurrentCity
+                
+                if let SelectedCity = selectedCity{
+                    selectCityController.selectedCity = SelectedCity
+                }
                 selectCityController.cityHistory = self.cityHistory
                 selectCityController.delegate = self
             }
