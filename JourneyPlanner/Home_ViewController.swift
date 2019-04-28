@@ -173,6 +173,7 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
     func didSelectNewCity(_ controller: SelectCityViewController, newCity city: LocationInformation, historyCity: [LocationInformation]) {
         self.cityHistory = historyCity
         self.selectedCity = city
+        self.City_Name.text = self.selectedCity?.cityName
     }
     
 

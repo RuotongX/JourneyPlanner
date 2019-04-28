@@ -16,6 +16,7 @@ protocol SelectCityViewControllerDelegate : class{
 // this class is used to maintain the select city page - Dalton 21 Apr 2019
 class SelectCityViewController: UIViewController {
 
+    @IBOutlet weak var SearchContent: UITextField!
     weak var delegate : SelectCityViewControllerDelegate?
     weak var CurrentLocationInformation : LocationInformation?
     
@@ -44,15 +45,22 @@ class SelectCityViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        
+    }
+    
 
     @IBAction func ConfirmButtonPressed(_ sender: Any) {
         // return to the previous view controller - Dalton 21 Apr 2019
-        
+        dismiss(animated: true, completion: nil)
+
         if let selectedCity = selectedCity,
             let history = cityHistory{
             delegate?.didSelectNewCity(self, newCity: selectedCity, historyCity: history)
         }
-        dismiss(animated: true, completion: nil)
+        
     }
     @IBAction func CancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -143,3 +151,5 @@ class SelectCityViewController: UIViewController {
     */
 
 }
+
+
