@@ -40,10 +40,35 @@ class SelectCityViewController: UIViewController {
         setImages()
         loadHistoryInformation()
         
+        
         if let currentCity = CurrentLocationInformation{
             CurrentCityLabel.text = currentCity.cityName
         }
+        
+        setSelectedIcon()
+
         // Do any additional setup after loading the view.
+    }
+    
+    func setSelectedIcon(){
+        deselectAllButton()
+        CurrentCityButton.isSelected = true
+        
+        if let selectedCity = selectedCity,
+            let cityHistory = cityHistory{
+            
+            if selectedCity.cityName == cityHistory[cityHistory.count - 1].cityName{
+                CurrentCityButton.isSelected = false
+                RecentCity1Button.isSelected = true
+            } else if selectedCity.cityName == cityHistory[cityHistory.count - 2].cityName{
+                CurrentCityButton.isSelected = false
+                RecentCity2Button.isSelected = true
+            } else if selectedCity.cityName == cityHistory[cityHistory.count - 3].cityName{
+                CurrentCityButton.isSelected = false
+                RecentCity3Button.isSelected = true
+            }
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

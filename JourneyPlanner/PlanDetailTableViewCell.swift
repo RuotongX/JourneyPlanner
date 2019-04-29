@@ -1,25 +1,26 @@
 //
-//  PlanTableViewCell.swift
+//  PlanDetailTableViewCell.swift
 //  JourneyPlanner
 //
-//  Created by Dalton Chen on 24/04/19.
+//  Created by Dalton Chen on 28/04/19.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 import UIKit
 
-class PlanTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var planNameLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var cityNameLabel: UILabel!
+class PlanDetailTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var LocationNameLabel: UILabel!
+    @IBOutlet weak var StreetLabel: UILabel!
+    @IBOutlet weak var MemoLabel: UILabel!
+    @IBOutlet weak var StayLengthLabel: UILabel!
+    @IBOutlet weak var SequenceNumber: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

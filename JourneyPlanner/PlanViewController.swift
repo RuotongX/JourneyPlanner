@@ -32,6 +32,7 @@ class PlanViewController: UIViewController {
     func LoadTestData(){
         let coor1 = CLLocation(latitude: -38.1387009, longitude: 176.2528075)
         let trip1 = SmallPlanInformation(name: "Awesome Thai food", location: coor1, staylength: 60, arrangement: 1)
+        trip1.memo = "this is memo"
         
         let coor2 = CLLocation(latitude: -38.1347549, longitude: 176.2517591)
         let trip2 = SmallPlanInformation(name: "Fat Dog Cafe & Bar", location: coor2, staylength: 70, arrangement: 2)
