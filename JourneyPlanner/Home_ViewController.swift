@@ -14,6 +14,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {}
 class Home_ViewController: ViewController{
 
     //Obtain the location manager, which provide the location services (Dalton 16/Apr/2019, last modified 27/Apr/2019)
+    
+    @IBOutlet weak var WeatherLabel: UILabel!
+    @IBOutlet weak var WeatherIcon: UIImageView!
+    
     let locationManager = CLLocationManager()
     var cityHistory : [LocationInformation]? = []
     var CurrentCity : LocationInformation?
