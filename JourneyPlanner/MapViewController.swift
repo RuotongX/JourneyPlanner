@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
     var selectedPin : MKPlacemark? = nil
     var resultSearchController : UISearchController?
     var selectedCity: LocationInformation?
+    var singleLocation : CLLocation?
     var delegate: MapViewControllerDelegate?
     @IBOutlet weak var mapView: MKMapView!
     
@@ -76,14 +77,31 @@ class MapViewController: UIViewController {
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true, completion: nil)
                 
-                // if user provide the current location, this will display the nearst 500 memter surroudings to user.Dalton 23 Apr 2019
+                // if user provide the current location, this will display the nearst 1000 memter surroudings to user.Dalton 23 Apr 2019
             } else {
-                let regionRadius : CLLocationDistance = 500.0
+
+                let regionRadius : CLLocationDistance = 1000.0
                 let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.location.coordinate.latitude, longitude: selectedCity.location.coordinate.longitude)
                 let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
                 
+                
+                
                 mapView.setRegion(region, animated: true)
             }
+        }
+        
+        // this call is from the plan detail class, which design to display the location in a map
+        if let singleLocation = singleLocation{
+            
+            mapView.removeAnnotations(mapView.annotations)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate =  singleLocation.coordinate
+            
+            mapView.addAnnotation(annotation)
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let region = MKCoordinateRegion(center: singleLocation.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
         }
     }
     
@@ -115,6 +133,29 @@ class MapViewController: UIViewController {
     }
     */
 
+}
+
+extension MapViewController : MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation{
+            return nil
+        }
+        
+        let reuseId = "Pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        
+        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        pinView?.pinTintColor = UIColor.orange
+        pinView?.canShowCallout = true
+        
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+        button.setBackgroundImage(UIImage(named: "Plan-add new 1x"), for: .normal)
+        pinView?.leftCalloutAccessoryView = button
+        
+        return pinView
+    }
 }
 
 extension MapViewController : HandleMapSearch{

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o9u-hr-6uw">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o9u-hr-6uw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RyV-e4-nOn">
@@ -597,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zH7-Tf-fwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3554.4000000000001" y="-251.23152709359607"/>
+            <point key="canvasLocation" x="3450" y="-251"/>
         </scene>
         <!--PlanDetailViewController-->
         <scene sceneID="4Ix-4S-8YV">
@@ -623,20 +623,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5Y-Ov-ZPc">
                                 <rect key="frame" x="320" y="65" width="23" height="23"/>
                                 <state key="normal" image="PlanDetail-add new 1x"/>
+                                <connections>
+                                    <segue destination="kdT-Rb-d3C" kind="show" identifier="addNewTrip" id="eIA-MW-uKx"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RHR-Ih-RUX">
                                 <rect key="frame" x="0.0" y="131" width="375" height="681"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="125" id="a7s-dd-XJP" customClass="PlanDetailTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="125" id="a7s-dd-XJP" customClass="PlanDetailTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a7s-dd-XJP" id="NfH-nS-q2p">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="124.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Location Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NE8-fc-9WZ">
-                                                    <rect key="frame" x="15" y="11" width="299" height="27"/>
+                                                    <rect key="frame" x="15" y="11" width="266" height="27"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -653,22 +656,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nob-nC-Hh2">
-                                                    <rect key="frame" x="322" y="23" width="29" height="78"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="65"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-ZU-eNz">
                                                     <rect key="frame" x="14.999999999999996" y="35" width="47.666666666666657" height="24"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nob-nC-Hh2">
+                                                    <rect key="frame" x="305" y="23" width="29" height="78"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="nob-nC-Hh2" firstAttribute="top" secondItem="NfH-nS-q2p" secondAttribute="top" constant="23" id="B3A-pG-tVs"/>
-                                                <constraint firstItem="nob-nC-Hh2" firstAttribute="leading" secondItem="NE8-fc-9WZ" secondAttribute="trailing" constant="8" id="Dni-4J-K9C"/>
+                                                <constraint firstItem="nob-nC-Hh2" firstAttribute="leading" secondItem="NE8-fc-9WZ" secondAttribute="trailing" constant="24" id="Dni-4J-K9C"/>
                                                 <constraint firstItem="E8a-cM-UcA" firstAttribute="bottom" secondItem="NfH-nS-q2p" secondAttribute="bottomMargin" id="RlU-oF-5gO"/>
                                                 <constraint firstItem="RSb-x0-xxY" firstAttribute="leading" secondItem="E8a-cM-UcA" secondAttribute="trailing" constant="-299" id="TVc-bU-4hM"/>
                                                 <constraint firstItem="NE8-fc-9WZ" firstAttribute="leading" secondItem="NfH-nS-q2p" secondAttribute="leading" constant="15" id="dIJ-US-RH5"/>
@@ -677,7 +680,7 @@
                                                 <constraint firstItem="5ss-ZU-eNz" firstAttribute="leading" secondItem="NfH-nS-q2p" secondAttribute="leading" constant="15" id="lD7-05-Y5j"/>
                                                 <constraint firstItem="RSb-x0-xxY" firstAttribute="top" secondItem="5ss-ZU-eNz" secondAttribute="bottom" constant="9" id="mBq-FT-Dqg"/>
                                                 <constraint firstItem="E8a-cM-UcA" firstAttribute="leading" secondItem="NfH-nS-q2p" secondAttribute="leading" constant="15" id="pRa-56-58O"/>
-                                                <constraint firstAttribute="trailing" secondItem="nob-nC-Hh2" secondAttribute="trailing" constant="24" id="qgN-fc-8z0"/>
+                                                <constraint firstAttribute="trailing" secondItem="nob-nC-Hh2" secondAttribute="trailing" constant="8" id="qgN-fc-8z0"/>
                                                 <constraint firstItem="RSb-x0-xxY" firstAttribute="leading" secondItem="NfH-nS-q2p" secondAttribute="leading" constant="15" id="qlE-RJ-EvV"/>
                                                 <constraint firstItem="NE8-fc-9WZ" firstAttribute="top" secondItem="NfH-nS-q2p" secondAttribute="top" constant="11" id="rUh-w1-ivN"/>
                                                 <constraint firstItem="nob-nC-Hh2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RSb-x0-xxY" secondAttribute="trailing" constant="8" symbolic="YES" id="yDb-Eh-4XZ"/>
@@ -690,6 +693,7 @@
                                             <outlet property="SequenceNumber" destination="nob-nC-Hh2" id="aAK-fE-vLc"/>
                                             <outlet property="StayLengthLabel" destination="RSb-x0-xxY" id="kGo-fO-zPf"/>
                                             <outlet property="StreetLabel" destination="E8a-cM-UcA" id="mJG-LC-hco"/>
+                                            <segue destination="kdT-Rb-d3C" kind="show" identifier="ViewTrip" id="3Bx-fl-6VK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -715,11 +719,128 @@
                     <connections>
                         <outlet property="PlanDetailTableView" destination="RHR-Ih-RUX" id="B41-0m-UYs"/>
                         <outlet property="planNameLabel" destination="eak-hd-6cH" id="dQA-Tc-Bek"/>
+                        <outlet property="tableview" destination="RHR-Ih-RUX" id="aFO-Q1-45O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hal-i6-s2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4472.8000000000002" y="-251.23152709359607"/>
+        </scene>
+        <!--Trip Detail View Controller-->
+        <scene sceneID="Ksf-Wa-Q28">
+            <objects>
+                <viewController id="kdT-Rb-d3C" customClass="tripDetailViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AuN-Eb-KDh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oT-Y5-IUx">
+                                <rect key="frame" x="33" y="103" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKS-RX-D1l">
+                                <rect key="frame" x="27" y="140" width="321" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PlanDetail-viewOnMap 1x"/>
+                                <connections>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="searchTripOnMap" id="D8Q-su-MS0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1B-HS-All">
+                                <rect key="frame" x="33" y="64" width="14" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plan-return key 1x"/>
+                                <connections>
+                                    <action selector="returnButton:" destination="kdT-Rb-d3C" eventType="touchUpInside" id="lvV-JA-f5X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAQ-rm-pQ0">
+                                <rect key="frame" x="30" y="95" width="315" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-7s-BMp">
+                                <rect key="frame" x="27" y="248" width="321" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-uj-nEA">
+                                <rect key="frame" x="124" y="216" width="127" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stay Length" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lE-9z-6oh">
+                                <rect key="frame" x="27" y="286" width="321" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Memo(optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POt-zG-zuo">
+                                <rect key="frame" x="27" y="324" width="321" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Advise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEM-n5-1ru">
+                                <rect key="frame" x="143" y="374" width="89" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zja-DJ-aa3">
+                                <rect key="frame" x="30" y="408" width="315" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommend Time Spent:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSD-pN-Wa4">
+                                <rect key="frame" x="30" y="437" width="315" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWV-l2-fqY">
+                                <rect key="frame" x="31" y="484" width="312" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ele-o8-0Sh">
+                                <rect key="frame" x="307" y="60" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="DoneButton:" destination="kdT-Rb-d3C" eventType="touchUpInside" id="Byj-Sd-aet"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zLy-pe-gR4"/>
+                    </view>
+                    <connections>
+                        <outlet property="MemoTextField" destination="POt-zG-zuo" id="e2D-Jk-rwJ"/>
+                        <outlet property="RatingLabel" destination="zja-DJ-aa3" id="R9p-Qy-dBj"/>
+                        <outlet property="StayLengthTextField" destination="8lE-9z-6oh" id="Jbw-fB-Smh"/>
+                        <outlet property="TimeSpentLabel" destination="wSD-pN-Wa4" id="trO-sc-hNW"/>
+                        <outlet property="TripNameTextField" destination="1ag-7s-BMp" id="9GG-LK-MMV"/>
+                        <outlet property="mapView" destination="QWV-l2-fqY" id="Qy7-hh-56C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydn-Ng-2kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5461.6000000000004" y="-251.23152709359607"/>
         </scene>
         <!--Search Map Table View Controller-->
         <scene sceneID="9oM-WY-xDq">
@@ -797,6 +918,7 @@
         <image name="Plan-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-add new 1x" width="23" height="23"/>
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
+        <image name="PlanDetail-viewOnMap 1x" width="321" height="62"/>
         <image name="Select City-SearchBar 1x" width="298" height="43"/>
         <image name="Select City-unselectedButton 1x" width="306" height="67"/>
         <image name="Tab - Explore" width="24" height="25"/>
@@ -812,7 +934,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RKU-2m-fz8"/>
-        <segue reference="7lf-2y-feD"/>
+        <segue reference="eIA-MW-uKx"/>
+        <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>
     </inferredMetricsTieBreakers>
 </document>

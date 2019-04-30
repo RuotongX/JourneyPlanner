@@ -16,6 +16,7 @@ protocol PlanDetailViewControllerDelegate: class {
 
 class PlanDetailViewController: UIViewController {
     
+    @IBOutlet weak var tableview: UITableView!
     var plan: TripPlan?
     var delegate : PlanDetailViewControllerDelegate?
     
@@ -36,6 +37,25 @@ class PlanDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         // if plan was not existing yet
         askingforPlanName()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ViewTrip"{
+            if let tripdetailViewController = segue.destination as? tripDetailViewController{
+                
+                tripdetailViewController.delegate = self
+                
+                if let cell = sender as? UITableViewCell{
+                    if let indexPath = tableview.indexPath(for: cell),
+                        let plan = plan{
+                        tripdetailViewController.plan = plan.trips[indexPath.row]
+                    }
+                    
+                }
+                
+            }
+        }
     }
     
     @IBAction func returnButton(_ sender: UIButton) {
@@ -96,6 +116,10 @@ class PlanDetailViewController: UIViewController {
             }
         }
     }
+    
+}
+
+extension PlanDetailViewController : tripDetailViewControllerDelagate{
     
 }
 
