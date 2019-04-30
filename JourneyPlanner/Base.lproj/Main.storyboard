@@ -245,6 +245,163 @@
             </objects>
             <point key="canvasLocation" x="2887" y="429"/>
         </scene>
+        <!--Preference View Controller-->
+        <scene sceneID="HPm-Lk-4GD">
+            <objects>
+                <viewController id="TMI-oH-Ybm" customClass="PreferenceViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jnh-uF-vKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-70-eK5">
+                                <rect key="frame" x="32" y="65" width="24" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back" image="PlanDetail-return key 1x"/>
+                                <connections>
+                                    <action selector="BurronPessed:" destination="TMI-oH-Ybm" eventType="touchUpInside" id="jTO-R7-rcW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6E-fx-jZs">
+                                <rect key="frame" x="138" y="70" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-Dt-2ds">
+                                <rect key="frame" x="16" y="107" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Name" image="Name(1)"/>
+                                <connections>
+                                    <segue destination="sWR-Ls-pWu" kind="show" identifier="PassingNameSegue" id="wqU-j0-ubd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-jS-QPG">
+                                <rect key="frame" x="16" y="175" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="RecommandRange" image="Range(1)"/>
+                                <connections>
+                                    <segue destination="20O-og-tOi" kind="show" identifier="PassRangeSegue" id="axN-dd-blj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5Q-AU-FGb">
+                                <rect key="frame" x="16" y="243" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="MapType" image="Map Type(1)"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-Zy-NBE" userLabel="Type">
+                                <rect key="frame" x="273" y="256" width="55" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUK-8w-7tI" userLabel="Range">
+                                <rect key="frame" x="265" y="190" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-P1-4dL" userLabel="Name">
+                                <rect key="frame" x="273" y="122" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b4p-JU-Zbx"/>
+                    </view>
+                    <connections>
+                        <outlet property="SelectRange" destination="EUK-8w-7tI" id="wrO-LV-LNM"/>
+                        <outlet property="Username" destination="Rhe-P1-4dL" id="cry-g7-3Cu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBU-SA-of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3776.8000000000002" y="566.74876847290648"/>
+        </scene>
+        <!--Choose Range View Controller-->
+        <scene sceneID="4dw-CE-Q8O">
+            <objects>
+                <viewController id="20O-og-tOi" customClass="ChooseRangeViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="27c-TF-RGk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-iB-9Db">
+                                <rect key="frame" x="15" y="64" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="Cancel:" destination="20O-og-tOi" eventType="touchUpInside" id="nVC-46-en6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28Z-DF-Rln">
+                                <rect key="frame" x="21" y="125" width="326" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7sG-x2-WS1"/>
+                    </view>
+                    <connections>
+                        <outlet property="RangeLabel" destination="28Z-DF-Rln" id="AZ0-vy-33f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwD-UV-nXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3776.8000000000002" y="1327.8325123152711"/>
+        </scene>
+        <!--huhu-->
+        <scene sceneID="Vpp-ob-a30">
+            <objects>
+                <viewController title="huhu" id="sWR-Ls-pWu" customClass="NameViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="id2-G3-j3n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz0-kj-hx3">
+                                <rect key="frame" x="16" y="44" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="Cancel:" destination="sWR-Ls-pWu" eventType="touchUpInside" id="1d7-mc-J4X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qo-E0-A9U">
+                                <rect key="frame" x="325" y="44" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveButtonPressed:" destination="sWR-Ls-pWu" eventType="touchUpInside" id="H5T-GR-mCm"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-KT-FdZ">
+                                <rect key="frame" x="16" y="92" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="c4Z-AR-hpv"/>
+                    </view>
+                    <connections>
+                        <outlet property="NameTextFiled" destination="LBi-KT-FdZ" id="0z5-q4-5fn"/>
+                        <outlet property="SaveNameButton" destination="7Qo-E0-A9U" id="Q0e-mg-tyh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDi-JY-pXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4956" y="569.70443349753702"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -280,6 +437,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-85-Ve0" userLabel="Preference">
                                 <rect key="frame" x="39" y="209.66666666666666" width="296" height="71.999999999999972"/>
                                 <state key="normal" image="User-Preference"/>
+                                <connections>
+                                    <segue destination="TMI-oH-Ybm" kind="show" id="EUV-aX-PTK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocU-XZ-TpY" userLabel="About">
                                 <rect key="frame" x="39" y="301.66666666666669" width="296" height="72"/>
@@ -731,11 +891,14 @@
         <image name="Home-Weather Background 1x" width="351" height="80"/>
         <image name="Home-map" width="164" height="76"/>
         <image name="Home-plan" width="164" height="76"/>
+        <image name="Map Type(1)" width="352" height="51"/>
+        <image name="Name(1)" width="352" height="51"/>
         <image name="Plan-add new 1x" width="23" height="23"/>
         <image name="Plan-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-add new 1x" width="23" height="23"/>
         <image name="PlanDetail-edit x1" width="23" height="23"/>
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
+        <image name="Range(1)" width="352" height="51"/>
         <image name="Select City - Search Icon 1x" width="25" height="25"/>
         <image name="Select City-SearchBar 1x" width="351" height="52"/>
         <image name="Select City-unselectedButton 1x" width="306" height="67"/>
