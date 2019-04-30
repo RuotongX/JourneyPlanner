@@ -19,6 +19,7 @@ class SelectCityViewController: UIViewController {
     @IBOutlet weak var SearchContent: UITextField!
     weak var delegate : SelectCityViewControllerDelegate?
     weak var CurrentLocationInformation : LocationInformation?
+
     
     var selectedCity : LocationInformation?
     var cityHistory : [LocationInformation]?

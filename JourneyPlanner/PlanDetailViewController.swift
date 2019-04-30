@@ -38,22 +38,23 @@ class PlanDetailViewController: UIViewController {
         // if plan was not existing yet
         askingforPlanName()
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == "ViewTrip"{
             if let tripdetailViewController = segue.destination as? tripDetailViewController{
-                
+
                 tripdetailViewController.delegate = self
-                
+
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = tableview.indexPath(for: cell),
                         let plan = plan{
                         tripdetailViewController.plan = plan.trips[indexPath.row]
                     }
-                    
+
                 }
-                
+
             }
         }
     }

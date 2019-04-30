@@ -37,6 +37,7 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
         
+        mapView.delegate = self
     }
     
     
@@ -138,24 +139,25 @@ class MapViewController: UIViewController {
 extension MapViewController : MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        if annotation is MKUserLocation{
+        if let _ = annotation as? MKUserLocation{
             return nil
         }
         
-        let reuseId = "Pin"
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        let identifier = "marker"
+        var view : MKMarkerAnnotationView
         
-        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        pinView?.pinTintColor = UIColor.orange
-        pinView?.canShowCallout = true
-        
-        let smallSquare = CGSize(width: 30, height: 30)
-        let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-        button.setBackgroundImage(UIImage(named: "Plan-add new 1x"), for: .normal)
-        pinView?.leftCalloutAccessoryView = button
-        
-        return pinView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+//            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
     }
+
 }
 
 extension MapViewController : HandleMapSearch{
@@ -168,12 +170,24 @@ extension MapViewController : HandleMapSearch{
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
         
-        if let city = placemark.locality,
-            let state = placemark.administrativeArea{
-            annotation.subtitle = "\(city) \(state)"
+        var subtitle : String = ""
+        
+        if let streetNo = placemark.subThoroughfare{
+            subtitle.append("\(streetNo)")
+            print("111\(streetNo)")
         }
+        if let street = placemark.thoroughfare{
+            subtitle.append(", \(street)")
+        }
+        if let city = placemark.subLocality{
+            subtitle.append(", \(city)")
+        }
+        
+        print("aaa \(subtitle)")
+        annotation.subtitle = subtitle
+        
         mapView.addAnnotation(annotation)
-        let span = MKCoordinateSpan(latitudeDelta: 0.05,longitudeDelta: 0.05)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01,longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: placemark.coordinate,span: span)
         mapView.setRegion(region, animated: true)
     }
