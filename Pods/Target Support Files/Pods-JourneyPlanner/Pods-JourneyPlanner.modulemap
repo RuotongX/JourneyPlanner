@@ -1,0 +1,6 @@
+framework module Pods_JourneyPlanner {
+  umbrella header "Pods-JourneyPlanner-umbrella.h"
+
+  export *
+  module * { export * }
+}

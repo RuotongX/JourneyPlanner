@@ -8,6 +8,10 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
+import NVActivityIndicatorView
+import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {}
 

@@ -18,6 +18,7 @@
 		41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2170B226FF2D700374707 /* PlanDetailViewController.swift */; };
 		41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B448B0226C39E600763AE4 /* SelectCityViewController.swift */; };
 		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
+		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
 		E14265F822421C06006399D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F722421C06006399D2 /* AppDelegate.swift */; };
 		E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F922421C06006399D2 /* Home_ViewController.swift */; };
 		E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265FB22421C06006399D2 /* SecondViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19305341977E0C9D7C33E2EC /* Pods-JourneyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourneyPlanner.release.xcconfig"; path = "Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		410AED47226EE51200998F9E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		410AED49226F13A400998F9E /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		4124D20E226C8335001CD1F2 /* LocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInformation.swift; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 		41B2170B226FF2D700374707 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
 		41B448B0226C39E600763AE4 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
+		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14265F422421C05006399D2 /* JourneyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourneyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14265F722421C06006399D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E14265F922421C06006399D2 /* Home_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		E142660022421C06006399D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E142660322421C06006399D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E142660522421C06006399D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFA350BB1C3D190A14111C95 /* Pods-JourneyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourneyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +57,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D51488F12E1CECAB2ED7A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFA350BB1C3D190A14111C95 /* Pods-JourneyPlanner.debug.xcconfig */,
+				19305341977E0C9D7C33E2EC /* Pods-JourneyPlanner.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A6569F2B4170D6685F746ACD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E14265EB22421C05006399D2 = {
 			isa = PBXGroup;
 			children = (
 				E14265F622421C05006399D2 /* JourneyPlanner */,
 				E14265F522421C05006399D2 /* Products */,
+				09D51488F12E1CECAB2ED7A4 /* Pods */,
+				A6569F2B4170D6685F746ACD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E142660822421C06006399D2 /* Build configuration list for PBXNativeTarget "JourneyPlanner" */;
 			buildPhases = (
+				ED8FA39C4C7BF00E34472633 /* [CP] Check Pods Manifest.lock */,
 				E14265F022421C05006399D2 /* Sources */,
 				E14265F122421C05006399D2 /* Frameworks */,
 				E14265F222421C05006399D2 /* Resources */,
+				851061EC85F9D3916C744742 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +192,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		851061EC85F9D3916C744742 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED8FA39C4C7BF00E34472633 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JourneyPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E14265F022421C05006399D2 /* Sources */ = {
@@ -328,16 +406,17 @@
 		};
 		E142660922421C06006399D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA350BB1C3D190A14111C95 /* Pods-JourneyPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerRt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -346,16 +425,17 @@
 		};
 		E142660A22421C06006399D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19305341977E0C9D7C33E2EC /* Pods-JourneyPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerRt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
