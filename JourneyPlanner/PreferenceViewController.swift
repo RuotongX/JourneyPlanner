@@ -10,13 +10,21 @@ import UIKit
 
 class PreferenceViewController: UIViewController{
 
-    @IBOutlet weak var SelectRange: UILabel!
+    @IBOutlet weak var RangeLabel: UILabel!
     @IBOutlet weak var Username: UILabel!
+    
+    
+    @IBOutlet weak var RangePicker: UIPickerView!
+    
+    var rangerInMeter : Int?
+    let rangeParameter : [String] = ["off","5","10","15","20","25"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        RangePicker?.delegate = self
         
     }
 
@@ -29,14 +37,11 @@ class PreferenceViewController: UIViewController{
             }
         }
         
-        if segue.identifier == "PassRangeSegue" {
-            if let chooseRangeController = segue.destination as? ChooseRangeViewController {
-                chooseRangeController.delegate = self
-                chooseRangeController.range = SelectRange.text
-            }
-        }
     }
     
+    @IBAction func RangeButtonPressed(_ sender: Any) {
+        RangePicker.isHidden = false
+    }
     
     @IBAction func BurronPessed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -65,6 +70,31 @@ extension PreferenceViewController: NameViewControllerDelagate {
     
 }
 
-extension PreferenceViewController : ChooseRangeViewControllerDelagate {
+extension PreferenceViewController : UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return rangeParameter.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        if rangeParameter[row] == "off"{
+            return "off"
+        }
+        return "\(rangeParameter[row]) km"
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if rangeParameter[row] == "off"{
+            RangeLabel.text = "off"
+        } else{
+            RangeLabel.text = "\(rangeParameter[row]) km"
+        }
+    }
+    
     
 }
+
