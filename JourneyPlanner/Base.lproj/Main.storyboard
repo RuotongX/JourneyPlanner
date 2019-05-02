@@ -426,6 +426,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4IZ-6K-w4j"/>
                     </view>
+                    <connections>
+                        <outlet property="DateLabel" destination="mHh-Mj-4XV" id="EvC-Fc-OxM"/>
+                        <outlet property="LocationLabel" destination="k8S-3x-N32" id="qQT-Xp-M0y"/>
+                        <outlet property="TempLabel" destination="Dp9-Pd-r8v" id="7Qf-bs-lPD"/>
+                        <outlet property="WeatherImage" destination="19E-ow-LNY" id="VcL-z5-zOS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNG-Bv-kvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -917,7 +923,7 @@
         <image name="mapView-Return Button 1x" width="81" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RKU-2m-fz8"/>
+        <segue reference="ohn-x0-Zeu"/>
         <segue reference="7lf-2y-feD"/>
         <segue reference="lPE-xR-MhK"/>
     </inferredMetricsTieBreakers>

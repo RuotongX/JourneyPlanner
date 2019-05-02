@@ -8,11 +8,32 @@
 
 import UIKit
 
-class WeatherForcastController: UIViewController {
+
+
+class WeatherForcastController: UIViewController, Home_ViewControllerDelegate {
+    
+    @IBOutlet weak var WeatherImage: UIImageView!
+    @IBOutlet weak var TempLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var LocationLabel: UILabel!
+    weak var CurrentLocationInformation : LocationInformation?
+    
+    var selectCity : LocationInformation?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let Home_ViewController = Home_ViewController(nibName:"Home_ViewController",bundle:nil)
+//        Home_ViewController.delegate = self
+//        presentedViewController(Home_ViewController,animated: true, completion: nil)
         
+    }
+    
+    func passOnInformation(_ controller: Home_ViewControllerDelegate, newCity city: LocationInformation) {
+        self.CurrentLocationInformation = city
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
     }
 

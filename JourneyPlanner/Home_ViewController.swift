@@ -13,6 +13,10 @@ import SwiftyJSON
 import NVActivityIndicatorView
 import Foundation
 
+protocol Home_ViewControllerDelegate{
+    func passOnInformation(_ controller:Home_ViewControllerDelegate, newCity city:LocationInformation)
+}
+
 class ViewController: UIViewController, CLLocationManagerDelegate {}
 
 class Home_ViewController: ViewController{
@@ -22,7 +26,7 @@ class Home_ViewController: ViewController{
     @IBOutlet weak var WeatherLabel: UILabel!
     @IBOutlet weak var WeatherIcon: UIImageView!
     
-    
+    var delegate: Home_ViewControllerDelegate?
     let WeatherApiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
     let locationManager = CLLocationManager()
     var cityHistory : [LocationInformation]? = []
@@ -49,8 +53,6 @@ class Home_ViewController: ViewController{
         locationPermission()
     }
     
-    
-    
     // This prepare function is used to pass the value between this viewController with another ViewController Dalton 27/Apr/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CurrentLocationProvider"{
@@ -59,6 +61,7 @@ class Home_ViewController: ViewController{
                 
                 if let SelectedCity = selectedCity{
                     selectCityController.selectedCity = SelectedCity
+                    self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
                 selectCityController.cityHistory = self.cityHistory
                 selectCityController.delegate = self
@@ -72,13 +75,19 @@ class Home_ViewController: ViewController{
                 
                 if let selectedCity = self.selectedCity{
                     mapviewController?.selectedCity = selectedCity
+                    self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
                 mapviewController?.delegate = self
             }
         }
     }
     
-
+    func closeVC(){
+        if(self.delegate != nil){
+            self.delegate?.passOnInformation(self as! Home_ViewControllerDelegate, newCity: CurrentCity!)
+        }
+        self.dismiss(animated: true,completion: nil)
+    }
     
     //Define a function which obtain the current location information (Dalton 16/Apr/2019)
     func locationPermission(){
@@ -96,6 +105,7 @@ class Home_ViewController: ViewController{
 
                 if let selectedCity = self.selectedCity{
                     self.City_Name.text = selectedCity.cityName
+                    self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
             }
         }
@@ -157,6 +167,7 @@ class Home_ViewController: ViewController{
                         
                         if let selectedCity = self.selectedCity{
                             self.City_Name.text = selectedCity.cityName
+                            self.CheckWeather(_location: (self.selectedCity?.location)!)
                         }
                         
                         let location = CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
@@ -166,99 +177,7 @@ class Home_ViewController: ViewController{
                     }
                 }
             }
-            
-            let lat = currentLocation.coordinate.latitude
-            let lon = currentLocation.coordinate.longitude
-            Alamofire.request("http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(WeatherApiKey)&units=metric").responseJSON{
-                response in
-                if let responseStr = response.result.value{
-                    let jsonResponse = JSON(responseStr)
-                    let jsonWeather = jsonResponse["weather"].array![0]
-                    let jsonTemp = jsonResponse["main"]
-                    var iconName = jsonWeather["icon"].stringValue
-                   
-                    
-                    switch iconName{
-                    case "01d":
-                        iconName = "Home-Weather-Sunny"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "01n":
-                        iconName = "Home-Weather-Sunny"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "02d":
-                        iconName = "Home-Weather-Partlycloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "02n":
-                        iconName = "Home-Weather-Partlycloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "03d":
-                        iconName = "Home-Weather-Cloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "03n":
-                        iconName = "Home-Weather-Cloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "04d":
-                        iconName = "Home-Weather-Mostlycloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "04n":
-                        iconName = "Home-Weather-Mostlycloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "09d":
-                        iconName = "Home-Weather-Sunnyrain"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "09n":
-                        iconName = "Home-Weather-Sunnyrain"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "10d":
-                        iconName = "Home-Weather-rain"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "10n":
-                        iconName = "Home-Weather-rain"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "11d":
-                        iconName = "Home-Weather-Thunder"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "11n":
-                        iconName = "Home-Weather-Thunder"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "13d":
-                        iconName = "Home-Weather-Mostlycloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "13n":
-                        iconName = "Home-Weather-Mostlycloudy"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "50d":
-                        iconName = "Home-Weather-Fog"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    case "50n":
-                        iconName = "Home-Weather-Fog"
-                        self.WeatherIcon.image = UIImage(named:iconName)
-                        break;
-                    default:
-                        break;
-                    }
-                    self.WeatherIcon.image = UIImage(named: iconName)
-                    
-                    self.WeatherLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))℃"
-                }
-            }
+            CheckWeather(_location: currentLocation)
         }
     }
     // cannot obtain the current location, display error message 21 Apr 2019 Dalton
@@ -271,10 +190,101 @@ class Home_ViewController: ViewController{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         locationPermission()
     }
-    
-    
-
-
+    func CheckWeather(_location: CLLocation){
+        let lat = _location.coordinate.latitude
+        let lon = _location.coordinate.longitude
+        
+        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(WeatherApiKey)&units=metric").responseJSON{
+            response in
+            if let responseStr = response.result.value{
+                let jsonResponse = JSON(responseStr)
+                let jsonWeather = jsonResponse["weather"].array![0]
+                let jsonTemp = jsonResponse["main"]
+                var iconName = jsonWeather["icon"].stringValue
+                
+                
+                switch iconName{
+                case "01d":
+                    iconName = "Home-Weather-Sunny"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "01n":
+                    iconName = "Home-Weather-Sunny"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "02d":
+                    iconName = "Home-Weather-Partlycloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "02n":
+                    iconName = "Home-Weather-Partlycloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "03d":
+                    iconName = "Home-Weather-Cloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "03n":
+                    iconName = "Home-Weather-Cloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "04d":
+                    iconName = "Home-Weather-Mostlycloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "04n":
+                    iconName = "Home-Weather-Mostlycloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "09d":
+                    iconName = "Home-Weather-Sunnyrain"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "09n":
+                    iconName = "Home-Weather-Sunnyrain"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "10d":
+                    iconName = "Home-Weather-rain"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "10n":
+                    iconName = "Home-Weather-rain"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "11d":
+                    iconName = "Home-Weather-Thunder"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "11n":
+                    iconName = "Home-Weather-Thunder"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "13d":
+                    iconName = "Home-Weather-Mostlycloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "13n":
+                    iconName = "Home-Weather-Mostlycloudy"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "50d":
+                    iconName = "Home-Weather-Fog"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                case "50n":
+                    iconName = "Home-Weather-Fog"
+                    self.WeatherIcon.image = UIImage(named:iconName)
+                    break;
+                default:
+                    break;
+                }
+                self.WeatherIcon.image = UIImage(named: iconName)
+                
+                self.WeatherLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))℃"
+            }
+        }
+    }
 }
 
 extension Home_ViewController : SelectCityViewControllerDelegate{
