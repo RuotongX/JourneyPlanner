@@ -9,7 +9,10 @@
 import UIKit
 
 class WeatherCellController: UITableViewCell {
-
+    @IBOutlet weak var LowLabel: UILabel!
+    @IBOutlet weak var HighLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

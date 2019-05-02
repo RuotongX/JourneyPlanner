@@ -355,7 +355,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home-Weather-Sunny" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19E-ow-LNY">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home-Weather-Sunny" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19E-ow-LNY">
                                         <rect key="frame" x="109" y="104" width="157" height="157"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="A8s-4R-d7e"/>
@@ -394,8 +394,11 @@
                                     <constraint firstItem="19E-ow-LNY" firstAttribute="centerX" secondItem="Dp9-Pd-r8v" secondAttribute="centerX" id="P4f-cJ-Xvo"/>
                                     <constraint firstItem="k8S-3x-N32" firstAttribute="leading" secondItem="LrJ-H0-JTN" secondAttribute="trailing" constant="66" id="QDd-hT-jxm"/>
                                     <constraint firstItem="LrJ-H0-JTN" firstAttribute="leading" secondItem="0D5-NV-TVp" secondAttribute="leading" constant="20" id="ayw-cN-Bas"/>
+                                    <constraint firstItem="k8S-3x-N32" firstAttribute="centerX" secondItem="0D5-NV-TVp" secondAttribute="centerX" id="glY-AC-ijC"/>
                                     <constraint firstItem="LrJ-H0-JTN" firstAttribute="centerY" secondItem="k8S-3x-N32" secondAttribute="centerY" id="nM6-97-9ME"/>
                                     <constraint firstItem="k8S-3x-N32" firstAttribute="centerX" secondItem="mHh-Mj-4XV" secondAttribute="centerX" id="ngU-oM-I3l"/>
+                                    <constraint firstItem="Dp9-Pd-r8v" firstAttribute="centerX" secondItem="0D5-NV-TVp" secondAttribute="centerX" id="xiV-1e-QC7"/>
+                                    <constraint firstItem="19E-ow-LNY" firstAttribute="centerX" secondItem="0D5-NV-TVp" secondAttribute="centerX" id="ySm-QQ-qmG"/>
                                     <constraint firstItem="Dp9-Pd-r8v" firstAttribute="top" secondItem="19E-ow-LNY" secondAttribute="bottom" constant="34" id="yf8-4O-gug"/>
                                 </constraints>
                             </view>
@@ -403,19 +406,52 @@
                                 <rect key="frame" x="16" y="405" width="343" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="0oK-M3-KGq" customClass="WeatherCellController" customModule="JourneyPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weathercell" rowHeight="90" id="0oK-M3-KGq" customClass="WeatherCellController" customModule="JourneyPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0oK-M3-KGq" id="wbO-au-tiH" customClass="WeatherCellController" customModule="JourneyPlanner" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0oK-M3-KGq" id="wbO-au-tiH">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-ut-f5T">
+                                                    <rect key="frame" x="15" y="29" width="51" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Home-Weather-Sunnyrain" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkO-PN-B3u">
+                                                    <rect key="frame" x="128" y="1" width="86" height="86"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0f-ZC-eKu">
+                                                    <rect key="frame" x="249" y="33" width="20" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g9-at-P8s">
+                                                    <rect key="frame" x="291" y="34" width="22" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="DateLabel" destination="Ojg-ut-f5T" id="qMQ-So-hpg"/>
+                                            <outlet property="HighLabel" destination="y0f-ZC-eKu" id="YgB-2d-3rs"/>
+                                            <outlet property="LowLabel" destination="3g9-at-P8s" id="iJf-p4-dAC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0D5-NV-TVp" firstAttribute="centerX" secondItem="SHb-ih-fke" secondAttribute="centerX" id="0eu-ob-3hO"/>
                             <constraint firstItem="0D5-NV-TVp" firstAttribute="leading" secondItem="SHb-ih-fke" secondAttribute="leading" id="BrZ-kn-5LC"/>
                             <constraint firstItem="XT7-iY-xon" firstAttribute="bottom" secondItem="4IZ-6K-w4j" secondAttribute="bottom" id="Osr-BC-3gd"/>
                             <constraint firstItem="0D5-NV-TVp" firstAttribute="top" secondItem="4IZ-6K-w4j" secondAttribute="top" id="PON-HR-eVT"/>
@@ -903,6 +939,7 @@
         <image name="Home-Weather Background 1x" width="1053" height="240"/>
         <image name="Home-Weather-Partlysunny" width="186" height="144"/>
         <image name="Home-Weather-Sunny" width="147" height="147"/>
+        <image name="Home-Weather-Sunnyrain" width="150" height="144"/>
         <image name="Home-map" width="492" height="228"/>
         <image name="Home-plan" width="492" height="228"/>
         <image name="Plan-add new 1x" width="69" height="69"/>

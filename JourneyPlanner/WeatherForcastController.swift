@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Foundation
+import Alamofire
+import SwiftyJSON
+import NVActivityIndicatorView
+import CoreLocation
 
-
-
-class WeatherForcastController: UIViewController, Home_ViewControllerDelegate {
+class WeatherForcastController: UIViewController {
     
     @IBOutlet weak var WeatherImage: UIImageView!
     @IBOutlet weak var TempLabel: UILabel!
@@ -23,15 +26,15 @@ class WeatherForcastController: UIViewController, Home_ViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let Home_ViewController = Home_ViewController(nibName:"Home_ViewController",bundle:nil)
-//        Home_ViewController.delegate = self
-//        presentedViewController(Home_ViewController,animated: true, completion: nil)
-        
+        self.LocationLabel.text = UserDefaults().string(forKey: "name")
+//        self.WeatherImage.image = UIImage(named: UserDefaults().string(forKey:"icon")!)
+        self.TempLabel.text = UserDefaults().string(forKey:"temp")!
+        let date = NSDate()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "MM-dd"
+        self.DateLabel.text = timeFormatter.string(from: date as Date) as String
     }
     
-    func passOnInformation(_ controller: Home_ViewControllerDelegate, newCity city: LocationInformation) {
-        self.CurrentLocationInformation = city
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         

@@ -13,9 +13,7 @@ import SwiftyJSON
 import NVActivityIndicatorView
 import Foundation
 
-protocol Home_ViewControllerDelegate{
-    func passOnInformation(_ controller:Home_ViewControllerDelegate, newCity city:LocationInformation)
-}
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate {}
 
@@ -26,7 +24,7 @@ class Home_ViewController: ViewController{
     @IBOutlet weak var WeatherLabel: UILabel!
     @IBOutlet weak var WeatherIcon: UIImageView!
     
-    var delegate: Home_ViewControllerDelegate?
+ 
     let WeatherApiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
     let locationManager = CLLocationManager()
     var cityHistory : [LocationInformation]? = []
@@ -82,12 +80,6 @@ class Home_ViewController: ViewController{
         }
     }
     
-    func closeVC(){
-        if(self.delegate != nil){
-            self.delegate?.passOnInformation(self as! Home_ViewControllerDelegate, newCity: CurrentCity!)
-        }
-        self.dismiss(animated: true,completion: nil)
-    }
     
     //Define a function which obtain the current location information (Dalton 16/Apr/2019)
     func locationPermission(){
@@ -200,6 +192,7 @@ class Home_ViewController: ViewController{
                 let jsonResponse = JSON(responseStr)
                 let jsonWeather = jsonResponse["weather"].array![0]
                 let jsonTemp = jsonResponse["main"]
+                let id = jsonResponse["id"].stringValue
                 var iconName = jsonWeather["icon"].stringValue
                 
                 
@@ -282,6 +275,11 @@ class Home_ViewController: ViewController{
                 self.WeatherIcon.image = UIImage(named: iconName)
                 
                 self.WeatherLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))℃"
+            UserDefaults().setValue(self.City_Name.text, forKey: "name")
+                
+                UserDefaults().setValue(iconName, forKey: "icon")
+                UserDefaults().setValue(id,forKey: "id")
+                UserDefaults().setValue(self.WeatherLabel.text, forKey: "temp")
             }
         }
     }
