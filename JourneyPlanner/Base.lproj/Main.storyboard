@@ -215,6 +215,48 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JT1-md-6LU" userLabel="Pharmacy">
+                                <rect key="frame" x="288" y="214" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Pharmacy(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-pD-DQd" userLabel="Shopping">
+                                <rect key="frame" x="114" y="134" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Shopping(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-Po-WGS" userLabel="Bar">
+                                <rect key="frame" x="201" y="134" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Bar(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaK-KG-Q7d" userLabel="Restaurant">
+                                <rect key="frame" x="27" y="134" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Restaurant(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwE-M8-4dG" userLabel="Hotel">
+                                <rect key="frame" x="288" y="134" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Hotel(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-47-9xP" userLabel="Dairy">
+                                <rect key="frame" x="114" y="214" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Dairy(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR3-Dk-VMz" userLabel="Bank">
+                                <rect key="frame" x="201" y="214" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Bank(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOS-Ha-JAA" userLabel="Gas">
+                                <rect key="frame" x="27" y="214" width="60" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Gas(1)"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -278,25 +320,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVQ-M4-qaw">
-                                <rect key="frame" x="0.0" y="562" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC3-Fz-r61">
-                                <rect key="frame" x="277" y="193" width="51" height="15"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-Hg-mAE">
+                                <rect key="frame" x="16" y="253" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="mapTypeTextField:" destination="TMI-oH-Ybm" eventType="editingDidEnd" id="d8r-dA-uBo"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Deg-lY-fc3">
+                                <rect key="frame" x="23" y="185" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="recommandRangeTextField:" destination="TMI-oH-Ybm" eventType="editingDidEnd" id="8rl-l4-hGA"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="b4p-JU-Zbx"/>
                     </view>
                     <connections>
-                        <outlet property="RangeLabel" destination="FC3-Fz-r61" id="HjF-vt-cC6"/>
-                        <outlet property="RangePicker" destination="yVQ-M4-qaw" id="0i2-ZY-Hgh"/>
                         <outlet property="Username" destination="Rhe-P1-4dL" id="cry-g7-3Cu"/>
+                        <outlet property="mapTypeTextField" destination="ug2-Hg-mAE" id="PIv-pd-dYF"/>
+                        <outlet property="recommandRangeTextField" destination="Deg-lY-fc3" id="FsN-DS-C1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBU-SA-of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -843,6 +894,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bank(1)" width="60" height="71"/>
+        <image name="Bar(1)" width="60" height="71"/>
+        <image name="Dairy(1)" width="60" height="72"/>
+        <image name="Gas(1)" width="60" height="71"/>
         <image name="Home - City Guide 1x" width="351" height="175"/>
         <image name="Home - Search Icon 1x" width="25" height="25"/>
         <image name="Home - Weather - Cloudy 1x" width="73" height="48"/>
@@ -851,17 +906,21 @@
         <image name="Home-Weather Background 1x" width="351" height="80"/>
         <image name="Home-map" width="164" height="76"/>
         <image name="Home-plan" width="164" height="76"/>
+        <image name="Hotel(1)" width="60" height="71"/>
         <image name="Map Type(1)" width="352" height="51"/>
         <image name="Name(1)" width="352" height="51"/>
+        <image name="Pharmacy(1)" width="60" height="72"/>
         <image name="Plan-add new 1x" width="23" height="23"/>
         <image name="Plan-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-add new 1x" width="23" height="23"/>
         <image name="PlanDetail-edit x1" width="23" height="23"/>
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
         <image name="Range(1)" width="352" height="51"/>
+        <image name="Restaurant(1)" width="60" height="71"/>
         <image name="Select City - Search Icon 1x" width="25" height="25"/>
         <image name="Select City-SearchBar 1x" width="351" height="52"/>
         <image name="Select City-unselectedButton 1x" width="306" height="67"/>
+        <image name="Shopping(1)" width="60" height="73"/>
         <image name="Tab - Explore" width="24" height="25"/>
         <image name="Tab - Favorite" width="25" height="23"/>
         <image name="Tab - Home" width="23" height="25"/>
