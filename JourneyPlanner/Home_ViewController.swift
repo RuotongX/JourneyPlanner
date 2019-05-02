@@ -283,8 +283,6 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
         self.selectedCity = city
         self.City_Name.text = self.selectedCity?.cityName
     }
-    
-
 }
 
 extension Home_ViewController : MapViewControllerDelegate{
