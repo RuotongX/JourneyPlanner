@@ -98,5 +98,10 @@ class tripDetailViewController: UIViewController {
 
 
 extension tripDetailViewController : MapViewControllerDelegate{
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        //
+    }
+    
+    
     
 }

@@ -14,12 +14,30 @@ protocol HandleMapSearch {
 }
 
 protocol MapViewControllerDelegate: class{
+    func didSelectANewcity(_ controller: MapViewController, selectedCity : LocationInformation)
+}
+
+enum MapSource{
+    case HOMEPAGE_MAP
+    case HOMEPAGE_SEARCH
+    case PLANDETAIL
+    case CHANGECITY
+    case EXPLOREPAGE
+    
     
 }
 
 class MapViewController: UIViewController {
+    
+    
+    var selectedAnnotation : MKAnnotation?
+    var changeCity_CurrentCity : LocationInformation?
+    var changeCity_ReturnValue : LocationInformation?
+    
 
-    var selectedPin : MKPlacemark? = nil
+//    var selectedAnnotation : MKPlacemark? = nil
+    var mapsource : MapSource? = .CHANGECITY
+    var annotationPin : MKPlacemark? = nil
     var resultSearchController : UISearchController?
     var selectedCity: LocationInformation?
     var singleLocation : CLLocation?
@@ -39,7 +57,76 @@ class MapViewController: UIViewController {
         
         mapView.delegate = self
     }
-    
+    @objc func showActionSheet(){
+        
+        if let mapsource = mapsource{
+            
+            let alertSheet = UIAlertController(title: "Choose an action", message: "Choose an action to continue", preferredStyle: .actionSheet)
+            
+            if mapsource == .CHANGECITY{
+                
+                let changeCtiyAction = UIAlertAction(title: "Replace with Current City", style: .default) { (action) in
+                    
+                    if let selectedPlace:MKAnnotation = self.selectedAnnotation{
+                        
+                        let geocoder = CLGeocoder()
+                        let location : CLLocation = CLLocation(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
+                        
+                        geocoder.reverseGeocodeLocation(location
+                            , completionHandler: { (placemarks, error) in
+                                if let error = error{
+                                    print(error.localizedDescription)
+                                } else{
+                                    if let placeMark = placemarks?.first{
+                                        
+                                        if let cityName = placeMark.subLocality{
+                                            if let zipCode = placeMark.postalCode{
+                                                
+                                                let cityInformation = LocationInformation(cityName: cityName, lontitude: location.coordinate.longitude, latitude: location.coordinate.latitude, zipCode: zipCode)
+                                                
+                                                self.delegate?.didSelectANewcity(self, selectedCity: cityInformation)
+                                                self.dismiss(animated: true, completion: nil)
+                                            }
+                                        }
+                                    }
+                                }
+                        })
+                        
+                    }
+                }
+                alertSheet.addAction(changeCtiyAction)
+                
+            } else if mapsource == .HOMEPAGE_MAP{
+                
+                let saveAction = UIAlertAction(title: "👌🏻 Add to Plan", style: .default) { (action) in
+        
+                }
+                let favoriteAction = UIAlertAction(title: "😍 Favorite", style: .default) { (action) in
+        
+                }
+        
+                alertSheet.addAction(saveAction)
+                alertSheet.addAction(favoriteAction)
+            } else if mapsource == .PLANDETAIL{
+                let replaceLocation = UIAlertAction(title: "Replace with existing Location", style: .default) { (action) in
+                    
+                }
+                alertSheet.addAction(replaceLocation)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            alertSheet.addAction(cancelAction)
+            self.present(alertSheet,animated: true)
+
+        }
+        
+        
+        
+       
+        
+
+
+    }
     
     func addSearchController(){
         // load the table view and define it as searchresult tableview Dalton 24/Apr/2019
@@ -68,41 +155,55 @@ class MapViewController: UIViewController {
         locationSearchTable.handleMapSearchDelegate = self
     }
     
+    // if user did not provide location information, then this app will not display the current user location.Dalton 23 Apr 2019
+    private func errorMsgCannotObtainCurrentLocation(){
+        let alertController : UIAlertController = UIAlertController(title: "Unknown Location", message: "Unable to get your location, please allow this app to obtain your current location", preferredStyle: .alert)
+        let alertAction : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     private func loadInformation(){
         
-        if let selectedCity = selectedCity{
-            // if user did not provide location information, then this app will not display the current user location.Dalton 23 Apr 2019
-            if selectedCity.cityName == "Unknown"{
-                let alertController : UIAlertController = UIAlertController(title: "Unknown Location", message: "Unable to get your location, please allow this app to obtain your current location", preferredStyle: .alert)
-                let alertAction : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-                // if user provide the current location, this will display the nearst 1000 memter surroudings to user.Dalton 23 Apr 2019
-            } else {
-
-                let regionRadius : CLLocationDistance = 1000.0
-                let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.location.coordinate.latitude, longitude: selectedCity.location.coordinate.longitude)
-                let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-                
-                
-                
-                mapView.setRegion(region, animated: true)
+        if let mapsource = mapsource{
+            if mapsource == .CHANGECITY{
+                if let changeCity_CurrentCity = changeCity_CurrentCity{
+                    if changeCity_CurrentCity.cityName == "Unknown"{
+                        errorMsgCannotObtainCurrentLocation()
+                    } else {
+                        
+                        // if user provide the current location or selected city, this will display the nearst 1000 memter surroudings to user. Dalton 23 Apr 2019, last modified 02 May 2019
+                        
+                        let regionRadius : CLLocationDistance = 1000.0
+                        let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: changeCity_CurrentCity.location.coordinate.latitude, longitude: changeCity_CurrentCity.location.coordinate.longitude)
+                        let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+                        
+                        mapView.setRegion(region, animated: true)
+                    }
+                }
             }
         }
+        
+        
+        
         
         // this call is from the plan detail class, which design to display the location in a map
         if let singleLocation = singleLocation{
             
-            mapView.removeAnnotations(mapView.annotations)
+            let placemark = MKPlacemark(coordinate: singleLocation.coordinate)
             
-            let annotation = MKPointAnnotation()
-            annotation.coordinate =  singleLocation.coordinate
+            dropPinZoomIn(placemark: placemark)
             
-            mapView.addAnnotation(annotation)
-            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            let region = MKCoordinateRegion(center: singleLocation.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
+            //转换singlelocation 从 CLLocation to MK mark
+//            mapView.removeAnnotations(mapView.annotations)
+            
+//            let annotation = MKPointAnnotation()
+//            annotation.coordinate =  singleLocation.coordinate
+//
+//            mapView.addAnnotation(annotation)
+//            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+//            let region = MKCoordinateRegion(center: singleLocation.coordinate, span: span)
+//            mapView.setRegion(region, animated: true)
         }
     }
     
@@ -122,21 +223,16 @@ class MapViewController: UIViewController {
     @IBAction func ReturnButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 extension MapViewController : MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation{
+            self.selectedAnnotation = annotation
+        }
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if let _ = annotation as? MKUserLocation{
@@ -146,44 +242,65 @@ extension MapViewController : MKMapViewDelegate{
         let identifier = "marker"
         var view : MKMarkerAnnotationView
         
+        print("marker called")
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
             dequeuedView.annotation = annotation
             view = dequeuedView
+            print("exist")
         } else {
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
+            print("??")
 //            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//
+//            let smallSquare = CGSize(width: 30, height: 30)
+//            let favoriteButton : UIButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+//            favoriteButton.setBackgroundImage(UIImage(named: "mapview -callOutAddButton 1x"), for: .normal)
+            
+            let detailButton: UIButton = UIButton(type: .detailDisclosure)
+            detailButton.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
+            view.rightCalloutAccessoryView = detailButton
+
+//            view.glyphText = "🐷"
         }
         return view
     }
+    
+
 
 }
 
 extension MapViewController : HandleMapSearch{
     func dropPinZoomIn(placemark: MKPlacemark) {
-        selectedPin = placemark
+        annotationPin = placemark
         
         mapView.removeAnnotations(mapView.annotations)
+        selectedAnnotation = placemark
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
-        annotation.title = placemark.name
+        
+        if let annotationName = placemark.name{
+            annotation.title = annotationName
+        } else {
+            annotation.title = "Selected Place"
+        }
+//        annotation.title = placemark.areasOfInterest?[0]
+//        // 在这里少了个名字呀 所以他就不能显示callout
+//            //placemark.name
         
         var subtitle : String = ""
         
         if let streetNo = placemark.subThoroughfare{
             subtitle.append("\(streetNo)")
-            print("111\(streetNo)")
         }
         if let street = placemark.thoroughfare{
-            subtitle.append(", \(street)")
+            subtitle.append(" \(street)")
         }
         if let city = placemark.subLocality{
             subtitle.append(", \(city)")
         }
         
-        print("aaa \(subtitle)")
         annotation.subtitle = subtitle
         
         mapView.addAnnotation(annotation)

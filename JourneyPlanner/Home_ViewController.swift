@@ -27,6 +27,7 @@ class Home_ViewController: ViewController{
     required init?(coder aDecoder: NSCoder) {
         self.CurrentCity = LocationInformation()
         super.init(coder: aDecoder)
+        
     }
     
     override func viewDidLoad() {
@@ -182,12 +183,18 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
         self.cityHistory = historyCity
         self.selectedCity = city
         self.City_Name.text = self.selectedCity?.cityName
+        
     }
     
 
 }
 
+
 extension Home_ViewController : MapViewControllerDelegate{
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        //
+    }
+    
     
 }
 

@@ -39,7 +39,7 @@ class SelectCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setImages()
-        loadHistoryInformation()
+//        loadHistoryInformation()
         
         
         if let currentCity = CurrentLocationInformation{
@@ -73,7 +73,22 @@ class SelectCityViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+    
+        if segue.identifier == "selectNewCity"{
+            if let navigationController = segue.destination as? UINavigationController{
+                if let mapViewController = navigationController.viewControllers.first as? MapViewController{
+                    
+                    mapViewController.mapsource = .CHANGECITY
+                    mapViewController.delegate = self
+                    
+                    if let selectedCity = self.selectedCity{
+                        mapViewController.changeCity_CurrentCity = selectedCity
+                    } else {
+                        mapViewController.changeCity_CurrentCity = self.CurrentLocationInformation
+                    }
+                }
+            }
+        }
         
     }
     
@@ -159,6 +174,10 @@ class SelectCityViewController: UIViewController {
                 RecentCity1.text = historyCity[historyCity.count - 1].cityName
                 RecentCity2.text = historyCity[historyCity.count - 2].cityName
                 RecentCity3.text = historyCity[historyCity.count - 3].cityName
+                
+                for num in 0..<historyCity.count{
+                    print("\(num)   \(historyCity[num].cityName)")
+                }
             }
 
         }
@@ -178,4 +197,49 @@ class SelectCityViewController: UIViewController {
 
 }
 
+extension SelectCityViewController: MapViewControllerDelegate{
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        
+        if let currentLocation = CurrentLocationInformation{
+            
+            // when the selected city = to current city, update city to current city and cancel selected city
+            if currentLocation.cityName == selectedCity.cityName{
+                deselectAllButton()
+                self.CurrentCityButton.isSelected = true
+                self.selectedCity = nil
+            } else {
+                
+                if var cityHistory = cityHistory{
+                    for index in 0..<cityHistory.count{
+                        if cityHistory[index].cityName == selectedCity.cityName{
+                            cityHistory.remove(at: index)
+                        }
+                    }
+                    cityHistory.append(selectedCity)
+                    print(cityHistory)
+                    print("yes")
+                } else {
+                    cityHistory = []
+                    cityHistory?.append(selectedCity)
+                    print("no")
+                }
+                
+                //?
+                loadHistoryInformation()
+                deselectAllButton()
+                RecentCity1Button.isSelected = true
+                self.selectedCity = selectedCity
+                print(self.selectedCity?.cityName)
+            }
+            
+            
+            
+        }
+        
+    }
+    
+    
+    
+    
+}
 
