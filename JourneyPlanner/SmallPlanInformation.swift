@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class SmallPlanInformation{
+class SmallTripInformation{
     var name:String
     var location : CLLocation
     var staylength : Int
