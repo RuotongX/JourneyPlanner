@@ -73,6 +73,7 @@ class Home_ViewController: ViewController{
                 mapviewController?.homePage_CurrentOrSelectedCity = self.CurrentCity
                 
                 if let selectedCity = self.selectedCity{
+
                     mapviewController?.homePage_CurrentOrSelectedCity = selectedCity
                     
                      self.CheckWeather(_location: (self.selectedCity?.location)!)
