@@ -235,6 +235,9 @@
                                 <rect key="frame" x="27" y="134" width="60" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Restaurant(1)"/>
+                                <connections>
+                                    <segue destination="lmG-BS-7tZ" kind="show" id="O5w-7c-VlV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwE-M8-4dG" userLabel="Hotel">
                                 <rect key="frame" x="288" y="134" width="60" height="71"/>
@@ -301,17 +304,11 @@
                                 <rect key="frame" x="16" y="175" width="343" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="RecommandRange" image="Range(1)"/>
-                                <connections>
-                                    <action selector="RangeButtonPressed:" destination="TMI-oH-Ybm" eventType="touchUpInside" id="F5m-bt-SFf"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5Q-AU-FGb">
                                 <rect key="frame" x="16" y="243" width="343" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="MapType" image="Map Type(1)"/>
-                                <connections>
-                                    <segue destination="dg2-AQ-CIp" kind="show" id="fDy-xK-eHr"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-P1-4dL" userLabel="Name">
                                 <rect key="frame" x="273" y="122" width="55" height="21"/>
@@ -321,24 +318,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-Hg-mAE">
-                                <rect key="frame" x="16" y="253" width="320" height="30"/>
+                                <rect key="frame" x="16" y="243" width="343" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="mapTypeTextField:" destination="TMI-oH-Ybm" eventType="editingDidEnd" id="d8r-dA-uBo"/>
+                                    <outlet property="delegate" destination="TMI-oH-Ybm" id="3QL-dG-jR5"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Deg-lY-fc3">
-                                <rect key="frame" x="23" y="185" width="313" height="30"/>
+                                <rect key="frame" x="16" y="175" width="343" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="recommandRangeTextField:" destination="TMI-oH-Ybm" eventType="editingDidEnd" id="8rl-l4-hGA"/>
+                                    <outlet property="delegate" destination="TMI-oH-Ybm" id="y1D-gu-5Gj"/>
                                 </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0G3-xi-iZ0">
+                                <rect key="frame" x="16" y="302" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -348,26 +354,12 @@
                         <outlet property="Username" destination="Rhe-P1-4dL" id="cry-g7-3Cu"/>
                         <outlet property="mapTypeTextField" destination="ug2-Hg-mAE" id="PIv-pd-dYF"/>
                         <outlet property="recommandRangeTextField" destination="Deg-lY-fc3" id="FsN-DS-C1G"/>
+                        <outlet property="testTextField" destination="0G3-xi-iZ0" id="LVp-ts-TFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBU-SA-of8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3776.8000000000002" y="566.74876847290648"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rYL-Iv-FPI">
-            <objects>
-                <viewController id="dg2-AQ-CIp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uFo-V9-iVh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Ftl-Ga-GNp"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l7t-Qi-OTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4986" y="1328"/>
         </scene>
         <!--huhu-->
         <scene sceneID="Vpp-ob-a30">
@@ -933,7 +925,7 @@
         <image name="mapView-Return Button 1x" width="27" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KC9-Sb-TTu"/>
+        <segue reference="O5w-7c-VlV"/>
         <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>
     </inferredMetricsTieBreakers>

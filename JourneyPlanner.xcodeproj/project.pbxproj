@@ -17,6 +17,7 @@
 		41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2170B226FF2D700374707 /* PlanDetailViewController.swift */; };
 		41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B448B0226C39E600763AE4 /* SelectCityViewController.swift */; };
 		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
+		DB69CA7E227BFA0D00F78397 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB69CA7D227BFA0D00F78397 /* ExploreViewController.swift */; };
 		DB9549002277F3BC008FA574 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9548FF2277F3BC008FA574 /* PreferenceViewController.swift */; };
 		DB954902227832A6008FA574 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB954901227832A6008FA574 /* NameViewController.swift */; };
 		E14265F822421C06006399D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F722421C06006399D2 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		41B2170B226FF2D700374707 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
 		41B448B0226C39E600763AE4 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
+		DB69CA7D227BFA0D00F78397 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DB9548FF2277F3BC008FA574 /* PreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		DB954901227832A6008FA574 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		E14265F422421C05006399D2 /* JourneyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourneyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 				DB9548FF2277F3BC008FA574 /* PreferenceViewController.swift */,
 				DB954901227832A6008FA574 /* NameViewController.swift */,
+				DB69CA7D227BFA0D00F78397 /* ExploreViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */,
 				41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */,
 				41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */,
+				DB69CA7E227BFA0D00F78397 /* ExploreViewController.swift in Sources */,
 				416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */,
 				DB9549002277F3BC008FA574 /* PreferenceViewController.swift in Sources */,
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
