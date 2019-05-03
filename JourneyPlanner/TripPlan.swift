@@ -11,20 +11,29 @@ import CoreLocation
 
 class TripPlan{
     
-    var trips : [SmallPlanInformation] = []
+    var trips : [SmallTripInformation] = []
     var firstCity : LocationInformation
     var distances : Double
     var PlanName : String
     
-    init(trips : [SmallPlanInformation], firstCity : LocationInformation, distances: Double, PlanName:String) {
+    init(trips : [SmallTripInformation], firstCity : LocationInformation, distances: Double, PlanName:String) {
         self.trips = trips
         self.firstCity = firstCity
         self.distances = distances
         self.PlanName = PlanName
     }
     
-    func addTrip(trip : SmallPlanInformation){
+    func addTrip(trip : SmallTripInformation){
         self.trips.append(trip)
+    }
+    
+    func move(item: SmallTripInformation, to index: Int, source sourceIndex:Int){
+        trips.remove(at: sourceIndex)
+        trips.insert(item, at: index)
+        
+        for index in 0..<trips.count{
+            trips[index].arragement = index + 1
+        }
     }
 
 

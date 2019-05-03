@@ -16,12 +16,12 @@ protocol SelectCityViewControllerDelegate : class{
 // this class is used to maintain the select city page - Dalton 21 Apr 2019
 class SelectCityViewController: UIViewController {
 
-    @IBOutlet weak var SearchContent: UITextField!
     weak var delegate : SelectCityViewControllerDelegate?
     weak var CurrentLocationInformation : LocationInformation?
+
     
     var selectedCity : LocationInformation?
-    var cityHistory : [LocationInformation]?
+    var cityHistories : [LocationInformation]?
     
     @IBOutlet weak var CurrentCityLabel: UILabel!
     @IBOutlet weak var CurrentCityButton: UIButton!
@@ -55,7 +55,7 @@ class SelectCityViewController: UIViewController {
         CurrentCityButton.isSelected = true
         
         if let selectedCity = selectedCity,
-            let cityHistory = cityHistory{
+            let cityHistory = cityHistories{
             
             if selectedCity.cityName == cityHistory[cityHistory.count - 1].cityName{
                 CurrentCityButton.isSelected = false
@@ -72,7 +72,22 @@ class SelectCityViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+    
+        if segue.identifier == "selectNewCity"{
+            if let navigationController = segue.destination as? UINavigationController{
+                if let mapViewController = navigationController.viewControllers.first as? MapViewController{
+                    
+                    mapViewController.mapsource = .CHANGECITY
+                    mapViewController.delegate = self
+                    
+                    if let selectedCity = self.selectedCity{
+                        mapViewController.changeCity_CurrentCity = selectedCity
+                    } else {
+                        mapViewController.changeCity_CurrentCity = self.CurrentLocationInformation
+                    }
+                }
+            }
+        }
         
     }
     
@@ -82,7 +97,7 @@ class SelectCityViewController: UIViewController {
         dismiss(animated: true, completion: nil)
 
         if let selectedCity = selectedCity,
-            let history = cityHistory{
+            let history = cityHistories{
             delegate?.didSelectNewCity(self, newCity: selectedCity, historyCity: history)
         }
         
@@ -99,15 +114,15 @@ class SelectCityViewController: UIViewController {
     
     @IBAction func rencent1ButtonPressed(_ sender: UIButton) {
         ButtonPressed(button: sender)
-        selectedCity = cityHistory![cityHistory!.count - 1]
+        selectedCity = cityHistories![cityHistories!.count - 1]
     }
     @IBAction func rencent2ButtonPressed(_ sender: UIButton) {
         ButtonPressed(button: sender)
-        selectedCity = cityHistory![cityHistory!.count - 2]
+        selectedCity = cityHistories![cityHistories!.count - 2]
     }
     @IBAction func rencent3ButtonPressed(_ sender: UIButton) {
         ButtonPressed(button: sender)
-        selectedCity = cityHistory![cityHistory!.count - 3]
+        selectedCity = cityHistories![cityHistories!.count - 3]
     }
     
     private func ButtonPressed(button : UIButton){
@@ -138,7 +153,7 @@ class SelectCityViewController: UIViewController {
         RecentCity2Button.isHidden = true
         RecentCity3Button.isHidden = true
 
-        if let historyCity = cityHistory{
+        if let historyCity = cityHistories{
             if historyCity.count == 1{
                 RecentCity1.text = historyCity[historyCity.count - 1].cityName
                 RecentCity1Button.isHidden = false
@@ -158,6 +173,7 @@ class SelectCityViewController: UIViewController {
                 RecentCity1.text = historyCity[historyCity.count - 1].cityName
                 RecentCity2.text = historyCity[historyCity.count - 2].cityName
                 RecentCity3.text = historyCity[historyCity.count - 3].cityName
+
             }
 
         }
@@ -177,4 +193,46 @@ class SelectCityViewController: UIViewController {
 
 }
 
+
+extension SelectCityViewController: MapViewControllerDelegate{
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
+        // do nothing, it does not relate to this class - Dalton 02/May/2019
+    }
+    
+
+    
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        
+        if let currentLocation = CurrentLocationInformation{
+            
+            // when the selected city = to current city, update city to current city and cancel selected city
+            if currentLocation.cityName == selectedCity.cityName{
+                deselectAllButton()
+                self.CurrentCityButton.isSelected = true
+                self.selectedCity = nil
+            } else {
+                
+                if let history = cityHistories{
+                    for(index, history) in history.enumerated(){
+                        if history.cityName == selectedCity.cityName{
+                            self.cityHistories?.remove(at: index)
+                        }
+                    }
+                }
+                cityHistories?.append(selectedCity)
+                
+                loadHistoryInformation()
+                deselectAllButton()
+                RecentCity1Button.isSelected = true
+                self.selectedCity = selectedCity
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+}
 

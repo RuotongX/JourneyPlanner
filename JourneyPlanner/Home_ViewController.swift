@@ -35,6 +35,7 @@ class Home_ViewController: ViewController{
     required init?(coder aDecoder: NSCoder) {
         self.CurrentCity = LocationInformation()
         super.init(coder: aDecoder)
+        
     }
     
     override func viewDidLoad() {
@@ -61,7 +62,7 @@ class Home_ViewController: ViewController{
                     selectCityController.selectedCity = SelectedCity
                     self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
-                selectCityController.cityHistory = self.cityHistory
+                selectCityController.cityHistories = self.cityHistory
                 selectCityController.delegate = self
             }
         }
@@ -69,12 +70,16 @@ class Home_ViewController: ViewController{
         if segue.identifier == "transferCityInfo"{
             if let mapNavigationviewController = segue.destination as? UINavigationController{
                 let mapviewController = mapNavigationviewController.viewControllers.first as? MapViewController
-                mapviewController?.selectedCity = self.CurrentCity
+                mapviewController?.homePage_CurrentOrSelectedCity = self.CurrentCity
                 
                 if let selectedCity = self.selectedCity{
-                    mapviewController?.selectedCity = selectedCity
+
+                    mapviewController?.homePage_CurrentOrSelectedCity = selectedCity
+
                     self.CheckWeather(_location: (self.selectedCity?.location)!)
+
                 }
+                mapviewController?.mapsource = .HOMEPAGE_MAP
                 mapviewController?.delegate = self
             }
         }
@@ -290,10 +295,20 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
         self.cityHistory = historyCity
         self.selectedCity = city
         self.City_Name.text = self.selectedCity?.cityName
+        
     }
 }
 
+
 extension Home_ViewController : MapViewControllerDelegate{
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
+        // do nothing, it does not relate to this class - Dalton 02/May/2019
+    }
+    
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        // do nothing, it does not relate to this class - Dalton 02/May/2019
+    }
+    
     
 }
 
