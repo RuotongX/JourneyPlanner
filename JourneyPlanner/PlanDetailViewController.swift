@@ -20,6 +20,7 @@ class PlanDetailViewController: UIViewController {
     var plan: TripPlan?
     var delegate : PlanDetailViewControllerDelegate?
     
+    @IBOutlet weak var EditButton: UIButton!
     @IBOutlet weak var PlanDetailTableView: UITableView!
     @IBOutlet weak var planNameLabel: UILabel!
     
@@ -32,6 +33,9 @@ class PlanDetailViewController: UIViewController {
         
         PlanDetailTableView.dataSource = self
         PlanDetailTableView.delegate = self
+        
+        
+        EditButton.setImage(UIImage(named: "PlanDetail-done 1x"), for: .selected)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,6 +43,16 @@ class PlanDetailViewController: UIViewController {
         askingforPlanName()
     }
 
+    @IBAction func editButtonPressed(_ sender: Any) {
+        self.tableview.isEditing = !self.tableview.isEditing
+        self.EditButton.isSelected = !self.EditButton.isSelected
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableview.setEditing(tableview.isEditing, animated: true)
+        self.EditButton.setImage(UIImage(named: ""), for: .normal)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -50,13 +64,22 @@ class PlanDetailViewController: UIViewController {
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = tableview.indexPath(for: cell),
                         let plan = plan{
-                        tripdetailViewController.plan = plan.trips[indexPath.row]
+                        tripdetailViewController.trip = plan.trips[indexPath.row]
+                        tripdetailViewController.oldtripNumber = indexPath.row
                     }
 
                 }
 
             }
         }
+        
+        if segue.identifier == "addNewTrip"{
+            if let tripdetailViewController = segue.destination as? tripDetailViewController{
+                
+                tripdetailViewController.delegate = self
+            }
+        }
+    
     }
     
     @IBAction func returnButton(_ sender: UIButton) {
@@ -100,17 +123,17 @@ class PlanDetailViewController: UIViewController {
                 
                 // add street number
                 if let StreetNumber = place.subThoroughfare {
-                    address.append("\(StreetNumber)")
+                    address.append("\(StreetNumber) ")
                 }else{}
                 
                 // add street
                 if let Street = place.thoroughfare{
-                    address.append(", \(Street)")
+                    address.append("\(Street) ")
                 }else{}
                 
                 // add city
                 if let City = place.locality{
-                    address.append(", \(City)")
+                    address.append("\(City)")
                 }else{}
                 
                 label.text = address
@@ -121,6 +144,26 @@ class PlanDetailViewController: UIViewController {
 }
 
 extension PlanDetailViewController : tripDetailViewControllerDelagate{
+    
+    func didNewPlan(_ controller: tripDetailViewController, trip: SmallTripInformation) {
+        print("didnewplan called")
+        if let plan = plan{
+            trip.arragement = plan.trips.count + 1
+            plan.addTrip(trip: trip)
+            tableview.reloadData()
+            print(plan.trips.count)
+        }
+    }
+    
+    func didUpdatePlan(_ controller: tripDetailViewController, trip : SmallTripInformation, oldTrip : SmallTripInformation, position : Int) {
+        print("didupdateplan called")
+        
+        self.plan?.trips.remove(at: position)
+        self.plan?.trips.insert(trip, at: position)
+        self.plan?.trips[position].arragement = position + 1
+        tableview.reloadData()
+
+    }
     
 }
 
@@ -133,6 +176,15 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
         
         return 0
     }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        if let plan = plan{
+            plan.move(item: plan.trips[sourceIndexPath.row], to: destinationIndexPath.row, source: sourceIndexPath.row)
+        }
+        tableView.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         self.plan?.trips.remove(at: indexPath.row)

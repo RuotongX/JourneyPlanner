@@ -11,17 +11,24 @@ import MapKit
 import CoreLocation
 
 protocol tripDetailViewControllerDelagate : class{
+    func didUpdatePlan(_ controller: tripDetailViewController, trip : SmallTripInformation, oldTrip : SmallTripInformation, position : Int)
+    
+    func didNewPlan(_ controller: tripDetailViewController, trip:SmallTripInformation)
+    
     
 }
 
 class tripDetailViewController: UIViewController {
     
     var delegate : tripDetailViewControllerDelagate?
-    var plan : SmallPlanInformation?
+    var trip : SmallTripInformation?
+    var oldtrip : SmallTripInformation?
+    var oldtripNumber : Int?
     
     @IBOutlet weak var TimeSpentLabel: UILabel!
     @IBOutlet weak var RatingLabel: UILabel!
     
+    @IBOutlet weak var TripTitle: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var MemoTextField: UITextField!
     @IBOutlet weak var StayLengthTextField: UITextField!
@@ -30,7 +37,7 @@ class tripDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let plan = plan{
+        if let plan = trip{
             loadPlan(plan: plan)
         }
         
@@ -42,9 +49,10 @@ class tripDetailViewController: UIViewController {
             if let uiNavigationController = segue.destination as? UINavigationController{
                 if let mapViewController = uiNavigationController.viewControllers.first as? MapViewController{
                     mapViewController.delegate = self
-                    
-                    if let plan = plan{
-                        mapViewController.singleLocation = plan.location
+                    mapViewController.mapsource = .PLANDETAIL_ADDNEW
+                    if let plan = trip{
+                        mapViewController.planDetail_planInformation = plan.location
+                        mapViewController.mapsource = .PLANDETAIL_VIEW
                     }
                 }
                 
@@ -52,7 +60,8 @@ class tripDetailViewController: UIViewController {
         }
     }
     
-    private func loadPlan(plan:SmallPlanInformation){
+    private func loadPlan(plan:SmallTripInformation){
+        TripTitle.text = "My Trip"
         TripNameTextField.text = plan.name
         StayLengthTextField.text = "\(plan.staylength)"
         MemoTextField.text = plan.memo
@@ -77,7 +86,29 @@ class tripDetailViewController: UIViewController {
         mapView.setRegion(region, animated: true)
     }
     
+    private func addAllNecessaryData(){
+        
+        self.trip?.name = TripNameTextField.text ?? ""
+        self.trip?.memo = MemoTextField.text
+        
+        if let stayLength = StayLengthTextField.text{
+            self.trip?.staylength = Int(stayLength) ?? 0
+        }
+    }
+    
     @IBAction func DoneButton(_ sender: Any) {
+        
+        if let trip = trip{
+            if let oldTrip = self.oldtrip,
+                let tripnumber = self.oldtripNumber{
+                addAllNecessaryData()
+                self.delegate?.didUpdatePlan(self, trip: trip, oldTrip: oldTrip, position: tripnumber)
+            } else{
+                addAllNecessaryData()
+                self.delegate?.didNewPlan(self, trip: trip)
+            }
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     @IBAction func returnButton(_ sender: Any) {
@@ -98,8 +129,53 @@ class tripDetailViewController: UIViewController {
 
 
 extension tripDetailViewController : MapViewControllerDelegate{
+    // this one is related to this class, when user is select a new location, user can replace the old one. - Dalton 02/May/2019
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
+        
+        let geoCoder = CLGeocoder()
+        
+        geoCoder.reverseGeocodeLocation(selectedLocation) { (placemarks, error) in
+            if let error = error{
+                print(error.localizedDescription)
+            } else {
+                let placemark = placemarks?.first
+                
+                var placeName = ""
+                
+                if let streetNo = placemark?.subLocality,
+                    let streetName = placemark?.locality{
+                    placeName.append(streetNo)
+                    placeName.append(" \(streetName)")
+                }
+                
+                if let markName = placemark?.areasOfInterest?[0]{
+                    placeName = markName
+                }
+                
+                if let location = placemark?.location{
+                    
+                    // if there is an existing plan, this means it was replace the old trip with new trips - Dalton 03/May/2019
+                    if let trip = self.trip{
+                        self.oldtrip = trip
+                    }
+                    self.MemoTextField.text = ""
+                    
+                    self.trip = SmallTripInformation(name: placeName, location: location, staylength: 0, arrangement: 0)
+
+                    self.loadPlan(plan: self.trip!)
+                }
+                
+                
+                
+            }
+        }
+        
+        
+        
+    }
+    
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
-        //
+        // do nothing since it is not relate to this class, see select city for more information - Dalton 02/May/2019
     }
     
     

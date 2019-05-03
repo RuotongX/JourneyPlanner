@@ -723,7 +723,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="nob-nC-Hh2" firstAttribute="top" secondItem="NfH-nS-q2p" secondAttribute="top" constant="23" id="B3A-pG-tVs"/>
-                                                <constraint firstItem="nob-nC-Hh2" firstAttribute="leading" secondItem="NE8-fc-9WZ" secondAttribute="trailing" constant="24" id="Dni-4J-K9C"/>
+                                                <constraint firstItem="nob-nC-Hh2" firstAttribute="leading" secondItem="NE8-fc-9WZ" secondAttribute="trailing" priority="750" constant="24" id="Dni-4J-K9C"/>
                                                 <constraint firstItem="E8a-cM-UcA" firstAttribute="bottom" secondItem="NfH-nS-q2p" secondAttribute="bottomMargin" id="RlU-oF-5gO"/>
                                                 <constraint firstItem="RSb-x0-xxY" firstAttribute="leading" secondItem="E8a-cM-UcA" secondAttribute="trailing" constant="-299" id="TVc-bU-4hM"/>
                                                 <constraint firstItem="NE8-fc-9WZ" firstAttribute="leading" secondItem="NfH-nS-q2p" secondAttribute="leading" constant="15" id="dIJ-US-RH5"/>
@@ -739,6 +739,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="nob-nC-Hh2" secondAttribute="bottom" constant="23.670000000000002" id="zNk-M6-R5d"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nob-nC-Hh2" secondAttribute="trailing" constant="41" id="wyR-J7-HB1"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="LocationNameLabel" destination="NE8-fc-9WZ" id="0nj-Kc-hyF"/>
                                             <outlet property="MemoLabel" destination="5ss-ZU-eNz" id="xNJ-um-peD"/>
@@ -750,14 +753,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-HP-45L">
+                                <rect key="frame" x="289" y="65" width="23" height="23"/>
+                                <state key="normal" image="PlanDetail-edit x1"/>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="c8T-pT-BZM" eventType="touchUpInside" id="EP5-US-1py"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RHR-Ih-RUX" firstAttribute="top" secondItem="eak-hd-6cH" secondAttribute="bottom" constant="7.3333333333333286" id="1zz-ue-CWI"/>
                             <constraint firstItem="eak-hd-6cH" firstAttribute="leading" secondItem="7Rk-cj-xng" secondAttribute="leading" constant="16" id="8TO-3T-oj6"/>
                             <constraint firstAttribute="bottom" secondItem="RHR-Ih-RUX" secondAttribute="bottom" id="ADw-qC-t3B"/>
+                            <constraint firstItem="9fK-HP-45L" firstAttribute="leading" secondItem="xdj-tO-bxd" secondAttribute="trailing" constant="243" id="Eld-nA-WSL"/>
                             <constraint firstItem="7Rk-cj-xng" firstAttribute="trailing" secondItem="x5Y-Ov-ZPc" secondAttribute="trailing" constant="32" id="J4h-fv-y0N"/>
                             <constraint firstItem="xdj-tO-bxd" firstAttribute="leading" secondItem="7Rk-cj-xng" secondAttribute="leading" constant="32" id="L4t-V5-O4H"/>
+                            <constraint firstItem="9fK-HP-45L" firstAttribute="top" secondItem="7Rk-cj-xng" secondAttribute="top" constant="21" id="N0g-L0-fnX"/>
+                            <constraint firstItem="x5Y-Ov-ZPc" firstAttribute="leading" secondItem="9fK-HP-45L" secondAttribute="trailing" constant="8" id="bdb-kC-Hjb"/>
                             <constraint firstItem="x5Y-Ov-ZPc" firstAttribute="top" secondItem="7Rk-cj-xng" secondAttribute="top" constant="21" id="bfs-50-fac"/>
                             <constraint firstItem="xdj-tO-bxd" firstAttribute="top" secondItem="7Rk-cj-xng" secondAttribute="top" constant="21" id="enC-GT-IZk"/>
                             <constraint firstItem="RHR-Ih-RUX" firstAttribute="leading" secondItem="7Rk-cj-xng" secondAttribute="leading" id="g7H-lt-7ao"/>
@@ -769,6 +782,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3L3-qN-2D6"/>
                     <connections>
+                        <outlet property="EditButton" destination="9fK-HP-45L" id="2Qg-vS-7Fj"/>
                         <outlet property="PlanDetailTableView" destination="RHR-Ih-RUX" id="B41-0m-UYs"/>
                         <outlet property="planNameLabel" destination="eak-hd-6cH" id="dQA-Tc-Bek"/>
                         <outlet property="tableview" destination="RHR-Ih-RUX" id="aFO-Q1-45O"/>
@@ -835,7 +849,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Memo(optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POt-zG-zuo">
                                 <rect key="frame" x="27" y="324" width="321" height="30"/>
@@ -887,6 +901,7 @@
                         <outlet property="StayLengthTextField" destination="8lE-9z-6oh" id="Jbw-fB-Smh"/>
                         <outlet property="TimeSpentLabel" destination="wSD-pN-Wa4" id="trO-sc-hNW"/>
                         <outlet property="TripNameTextField" destination="1ag-7s-BMp" id="9GG-LK-MMV"/>
+                        <outlet property="TripTitle" destination="mAQ-rm-pQ0" id="OQE-Vh-11M"/>
                         <outlet property="mapView" destination="QWV-l2-fqY" id="Qy7-hh-56C"/>
                     </connections>
                 </viewController>
@@ -969,6 +984,7 @@
         <image name="Plan-add new 1x" width="23" height="23"/>
         <image name="Plan-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-add new 1x" width="23" height="23"/>
+        <image name="PlanDetail-edit x1" width="23" height="23"/>
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-viewOnMap 1x" width="321" height="62"/>
         <image name="Select City-SearchBar 1x" width="298" height="43"/>
@@ -985,7 +1001,7 @@
         <image name="mapView-Return Button 1x" width="27" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RKU-2m-fz8"/>
+        <segue reference="D8Q-su-MS0"/>
         <segue reference="eIA-MW-uKx"/>
         <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>
