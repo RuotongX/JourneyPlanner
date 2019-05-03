@@ -75,9 +75,8 @@ class Home_ViewController: ViewController{
                 if let selectedCity = self.selectedCity{
 
                     mapviewController?.homePage_CurrentOrSelectedCity = selectedCity
-
-                    self.CheckWeather(_location: (self.selectedCity?.location)!)
-
+                    
+                     self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
                 mapviewController?.mapsource = .HOMEPAGE_MAP
                 mapviewController?.delegate = self
