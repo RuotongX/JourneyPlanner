@@ -12,7 +12,7 @@ import CoreLocation
 class Explore_ViewController: UIViewController {
     
     var obtainedLocation: CLLocation?
-    var keyword : String? = "Coffee"
+    var keyword : String?
     
     @IBOutlet weak var testButton: UIButton!
     
@@ -67,7 +67,7 @@ class Explore_ViewController: UIViewController {
         disableButtons()
     }
     @IBAction func TestButtonAction(_ sender: Any) {
-        
+        self.keyword = "Bar"
         
     }
     
@@ -94,12 +94,13 @@ class Explore_ViewController: UIViewController {
 
 extension Explore_ViewController:MapViewControllerDelegate{
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+         // do not implement this method, it does not relate to this class Dalton 4/May/2019
+    }
+    
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
         // do not implement this method, it does not relate to this class Dalton 4/May/2019
     }
     
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
-        // do not implement this method, it does not relate to this class Dalton 4/May/2019
-    }
     
     
 }
