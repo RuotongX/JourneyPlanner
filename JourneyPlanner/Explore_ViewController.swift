@@ -105,11 +105,6 @@ class Explore_ViewController: UIViewController {
          self.keyword = "convenience shop"
     }
     
-    
-    private func dropAnnotationsToMap(typeKeyWord : String){
-        
-    }
-    
     private func disableButtons(){
         // this class is used to disable all buttons
         restaurantButton.isEnabled = false
