@@ -214,14 +214,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLb-Bg-mCb">
-                                <rect key="frame" x="126" y="384" width="122" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLb-Bg-mCb" userLabel="Bar">
+                                <rect key="frame" x="114" y="123" width="61" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="bar"/>
+                                <state key="normal" title="bar" image="Explore-Bar(1)"/>
                                 <connections>
-                                    <action selector="TestButtonAction:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="emv-HD-8Wn"/>
+                                    <action selector="Bar:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="8Tt-SU-iDy"/>
                                     <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="h4j-LI-bMP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-Dc-n1u" userLabel="Dairy">
+                                <rect key="frame" x="288" y="210" width="61" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-Dairy(1)"/>
+                                <connections>
+                                    <action selector="Dairy:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="8br-qS-qLG"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="n1d-SH-f0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05c-1e-noV" userLabel="Gas">
+                                <rect key="frame" x="27" y="211" width="61" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-gas(1)"/>
+                                <connections>
+                                    <action selector="Gas:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="uCV-xE-aVl"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="V7J-Fi-XP7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72H-6p-jsJ" userLabel="Pharmacy">
+                                <rect key="frame" x="114" y="210" width="61" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-Pharmacy(1)"/>
+                                <connections>
+                                    <action selector="Pharmacy:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="kSK-od-TV2"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="ygy-uY-25R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVC-fT-WWJ" userLabel="Shopping">
+                                <rect key="frame" x="201" y="123" width="62" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-shopping(1)"/>
+                                <connections>
+                                    <action selector="Shopping:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="Ddh-74-PqD"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="F8C-jt-tDv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ov-TI-Fgi" userLabel="Restaurant">
+                                <rect key="frame" x="27" y="123" width="61" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-Restaurant(1)"/>
+                                <connections>
+                                    <action selector="Restaurant:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="5jH-xl-8hb"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="rkt-h6-WKr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWj-JO-Sh1" userLabel="Bank">
+                                <rect key="frame" x="288" y="123" width="61" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-Bank(1)"/>
+                                <connections>
+                                    <action selector="Bank:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="czT-WX-Nxb"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="r8F-8r-GSp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-NS-tap" userLabel="Hotel">
+                                <rect key="frame" x="201" y="210" width="61" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Explore-Hotel(1)"/>
+                                <connections>
+                                    <action selector="Hotel:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="TEa-9X-NvD"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="MVp-Mh-Gsc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -230,12 +292,19 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="Tab - Explore" selectedImage="Tab - Explore" id="B0d-RF-nQZ"/>
                     <connections>
-                        <outlet property="testButton" destination="FLb-Bg-mCb" id="rVk-0e-Y5w"/>
+                        <outlet property="bankButton" destination="NWj-JO-Sh1" id="HNc-F9-0ap"/>
+                        <outlet property="barButton" destination="FLb-Bg-mCb" id="ZqG-oc-cIt"/>
+                        <outlet property="dairyButton" destination="oZ6-Dc-n1u" id="TmW-55-TST"/>
+                        <outlet property="gasButton" destination="05c-1e-noV" id="NJg-gR-b3q"/>
+                        <outlet property="hotelButton" destination="rMF-NS-tap" id="ZZF-x3-2Zq"/>
+                        <outlet property="pharmacyButton" destination="72H-6p-jsJ" id="WHv-Fq-ET1"/>
+                        <outlet property="restaurantButton" destination="9Ov-TI-Fgi" id="JA6-ZG-7oE"/>
+                        <outlet property="shoppingButton" destination="MVC-fT-WWJ" id="HC8-Ui-IhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS0-qu-yLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="544"/>
+            <point key="canvasLocation" x="621.60000000000002" y="543.8423645320197"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="wg7-f3-ORb">
@@ -1086,6 +1155,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Explore-Bank(1)" width="60" height="71"/>
+        <image name="Explore-Bar(1)" width="60" height="71"/>
+        <image name="Explore-Dairy(1)" width="60" height="72"/>
+        <image name="Explore-Hotel(1)" width="60" height="71"/>
+        <image name="Explore-Pharmacy(1)" width="60" height="72"/>
+        <image name="Explore-Restaurant(1)" width="60" height="71"/>
+        <image name="Explore-gas(1)" width="60" height="71"/>
+        <image name="Explore-shopping(1)" width="60" height="73"/>
         <image name="Home - City Guide 1x" width="351" height="175"/>
         <image name="Home - Search Icon 1x" width="25" height="25"/>
         <image name="Home-Change City 1x" width="16" height="16"/>
@@ -1116,7 +1193,7 @@
         <image name="mapView-Return Button 1x" width="27" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h4j-LI-bMP"/>
+        <segue reference="r8F-8r-GSp"/>
         <segue reference="eIA-MW-uKx"/>
         <segue reference="7lf-2y-feD"/>
         <segue reference="lPE-xR-MhK"/>
