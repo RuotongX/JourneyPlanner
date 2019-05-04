@@ -16,6 +16,7 @@ protocol HandleMapSearch {
 protocol MapViewControllerDelegate: class{
     func didSelectANewcity(_ controller: MapViewController, selectedCity : LocationInformation)
     func didSelectANewLocation(_ controller: MapViewController, selectedLocation : CLLocation)
+    
 }
 
 enum MapSource{
@@ -31,16 +32,17 @@ enum MapSource{
 
 class MapViewController: UIViewController {
     
-    
+    var mapsource : MapSource?
     var selectedAnnotation : MKAnnotation?
     var changeCity_CurrentCity : LocationInformation?
     var changeCity_ReturnValue : LocationInformation?
+    var explorePage_Suggestionkeyword : String?
+    var explorePage_UserLocation : CLLocation?
     var homePage_CurrentOrSelectedCity : LocationInformation?
     var planDetail_planInformation : CLLocation?
     
 
 //    var selectedAnnotation : MKPlacemark? = nil
-    var mapsource : MapSource? = .CHANGECITY
     var annotationPin : MKPlacemark? = nil
     var resultSearchController : UISearchController?
     var delegate: MapViewControllerDelegate?
@@ -104,7 +106,7 @@ class MapViewController: UIViewController {
                 }
                 alertSheet.addAction(changeCtiyAction)
                 
-            } else if mapsource == .HOMEPAGE_MAP{
+            } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE{
                 
                 let saveAction = UIAlertAction(title: "👌🏻 Add to Plan", style: .default) { (action) in
         
@@ -259,9 +261,36 @@ class MapViewController: UIViewController {
                     }
                 }
             }
+            
+            if mapsource == .EXPLOREPAGE{
+                if let keyword = explorePage_Suggestionkeyword,
+                    let selectedCity = explorePage_UserLocation{
+                    
+                    let regionRadius : CLLocationDistance = 3000.0
+                    let center : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: selectedCity.coordinate.latitude, longitude: selectedCity.coordinate.longitude)
+                    let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+                    
+                    let searchRequest = MKLocalSearch.Request()
+                    searchRequest.naturalLanguageQuery = keyword
+                    searchRequest.region = region
+                    
+                    let searchResult = MKLocalSearch(request: searchRequest)
+                    searchResult.start { (responses, error) in
+                        
+                        guard let responses = responses else { return }
+                        
+                        self.mapView.removeAnnotations(self.mapView.annotations)
+                        
+                        for mapItem in responses.mapItems{
+                            self.createAnnotation(placemark: mapItem.placemark)
+                        }
+                    }
+                    
+                    mapView.setRegion(region, animated: true)
+                }
+            }
         }
     }
-        
         
 
             
@@ -309,24 +338,33 @@ extension MapViewController : MKMapViewDelegate{
             return nil
         }
         
+        if let cluster = annotation as? MKClusterAnnotation{
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "cluster") as? MKMarkerAnnotationView
+            if annotationView == nil{
+                annotationView = MKMarkerAnnotationView(annotation: nil, reuseIdentifier: "cluster")
+            }
+            annotationView?.markerTintColor = UIColor.brown
+            annotationView?.annotation = cluster
+            return annotationView
+        }
+        
+        
+        
         let identifier = "marker"
         var view : MKMarkerAnnotationView
         
-        print("marker called")
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
             dequeuedView.annotation = annotation
             view = dequeuedView
-            print("exist")
         } else {
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
-            print("??")
 //            view.calloutOffset = CGPoint(x: -5, y: 5)
 //
 //            let smallSquare = CGSize(width: 30, height: 30)
 //            let favoriteButton : UIButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
 //            favoriteButton.setBackgroundImage(UIImage(named: "mapview -callOutAddButton 1x"), for: .normal)
-            
+            view.clusteringIdentifier = "cluster"
             let detailButton: UIButton = UIButton(type: .detailDisclosure)
             detailButton.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
             view.rightCalloutAccessoryView = detailButton
@@ -341,12 +379,20 @@ extension MapViewController : MKMapViewDelegate{
 }
 
 extension MapViewController : HandleMapSearch{
+    
+
     func dropPinZoomIn(placemark: MKPlacemark) {
-        annotationPin = placemark
         
         mapView.removeAnnotations(mapView.annotations)
         selectedAnnotation = placemark
+        createAnnotation(placemark: placemark)
         
+        let span = MKCoordinateSpan(latitudeDelta: 0.01,longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: placemark.coordinate,span: span)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func createAnnotation(placemark : MKPlacemark){
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         
@@ -355,9 +401,9 @@ extension MapViewController : HandleMapSearch{
         } else {
             annotation.title = "Selected Place"
         }
-//        annotation.title = placemark.areasOfInterest?[0]
-//        // 在这里少了个名字呀 所以他就不能显示callout
-//            //placemark.name
+        //        annotation.title = placemark.areasOfInterest?[0]
+        //        // 在这里少了个名字呀 所以他就不能显示callout
+        //            //placemark.name
         
         var subtitle : String = ""
         
@@ -374,9 +420,6 @@ extension MapViewController : HandleMapSearch{
         annotation.subtitle = subtitle
         
         mapView.addAnnotation(annotation)
-        let span = MKCoordinateSpan(latitudeDelta: 0.01,longitudeDelta: 0.01)
-        let region = MKCoordinateRegion(center: placemark.coordinate,span: span)
-        mapView.setRegion(region, animated: true)
     }
 }
 

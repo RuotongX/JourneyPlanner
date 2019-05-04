@@ -209,18 +209,33 @@
         <!--Favorite-->
         <scene sceneID="u4C-nW-Rdh">
             <objects>
-                <viewController id="HCo-Dj-nSE" sceneMemberID="viewController">
+                <viewController id="HCo-Dj-nSE" customClass="Explore_ViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2e5-7L-b69">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLb-Bg-mCb">
+                                <rect key="frame" x="126" y="384" width="122" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="bar"/>
+                                <connections>
+                                    <action selector="TestButtonAction:" destination="HCo-Dj-nSE" eventType="touchUpInside" id="emv-HD-8Wn"/>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="h4j-LI-bMP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pWZ-eF-KjG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="Tab - Favorite" id="B0d-RF-nQZ"/>
+                    <connections>
+                        <outlet property="testButton" destination="FLb-Bg-mCb" id="rVk-0e-Y5w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS0-qu-yLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="430"/>
+            <point key="canvasLocation" x="623" y="544"/>
         </scene>
         <!--Explore-->
         <scene sceneID="wg7-f3-ORb">
@@ -353,8 +368,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-dj-FYT" userLabel="History Plan">
-                                <rect key="frame" x="39" y="107" width="335" height="144"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-dj-FYT" userLabel="History Plan">
+                                <rect key="frame" x="39" y="117" width="296" height="72"/>
                                 <state key="normal" image="User-History Plan"/>
                             </button>
                         </subviews>
@@ -495,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNG-Bv-kvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.20000000000005" y="-1185.2216748768474"/>
+            <point key="canvasLocation" x="2998" y="-995"/>
         </scene>
         <!--Select City -->
         <scene sceneID="O94-rL-sQa">
@@ -1122,7 +1137,7 @@
         <image name="mapView-Return Button 1x" width="27" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ohn-x0-Zeu"/>
+        <segue reference="h4j-LI-bMP"/>
         <segue reference="eIA-MW-uKx"/>
         <segue reference="7lf-2y-feD"/>
         <segue reference="lPE-xR-MhK"/>
