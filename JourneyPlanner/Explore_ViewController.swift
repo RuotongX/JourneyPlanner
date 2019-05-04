@@ -12,9 +12,17 @@ import CoreLocation
 class Explore_ViewController: UIViewController {
     
     var obtainedLocation: CLLocation?
-    var keyword : String? = "Coffee"
+    var keyword : String?
     
-    @IBOutlet weak var testButton: UIButton!
+    @IBOutlet weak var restaurantButton: UIButton!
+    @IBOutlet weak var barButton: UIButton!
+    @IBOutlet weak var shoppingButton: UIButton!
+    @IBOutlet weak var bankButton: UIButton!
+    @IBOutlet weak var gasButton: UIButton!
+    @IBOutlet weak var pharmacyButton: UIButton!
+    @IBOutlet weak var hotelButton: UIButton!
+    @IBOutlet weak var dairyButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,8 @@ class Explore_ViewController: UIViewController {
         obtainTheCurrentLocationInformation()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "exploreShowSuggestions" {
+        
         if let navigationController = segue.destination as? UINavigationController{
             if let mapViewController = navigationController.viewControllers.first as? MapViewController{
                 
@@ -36,6 +46,7 @@ class Explore_ViewController: UIViewController {
                 }
             }
         }
+    }
     }
     
     private func obtainTheCurrentLocationInformation(){
@@ -66,17 +77,44 @@ class Explore_ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         disableButtons()
     }
-    @IBAction func TestButtonAction(_ sender: Any) {
-        
-        
+
+    @IBAction func Bar(_ sender: Any) {
+         self.keyword = "bar"
     }
     
-    private func dropAnnotationsToMap(typeKeyWord : String){
-        
+    @IBAction func Shopping(_ sender: Any) {
+         self.keyword = "shopping"
+    }
+    
+    @IBAction func Gas(_ sender: Any) {
+        self.keyword = "gas"
+    }
+    @IBAction func Bank(_ sender: Any) {
+        self.keyword = "bank"
+    }
+    @IBAction func Restaurant(_ sender: Any) {
+         self.keyword = "restaurant"
+    }
+    @IBAction func Pharmacy(_ sender: Any) {
+         self.keyword = "pharmacy"
+    }
+    @IBAction func Hotel(_ sender: Any) {
+         self.keyword = "hotel"
+    }
+    @IBAction func Dairy(_ sender: Any) {
+         self.keyword = "convenience shop"
     }
     
     private func disableButtons(){
         // this class is used to disable all buttons
+        restaurantButton.isEnabled = false
+        barButton.isEnabled = false
+        gasButton.isEnabled = false
+        dairyButton.isEnabled = false
+        shoppingButton.isEnabled = false
+        hotelButton.isEnabled = false
+        pharmacyButton.isEnabled = false
+        bankButton.isEnabled = false
     }
     
 
