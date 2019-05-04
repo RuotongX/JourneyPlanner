@@ -13,18 +13,20 @@ class Resturant {
     var RName : String
     var RMark : String
     var RType : String
-    var RCost : String
-    var Rlat : String
-    var Rlon : String
+    var RCost : Double
+    var Rlat : Double
+    var Rlon : Double
+    var RUrl : String
     
     init(){
-        self.RImage = UIImage(named: "Home-Weather-Cloudy")!
+        self.RImage = UIImage(named: "Resturant-image")!
         self.RName = "DoubleHappy"
         self.RMark = "3.5"
         self.RType = "Chinese"
-        self.RCost = "20"
-        self.Rlat = "-36.7186265"
-        self.Rlon = "174.7169448"
+        self.RCost = 20
+        self.Rlat = -36.7186265
+        self.Rlon = 174.7169448
+        self.RUrl = "https://www.zomato.com/new-york-city/lombardis-pizza-lower-east-side?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1"
     }
     
 }

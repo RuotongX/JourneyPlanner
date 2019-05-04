@@ -17,6 +17,20 @@ class ResturantCellController: UITableViewCell {
     @IBOutlet weak var AvangeCost: UILabel!
     @IBOutlet weak var ResturantType: UILabel!
     
+    var Url :String = ""
+    var lat : Double = 0.0
+    var lon : Double = 0.0
+    
+    func setResturant(resturant:Resturant){
+        ResturantImage.image = resturant.RImage
+        ResturantName.text = resturant.RName
+        ResturantMark.text = resturant.RMark
+        AvangeCost.text = "$ "+"\(resturant.RCost)"
+        ResturantType.text = resturant.RType
+        self.Url = resturant.RUrl
+        self.lat = resturant.Rlat
+        self.lon = resturant.Rlon
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +43,6 @@ class ResturantCellController: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func ResturantLocation(_ sender: Any) {
-    }
+//    @IBAction func ResturantLocation(_ sender: Any) {
+//    }
 }
