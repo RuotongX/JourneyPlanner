@@ -50,6 +50,7 @@ class ResturantRecommandedController: UIViewController {
                     let image = jsonR["thumb"].stringValue
                     let resturant = Resturant()
                     let url = URL(string: image)
+                    let votes = jsonRating["votes"].intValue
                     if let url = url{
                         do {
                             let data = try Data(contentsOf: url)
@@ -65,9 +66,22 @@ class ResturantRecommandedController: UIViewController {
                     resturant.Rlat = lat
                     resturant.Rlon = lon
                     resturant.RUrl = Url
+                    resturant.votes = votes
                     self.resturants.append(resturant)
                 }
                 DispatchQueue.main.async {
+                    for i in 0...self.resturants.count-1{
+                        for j in 1...self.resturants.count-2{
+                            if self.resturants[i].votes<self.resturants[j].votes{
+                                let temp = self.resturants[i]
+                                self.resturants[i] = self.resturants[j]
+                                self.resturants[j] = temp
+                            }
+                        }
+                    }
+                    for k in 0...self.resturants.count-1{
+                        self.resturants[k].Rank = k+1
+                    }
                     self.Table.reloadData()
                 }
             }

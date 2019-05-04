@@ -17,6 +17,8 @@ class Resturant {
     var Rlat : Double
     var Rlon : Double
     var RUrl : String
+    var Rank : Int
+    var votes: Int = 0;
     
     init(){
         self.RImage = UIImage(named: "Resturant-image")!
@@ -27,6 +29,8 @@ class Resturant {
         self.Rlat = -36.7186265
         self.Rlon = 174.7169448
         self.RUrl = "https://www.zomato.com/new-york-city/lombardis-pizza-lower-east-side?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1"
+        self.Rank = 10
+        self.votes = 0;
     }
     
 }
