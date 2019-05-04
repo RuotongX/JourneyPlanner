@@ -93,7 +93,6 @@ class ResturantRecommandedController: UIViewController {
 extension  ResturantRecommandedController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("here")
         return 120
     }
     
