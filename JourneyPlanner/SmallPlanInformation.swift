@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 
+// this class will stores the trip information, which will be used on the trip detail information section - dalton 23/04/2019
 class SmallTripInformation{
     var name:String
     var location : CLLocation
@@ -19,6 +20,7 @@ class SmallTripInformation{
     var rating : Double?
     var recommendStayLength : Int?
     
+    // this is the default contrustor for this type of item - dalton 23/04/2019
     init(name:String,location:CLLocation, staylength: Int,arrangement : Int) {
         self.name = name
         self.location = location

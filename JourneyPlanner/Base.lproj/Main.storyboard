@@ -1373,9 +1373,9 @@
         <image name="mapView-Return Button 1x" width="81" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r8F-8r-GSp"/>
+        <segue reference="n1d-SH-f0L"/>
         <segue reference="eIA-MW-uKx"/>
-        <segue reference="7lf-2y-feD"/>
+        <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>
     </inferredMetricsTieBreakers>
 </document>
