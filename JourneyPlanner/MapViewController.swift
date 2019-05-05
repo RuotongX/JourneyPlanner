@@ -9,16 +9,19 @@
 import UIKit
 import MapKit
 
+// this protocol is used to handle the map search result - Dalton 25/Apr/2019
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
 
+// this protocol is used to passing value back to other view controller - Dalton 25/Apr/2019
 protocol MapViewControllerDelegate: class{
     func didSelectANewcity(_ controller: MapViewController, selectedCity : LocationInformation)
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation : CLLocation)
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation : CLLocation, nameOfLocation : String)
     
 }
 
+// this enum defines different type of mapsource,which used to indicate different situations  - Dalton 25/Apr/2019
 enum MapSource{
     case HOMEPAGE_MAP
     case HOMEPAGE_SEARCH
@@ -32,6 +35,7 @@ enum MapSource{
 
 class MapViewController: UIViewController {
     
+    // all necessary data which used to drop the annotation or display the current location - Dalton 25/Apr/2019
     var mapsource : MapSource?
     var selectedAnnotation : MKAnnotation?
     var changeCity_CurrentCity : LocationInformation?
@@ -48,6 +52,7 @@ class MapViewController: UIViewController {
     var delegate: MapViewControllerDelegate?
     @IBOutlet weak var mapView: MKMapView!
     
+    // this function will first being called when the view is loaded - Dalton 25/Apr/2019
     override func viewDidLoad() {
         super.viewDidLoad()
         // change the current location icon to black Dalton 23/Apr/2019
@@ -55,19 +60,22 @@ class MapViewController: UIViewController {
         addSearchController()
         
     }
-    
+    // this function will response when the view is finish loading  - Dalton 25/Apr/2019
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
         
         mapView.delegate = self
     }
     
+    // this function is used to display the differnet actionsheet, each entry will have diffent action list  - Dalton 25/Apr/2019
     @objc func showActionSheet(){
         
         if let mapsource = mapsource{
             
+            // creating the action sheet which pops up from below to allow user select an action  - Dalton 25/Apr/2019
             let alertSheet = UIAlertController(title: "Choose an action", message: "Choose an action to continue", preferredStyle: .actionSheet)
             
+            // when user is entred from the change city page, it will display one option to allow user change the current city city with selected city, after user tab on that button, it will return to select city page and replace the city  - Dalton 28/Apr/2019
             if mapsource == .CHANGECITY{
                 
                 let changeCtiyAction = UIAlertAction(title: "Replace with Current City", style: .default) { (action) in
@@ -77,6 +85,7 @@ class MapViewController: UIViewController {
                         let geocoder = CLGeocoder()
                         let location : CLLocation = CLLocation(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
                         
+                        // to convert the coordinate information into the placemark (street level information) - Dalton 25/Apr/2019
                         geocoder.reverseGeocodeLocation(location
                             , completionHandler: { (placemarks, error) in
                                 if let error = error{
@@ -106,6 +115,7 @@ class MapViewController: UIViewController {
                 }
                 alertSheet.addAction(changeCtiyAction)
                 
+                // when user selected from the button on the homepage or from the explorepage, it will showed up the add to plan and favorite button, which will first add it to the plan or add it to the favorite list.  - Dalton 25/Apr/2019
             } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE{
                 
                 let saveAction = UIAlertAction(title: "👌🏻 Add to Plan", style: .default) { (action) in
@@ -117,38 +127,40 @@ class MapViewController: UIViewController {
         
                 alertSheet.addAction(saveAction)
                 alertSheet.addAction(favoriteAction)
+                
+                // when user select this from the plandetail page, it will allow user to place the current location with the selected new loadtion  - Dalton 25/Apr/2019
             } else if mapsource == .PLANDETAIL_VIEW{
                 let replaceLocation = UIAlertAction(title: "Replace with existing Location", style: .default) { (action) in
                     if let annotation = self.selectedAnnotation{
                         let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-                        self.delegate?.didSelectANewLocation(self, selectedLocation: location)
-                        self.dismiss(animated: true, completion: nil)
+                        if let locationName = annotation.title{
+                            self.delegate?.didSelectANewLocation(self, selectedLocation: location, nameOfLocation: locationName!)
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
                 alertSheet.addAction(replaceLocation)
+                // When user is deciding to create a new from the plan interface, it will allow user to add this location to trip. - Dalton 25/Apr/2019
             } else if mapsource == .PLANDETAIL_ADDNEW{
-                let addThisPlace = UIAlertAction(title: "Add this location to my trip", style: .default) { (action) in
+                let addThisPlace = UIAlertAction(title:"Add this location to my trip", style: .default) { (action) in
                     if let annotation = self.selectedAnnotation{
                         let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-                        self.delegate?.didSelectANewLocation(self, selectedLocation: location)
-                        self.dismiss(animated: true, completion: nil)
+                        if let locationName = annotation.title{
+                            self.delegate?.didSelectANewLocation(self, selectedLocation: location, nameOfLocation: locationName!)
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
                 alertSheet.addAction(addThisPlace)
             }
             
+            // this also allow user to select cancel, when user select cancel, nothing will happened  - Dalton 25/Apr/2019
             let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
             alertSheet.addAction(cancelAction)
             self.present(alertSheet,animated: true)
 
         }
         
-        
-        
-       
-        
-
-
     }
     
     func addSearchController(){
@@ -186,6 +198,7 @@ class MapViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    // this method is used to do different actions from different pages, each page got their own customized way of represrnting data  - Dalton 22/Apr/2019
     private func loadInformation(){
         
         if let mapsource = mapsource{
@@ -224,6 +237,7 @@ class MapViewController: UIViewController {
                 }
             }
             
+            // if the map source is from the plan detail page, which user want to new the plan, it will display the annotation for user  - Dalton 03/May/2019
             if mapsource == .PLANDETAIL_VIEW{
                 if let annotationInfo = planDetail_planInformation{
                     
@@ -243,6 +257,7 @@ class MapViewController: UIViewController {
                 }
             }
             
+            // if user want to add new location to the plan, it will also dispaly the annotation for user
             if mapsource == .PLANDETAIL_ADDNEW{
                 if let annotationInfo = planDetail_planInformation{
                     
@@ -262,6 +277,7 @@ class MapViewController: UIViewController {
                 }
             }
             
+            // if user is select this page from explore page, it will display all types of information for user  - Dalton 03/May/2019
             if mapsource == .EXPLOREPAGE{
                 if let keyword = explorePage_Suggestionkeyword,
                     let selectedCity = explorePage_UserLocation{
@@ -291,11 +307,7 @@ class MapViewController: UIViewController {
             }
         }
     }
-        
-
-            
-            //转换singlelocation 从 CLLocation to MK mark
-//            mapView.removeAnnotations(mapView.annotations)
+        //            mapView.removeAnnotations(mapView.annotations)
             
 //            let annotation = MKPointAnnotation()
 //            annotation.coordinate =  singleLocation.coordinate
@@ -318,26 +330,31 @@ class MapViewController: UIViewController {
         }
     }
     
-    
+    // if the return button is pressed, this interface will goback to the previous page - Dalton 22/Apr/2019
     @IBAction func ReturnButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
 }
 
+// this part is specially for the mapviewcontroller
 extension MapViewController : MKMapViewDelegate{
+    
+    // if user select one of the annotation, it will being display and stored in the class  - Dalton 25/Apr/2019
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation{
             self.selectedAnnotation = annotation
         }
     }
     
+    // this method is used to customize the annotation type and relevant information  - Dalton 25/Apr/2019
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if let _ = annotation as? MKUserLocation{
             return nil
         }
         
+        // this method allow annotation to clustered together
         if let cluster = annotation as? MKClusterAnnotation{
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "cluster") as? MKMarkerAnnotationView
             if annotationView == nil{
@@ -353,6 +370,7 @@ extension MapViewController : MKMapViewDelegate{
         let identifier = "marker"
         var view : MKMarkerAnnotationView
         
+        // this method is defining the normal annotations
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
             dequeuedView.annotation = annotation
             view = dequeuedView
@@ -378,9 +396,11 @@ extension MapViewController : MKMapViewDelegate{
 
 }
 
+// this extension is speclized to handle the map search  - Dalton 25/Apr/2019
 extension MapViewController : HandleMapSearch{
     
 
+    // when this function is called, it will drop one single annotation to the point, and let map to zoom to that location  - Dalton 25/Apr/2019
     func dropPinZoomIn(placemark: MKPlacemark) {
         
         mapView.removeAnnotations(mapView.annotations)
@@ -392,6 +412,7 @@ extension MapViewController : HandleMapSearch{
         mapView.setRegion(region, animated: true)
     }
     
+    // creating annotation, used to creating the annotations, one annotation will contain the coordinates, one subtitle and one title. - Dalton 25/Apr/2019
     func createAnnotation(placemark : MKPlacemark){
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate

@@ -2,13 +2,14 @@
 //  Explore_ViewController.swift
 //  JourneyPlanner
 //
-//  Created by Dalton Chen on 4/05/19.
+//  Created by Qichang Zhou on 4/05/19.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
+// this method is used to declear the explore page, explore page currently have few button which is used to suggest the nearst facilities for user - Qichang Zhou 04/May/2019
 class Explore_ViewController: UIViewController {
     
     var obtainedLocation: CLLocation?
@@ -26,12 +27,12 @@ class Explore_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
     }
+    
+    // this method will load when passing data from this class to another class - Qichang Zhou 04/May/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "exploreShowSuggestions" {
         
@@ -49,6 +50,8 @@ class Explore_ViewController: UIViewController {
     }
     }
     
+    // this function is used to obtain the current user location information and passing it to the mapview controller - Qichang Zhou 04/May/2019
+    // map part work with Qijin Chen 04/May/2109
     private func obtainTheCurrentLocationInformation(){
         if let homeViewController = tabBarController?.viewControllers?[0] as? Home_ViewController{
             
@@ -70,6 +73,8 @@ class Explore_ViewController: UIViewController {
         }
     }
     
+    
+    // when user unable to provide the location information or have not select the city yet, it will display information to notify the user - Qichang Zhou 04/May/2019
     private func errorMsgCannotObtainCurrentLocation(){
         let alertController : UIAlertController = UIAlertController(title: "Unknown Location", message: "Unable to get your location, please allow this app to obtain your current location or select city from home page", preferredStyle: .alert)
         let alertAction : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -78,6 +83,7 @@ class Explore_ViewController: UIViewController {
         disableButtons()
     }
 
+    // thereafter, when user click the button, show the nearby locations- Qichang Zhou 04/May/2019
     @IBAction func Bar(_ sender: Any) {
          self.keyword = "bar"
     }
@@ -105,6 +111,7 @@ class Explore_ViewController: UIViewController {
          self.keyword = "convenience shop"
     }
     
+    // disable all the button if user could not provide the location information - Qichang Zhou 04/May/2019
     private func disableButtons(){
         // this class is used to disable all buttons
         restaurantButton.isEnabled = false
@@ -130,14 +137,16 @@ class Explore_ViewController: UIViewController {
 
 }
 
+// this section is provide information when exchange with the mapview controller- Qichang Zhou 04/May/2019
 extension Explore_ViewController:MapViewControllerDelegate{
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+         // do not implement this method, it does not relate to this class Dalton 4/May/2019
+    }
+    
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
         // do not implement this method, it does not relate to this class Dalton 4/May/2019
     }
     
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
-        // do not implement this method, it does not relate to this class Dalton 4/May/2019
-    }
     
     
 }
