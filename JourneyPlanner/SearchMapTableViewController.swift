@@ -22,7 +22,7 @@ class SearchMapTableViewController: UITableViewController {
         
         var address : String = ""
         
-        // add street number
+        // this method is used to convert the location information into street informations  - Dalton 25/Apr/2019
         if let StreetNumber = place.subThoroughfare {
             address.append("\(StreetNumber) ")
         }else{}
@@ -45,10 +45,12 @@ class SearchMapTableViewController: UITableViewController {
         return address
     }
     
+    // this method is returning how many mathing items available - Dalton 25/Apr/2019
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
     }
     
+    //this method is defining the table and the relevant information  - Dalton 25/Apr/2019
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell")
         
@@ -58,6 +60,7 @@ class SearchMapTableViewController: UITableViewController {
         return cell!
     }
     
+    // this class is used to when user click one of the search result, this search result will also disapper  - Dalton 25/Apr/2019
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[indexPath.row].placemark
         handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
@@ -67,6 +70,7 @@ class SearchMapTableViewController: UITableViewController {
 
 }
 
+// this part is specialed for updating the search result - Dalton 25/Apr/2019
 extension SearchMapTableViewController : UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {

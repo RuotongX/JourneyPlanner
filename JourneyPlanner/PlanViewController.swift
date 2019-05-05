@@ -2,18 +2,20 @@
 //  PlanViewController.swift
 //  JourneyPlanner
 //
-//  Created by Dalton Chen on 23/04/19.
+//  Created by Wanfang Zhou on 23/04/19.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
+//This class is design to control the plan view controller - Wanfang Zhou 23/04/2019
 class PlanViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var plan : [TripPlan]?
     
+    // when this view is loaded, this will be displayed at the first time - Wanfang Zhou 23/04/2019
     override func viewDidLoad() {
         super.viewDidLoad()
         plan = []
@@ -25,10 +27,13 @@ class PlanViewController: UIViewController {
 //        tableView.register(PlanTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    // when the return button is pressed, go back to the previous page  - Wanfang Zhou 23/04/2019
     @IBAction func returnButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    // this method is used to load the test date please remove before submit  - Wanfang Zhou 23/04/2019
+    // PLEASE REMOVE BEFORE SUBMIT !!!!!!!
     func LoadTestData(){
         let coor1 = CLLocation(latitude: -38.1387009, longitude: 176.2528075)
         let trip1 = SmallTripInformation(name: "Awesome Thai food", location: coor1, staylength: 60, arrangement: 1)
@@ -47,6 +52,7 @@ class PlanViewController: UIViewController {
     }
     
     
+    // this method is used to create the bridge beteen this class and the plan detail view controller - Wanfang Zhou 23/04/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // View Plan detail
         if segue.identifier == "PlanDetailSegue"{
@@ -64,7 +70,7 @@ class PlanViewController: UIViewController {
         }
         
         
-        // Create a new plan
+        // if user would likely to create a new trip, it will bring user to an emptry page - Wanfang Zhou 23/04/2019
         if segue.identifier == "newPlanSegue"{
             if let planDetailViewController = segue.destination as? PlanDetailViewController{
                 
@@ -76,24 +82,18 @@ class PlanViewController: UIViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
+// this section is used to provide define the uitable view source and customize the content  - Wanfang Zhou 23/04/2019
 extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
+    
+    // return how many rows that tableview will have, the default value is 0  - Wanfang Zhou 23/04/2019
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.plan?.count ?? 0
     }
     
+    // this function is used to customize the tableview cell, it fills the name and all necessary information  - Wanfang Zhou 23/04/2019
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as? PlanTableViewCell else{ fatalError("The dequeued cell is not an instance of PlanTableViewCell.") }
@@ -107,12 +107,12 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    // when user preseed the the cell, it will not stuck in selected color - Wanfang Zhou 27/04/2019
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // deselect button (unhighlighted) - Dalton 27/Apr/2019
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
+    // this method is allow user to swipe to delete function  - Wanfang Zhou 23/04/2019
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         self.plan?.remove(at: indexPath.row)
         tableView.reloadData()
@@ -120,6 +120,7 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
 
 }
 
+// this extentsion creates the bridge between the this class and plan detail view class  - Wanfang Zhou 23/04/2019
 extension PlanViewController : PlanDetailViewControllerDelegate{
     
 }

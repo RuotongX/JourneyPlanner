@@ -8,6 +8,7 @@
 
 import Foundation
 
+// this method id defined the city guide type, which it have 4 types - Dalton 18/04/2019
 enum cityGuideType{
     case FOOD
     case HOTEL
@@ -15,6 +16,7 @@ enum cityGuideType{
     case UNKNOWN
 }
 
+// set up the city guide informaiton - Dalton 18/04/2019
 class cityGuideDetail {
     var short_intro : String
     var title : String
@@ -25,6 +27,7 @@ class cityGuideDetail {
     var city : String
     var individualKey : Int
     
+    // default constructor - Dalton 18/04/2019
     init(Short_Desc : String, title :String, type : cityGuideType, address:String, rate :Float, description : String,
          city:String, individualKey : Int){
         self.short_intro = Short_Desc
@@ -37,6 +40,7 @@ class cityGuideDetail {
         self.individualKey = individualKey
     }
     
+    // alternative contruction - Dalton 18/04/2019
     convenience init(){
         self.init(Short_Desc: "Short Intro", title: "Title", type: cityGuideType.UNKNOWN, address: "Address", rate: 5, description: "Description", city: "City", individualKey: 00000)
     }
