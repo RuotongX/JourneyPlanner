@@ -130,7 +130,7 @@ class tripDetailViewController: UIViewController {
 // this method handle the when map is passing the value back to this page - Wanfang Zhou  30/04/2019 working with Dalton 01/May/2019
 extension tripDetailViewController : MapViewControllerDelegate{
     // this one is related to this class, when user is select a new location, user can replace the old one. - Dalton 02/May/2019
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
         
         
         // the geocoder can convertor the coordinates information to stree level information - Dalton 02/May/2019
@@ -142,17 +142,7 @@ extension tripDetailViewController : MapViewControllerDelegate{
             } else {
                 let placemark = placemarks?.first
                 
-                var placeName = ""
-                
-                if let streetNo = placemark?.subLocality,
-                    let streetName = placemark?.locality{
-                    placeName.append(streetNo)
-                    placeName.append(" \(streetName)")
-                }
-                
-                if let markName = placemark?.areasOfInterest?[0]{
-                    placeName = markName
-                }
+                let placeName = nameOfLocation
                 
                 if let location = placemark?.location{
                     
@@ -163,12 +153,13 @@ extension tripDetailViewController : MapViewControllerDelegate{
                     self.MemoTextField.text = ""
                     
                     self.trip = SmallTripInformation(name: placeName, location: location, staylength: 0, arrangement: 0)
-
+                    
                     self.loadPlan(plan: self.trip!)
                 }
             }
         }
     }
+    
     
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
         // do nothing since it is not relate to this class, see select city for more information - Dalton 02/May/2019

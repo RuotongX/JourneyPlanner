@@ -316,8 +316,9 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
 
 // protocol information from the mapview controller, when user select something from actionlist, it will do the action on here to update datas - Dalton 23/Apr/2019
 extension Home_ViewController : MapViewControllerDelegate{
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
         // do nothing, it does not relate to this class - Dalton 02/May/2019
+
     }
     
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
