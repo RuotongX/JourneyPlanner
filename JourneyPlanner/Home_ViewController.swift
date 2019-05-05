@@ -284,6 +284,8 @@ class Home_ViewController: ViewController{
                 UserDefaults().setValue(iconName, forKey: "icon")
                 UserDefaults().setValue(id,forKey: "id")
                 UserDefaults().setValue(self.WeatherLabel.text, forKey: "temp")
+                UserDefaults().setValue(lat, forKey: "lat")
+                UserDefaults().setValue(lon, forKey: "lon")
             }
         }
     }

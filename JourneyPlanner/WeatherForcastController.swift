@@ -19,9 +19,7 @@ class WeatherForcastController: UIViewController {
     @IBOutlet weak var TempLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var LocationLabel: UILabel!
-    weak var CurrentLocationInformation : LocationInformation?
     
-    var selectCity : LocationInformation?
     var weathers: [weatherf] = [];
     
 
