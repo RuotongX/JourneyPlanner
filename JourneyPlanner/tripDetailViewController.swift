@@ -130,7 +130,7 @@ class tripDetailViewController: UIViewController {
 
 extension tripDetailViewController : MapViewControllerDelegate{
     // this one is related to this class, when user is select a new location, user can replace the old one. - Dalton 02/May/2019
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
         
         let geoCoder = CLGeocoder()
         
@@ -140,7 +140,17 @@ extension tripDetailViewController : MapViewControllerDelegate{
             } else {
                 let placemark = placemarks?.first
                 
-                let placeName = nameOfLocation
+                var placeName = ""
+                
+                if let streetNo = placemark?.subLocality,
+                    let streetName = placemark?.locality{
+                    placeName.append(streetNo)
+                    placeName.append(" \(streetName)")
+                }
+                
+                if let markName = placemark?.areasOfInterest?[0]{
+                    placeName = markName
+                }
                 
                 if let location = placemark?.location{
                     
@@ -151,13 +161,18 @@ extension tripDetailViewController : MapViewControllerDelegate{
                     self.MemoTextField.text = ""
                     
                     self.trip = SmallTripInformation(name: placeName, location: location, staylength: 0, arrangement: 0)
-                    
+
                     self.loadPlan(plan: self.trip!)
                 }
+                
+                
+                
             }
         }
+        
+        
+        
     }
-    
     
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
         // do nothing since it is not relate to this class, see select city for more information - Dalton 02/May/2019

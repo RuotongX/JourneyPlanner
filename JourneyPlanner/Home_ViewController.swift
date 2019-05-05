@@ -302,9 +302,8 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
 
 
 extension Home_ViewController : MapViewControllerDelegate{
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
         // do nothing, it does not relate to this class - Dalton 02/May/2019
-
     }
     
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
