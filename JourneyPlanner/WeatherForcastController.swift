@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
+//This class is used to show the weather forecast
 class WeatherForcastController: UIViewController {
     
     @IBOutlet weak var table: UITableView!

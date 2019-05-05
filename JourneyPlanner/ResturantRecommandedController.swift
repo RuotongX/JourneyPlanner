@@ -10,11 +10,11 @@ import UIKit
 import Alamofire
 import Foundation
 import SwiftyJSON
-
+// This class is used to showing the nearby resturant rank.
 class ResturantRecommandedController: UIViewController {
     
     
-    
+    // Get the coordinate values from the other class and connect the story board table into this controler. Also create an array to store restaurant object.
     @IBOutlet weak var Table: UITableView!
     let lat = UserDefaults().string(forKey: "lat")
     let lon = UserDefaults().string(forKey: "lon")
@@ -31,7 +31,7 @@ class ResturantRecommandedController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
+    // Same as I mentioned in weather forcast Controller, this class is to get the api data which is support by Zomato, and take the data value into each restaurant object.
     func getResturants(){
         let header = "1143149f226cce509acd087c44290754"
        
@@ -53,8 +53,9 @@ class ResturantRecommandedController: UIViewController {
                     let lon = jsonLocation["longitude"].doubleValue
                     let image = jsonR["thumb"].stringValue
                     let resturant = Resturant()
+                     let votes = jsonRating["votes"].intValue
+                    // The image is an URL, 59-67 lines is to displayed the URL image in the restaurants table.
                     let url = URL(string: image)
-                    let votes = jsonRating["votes"].intValue
                     if let url = url{
                         do {
                             let data = try Data(contentsOf: url)
@@ -73,6 +74,7 @@ class ResturantRecommandedController: UIViewController {
                     resturant.votes = votes
                     self.resturants.append(resturant)
                 }
+                //Async method to refresh the table information, reason same as weather forecast Controller. And the double for loop inside is used to get the rank for the restaurants given by Zomato API, the value to called the rank is how many people have voted this restaurant, more people vote, higer rank the resaurant get. The for loop for k one is used to give each restaurant rank value.
                 DispatchQueue.main.async {
                     for i in 0...self.resturants.count-1{
                         for j in 1...self.resturants.count-2{
@@ -93,18 +95,18 @@ class ResturantRecommandedController: UIViewController {
 
     }
 }
-
+// Extension class for control the table
 extension  ResturantRecommandedController: UITableViewDelegate,UITableViewDataSource{
-    
+    //set table row's height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
+    // get how many rows does table have
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return resturants.count
     }
-    
+    //Display the restaurant object information into Weather Cell Controller,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let resturant = resturants[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "resturantcell", for: indexPath) as! ResturantCellController
