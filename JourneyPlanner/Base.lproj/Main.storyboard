@@ -206,18 +206,16 @@
             </objects>
             <point key="canvasLocation" x="832.79999999999995" y="-273.39901477832512"/>
         </scene>
-        <!--View Controller-->
+        <!--Resturant Recommanded Controller-->
         <scene sceneID="a0j-sc-NOq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AT0-pL-7Ns" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="D1R-PD-hoZ" sceneMemberID="viewController">
+                <viewController id="D1R-PD-hoZ" customClass="ResturantRecommandedController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dl5-T2-IfZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="INY-yA-Vh8">
-                                <rect key="frame" x="0.0" y="154" width="375" height="658"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="INY-yA-Vh8">
+                                <rect key="frame" x="0.0" y="143" width="375" height="669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resturantcell" rowHeight="120" id="FNq-1Z-vCo" customClass="ResturantCellController" customModule="JourneyPlanner" customModuleProvider="target">
@@ -280,7 +278,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="41" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdW-7m-MWi">
-                                                    <rect key="frame" x="330" y="1" width="41" height="46"/>
+                                                    <rect key="frame" x="329" y="1" width="41" height="46"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="41" id="JXl-K3-8KD"/>
                                                     </constraints>
@@ -314,18 +312,22 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="AvangeCost" destination="NfJ-jo-tDo" id="Pbl-PN-NgJ"/>
-                                            <outlet property="Rank" destination="bdW-7m-MWi" id="bRC-7C-7cn"/>
-                                            <outlet property="ResturantImage" destination="UYB-3A-Tm3" id="qQu-gb-bCc"/>
-                                            <outlet property="ResturantMark" destination="5ym-50-VUd" id="mQU-7R-CFu"/>
-                                            <outlet property="ResturantName" destination="8Kg-J8-pzb" id="YHV-OM-Yih"/>
-                                            <outlet property="ResturantType" destination="PQl-hw-n8T" id="I2w-ko-xvo"/>
+                                            <outlet property="AvangeCost" destination="NfJ-jo-tDo" id="CdZ-Qg-Hqu"/>
+                                            <outlet property="Rank" destination="bdW-7m-MWi" id="Nfa-r8-NRj"/>
+                                            <outlet property="ResturantImage" destination="UYB-3A-Tm3" id="EiB-A7-MbC"/>
+                                            <outlet property="ResturantMark" destination="5ym-50-VUd" id="Y3i-N0-mnI"/>
+                                            <outlet property="ResturantName" destination="8Kg-J8-pzb" id="4Df-3R-F9G"/>
+                                            <outlet property="ResturantType" destination="PQl-hw-n8T" id="fh2-1b-yHL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="D1R-PD-hoZ" id="GLq-8R-DyB"/>
+                                    <outlet property="delegate" destination="D1R-PD-hoZ" id="egR-gC-zdI"/>
+                                </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-ja-n42">
-                                <rect key="frame" x="0.0" y="44" width="375" height="102"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-ja-n42">
+                                <rect key="frame" x="0.0" y="44" width="375" height="91"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-T7-VYJ">
                                         <rect key="frame" x="150" y="28" width="99" height="63"/>
@@ -336,6 +338,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DE-lO-Gyq">
                                         <rect key="frame" x="29" y="25" width="42" height="69"/>
                                         <state key="normal" image="PlanDetail-return key 1x"/>
+                                        <connections>
+                                            <action selector="Return:" destination="D1R-PD-hoZ" eventType="touchUpInside" id="a3F-YN-GKg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -350,9 +355,22 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="INY-yA-Vh8" firstAttribute="top" secondItem="Ue3-ja-n42" secondAttribute="bottom" constant="8" symbolic="YES" id="0gT-NU-fUD"/>
+                            <constraint firstItem="Ue3-ja-n42" firstAttribute="trailing" secondItem="INY-yA-Vh8" secondAttribute="trailing" id="4R8-Sb-6er"/>
+                            <constraint firstAttribute="bottom" secondItem="INY-yA-Vh8" secondAttribute="bottom" id="96O-zc-nHn"/>
+                            <constraint firstItem="Ue3-ja-n42" firstAttribute="leading" secondItem="Dl5-T2-IfZ" secondAttribute="leading" id="G9e-dY-BuY"/>
+                            <constraint firstAttribute="trailing" secondItem="Ue3-ja-n42" secondAttribute="trailing" id="Pzr-mJ-Rw5"/>
+                            <constraint firstItem="Ue3-ja-n42" firstAttribute="leading" secondItem="INY-yA-Vh8" secondAttribute="leading" id="acl-S7-qWA"/>
+                            <constraint firstItem="Ue3-ja-n42" firstAttribute="top" secondItem="xV0-b2-BFT" secondAttribute="top" id="dCb-he-Nwm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xV0-b2-BFT"/>
                     </view>
+                    <connections>
+                        <outlet property="Table" destination="INY-yA-Vh8" id="Tju-Sm-MZB"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AT0-pL-7Ns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2687.1999999999998" y="491.37931034482762"/>
         </scene>

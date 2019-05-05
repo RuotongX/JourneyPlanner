@@ -10,13 +10,14 @@ import UIKit
 
 class ResturantCellController: UITableViewCell {
 
-    
+
     @IBOutlet weak var ResturantImage: UIImageView!
     @IBOutlet weak var ResturantName: UILabel!
     @IBOutlet weak var ResturantMark: UILabel!
     @IBOutlet weak var AvangeCost: UILabel!
     @IBOutlet weak var ResturantType: UILabel!
     @IBOutlet weak var Rank: UILabel!
+    
     
     var Url :String = ""
     var lat : Double = 0.0

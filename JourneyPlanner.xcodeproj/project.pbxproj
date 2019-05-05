@@ -24,6 +24,9 @@
 		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
 		E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118498D2279B5CA00731D9A /* WeatherForcastController.swift */; };
 		E11849922279B65100731D9A /* WeatherCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11849912279B65100731D9A /* WeatherCellController.swift */; };
+		E11C2A08227E8FE50076B33B /* ResturantRecommandedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C2A05227E8FE40076B33B /* ResturantRecommandedController.swift */; };
+		E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C2A06227E8FE40076B33B /* ResturantCellController.swift */; };
+		E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C2A07227E8FE50076B33B /* Resturant.swift */; };
 		E127EDE2227C053D00386D84 /* weatherf.swift in Sources */ = {isa = PBXBuildFile; fileRef = E127EDE1227C053D00386D84 /* weatherf.swift */; };
 		E14265F822421C06006399D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F722421C06006399D2 /* AppDelegate.swift */; };
 		E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14265F922421C06006399D2 /* Home_ViewController.swift */; };
@@ -52,6 +55,9 @@
 		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E118498D2279B5CA00731D9A /* WeatherForcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastController.swift; sourceTree = "<group>"; };
 		E11849912279B65100731D9A /* WeatherCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellController.swift; sourceTree = "<group>"; };
+		E11C2A05227E8FE40076B33B /* ResturantRecommandedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantRecommandedController.swift; sourceTree = "<group>"; };
+		E11C2A06227E8FE40076B33B /* ResturantCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantCellController.swift; sourceTree = "<group>"; };
+		E11C2A07227E8FE50076B33B /* Resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		E127EDE1227C053D00386D84 /* weatherf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherf.swift; sourceTree = "<group>"; };
 		E14265F422421C05006399D2 /* JourneyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourneyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14265F722421C06006399D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 				416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */,
 				416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */,
 				416AF92F226F21F700FF4FF6 /* TripPlan.swift */,
+				E11C2A07227E8FE50076B33B /* Resturant.swift */,
+				E11C2A06227E8FE40076B33B /* ResturantCellController.swift */,
+				E11C2A05227E8FE40076B33B /* ResturantRecommandedController.swift */,
 				410AED49226F13A400998F9E /* PlanViewController.swift */,
 				410AED47226EE51200998F9E /* MapViewController.swift */,
 				415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */,
@@ -278,9 +287,12 @@
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
 				E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
+				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
+				E11C2A08227E8FE50076B33B /* ResturantRecommandedController.swift in Sources */,
 				E11849922279B65100731D9A /* WeatherCellController.swift in Sources */,
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
+				E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */,
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
