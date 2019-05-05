@@ -200,7 +200,7 @@ class Home_ViewController: ViewController{
         locationPermission()
     }
     
-    // weather calling api
+    // Alamofire library is use for weather calling api, to get the the api data out from JSON package is using by swiftyJSON library this is useed the coordinate values to get the information from openWeather, and for the weather image changing part I used a switch case to depend which icon I should use.
     func CheckWeather(_location: CLLocation){
         let lat = _location.coordinate.latitude
         let lon = _location.coordinate.longitude
@@ -294,6 +294,7 @@ class Home_ViewController: ViewController{
                 self.WeatherIcon.image = UIImage(named: iconName)
                 
                 self.WeatherLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))℃"
+                //These following code is used the UserDefaults as an deletegate to store the variables, so that I can use these value in the other view Controller.
             UserDefaults().setValue(self.City_Name.text, forKey: "name")
                 
                 UserDefaults().setValue(iconName, forKey: "icon")

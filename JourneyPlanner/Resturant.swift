@@ -5,7 +5,7 @@
 //  Created by RuotongX on 2019/5/4.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
-
+// this class is the model for restaurant.
 import UIKit
 
 class Resturant {
@@ -19,7 +19,7 @@ class Resturant {
     var RUrl : String
     var Rank : Int
     var votes: Int = 0;
-    
+    // Default constructor.
     init(){
         self.RImage = UIImage(named: "Resturant-image")!
         self.RName = "DoubleHappy"
