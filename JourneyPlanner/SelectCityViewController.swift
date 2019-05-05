@@ -195,11 +195,9 @@ class SelectCityViewController: UIViewController {
 
 
 extension SelectCityViewController: MapViewControllerDelegate{
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation) {
-        // do nothing, it does not relate to this class - Dalton 02/May/2019
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
+        // do not implement this method, it does not relate to this class Dalton 4/May/2019
     }
-    
-
     
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
         

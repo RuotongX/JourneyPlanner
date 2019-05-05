@@ -15,7 +15,7 @@ protocol HandleMapSearch {
 
 protocol MapViewControllerDelegate: class{
     func didSelectANewcity(_ controller: MapViewController, selectedCity : LocationInformation)
-    func didSelectANewLocation(_ controller: MapViewController, selectedLocation : CLLocation)
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation : CLLocation, nameOfLocation : String)
     
 }
 
@@ -121,17 +121,22 @@ class MapViewController: UIViewController {
                 let replaceLocation = UIAlertAction(title: "Replace with existing Location", style: .default) { (action) in
                     if let annotation = self.selectedAnnotation{
                         let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-                        self.delegate?.didSelectANewLocation(self, selectedLocation: location)
-                        self.dismiss(animated: true, completion: nil)
+                        if let locationName = annotation.title{
+                            self.delegate?.didSelectANewLocation(self, selectedLocation: location, nameOfLocation: locationName!)
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
                 alertSheet.addAction(replaceLocation)
+                
             } else if mapsource == .PLANDETAIL_ADDNEW{
-                let addThisPlace = UIAlertAction(title: "Add this location to my trip", style: .default) { (action) in
+                let addThisPlace = UIAlertAction(title:"Add this location to my trip", style: .default) { (action) in
                     if let annotation = self.selectedAnnotation{
                         let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-                        self.delegate?.didSelectANewLocation(self, selectedLocation: location)
-                        self.dismiss(animated: true, completion: nil)
+                        if let locationName = annotation.title{
+                            self.delegate?.didSelectANewLocation(self, selectedLocation: location, nameOfLocation: locationName!)
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
                 alertSheet.addAction(addThisPlace)
