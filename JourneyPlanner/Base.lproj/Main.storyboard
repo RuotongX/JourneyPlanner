@@ -458,7 +458,9 @@
                                 <rect key="frame" x="28" y="427" width="326" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Nearby Restaruants Rank"/>
+                                <state key="normal" title="Nearby Restaruants Rank">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="D1R-PD-hoZ" kind="show" id="fcw-r9-Kt3"/>
                                 </connections>
