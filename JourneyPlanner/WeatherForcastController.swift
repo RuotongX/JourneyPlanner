@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
+//This class is used to show the weather forecast
 class WeatherForcastController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
@@ -24,7 +24,7 @@ class WeatherForcastController: UIViewController {
     var selectCity : LocationInformation?
     var weathers: [weatherf] = [];
     
-
+// These is getting the data that generated in Home_ViewController. I store those data into UserDefaults delegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.LocationLabel.text = UserDefaults().string(forKey: "name")
@@ -38,11 +38,11 @@ class WeatherForcastController: UIViewController {
         
     }
     
-
+// These is the retrun button, which can get back to Home screen.
     @IBAction func Return(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+    // Same as I mentioned in Home_ViewController this method is used to get the api value from openWeather. The difference bwtween that is the request URL is different, this URL will return the data set incluse an a serious of weather which is for the following days. So I create an array, and I create a class to modify the weather Forecast whose name is weatherf. To store these value create each days weather forcast as an object and take these objects into array.
     func getWeathers()  {
         let id = UserDefaults().string(forKey: "id")
         let apiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
@@ -146,7 +146,7 @@ class WeatherForcastController: UIViewController {
                     self.weathers.append(forcast)
                     
                 }
-                
+                // These method is used to refresh the data in the table, because in swift, the information which is in the table will load after the page load. Normally we cannot see the information. That's why using the async to load the information. These async can also reduce the performance cost for these app.
                 DispatchQueue.main.async {
                     self.table.reloadData()
                 }
@@ -154,19 +154,19 @@ class WeatherForcastController: UIViewController {
         }
     }
 }
-
+// These extension class is created for the table controller which is handling the table display.
 extension  WeatherForcastController: UITableViewDelegate,UITableViewDataSource{
 
-    
+    // This method is to control each row's height
     private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
         return 90
     }
-    
+    //This method is to control how many row does the table need to be displayed, the number is depend on the array that I created for stroing weather forecast objects size.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return weathers.count
     }
-
+// This method is to set the cell value by giving each weather forcast object value to the Weather Cell Controller class.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let weatherf = weathers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "weathercell", for: indexPath) as! WeatherCellController

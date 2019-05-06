@@ -5,7 +5,7 @@
 //  Created by RuotongX on 2019/5/4.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
-
+// This class is used to control the cell in restaurant table.
 import UIKit
 
 class ResturantCellController: UITableViewCell {
@@ -46,6 +46,5 @@ class ResturantCellController: UITableViewCell {
         // Configure the view for the selected state
     }
 
-//    @IBAction func ResturantLocation(_ sender: Any) {
-//    }
+
 }

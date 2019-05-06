@@ -458,7 +458,9 @@
                                 <rect key="frame" x="28" y="427" width="326" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Nearby Restaruants Rank"/>
+                                <state key="normal" title="Nearby Restaruants Rank">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="D1R-PD-hoZ" kind="show" id="fcw-r9-Kt3"/>
                                 </connections>
@@ -579,6 +581,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-85-Ve0" userLabel="Preference">
                                 <rect key="frame" x="39" y="209.66666666666666" width="296" height="71.999999999999972"/>
                                 <state key="normal" image="User-Preference"/>
+                                <connections>
+                                    <segue destination="sZT-pM-JJI" kind="show" id="x2G-JL-PQR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocU-XZ-TpY" userLabel="About">
                                 <rect key="frame" x="39" y="301.66666666666669" width="296" height="72"/>
@@ -1330,6 +1335,71 @@
             </objects>
             <point key="canvasLocation" x="-255.19999999999999" y="-700.49261083743841"/>
         </scene>
+        <!--Perference View Controller-->
+        <scene sceneID="GP5-UN-eMy">
+            <objects>
+                <viewController id="sZT-pM-JJI" customClass="PerferenceViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s31-Cl-Nbx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a3-bv-3HB" userLabel="Return">
+                                <rect key="frame" x="32" y="63" width="68" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Plan-return key 1x"/>
+                                <connections>
+                                    <action selector="return:" destination="sZT-pM-JJI" eventType="touchUpInside" id="Eq4-sm-Qxy"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Perference" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-gn-JWP">
+                                <rect key="frame" x="137" y="70" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIW-Ny-doj" userLabel="MapType">
+                                <rect key="frame" x="16" y="271" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Map Type(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqn-5Y-wJO" userLabel="RecommandRange">
+                                <rect key="frame" x="16" y="197" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Range(1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk2-s2-g3d" userLabel="Name">
+                                <rect key="frame" x="16" y="123" width="343" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Name(1)"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl3-QI-aJt" userLabel="RangeTextField">
+                                <rect key="frame" x="16" y="197" width="315" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-rj-iRE" userLabel="MapTypeTextField">
+                                <rect key="frame" x="16" y="271" width="315" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NFA-f1-2fg"/>
+                    </view>
+                    <connections>
+                        <outlet property="MapTypeTextField" destination="Zwl-rj-iRE" id="F14-ov-KRC"/>
+                        <outlet property="RangeTextField" destination="Xl3-QI-aJt" id="5L1-3S-aXB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBC-5O-U8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.60000000000002" y="1137.9310344827586"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Explore-Bank(1)" width="60" height="71"/>
@@ -1350,12 +1420,15 @@
         <image name="Home-Weather-Sunnyrain" width="50" height="48"/>
         <image name="Home-map" width="164" height="76"/>
         <image name="Home-plan" width="164" height="76"/>
+        <image name="Map Type(1)" width="352" height="51"/>
+        <image name="Name(1)" width="352" height="51"/>
         <image name="Plan-add new 1x" width="23" height="23"/>
         <image name="Plan-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-add new 1x" width="23" height="23"/>
         <image name="PlanDetail-edit x1" width="23" height="23"/>
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-viewOnMap 1x" width="321" height="62"/>
+        <image name="Range(1)" width="352" height="51"/>
         <image name="Resturant-Location" width="200" height="200"/>
         <image name="Resturant-hot" width="200" height="200"/>
         <image name="Resturant-image" width="500" height="489"/>

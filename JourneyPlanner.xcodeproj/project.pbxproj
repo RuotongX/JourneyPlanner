@@ -24,6 +24,7 @@
 		41FFC1ED227FF33300AED351 /* TripPlanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EC227FF33300AED351 /* TripPlanTest.swift */; };
 		41FFC1EF227FFBE400AED351 /* 111.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EE227FFBE400AED351 /* 111.swift */; };
 		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
+		DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */; };
 		E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118498D2279B5CA00731D9A /* WeatherForcastController.swift */; };
 		E11849922279B65100731D9A /* WeatherCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11849912279B65100731D9A /* WeatherCellController.swift */; };
 		E11C2A08227E8FE50076B33B /* ResturantRecommandedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11C2A05227E8FE40076B33B /* ResturantRecommandedController.swift */; };
@@ -69,6 +70,7 @@
 		41FFC1EC227FF33300AED351 /* TripPlanTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanTest.swift; sourceTree = "<group>"; };
 		41FFC1EE227FFBE400AED351 /* 111.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 111.swift; sourceTree = "<group>"; };
 		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceViewController.swift; sourceTree = "<group>"; };
 		E118498D2279B5CA00731D9A /* WeatherForcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastController.swift; sourceTree = "<group>"; };
 		E11849912279B65100731D9A /* WeatherCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellController.swift; sourceTree = "<group>"; };
 		E11C2A05227E8FE40076B33B /* ResturantRecommandedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantRecommandedController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				E118498D2279B5CA00731D9A /* WeatherForcastController.swift */,
 				E11849912279B65100731D9A /* WeatherCellController.swift */,
 				E127EDE1227C053D00386D84 /* weatherf.swift */,
+				DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
 				E11C2A08227E8FE50076B33B /* ResturantRecommandedController.swift in Sources */,
+				DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */,
 				E11849922279B65100731D9A /* WeatherCellController.swift in Sources */,
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
 				E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */,
