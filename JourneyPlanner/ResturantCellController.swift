@@ -7,6 +7,8 @@
 //
 // This class is used to control the cell in restaurant table.
 import UIKit
+import Foundation
+import SafariServices
 
 class ResturantCellController: UITableViewCell {
 
@@ -42,9 +44,10 @@ class ResturantCellController: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        UserDefaults().set(self.Url,forKey: "ZomatoUrl")
         // Configure the view for the selected state
     }
+    
 
 
 }

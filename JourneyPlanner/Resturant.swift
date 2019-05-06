@@ -21,7 +21,7 @@ class Resturant {
     var votes: Int = 0;
     // Default constructor.
     init(){
-        self.RImage = UIImage(named: "Resturant-image")!
+        self.RImage = UIImage(named: "zomato")!
         self.RName = "DoubleHappy"
         self.RMark = "3.5"
         self.RType = "Chinese"
