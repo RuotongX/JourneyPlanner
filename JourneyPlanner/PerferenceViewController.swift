@@ -14,7 +14,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var RangeTextField: UITextField!
     @IBOutlet weak var MapTypeTextField: UITextField!
     let range_arr = ["off","5km","10km","15km","20km","25km"]
-    let mapType_arr = ["Standerd","Setellite","Hybird"]
+    let mapType_arr = ["Standerd","Setellite","Hybrid"]
     var active_textField : UITextField!
     
     let my_pickerView = UIPickerView()
@@ -82,7 +82,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClick))
-        toolbar.setItems([doneButton, spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         
         RangeTextField.inputAccessoryView = toolbar
         MapTypeTextField.inputAccessoryView = toolbar
