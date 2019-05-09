@@ -110,6 +110,7 @@ class tripDetailViewController: UIViewController {
                 let tripnumber = self.oldtripNumber{
                 addAllNecessaryData()
                 self.delegate?.didUpdatePlan(self, trip: trip, oldTrip: oldTrip, position: tripnumber)
+
             } else{
                 addAllNecessaryData()
                 self.delegate?.didNewPlan(self, trip: trip)
