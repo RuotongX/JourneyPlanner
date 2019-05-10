@@ -122,7 +122,11 @@ class MapViewController: UIViewController {
         
                 }
                 let favoriteAction = UIAlertAction(title: "😍 Favorite", style: .default) { (action) in
-        
+                    let model = Favourite.init()
+                    model.name = self.selectedAnnotation?.title ?? "北京"
+                    model.address = self.selectedAnnotation?.subtitle ?? "三里屯"
+                    let manager = FavouriteManager.sharedInstance()
+                    manager?.favourites[model.address] = model as AnyObject
                 }
         
                 alertSheet.addAction(saveAction)
