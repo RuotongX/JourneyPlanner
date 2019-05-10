@@ -23,6 +23,23 @@
 		41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E05837227931BC00BFF264 /* AboutViewController.swift */; };
 		41FFC1ED227FF33300AED351 /* TripPlanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EC227FF33300AED351 /* TripPlanTest.swift */; };
 		41FFC1EF227FFBE400AED351 /* 111.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EE227FFBE400AED351 /* 111.swift */; };
+		8C32366F2285230B00BD0DB2 /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32366C2285230B00BD0DB2 /* Favourite.m */; };
+		8C3236722285232600BD0DB2 /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236712285232600BD0DB2 /* FavouriteViewController.m */; };
+		8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236772285248800BD0DB2 /* SWCellScrollView.m */; };
+		8C3236832285248800BD0DB2 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32367A2285248800BD0DB2 /* SWUtilityButtonView.m */; };
+		8C3236842285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32367C2285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m */; };
+		8C3236852285248800BD0DB2 /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32367D2285248800BD0DB2 /* SWLongPressGestureRecognizer.m */; };
+		8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32367E2285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m */; };
+		8C3236872285248800BD0DB2 /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236812285248800BD0DB2 /* SWTableViewCell.m */; };
+		8C32369422854A6100BD0DB2 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32368A22854A6100BD0DB2 /* FMDatabaseQueue.m */; };
+		8C32369522854A6100BD0DB2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32368D22854A6100BD0DB2 /* FMDatabaseAdditions.m */; };
+		8C32369622854A6100BD0DB2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32368E22854A6100BD0DB2 /* FMDatabase.m */; };
+		8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369222854A6100BD0DB2 /* FMDatabasePool.m */; };
+		8C32369822854A6100BD0DB2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369322854A6100BD0DB2 /* FMResultSet.m */; };
+		8C32369E22854AA000BD0DB2 /* Persistent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369A22854AA000BD0DB2 /* Persistent.m */; };
+		8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */; };
+		8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A122854AF800BD0DB2 /* DBManager.m */; };
+		8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A422854B6200BD0DB2 /* FavouriteDao.m */; };
 		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
 		DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */; };
 		E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118498D2279B5CA00731D9A /* WeatherForcastController.swift */; };
@@ -70,6 +87,42 @@
 		41FFC1E4227FEFF600AED351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41FFC1EC227FF33300AED351 /* TripPlanTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanTest.swift; sourceTree = "<group>"; };
 		41FFC1EE227FFBE400AED351 /* 111.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 111.swift; sourceTree = "<group>"; };
+		8C32366A2285230B00BD0DB2 /* Favourite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Favourite.h; sourceTree = "<group>"; };
+		8C32366C2285230B00BD0DB2 /* Favourite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Favourite.m; sourceTree = "<group>"; };
+		8C3236702285232600BD0DB2 /* FavouriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteViewController.h; sourceTree = "<group>"; };
+		8C3236712285232600BD0DB2 /* FavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteViewController.m; sourceTree = "<group>"; };
+		8C3236732285235700BD0DB2 /* Header-OCSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Header-OCSwift.h"; sourceTree = "<group>"; };
+		8C3236762285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonTapGestureRecognizer.h; sourceTree = "<group>"; };
+		8C3236772285248800BD0DB2 /* SWCellScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCellScrollView.m; sourceTree = "<group>"; };
+		8C3236782285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
+		8C3236792285248800BD0DB2 /* SWLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		8C32367A2285248800BD0DB2 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
+		8C32367B2285248800BD0DB2 /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		8C32367C2285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
+		8C32367D2285248800BD0DB2 /* SWLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		8C32367E2285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
+		8C32367F2285248800BD0DB2 /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
+		8C3236802285248800BD0DB2 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
+		8C3236812285248800BD0DB2 /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		8C32368922854A6100BD0DB2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8C32368A22854A6100BD0DB2 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8C32368B22854A6100BD0DB2 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8C32368C22854A6100BD0DB2 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8C32368D22854A6100BD0DB2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8C32368E22854A6100BD0DB2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8C32368F22854A6100BD0DB2 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8C32369022854A6100BD0DB2 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8C32369122854A6100BD0DB2 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8C32369222854A6100BD0DB2 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8C32369322854A6100BD0DB2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8C32369A22854AA000BD0DB2 /* Persistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persistent.m; sourceTree = "<group>"; };
+		8C32369B22854AA000BD0DB2 /* Persistent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persistent.h; sourceTree = "<group>"; };
+		8C32369C22854AA000BD0DB2 /* NSObject+SQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SQL.h"; sourceTree = "<group>"; };
+		8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SQL.m"; sourceTree = "<group>"; };
+		8C3236A022854AF800BD0DB2 /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		8C3236A122854AF800BD0DB2 /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		8C3236A322854B6200BD0DB2 /* FavouriteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteDao.h; sourceTree = "<group>"; };
+		8C3236A422854B6200BD0DB2 /* FavouriteDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteDao.m; sourceTree = "<group>"; };
 		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceViewController.swift; sourceTree = "<group>"; };
 		E118498D2279B5CA00731D9A /* WeatherForcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastController.swift; sourceTree = "<group>"; };
@@ -128,6 +181,86 @@
 			path = JourneyPlannerTests;
 			sourceTree = "<group>";
 		};
+		8C323668228522CC00BD0DB2 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				8C32366A2285230B00BD0DB2 /* Favourite.h */,
+				8C32366C2285230B00BD0DB2 /* Favourite.m */,
+				8C3236702285232600BD0DB2 /* FavouriteViewController.h */,
+				8C3236712285232600BD0DB2 /* FavouriteViewController.m */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		8C3236692285230B00BD0DB2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8C32369922854A6A00BD0DB2 /* LocalManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8C3236742285247900BD0DB2 /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				8C32368822854A6100BD0DB2 /* FMDB */,
+				8C3236752285248800BD0DB2 /* SWTableViewCell */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		8C3236752285248800BD0DB2 /* SWTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8C3236762285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.h */,
+				8C3236772285248800BD0DB2 /* SWCellScrollView.m */,
+				8C3236782285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.h */,
+				8C3236792285248800BD0DB2 /* SWLongPressGestureRecognizer.h */,
+				8C32367A2285248800BD0DB2 /* SWUtilityButtonView.m */,
+				8C32367B2285248800BD0DB2 /* SWTableViewCell.h */,
+				8C32367C2285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m */,
+				8C32367D2285248800BD0DB2 /* SWLongPressGestureRecognizer.m */,
+				8C32367E2285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m */,
+				8C32367F2285248800BD0DB2 /* SWCellScrollView.h */,
+				8C3236802285248800BD0DB2 /* SWUtilityButtonView.h */,
+				8C3236812285248800BD0DB2 /* SWTableViewCell.m */,
+			);
+			path = SWTableViewCell;
+			sourceTree = "<group>";
+		};
+		8C32368822854A6100BD0DB2 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8C32368922854A6100BD0DB2 /* FMDatabase.h */,
+				8C32368A22854A6100BD0DB2 /* FMDatabaseQueue.m */,
+				8C32368B22854A6100BD0DB2 /* FMResultSet.h */,
+				8C32368C22854A6100BD0DB2 /* FMDatabasePool.h */,
+				8C32368D22854A6100BD0DB2 /* FMDatabaseAdditions.m */,
+				8C32368E22854A6100BD0DB2 /* FMDatabase.m */,
+				8C32368F22854A6100BD0DB2 /* FMDatabaseQueue.h */,
+				8C32369022854A6100BD0DB2 /* FMDB.h */,
+				8C32369122854A6100BD0DB2 /* FMDatabaseAdditions.h */,
+				8C32369222854A6100BD0DB2 /* FMDatabasePool.m */,
+				8C32369322854A6100BD0DB2 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		8C32369922854A6A00BD0DB2 /* LocalManager */ = {
+			isa = PBXGroup;
+			children = (
+				8C32369B22854AA000BD0DB2 /* Persistent.h */,
+				8C32369A22854AA000BD0DB2 /* Persistent.m */,
+				8C3236A022854AF800BD0DB2 /* DBManager.h */,
+				8C3236A122854AF800BD0DB2 /* DBManager.m */,
+				8C32369C22854AA000BD0DB2 /* NSObject+SQL.h */,
+				8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */,
+				8C3236A322854B6200BD0DB2 /* FavouriteDao.h */,
+				8C3236A422854B6200BD0DB2 /* FavouriteDao.m */,
+			);
+			path = LocalManager;
+			sourceTree = "<group>";
+		};
 		A6569F2B4170D6685F746ACD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +292,9 @@
 		E14265F622421C05006399D2 /* JourneyPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				8C3236742285247900BD0DB2 /* ThirdPart */,
+				8C3236692285230B00BD0DB2 /* Manager */,
+				8C323668228522CC00BD0DB2 /* Favourite */,
 				E14265F722421C06006399D2 /* AppDelegate.swift */,
 				41C818DC227D378300ED125D /* Explore_ViewController.swift */,
 				E14265F922421C06006399D2 /* Home_ViewController.swift */,
@@ -188,6 +324,7 @@
 				E127EDE1227C053D00386D84 /* weatherf.swift */,
 				DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */,
 				E11F14BA2280D74300A36DE9 /* ZomatoWeb.swift */,
+				8C3236732285235700BD0DB2 /* Header-OCSwift.h */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -360,24 +497,41 @@
 				416AF92E226F1ECE00FF4FF6 /* SmallPlanInformation.swift in Sources */,
 				E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */,
 				41E058342277172700BFF264 /* tripDetailViewController.swift in Sources */,
+				8C3236722285232600BD0DB2 /* FavouriteViewController.m in Sources */,
 				41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */,
+				8C32369822854A6100BD0DB2 /* FMResultSet.m in Sources */,
+				8C32369E22854AA000BD0DB2 /* Persistent.m in Sources */,
+				8C3236832285248800BD0DB2 /* SWUtilityButtonView.m in Sources */,
 				41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */,
+				8C3236872285248800BD0DB2 /* SWTableViewCell.m in Sources */,
+				8C32369422854A6100BD0DB2 /* FMDatabaseQueue.m in Sources */,
+				8C32366F2285230B00BD0DB2 /* Favourite.m in Sources */,
 				416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */,
 				412D87C52275A4F90025773F /* PlanDetailTableViewCell.swift in Sources */,
 				E127EDE2227C053D00386D84 /* weatherf.swift in Sources */,
+				8C32369622854A6100BD0DB2 /* FMDatabase.m in Sources */,
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
+				8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */,
+				8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */,
+				8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
+				8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */,
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
+				8C3236842285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
+				8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */,
+				8C32369522854A6100BD0DB2 /* FMDatabaseAdditions.m in Sources */,
 				E11C2A08227E8FE50076B33B /* ResturantRecommandedController.swift in Sources */,
 				DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */,
 				E11849922279B65100731D9A /* WeatherCellController.swift in Sources */,
+				8C3236852285248800BD0DB2 /* SWLongPressGestureRecognizer.m in Sources */,
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
 				E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */,
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
 				E11F14BB2280D74300A36DE9 /* ZomatoWeb.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
+				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
 				41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */,
 				416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */,
@@ -581,15 +735,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NSSMPHWC2A;
+				DEVELOPMENT_TEAM = GG54TVX9UE;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerq;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlanner123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -601,16 +755,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NSSMPHWC2A;
-				DEVELOPMENT_TEAM = PQS8SCK9PK;
+				DEVELOPMENT_TEAM = GG54TVX9UE;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerq;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlanner123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
