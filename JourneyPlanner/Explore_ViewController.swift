@@ -14,6 +14,7 @@ class Explore_ViewController: UIViewController {
     
     var obtainedLocation: CLLocation?
     var keyword : String?
+    @IBOutlet weak var Table: UITableView!
     
     @IBOutlet weak var restaurantButton: UIButton!
     @IBOutlet weak var barButton: UIButton!
@@ -147,6 +148,18 @@ extension Explore_ViewController:MapViewControllerDelegate{
         // do not implement this method, it does not relate to this class Dalton 4/May/2019
     }
     
+    
+    
+}
+
+extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     
     
 }
