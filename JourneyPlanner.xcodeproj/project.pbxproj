@@ -55,6 +55,8 @@
 		E14265FF22421C06006399D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14265FD22421C06006399D2 /* Main.storyboard */; };
 		E142660122421C06006399D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E142660022421C06006399D2 /* Assets.xcassets */; };
 		E142660422421C06006399D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E142660222421C06006399D2 /* LaunchScreen.storyboard */; };
+		E1CD9FDE2285B660007A116F /* ShowMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD9FDD2285B660007A116F /* ShowMoreCell.swift */; };
+		E1CD9FE02285B6D3007A116F /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD9FDF2285B6D3007A116F /* CuisineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		E142660022421C06006399D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E142660322421C06006399D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E142660522421C06006399D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1CD9FDD2285B660007A116F /* ShowMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreCell.swift; sourceTree = "<group>"; };
+		E1CD9FDF2285B6D3007A116F /* CuisineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineCell.swift; sourceTree = "<group>"; };
 		EFA350BB1C3D190A14111C95 /* Pods-JourneyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourneyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,6 +329,8 @@
 				DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */,
 				E11F14BA2280D74300A36DE9 /* ZomatoWeb.swift */,
 				8C3236732285235700BD0DB2 /* Header-OCSwift.h */,
+				E1CD9FDD2285B660007A116F /* ShowMoreCell.swift */,
+				E1CD9FDF2285B6D3007A116F /* CuisineCell.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -509,7 +515,9 @@
 				416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */,
 				412D87C52275A4F90025773F /* PlanDetailTableViewCell.swift in Sources */,
 				E127EDE2227C053D00386D84 /* weatherf.swift in Sources */,
+				E1CD9FE02285B6D3007A116F /* CuisineCell.swift in Sources */,
 				8C32369622854A6100BD0DB2 /* FMDatabase.m in Sources */,
+				E1CD9FDE2285B660007A116F /* ShowMoreCell.swift in Sources */,
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
 				8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */,
