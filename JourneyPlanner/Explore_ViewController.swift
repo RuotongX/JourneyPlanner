@@ -8,8 +8,17 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import Foundation
+import SwiftyJSON
 
 // this method is used to declear the explore page, explore page currently have few button which is used to suggest the nearst facilities for user - Qichang Zhou 04/May/2019
+struct cellData{
+    var opened = Bool()
+    var cuisine = String()
+    var sectionData = [Resturant]()
+    var cuisineN = Int()
+}
 class Explore_ViewController: UIViewController {
     
     var obtainedLocation: CLLocation?
@@ -26,8 +35,11 @@ class Explore_ViewController: UIViewController {
     @IBOutlet weak var dairyButton: UIButton!
     
     
+    var tableViewData = [cellData]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60)]
     }
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
@@ -125,6 +137,56 @@ class Explore_ViewController: UIViewController {
         bankButton.isEnabled = false
     }
     
+    func getResturants(cuisine:Int,index:Int){
+        let header = "1143149f226cce509acd087c44290754"
+        let lat = UserDefaults().string(forKey: "lat")
+        let lon = UserDefaults().string(forKey: "lon")
+        Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=20&lat=\(lat!)&lon=\(lon!)&radius=2000&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
+            response in
+            if let responseStr = response.result.value{
+                let jsonResponse = JSON(responseStr)
+                for i in 0...jsonResponse["restaurants"].array!.count-1{
+                    let jsonRest = jsonResponse["restaurants"].array![i]
+                    let jsonR = jsonRest["restaurant"]
+                    let jsonRating = jsonR["user_rating"]
+                    let jsonLocation = jsonR["location"]
+                    let Name = jsonR["name"].stringValue
+                    let Url = jsonR["url"].stringValue
+                    let Price = jsonR["average_cost_for_two"].doubleValue/2
+                    let rate = jsonRating["aggregate_rating"].stringValue
+                    let cuisines = jsonR["cuisines"].stringValue
+                    let lat = jsonLocation["latitude"].doubleValue
+                    let lon = jsonLocation["longitude"].doubleValue
+                    let image = jsonR["thumb"].stringValue
+                    let resturant = Resturant()
+                    let votes = jsonRating["votes"].intValue
+                    // The image is an URL, 59-67 lines is to displayed the URL image in the restaurants table.
+                    let url = URL(string: image)
+                    if let url = url{
+                        do {
+                            let data = try Data(contentsOf: url)
+                            resturant.RImage = UIImage(data: data)!
+                        }catch let error as NSError {
+                            print(error)
+                        }
+                    }
+                    resturant.RName = Name
+                    resturant.RCost = Price
+                    resturant.RMark = rate
+                    resturant.RType = cuisines
+                    resturant.Rlat = lat
+                    resturant.Rlon = lon
+                    resturant.RUrl = Url
+                    resturant.votes = votes
+                    self.tableViewData[index].sectionData.append(resturant)
+                }
+                let resturant1 = Resturant()
+                self.tableViewData[index].sectionData.append(resturant1)
+            }
+        }
+        
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -160,6 +222,8 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
+    }
     
 }

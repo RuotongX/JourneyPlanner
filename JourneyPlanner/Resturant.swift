@@ -22,7 +22,7 @@ class Resturant {
     // Default constructor.
     init(){
         self.RImage = UIImage(named: "zomato")!
-        self.RName = "DoubleHappy"
+        self.RName = "SAMRTX123"
         self.RMark = "3.5"
         self.RType = "Chinese"
         self.RCost = 20

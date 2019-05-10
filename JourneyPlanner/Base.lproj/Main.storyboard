@@ -525,7 +525,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chinese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK9-wp-zeD">
-                                                    <rect key="frame" x="72" y="0.0" width="230" height="84"/>
+                                                    <rect key="frame" x="72.666666666666686" y="0.0" width="230" height="84"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="60"/>
                                                     <color key="textColor" red="1" green="0.99544925520000005" blue="0.98286548169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
