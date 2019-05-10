@@ -2,7 +2,7 @@
 //  Favourite.m
 //  JourneyPlanner
 //
-//  Created by Jackie on 2019/5/10.
+//  Created by Zhouqichang on 2019/5/10.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
