@@ -40,6 +40,10 @@ class Explore_ViewController: UIViewController {
         super.viewDidLoad()
         
         tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60)]
+        for i in 0...tableViewData.count-1{
+            getResturants(index: i)
+        }
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
@@ -137,11 +141,12 @@ class Explore_ViewController: UIViewController {
         bankButton.isEnabled = false
     }
     
-    func getResturants(cuisine:Int,index:Int){
+    func getResturants(index:Int){
         let header = "1143149f226cce509acd087c44290754"
         let lat = UserDefaults().string(forKey: "lat")
         let lon = UserDefaults().string(forKey: "lon")
-        Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=20&lat=\(lat!)&lon=\(lon!)&radius=2000&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
+        let cuisine = tableViewData[index].cuisineN
+        Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=3&lat=\(lat!)&lon=\(lon!)&radius=500&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
             response in
             if let responseStr = response.result.value{
                 let jsonResponse = JSON(responseStr)
@@ -178,10 +183,14 @@ class Explore_ViewController: UIViewController {
                     resturant.Rlon = lon
                     resturant.RUrl = Url
                     resturant.votes = votes
+                    resturant.Rank = i+1
                     self.tableViewData[index].sectionData.append(resturant)
                 }
                 let resturant1 = Resturant()
                 self.tableViewData[index].sectionData.append(resturant1)
+                DispatchQueue.main.async {
+                    self.Table.reloadData()
+                }
             }
         }
         
@@ -215,15 +224,58 @@ extension Explore_ViewController:MapViewControllerDelegate{
 }
 
 extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+       
+        return tableViewData.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if tableViewData[section].opened == true{
+            return tableViewData[section].sectionData.count + 1
+        } else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let dataIndex = indexPath.row - 1
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cuisine") as! CuisineCell
+            cell.CuisineName.text = tableViewData[indexPath.section].cuisine
+            cell.CuisinePicture.image = UIImage(named: "Explore-picture1")
+            return cell
+        } else if(indexPath.row == 4){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ShowMore") as! ShowMoreCell
+            UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
+            return cell
+        } else{
+            let resturant = tableViewData[indexPath.section].sectionData[dataIndex]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "resturantcell", for: indexPath) as! ResturantCellController
+            cell.setResturant(resturant: resturant)
+            return cell
+        }
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
+        if indexPath.row == 0{
+            if tableViewData[indexPath.section].opened == true{
+                tableViewData[indexPath.section].opened = false
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none)
+            } else{
+                tableViewData[indexPath.section].opened = true
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none)
+            }
+        } else if(indexPath.row == 4){
+            
+        } else{
+            
+        }
     }
     
 }
