@@ -250,6 +250,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             return cell
         } else if(indexPath.row == 4){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShowMore") as! ShowMoreCell
+            UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
             return cell
         } else{
             let resturant = tableViewData[indexPath.section].sectionData[dataIndex]
@@ -271,7 +272,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
                 tableView.reloadSections(sections, with: .none)
             }
         } else if(indexPath.row == 4){
-            UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
+            
         } else{
             
         }

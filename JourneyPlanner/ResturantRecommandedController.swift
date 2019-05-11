@@ -25,7 +25,7 @@ class ResturantRecommandedController: UIViewController {
         super.viewDidLoad()
         getResturants()
     }
-    
+   
  
     @IBAction func Return(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -36,7 +36,7 @@ class ResturantRecommandedController: UIViewController {
         let header = "1143149f226cce509acd087c44290754"
         let cuisine = UserDefaults().integer(forKey: "cuisine")
         //https://developers.zomato.com/api/v2.1/geocode?apikey=\(header)&lat=\(lat!)&lon=\(lon!)
-        Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=20&lat=\(lat!)&lon=\(lon!)&radius=2000&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
+        Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=19&lat=\(lat!)&lon=\(lon!)&radius=2000&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
             response in
             if let responseStr = response.result.value{
                 let jsonResponse = JSON(responseStr)
