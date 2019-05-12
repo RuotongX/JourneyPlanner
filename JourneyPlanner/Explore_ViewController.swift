@@ -239,6 +239,11 @@ extension Explore_ViewController:MapViewControllerDelegate{
 
 extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableViewData[indexPath.section].sectionData.count == 1{
+            if(indexPath.row == 1){
+                return 50
+            }
+        }
         if(indexPath.row == 4)
         {
             return 70
@@ -272,7 +277,8 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             return cell
         } else{
             if tableViewData[indexPath.section].sectionData.count == 1{
-                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "Nothing") else {return UITableViewCell()}
+                return cell
             }
             let resturant = tableViewData[indexPath.section].sectionData[dataIndex]
             let cell = tableView.dequeueReusableCell(withIdentifier: "resturantcell", for: indexPath) as! ResturantCellController
