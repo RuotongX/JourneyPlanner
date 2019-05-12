@@ -225,6 +225,10 @@ extension Explore_ViewController:MapViewControllerDelegate{
 
 extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.row == 4)
+        {
+            return 70
+        }
         return 120
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -246,7 +250,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cuisine") as! CuisineCell
             cell.CuisineName.text = tableViewData[indexPath.section].cuisine
-            cell.CuisinePicture.image = UIImage(named: "Explore-picture1")
+            cell.CuisinePicture.image = UIImage(named: "Explore-rest-default")
             return cell
         } else if(indexPath.row == 4){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShowMore") as! ShowMoreCell

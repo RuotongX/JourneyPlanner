@@ -505,7 +505,7 @@
                                     <segue destination="lmG-BS-7tZ" kind="show" identifier="exploreShowSuggestions" id="MVp-Mh-Gsc"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pac-9S-qif">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pac-9S-qif">
                                 <rect key="frame" x="0.0" y="247" width="375" height="565"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -514,17 +514,17 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qfN-0a-SdM" id="Dn5-GP-XA0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Explore-picture1" translatesAutoresizingMaskIntoConstraints="NO" id="NBw-Jg-x7A">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Explore-rest-Japanese" translatesAutoresizingMaskIntoConstraints="NO" id="NBw-Jg-x7A">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chinese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="dK9-wp-zeD">
-                                                    <rect key="frame" x="72.666666666666686" y="0.0" width="230" height="84"/>
+                                                    <rect key="frame" x="10" y="63" width="350" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="60"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="40"/>
                                                     <color key="textColor" red="1" green="0.99544925520000005" blue="0.98286548169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                             </subviews>
@@ -538,7 +538,7 @@
                                         <rect key="frame" x="0.0" y="148" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNZ-RS-KOx" id="tuk-LY-LXp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zomato" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DuR-0N-mmK">
@@ -601,17 +601,21 @@
                                             <segue destination="7yi-yB-7OB" kind="show" id="20Y-3l-nNd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowMore" rowHeight="130" id="Iye-qK-39T" customClass="ShowMoreCell" customModule="JourneyPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="268" width="375" height="130"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowMore" rowHeight="70" id="Iye-qK-39T" customClass="ShowMoreCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="268" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iye-qK-39T" id="xbv-tH-nf0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show More Restaurants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmN-GE-KW2">
-                                                    <rect key="frame" x="20" y="43" width="335" height="42"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home-city guide-type-enter(1)" translatesAutoresizingMaskIntoConstraints="NO" id="hfp-A3-4cI">
+                                                    <rect key="frame" x="307" y="11" width="53" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PS-xh-eXA">
+                                                    <rect key="frame" x="15" y="14" width="156" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="32"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1572,7 +1576,7 @@
         <image name="Explore-Pharmacy(1)" width="180" height="216"/>
         <image name="Explore-Restaurant(1)" width="180" height="213"/>
         <image name="Explore-gas(1)" width="180" height="213"/>
-        <image name="Explore-picture1" width="1440" height="960"/>
+        <image name="Explore-rest-Japanese" width="1024" height="683"/>
         <image name="Explore-shopping(1)" width="180" height="219"/>
         <image name="Home - City Guide 1x" width="1053" height="525"/>
         <image name="Home - Search Icon 1x" width="75" height="75"/>
@@ -1605,16 +1609,17 @@
         <image name="User-About" width="888" height="216"/>
         <image name="User-History Plan" width="888" height="216"/>
         <image name="User-Preference" width="888" height="216"/>
+        <image name="home-city guide-type-enter(1)" width="225" height="225"/>
         <image name="home-city-choose city-type-cancel(1)" width="228" height="228"/>
         <image name="home-city-choose city-type-confirm(1)" width="228" height="228"/>
         <image name="mapView-Return Button 1x" width="81" height="51"/>
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MVp-Mh-Gsc"/>
+        <segue reference="ygy-uY-25R"/>
         <segue reference="eIA-MW-uKx"/>
         <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>
-        <segue reference="nUH-Xj-sMh"/>
+        <segue reference="20Y-3l-nNd"/>
     </inferredMetricsTieBreakers>
 </document>
