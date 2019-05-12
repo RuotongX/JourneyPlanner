@@ -272,7 +272,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             return cell
         } else{
             if tableViewData[indexPath.section].sectionData.count == 1{
-                return 
+                
             }
             let resturant = tableViewData[indexPath.section].sectionData[dataIndex]
             let cell = tableView.dequeueReusableCell(withIdentifier: "resturantcell", for: indexPath) as! ResturantCellController
