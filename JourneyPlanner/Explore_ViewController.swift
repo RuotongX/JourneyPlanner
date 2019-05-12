@@ -39,7 +39,17 @@ class Explore_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60)]
+        tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),
+                         cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60),
+            cellData(opened: false, cuisine: "Korean",sectionData:[],cuisineN:67),
+            cellData(opened: false, cuisine: "Continental",sectionData:[],cuisineN:35),
+            cellData(opened: false, cuisine: "Fast Food",sectionData:[],cuisineN:40),
+            cellData(opened: false, cuisine: "French",sectionData:[],cuisineN:45),
+            cellData(opened: false, cuisine: "Mexican",sectionData:[],cuisineN:73),
+            cellData(opened: false, cuisine: "Healthy Food",sectionData:[],cuisineN:143),
+            cellData(opened: false, cuisine: "Indian",sectionData:[],cuisineN:148),
+            cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
+        ]
         for i in 0...tableViewData.count-1{
             getResturants(index: i)
         }
@@ -150,41 +160,45 @@ class Explore_ViewController: UIViewController {
             response in
             if let responseStr = response.result.value{
                 let jsonResponse = JSON(responseStr)
-                for i in 0...jsonResponse["restaurants"].array!.count-1{
-                    let jsonRest = jsonResponse["restaurants"].array![i]
-                    let jsonR = jsonRest["restaurant"]
-                    let jsonRating = jsonR["user_rating"]
-                    let jsonLocation = jsonR["location"]
-                    let Name = jsonR["name"].stringValue
-                    let Url = jsonR["url"].stringValue
-                    let Price = jsonR["average_cost_for_two"].doubleValue/2
-                    let rate = jsonRating["aggregate_rating"].stringValue
-                    let cuisines = jsonR["cuisines"].stringValue
-                    let lat = jsonLocation["latitude"].doubleValue
-                    let lon = jsonLocation["longitude"].doubleValue
-                    let image = jsonR["thumb"].stringValue
-                    let resturant = Resturant()
-                    let votes = jsonRating["votes"].intValue
-                    // The image is an URL, 59-67 lines is to displayed the URL image in the restaurants table.
-                    let url = URL(string: image)
-                    if let url = url{
-                        do {
-                            let data = try Data(contentsOf: url)
-                            resturant.RImage = UIImage(data: data)!
-                        }catch let error as NSError {
-                            print(error)
+                if jsonResponse["restaurants"].array!.count != 0{
+                    for i in 0...jsonResponse["restaurants"].array!.count-1{
+                        let jsonRest = jsonResponse["restaurants"].array![i]
+                        let jsonR = jsonRest["restaurant"]
+                        let jsonRating = jsonR["user_rating"]
+                        let jsonLocation = jsonR["location"]
+                        let Name = jsonR["name"].stringValue
+                        let Url = jsonR["url"].stringValue
+                        let Price = jsonR["average_cost_for_two"].doubleValue/2
+                        let rate = jsonRating["aggregate_rating"].stringValue
+                        let cuisines = jsonR["cuisines"].stringValue
+                        let lat = jsonLocation["latitude"].doubleValue
+                        let lon = jsonLocation["longitude"].doubleValue
+                        let image = jsonR["thumb"].stringValue
+                        let resturant = Resturant()
+                        let votes = jsonRating["votes"].intValue
+                        // The image is an URL, 59-67 lines is to displayed the URL image in the restaurants table.
+                        let url = URL(string: image)
+                        if let url = url{
+                            do {
+                                let data = try Data(contentsOf: url)
+                                resturant.RImage = UIImage(data: data)!
+                            }catch let error as NSError {
+                                print(error)
+                            }
                         }
+                        resturant.RName = Name
+                        resturant.RCost = Price
+                        resturant.RMark = rate
+                        resturant.RType = cuisines
+                        resturant.Rlat = lat
+                        resturant.Rlon = lon
+                        resturant.RUrl = Url
+                        resturant.votes = votes
+                        resturant.Rank = i+1
+                        self.tableViewData[index].sectionData.append(resturant)
                     }
-                    resturant.RName = Name
-                    resturant.RCost = Price
-                    resturant.RMark = rate
-                    resturant.RType = cuisines
-                    resturant.Rlat = lat
-                    resturant.Rlon = lon
-                    resturant.RUrl = Url
-                    resturant.votes = votes
-                    resturant.Rank = i+1
-                    self.tableViewData[index].sectionData.append(resturant)
+                } else{
+                    
                 }
                 let resturant1 = Resturant()
                 self.tableViewData[index].sectionData.append(resturant1)
@@ -257,6 +271,9 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
             return cell
         } else{
+            if tableViewData[indexPath.section].sectionData.count == 1{
+                return 
+            }
             let resturant = tableViewData[indexPath.section].sectionData[dataIndex]
             let cell = tableView.dequeueReusableCell(withIdentifier: "resturantcell", for: indexPath) as! ResturantCellController
             cell.setResturant(resturant: resturant)
