@@ -42,7 +42,7 @@ class Explore_ViewController: UIViewController {
         tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),
                          cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60),
             cellData(opened: false, cuisine: "Korean",sectionData:[],cuisineN:67),
-            cellData(opened: false, cuisine: "Continental",sectionData:[],cuisineN:35),
+            cellData(opened: false, cuisine: "American",sectionData:[],cuisineN:1),
             cellData(opened: false, cuisine: "Fast Food",sectionData:[],cuisineN:40),
             cellData(opened: false, cuisine: "French",sectionData:[],cuisineN:45),
             cellData(opened: false, cuisine: "Mexican",sectionData:[],cuisineN:73),
@@ -50,13 +50,12 @@ class Explore_ViewController: UIViewController {
             cellData(opened: false, cuisine: "Indian",sectionData:[],cuisineN:148),
             cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
         ]
-        for i in 0...tableViewData.count-1{
-            getResturants(index: i)
-        }
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
+        for i in 0...tableViewData.count-1{
+            getResturants(index: i)
+        }
     }
     
     // this method will load when passing data from this class to another class - Qichang Zhou 04/May/2019
