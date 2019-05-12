@@ -225,6 +225,10 @@ extension Explore_ViewController:MapViewControllerDelegate{
 
 extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.row == 4)
+        {
+            return 70
+        }
         return 120
     }
     func numberOfSections(in tableView: UITableView) -> Int {
