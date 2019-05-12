@@ -25,6 +25,7 @@ class Home_ViewController: ViewController{
     
     let WeatherApiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
     let locationManager = CLLocationManager()
+    var preferredMapType: MapType?
     var cityHistory : [LocationInformation]? = []
     var CurrentCity : LocationInformation?
     var selectedCity : LocationInformation?
@@ -82,6 +83,9 @@ class Home_ViewController: ViewController{
                     mapviewController?.homePage_CurrentOrSelectedCity = selectedCity
                     
                     self.CheckWeather(_location: (self.selectedCity?.location)!)
+                }
+                if let preferredMap = preferredMapType{
+                    mapviewController?.userPreferedMapType = preferredMap
                 }
                 mapviewController?.mapsource = .HOMEPAGE_MAP
                 mapviewController?.delegate = self

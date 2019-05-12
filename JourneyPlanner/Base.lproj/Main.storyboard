@@ -59,6 +59,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OkY-0A-pdl"/>
                     <connections>
+                        <outlet property="mapTypeSegment" destination="RyV-e4-nOn" id="C5h-UN-TnB"/>
                         <outlet property="mapView" destination="o9u-hr-6uw" id="Rt1-uh-uUi"/>
                         <outlet property="searchDisplayController" destination="vhO-Ck-7wz" id="pe0-1D-igF"/>
                     </connections>
@@ -608,22 +609,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home-city guide-type-enter(1)" translatesAutoresizingMaskIntoConstraints="NO" id="hfp-A3-4cI">
-                                                    <rect key="frame" x="307" y="11" width="53" height="48"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PS-xh-eXA">
-                                                    <rect key="frame" x="15" y="14" width="156" height="45"/>
+                                                    <rect key="frame" x="129" y="18" width="117" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="32"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="D1R-PD-hoZ" kind="show" id="4WY-Hu-7Oz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Nothing" id="kex-AV-OLi">
+                                        <rect key="frame" x="0.0" y="338" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kex-AV-OLi" id="m8d-ZK-yvx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No restaurant yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZj-Ca-cNz">
+                                                    <rect key="frame" x="107" y="5" width="160" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="D1R-PD-hoZ" kind="show" id="4WY-Hu-7Oz"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1609,14 +1624,13 @@
         <image name="User-About" width="888" height="216"/>
         <image name="User-History Plan" width="888" height="216"/>
         <image name="User-Preference" width="888" height="216"/>
-        <image name="home-city guide-type-enter(1)" width="225" height="225"/>
         <image name="home-city-choose city-type-cancel(1)" width="228" height="228"/>
         <image name="home-city-choose city-type-confirm(1)" width="228" height="228"/>
         <image name="mapView-Return Button 1x" width="81" height="51"/>
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ygy-uY-25R"/>
+        <segue reference="F8C-jt-tDv"/>
         <segue reference="eIA-MW-uKx"/>
         <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>

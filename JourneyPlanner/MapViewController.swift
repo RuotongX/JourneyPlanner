@@ -29,13 +29,18 @@ enum MapSource{
     case PLANDETAIL_ADDNEW
     case CHANGECITY
     case EXPLOREPAGE
-    
-    
+}
+
+enum MapType{
+    case HYBRID
+    case SATELLITE
+    case STANDARD
 }
 
 class MapViewController: UIViewController {
     
     // all necessary data which used to drop the annotation or display the current location - Dalton 25/Apr/2019
+    @IBOutlet weak var mapTypeSegment: UISegmentedControl!
     var mapsource : MapSource?
     var selectedAnnotation : MKAnnotation?
     var changeCity_CurrentCity : LocationInformation?
@@ -44,6 +49,9 @@ class MapViewController: UIViewController {
     var explorePage_UserLocation : CLLocation?
     var homePage_CurrentOrSelectedCity : LocationInformation?
     var planDetail_planInformation : CLLocation?
+    
+    //the user can select their preferred maptype from the setting page - Dalton 12/May/2019
+    var userPreferedMapType: MapType?
     
 
 //    var selectedAnnotation : MKPlacemark? = nil
@@ -56,6 +64,27 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // change the current location icon to black Dalton 23/Apr/2019
+
+        
+        
+        if let preferredMAP = userPreferedMapType{
+            
+            if preferredMAP == .HYBRID{
+                mapView.mapType = .hybrid
+                mapTypeSegment.selectedSegmentIndex = 3
+            } else if preferredMAP == .SATELLITE{
+                mapView.mapType = .satellite
+                mapTypeSegment.selectedSegmentIndex = 2
+            } else if preferredMAP == .STANDARD{
+                mapView.mapType = .standard
+                mapTypeSegment.selectedSegmentIndex = 1
+            }
+            
+            
+        } else{
+            mapView.mapType = .standard
+            mapTypeSegment.selectedSegmentIndex = 1
+        }
         
         addSearchController()
         
