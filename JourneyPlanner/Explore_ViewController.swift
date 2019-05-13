@@ -25,6 +25,7 @@ class Explore_ViewController: UIViewController {
     var keyword : String?
     @IBOutlet weak var Table: UITableView!
     
+
     @IBOutlet weak var restaurantButton: UIButton!
     @IBOutlet weak var barButton: UIButton!
     @IBOutlet weak var shoppingButton: UIButton!
@@ -54,6 +55,7 @@ class Explore_ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
         for i in 0...tableViewData.count-1{
+            tableViewData[i].sectionData.removeAll()
             getResturants(index: i)
         }
     }
@@ -151,7 +153,7 @@ class Explore_ViewController: UIViewController {
     }
     
     func getResturants(index:Int){
-        let header = "1143149f226cce509acd087c44290754"
+        let header = "b4a1b65c2bd7e6ca955092af1da11545"
         let lat = UserDefaults().string(forKey: "lat")
         let lon = UserDefaults().string(forKey: "lon")
         let cuisine = tableViewData[index].cuisineN
