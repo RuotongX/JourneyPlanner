@@ -152,7 +152,7 @@ class Explore_ViewController: UIViewController {
     
     func getResturants(index:Int){
         let header = "1143149f226cce509acd087c44290754"
-        let lat = UserDefaults().string(forKey: "lat")
+        let lat = UserDefaults().string(forKey: "lat") 
         let lon = UserDefaults().string(forKey: "lon")
         let cuisine = tableViewData[index].cuisineN
         Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=3&lat=\(lat!)&lon=\(lon!)&radius=500&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
