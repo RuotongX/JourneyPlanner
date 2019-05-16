@@ -743,13 +743,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PQS8SCK9PK;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlanner123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;
@@ -763,13 +763,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PQS8SCK9PK;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlanner123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;

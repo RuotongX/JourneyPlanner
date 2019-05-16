@@ -11,6 +11,7 @@ import UIKit
 class CuisineCell: UITableViewCell {
     @IBOutlet weak var CuisinePicture: UIImageView!
     @IBOutlet weak var CuisineName: UILabel!
+    @IBOutlet weak var ShowIndicator: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,6 @@ class CuisineCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

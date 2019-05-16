@@ -33,7 +33,8 @@ class ResturantRecommandedController: UIViewController {
     
     // Same as I mentioned in weather forcast Controller, this class is to get the api data which is support by Zomato, and take the data value into each restaurant object.
     func getResturants(){
-        let header = "1143149f226cce509acd087c44290754"
+        //The other api key : 1143149f226cce509acd087c44290754
+        let header = "b4a1b65c2bd7e6ca955092af1da11545"
         let cuisine = UserDefaults().integer(forKey: "cuisine")
         //https://developers.zomato.com/api/v2.1/geocode?apikey=\(header)&lat=\(lat!)&lon=\(lon!)
         Alamofire.request("https://developers.zomato.com/api/v2.1/search?apikey=\(header)&count=19&lat=\(lat!)&lon=\(lon!)&radius=2000&cuisines=\(cuisine)&sort=rating&order=desc").responseJSON{
