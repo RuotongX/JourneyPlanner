@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {}
 class Home_ViewController: ViewController{
 
     //Obtain the location manager, which provide the location services (Dalton 16/Apr/2019, last modified 27/Apr/2019)
+    @IBOutlet weak var TravelTimeSelect: UITableView!
     
     
     var selectedPlanDate : Int!
@@ -30,6 +31,9 @@ class Home_ViewController: ViewController{
     @IBOutlet weak var WeatherLabel: UILabel!
     @IBOutlet weak var WeatherIcon: UIImageView!
     
+    @IBOutlet weak var TravelTImeSelect: UITableView!
+    
+    
     let WeatherApiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
     let locationManager = CLLocationManager()
     var preferredMapType: MapType?
@@ -38,7 +42,7 @@ class Home_ViewController: ViewController{
     var selectedCity : LocationInformation?
     @IBOutlet weak var City_Name: UILabel!
     
-    //Below is set upt he current city information items Dalton 24/Apr/2019
+    //Below is set upt the current city information items Dalton 24/Apr/2019
     required init?(coder aDecoder: NSCoder) {
         self.CurrentCity = LocationInformation()
         super.init(coder: aDecoder)

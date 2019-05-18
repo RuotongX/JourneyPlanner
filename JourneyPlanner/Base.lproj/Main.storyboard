@@ -660,6 +660,134 @@
             </objects>
             <point key="canvasLocation" x="-1959.2" y="487.6847290640394"/>
         </scene>
+        <!--Route List View Controller-->
+        <scene sceneID="N9v-wT-Vah">
+            <objects>
+                <viewController id="rBw-me-iQ7" customClass="RouteListViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VzF-aN-UXQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="210" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yHJ-uV-2wJ">
+                                <rect key="frame" x="6" y="104" width="363" height="674"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeOptionCell_1" rowHeight="192" id="Sso-Gt-dpb" customClass="RouteSelectTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="363" height="192"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sso-Gt-dpb" id="RO6-XF-Pj2" customClass="RouteSelectTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="363" height="192"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" image="Trip-Piha1x" translatesAutoresizingMaskIntoConstraints="NO" id="YDI-nH-KaN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="363" height="192"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVN-KS-pnZ">
+                                                    <rect key="frame" x="50" y="30" width="250" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YDI-nH-KaN" firstAttribute="leading" secondItem="RO6-XF-Pj2" secondAttribute="leading" id="Qd2-eB-UHr"/>
+                                                <constraint firstAttribute="trailing" secondItem="YDI-nH-KaN" secondAttribute="trailing" id="hVh-nZ-ObZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="RouteCell1"/>
+                                        <connections>
+                                            <outlet property="Auckland_Explore" destination="YDI-nH-KaN" id="YdO-H0-YT9"/>
+                                            <outlet property="RouteName" destination="qVN-KS-pnZ" id="Zpx-BN-3ef"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svh-GK-E6r">
+                                <rect key="frame" x="29" y="57" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="SelectcityreturnButton 1x"/>
+                                <connections>
+                                    <action selector="ReturnButton:" destination="rBw-me-iQ7" eventType="touchUpInside" id="lO9-oU-vGS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yHJ-uV-2wJ" firstAttribute="top" secondItem="M4d-gj-qXK" secondAttribute="top" constant="60" id="6JE-j3-OVx"/>
+                            <constraint firstItem="M4d-gj-qXK" firstAttribute="trailing" secondItem="yHJ-uV-2wJ" secondAttribute="trailing" constant="6" id="BTO-Re-r7E"/>
+                            <constraint firstItem="yHJ-uV-2wJ" firstAttribute="leading" secondItem="M4d-gj-qXK" secondAttribute="leading" constant="6" id="XTU-iN-Eln"/>
+                            <constraint firstItem="M4d-gj-qXK" firstAttribute="bottom" secondItem="yHJ-uV-2wJ" secondAttribute="bottom" id="s2p-xN-tXP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M4d-gj-qXK"/>
+                    </view>
+                    <connections>
+                        <outlet property="TripTableView" destination="yHJ-uV-2wJ" id="AXo-wp-YWi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mg5-CD-763" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3431.1999999999998" y="1670.6896551724139"/>
+        </scene>
+        <!--RoutePreviewingPage-->
+        <scene sceneID="vGp-Ue-glZ">
+            <objects>
+                <tableViewController storyboardIdentifier="RoutePreviewing" title="RoutePreviewingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yTR-qo-DtJ" customClass="RoutePreviewingTableViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zB0-tA-4DK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="46" id="kEw-e4-ZBZ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kEw-e4-ZBZ" id="WCA-hM-oye" customClass="Route">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhR-og-M3D">
+                                            <rect key="frame" x="31" y="6" width="19" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKq-Ie-wRK">
+                                            <rect key="frame" x="85" y="12" width="223" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yTR-qo-DtJ" id="fQ3-55-9uq"/>
+                            <outlet property="delegate" destination="yTR-qo-DtJ" id="lEe-o5-c3Y"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pj-Dn-Gs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2423.1999999999998" y="1670.6896551724139"/>
+        </scene>
+        <!--EditRoutePlan-->
+        <scene sceneID="U6P-tn-AfN">
+            <objects>
+                <viewController storyboardIdentifier="EditRoutePlanPage" title="EditRoutePlan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V8B-Xx-xMg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uEN-XV-F7t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9ur-WC-ofn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYH-Xm-xp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1412" y="1671"/>
+        </scene>
         <!--Favorite-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -1612,6 +1740,7 @@
         <image name="Tab - Favorite" width="25" height="23"/>
         <image name="Tab - Home" width="23" height="25"/>
         <image name="Tab - User" width="25" height="25"/>
+        <image name="Trip-Piha1x" width="363" height="192"/>
         <image name="User-About" width="296" height="72"/>
         <image name="User-History Plan" width="296" height="72"/>
         <image name="User-Preference" width="296" height="72"/>
