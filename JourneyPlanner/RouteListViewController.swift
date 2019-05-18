@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol RouteListViewControllerDelegate {
+    
+}
+
 class RouteListViewController: UIViewController {
 
+    var delegate: RouteListViewControllerDelegate?
     @IBOutlet weak var TripTableView: UITableView!
     var routeInfo : [RouteInformation] = []
     
