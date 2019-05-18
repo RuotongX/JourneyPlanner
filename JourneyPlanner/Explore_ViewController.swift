@@ -182,7 +182,7 @@ class Explore_ViewController: UIViewController {
                             resturant.Rlon = lon
                             resturant.RUrl = Url
                             resturant.votes = votes
-                            resturant.Rank = i+1
+//                            resturant.Rank = i+1
                             self.tableViewData[index].sectionData.append(resturant)
                         }
                     } else{

@@ -357,23 +357,12 @@
                                                         <constraint firstAttribute="width" constant="32" id="aBf-ZP-zCL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="41" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdW-7m-MWi">
-                                                    <rect key="frame" x="329" y="1" width="41" height="46"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="41" id="JXl-K3-8KD"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                    <color key="textColor" red="1" green="0.50251972320000005" blue="0.29910593740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bdW-7m-MWi" secondAttribute="trailing" constant="-12" id="1fM-XS-4n7"/>
                                                 <constraint firstItem="5ym-50-VUd" firstAttribute="centerX" secondItem="Q3P-ii-Yrb" secondAttribute="centerX" constant="-4.5" id="2H7-b6-uPA"/>
                                                 <constraint firstItem="vfM-Om-VOj" firstAttribute="top" secondItem="8Kg-J8-pzb" secondAttribute="bottom" constant="15" id="3eb-iM-lz3"/>
                                                 <constraint firstItem="vfM-Om-VOj" firstAttribute="leading" secondItem="NfJ-jo-tDo" secondAttribute="trailing" constant="22" id="7fa-Dp-Ric"/>
                                                 <constraint firstItem="UYB-3A-Tm3" firstAttribute="leading" secondItem="Q3P-ii-Yrb" secondAttribute="leading" id="8gU-AA-ytr"/>
-                                                <constraint firstItem="bdW-7m-MWi" firstAttribute="centerY" secondItem="8Kg-J8-pzb" secondAttribute="centerY" id="9gt-ii-U4h"/>
                                                 <constraint firstItem="5ym-50-VUd" firstAttribute="leading" secondItem="kpC-uC-vae" secondAttribute="trailing" constant="4" id="CsI-sV-PX9"/>
                                                 <constraint firstItem="UYB-3A-Tm3" firstAttribute="top" secondItem="Q3P-ii-Yrb" secondAttribute="top" id="H4p-rr-PAC"/>
                                                 <constraint firstItem="8Kg-J8-pzb" firstAttribute="leading" secondItem="UYB-3A-Tm3" secondAttribute="trailing" constant="11" id="M0E-Pp-bAX"/>
@@ -381,19 +370,15 @@
                                                 <constraint firstItem="PQl-hw-n8T" firstAttribute="leading" secondItem="UYB-3A-Tm3" secondAttribute="trailing" constant="8" symbolic="YES" id="R73-d3-2iy"/>
                                                 <constraint firstItem="kpC-uC-vae" firstAttribute="top" secondItem="8Kg-J8-pzb" secondAttribute="bottom" constant="8" id="bfD-HU-BOY"/>
                                                 <constraint firstItem="PQl-hw-n8T" firstAttribute="top" secondItem="5ym-50-VUd" secondAttribute="bottom" constant="8" symbolic="YES" id="eWX-KS-g9B"/>
-                                                <constraint firstItem="vfM-Om-VOj" firstAttribute="top" secondItem="bdW-7m-MWi" secondAttribute="bottom" constant="7" id="eeF-b0-gKL"/>
                                                 <constraint firstItem="NfJ-jo-tDo" firstAttribute="leading" secondItem="5ym-50-VUd" secondAttribute="trailing" constant="18" id="lmS-Yg-r1z"/>
                                                 <constraint firstItem="vfM-Om-VOj" firstAttribute="bottom" secondItem="Q3P-ii-Yrb" secondAttribute="bottomMargin" id="mRd-4y-UjO"/>
                                                 <constraint firstItem="PQl-hw-n8T" firstAttribute="top" secondItem="kpC-uC-vae" secondAttribute="bottom" constant="10" id="sbs-lO-Nrz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bdW-7m-MWi" secondAttribute="trailing" constant="-11" id="te3-xk-ynw"/>
                                                 <constraint firstItem="5ym-50-VUd" firstAttribute="baseline" secondItem="NfJ-jo-tDo" secondAttribute="baseline" id="uzf-RQ-bip"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bdW-7m-MWi" secondAttribute="trailing" constant="-10" id="yLz-wi-OeL"/>
                                                 <constraint firstItem="8Kg-J8-pzb" firstAttribute="leading" secondItem="kpC-uC-vae" secondAttribute="leading" constant="3" id="yu9-dq-3PF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="AvangeCost" destination="NfJ-jo-tDo" id="CdZ-Qg-Hqu"/>
-                                            <outlet property="Rank" destination="bdW-7m-MWi" id="Nfa-r8-NRj"/>
                                             <outlet property="ResturantImage" destination="UYB-3A-Tm3" id="EiB-A7-MbC"/>
                                             <outlet property="ResturantMark" destination="5ym-50-VUd" id="Y3i-N0-mnI"/>
                                             <outlet property="ResturantName" destination="8Kg-J8-pzb" id="4Df-3R-F9G"/>
@@ -577,18 +562,10 @@
                                                     <rect key="frame" x="129" y="47" width="32" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="41" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJw-na-otO">
-                                                    <rect key="frame" x="330" y="1" width="41" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                    <color key="textColor" red="1" green="0.50251972320000005" blue="0.29910593740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="AvangeCost" destination="a4K-HD-GKs" id="bva-DX-WEj"/>
-                                            <outlet property="Rank" destination="gJw-na-otO" id="rXA-FX-kY5"/>
                                             <outlet property="ResturantImage" destination="DuR-0N-mmK" id="Xqt-BL-t0J"/>
                                             <outlet property="ResturantMark" destination="cOr-ev-k1n" id="MXy-wb-9KU"/>
                                             <outlet property="ResturantName" destination="PpX-fc-ckC" id="O9S-pQ-bre"/>
@@ -1773,6 +1750,6 @@
         <segue reference="eIA-MW-uKx"/>
         <segue reference="NMq-7Q-mdJ"/>
         <segue reference="lPE-xR-MhK"/>
-        <segue reference="20Y-3l-nNd"/>
+        <segue reference="nUH-Xj-sMh"/>
     </inferredMetricsTieBreakers>
 </document>
