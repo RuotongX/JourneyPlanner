@@ -40,6 +40,10 @@
 		8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */; };
 		8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A122854AF800BD0DB2 /* DBManager.m */; };
 		8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A422854B6200BD0DB2 /* FavouriteDao.m */; };
+		A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */; };
+		A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */; };
+		A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */; };
+		A8D2DC4E228980DD00F490F8 /* RouteInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */; };
 		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
 		DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */; };
 		E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118498D2279B5CA00731D9A /* WeatherForcastController.swift */; };
@@ -126,6 +130,10 @@
 		8C3236A322854B6200BD0DB2 /* FavouriteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteDao.h; sourceTree = "<group>"; };
 		8C3236A422854B6200BD0DB2 /* FavouriteDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteDao.m; sourceTree = "<group>"; };
 		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewingTableViewController.swift; sourceTree = "<group>"; };
+		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
+		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
+		A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInformation.swift; sourceTree = "<group>"; };
 		DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceViewController.swift; sourceTree = "<group>"; };
 		E118498D2279B5CA00731D9A /* WeatherForcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastController.swift; sourceTree = "<group>"; };
 		E11849912279B65100731D9A /* WeatherCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellController.swift; sourceTree = "<group>"; };
@@ -303,6 +311,10 @@
 				41C818DC227D378300ED125D /* Explore_ViewController.swift */,
 				E14265F922421C06006399D2 /* Home_ViewController.swift */,
 				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
+				A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */,
+				A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */,
+				A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */,
+				A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
@@ -502,6 +514,8 @@
 				41C818DD227D378300ED125D /* Explore_ViewController.swift in Sources */,
 				416AF92E226F1ECE00FF4FF6 /* SmallPlanInformation.swift in Sources */,
 				E14265FC22421C06006399D2 /* SecondViewController.swift in Sources */,
+				A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */,
+				A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */,
 				41E058342277172700BFF264 /* tripDetailViewController.swift in Sources */,
 				8C3236722285232600BD0DB2 /* FavouriteViewController.m in Sources */,
 				41B2170C226FF2D700374707 /* PlanDetailViewController.swift in Sources */,
@@ -527,6 +541,7 @@
 				8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */,
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
 				8C3236842285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
+				A8D2DC4E228980DD00F490F8 /* RouteInformation.swift in Sources */,
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
 				8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */,
 				8C32369522854A6100BD0DB2 /* FMDatabaseAdditions.m in Sources */,
@@ -537,6 +552,7 @@
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
 				E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */,
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
+				A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */,
 				E11F14BB2280D74300A36DE9 /* ZomatoWeb.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
@@ -743,13 +759,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NSSMPHWC2A;
+				DEVELOPMENT_TEAM = W9V67A55PQ;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerBasco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;
@@ -763,13 +779,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NSSMPHWC2A;
+				DEVELOPMENT_TEAM = W9V67A55PQ;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerBasco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;

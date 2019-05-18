@@ -259,7 +259,42 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cuisine") as! CuisineCell
             cell.CuisineName.text = tableViewData[indexPath.section].cuisine
-            cell.CuisinePicture.image = UIImage(named: "Explore-rest-default")
+            switch(tableViewData[indexPath.section].cuisineN){
+            case 25:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-chinese")
+                break;
+            case 60:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-Japanese")
+                break;
+            case 67:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-korean")
+                break;
+            case 1:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-america")
+                break;
+            case 40:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-fastfood")
+                break;
+            case 45:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-french")
+                break;
+            case 73:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-mexican")
+                break;
+            case 143:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-healthy")
+                break;
+            case 148:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-indian")
+                break;
+            case 69:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-malasia")
+                break;
+            default:
+                cell.CuisinePicture.image = UIImage(named: "Explore-rest-default")
+                break;
+            }
+            
             return cell
         } else if(indexPath.row == 4){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShowMore") as! ShowMoreCell
