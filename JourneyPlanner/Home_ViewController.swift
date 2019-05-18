@@ -84,6 +84,12 @@ class Home_ViewController: ViewController{
             }
         }
         
+        if segue.identifier == "PlanDesignerSegue"{
+            if let planDesignerViewController = segue.destination as? RouteListViewController{
+                planDesignerViewController.delegate = self
+            }
+        }
+        
         if segue.identifier == "transferCityInfo"{
             // the mapview controller got a navigation controller which helps to handle the search request Dalton 28/Apr/2019
             // therefore if we'd likely to access the mapview, we need to obtain it from the navigation controller Dalton 29/Apr/2019
@@ -356,6 +362,9 @@ class Home_ViewController: ViewController{
             }
         }
     }
+}
+extension Home_ViewController : RouteListViewControllerDelegate{
+    
 }
 
 // protocol information from the select city view controller, when user change the city, it will being here and change the relevant data - Zhe Wang 26/Apr/2019

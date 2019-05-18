@@ -87,6 +87,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPI-es-PRQ">
                                 <rect key="frame" x="13" y="378" width="350" height="292"/>
                                 <state key="normal" image="Home-plan_designer1x"/>
+                                <connections>
+                                    <segue destination="rBw-me-iQ7" kind="show" identifier="PlanDesignerSegue" id="IQF-UJ-gS5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLE-HE-uYP" userLabel="Weather">
                                 <rect key="frame" x="12" y="117" width="351" height="80"/>
@@ -727,7 +730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mg5-CD-763" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3431.1999999999998" y="1670.6896551724139"/>
+            <point key="canvasLocation" x="-394" y="1138"/>
         </scene>
         <!--RoutePreviewingPage-->
         <scene sceneID="vGp-Ue-glZ">
