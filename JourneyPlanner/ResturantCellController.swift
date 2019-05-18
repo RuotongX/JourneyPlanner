@@ -18,7 +18,6 @@ class ResturantCellController: UITableViewCell {
     @IBOutlet weak var ResturantMark: UILabel!
     @IBOutlet weak var AvangeCost: UILabel!
     @IBOutlet weak var ResturantType: UILabel!
-    @IBOutlet weak var Rank: UILabel!
     
     
     var Url :String = ""
@@ -34,7 +33,6 @@ class ResturantCellController: UITableViewCell {
         self.Url = resturant.RUrl
         self.lat = resturant.Rlat
         self.lon = resturant.Rlon
-        self.Rank.text = "\(resturant.Rank)"
     }
     
     override func awakeFromNib() {

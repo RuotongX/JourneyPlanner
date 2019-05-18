@@ -78,18 +78,18 @@ class ResturantRecommandedController: UIViewController {
                 }
                 //Async method to refresh the table information, reason same as weather forecast Controller. And the double for loop inside is used to get the rank for the restaurants given by Zomato API, the value to called the rank is how many people have voted this restaurant, more people vote, higer rank the resaurant get. The for loop for k one is used to give each restaurant rank value.
                 DispatchQueue.main.async {
-                    for i in 0...self.resturants.count-1{
-                        for j in 1...self.resturants.count-2{
-                            if self.resturants[i].votes<self.resturants[j].votes{
-                                let temp = self.resturants[i]
-                                self.resturants[i] = self.resturants[j]
-                                self.resturants[j] = temp
-                            }
-                        }
-                    }
-                    for k in 0...self.resturants.count-1{
-                        self.resturants[k].Rank = k+1
-                    }
+//                    for i in 0...self.resturants.count-1{
+//                        for j in 1...self.resturants.count-2{
+//                            if self.resturants[i].votes<self.resturants[j].votes{
+//                                let temp = self.resturants[i]
+//                                self.resturants[i] = self.resturants[j]
+//                                self.resturants[j] = temp
+//                            }
+//                        }
+//                    }
+//                    for k in 0...self.resturants.count-1{
+//                        self.resturants[k].Rank = k+1
+//                    }
                     self.Table.reloadData()
                 }
             }
