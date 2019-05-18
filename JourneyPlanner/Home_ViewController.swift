@@ -58,7 +58,7 @@ class Home_ViewController: ViewController{
         //FOR TEST USE ONLY, DELETE BEFORE SUBMIT!   27/Apr/2019
         preparetestHistoryData()
         selectedPlanDate = 0;
-        PlanDesignerDay.text = "3 days"
+        PlanDesignerDay.text = "1 - 3 Days"
     }
     
     // after the viewdidload, this one is incharge, the alert will show in this section, other section will cause failer - Dalton 25/Apr/2019
@@ -81,6 +81,12 @@ class Home_ViewController: ViewController{
                 selectCityController.cityHistories = self.cityHistory
                 // set up the delegate is used to passing the value between target and this class Dalton 27/Apr/2019
                 selectCityController.delegate = self
+            }
+        }
+        
+        if segue.identifier == "PlanDesignerSegue"{
+            if let planDesignerViewController = segue.destination as? RouteListViewController{
+                planDesignerViewController.delegate = self
             }
         }
         
@@ -148,7 +154,7 @@ class Home_ViewController: ViewController{
             impactFeedBackGenerator.impactOccurred()
             
             
-            PlanDesignerDay.text = "7 Days"
+            PlanDesignerDay.text = "4 - 7 Days"
             selectedPlanDate = 1
         } else {
             let error = UINotificationFeedbackGenerator()
@@ -163,7 +169,7 @@ class Home_ViewController: ViewController{
             impactFeedBackGenerator.prepare()
             impactFeedBackGenerator.impactOccurred()
             
-            PlanDesignerDay.text = "3 Days"
+            PlanDesignerDay.text = "1 - 3 Days"
             selectedPlanDate = 0
         } else {
             let error = UINotificationFeedbackGenerator()
@@ -356,6 +362,9 @@ class Home_ViewController: ViewController{
             }
         }
     }
+}
+extension Home_ViewController : RouteListViewControllerDelegate{
+    
 }
 
 // protocol information from the select city view controller, when user change the city, it will being here and change the relevant data - Zhe Wang 26/Apr/2019
