@@ -21,6 +21,13 @@ class Home_ViewController: ViewController{
 
     //Obtain the location manager, which provide the location services (Dalton 16/Apr/2019, last modified 27/Apr/2019)
     @IBOutlet weak var TravelTimeSelect: UITableView!
+    
+    
+    var selectedPlanDate : Int!
+    @IBOutlet weak var PlanDesignerAdd: UIButton!
+    @IBOutlet weak var PlanDesignerMinus: UIButton!
+    @IBOutlet weak var PlanDesignerDay: UILabel!
+    
     @IBOutlet weak var WeatherLabel: UILabel!
     @IBOutlet weak var WeatherIcon: UIImageView!
     
@@ -50,6 +57,8 @@ class Home_ViewController: ViewController{
         
         //FOR TEST USE ONLY, DELETE BEFORE SUBMIT!   27/Apr/2019
         preparetestHistoryData()
+        selectedPlanDate = 0;
+        PlanDesignerDay.text = "3 days"
     }
     
     // after the viewdidload, this one is incharge, the alert will show in this section, other section will cause failer - Dalton 25/Apr/2019
@@ -130,6 +139,40 @@ class Home_ViewController: ViewController{
         }
         
     }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        if selectedPlanDate == 0{
+            //using taptic engine to generate vibrate
+            let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .light)
+            impactFeedBackGenerator.prepare()
+            impactFeedBackGenerator.impactOccurred()
+            
+            
+            PlanDesignerDay.text = "7 Days"
+            selectedPlanDate = 1
+        } else {
+            let error = UINotificationFeedbackGenerator()
+            error.notificationOccurred(.error)
+        }
+    }
+    
+    @IBAction func minusButtonPressed(_ sender: Any) {
+        if selectedPlanDate == 1{
+            //using taptic engine to generate vibrate
+            let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .light)
+            impactFeedBackGenerator.prepare()
+            impactFeedBackGenerator.impactOccurred()
+            
+            PlanDesignerDay.text = "3 Days"
+            selectedPlanDate = 0
+        } else {
+            let error = UINotificationFeedbackGenerator()
+            error.notificationOccurred(.error)
+        }
+    }
+    
+    
+    
     
     // this method is used to load history data for the testing purposes Dalton 23/Apr/2019
     func preparetestHistoryData(){

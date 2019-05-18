@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/RouteSelectTableViewCell.swift"
+            timestampString = "579832441.7564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "RouteSelectTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.RouteSelectTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; JourneyPlanner.RouteSelectTableViewCell"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/RouteSelectTableViewCell.swift"
+                  timestampString = "579409931.152523"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.RouteSelectTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; JourneyPlanner.RouteSelectTableViewCell"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/RouteSelectTableViewCell.swift"
+                  timestampString = "579409931.155028"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "199">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.RouteSelectTableViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;JourneyPlanner.RouteSelectTableViewCell&gt;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/RouteSelectTableViewCell.swift"
+                  timestampString = "579409931.157129"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.RouteSelectTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;JourneyPlanner.RouteSelectTableViewCell&gt;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/RouteSelectTableViewCell.swift"
+                  timestampString = "579409931.159304"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.RouteSelectTableViewCell.__deallocating_deinit"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/RouteSelectTableViewCell.swift"
+                  timestampString = "579409931.161474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/RouteListViewController.swift"
+            timestampString = "579832441.756574"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/RouteListViewController.swift"
+            timestampString = "579832441.757147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/RouteListViewController.swift"
+            timestampString = "579832441.757549"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
