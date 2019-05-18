@@ -11,6 +11,7 @@ import UIKit
 //Cell controller which to set up the edit for the cells - ZHE WANG
 class RouteSelectTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var BlackCover: UIImageView!
     //Only connect the elements that need to do the action later
     //Connect to the image
     @IBOutlet weak var Auckland_Explore: UIImageView!

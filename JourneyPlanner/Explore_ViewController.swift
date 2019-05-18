@@ -136,6 +136,11 @@ class Explore_ViewController: UIViewController {
         bankButton.isEnabled = false
     }
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
     func getResturants(index:Int){
         let header = "b4a1b65c2bd7e6ca955092af1da11545"
 //        let lat = UserDefaults().string(forKey: "lat")
