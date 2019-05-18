@@ -97,7 +97,8 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
         }
         
         cell.Auckland_Explore.layer.cornerRadius = 10
-
+        cell.BlackCover.layer.cornerRadius = 10
+        
         return cell
     }
 }
