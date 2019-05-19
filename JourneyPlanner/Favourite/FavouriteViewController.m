@@ -10,8 +10,13 @@
 #import "SWTableViewCell.h"
 #import "Favourite.h"
 #import "DBManager.h"
+#define KWidth [UIScreen mainScreen].bounds.size.width
+#define KHeight [UIScreen mainScreen].bounds.size.height
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 @interface FavouriteViewController () <UITableViewDelegate,UITableViewDataSource,SWTableViewCellDelegate>
 
+@property (nonatomic, strong) UILabel     *titleLabel;
+@property (nonatomic, strong) UILabel     *remindText;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *favourites;
 @end
@@ -20,7 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.tableView];
+    [self.tableView addSubview:self.remindText];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -84,13 +91,52 @@
 
 - (void)refreshFavourites {
     self.favourites = [NSMutableArray arrayWithArray:[DBManager sharedInstance].favourites];
+    if (self.favourites && self.favourites.count > 0) {
+        self.remindText.hidden = YES;
+    } else {
+        self.remindText.hidden = NO;
+    }
     [self.tableView reloadData];
 }
 
 #pragma mark - Setters && Getters
+- (UILabel *)titleLabel {
+    if (nil == _titleLabel) {
+        CGFloat height = 20;
+        if (iPhoneX) {
+            height = 44;
+        }
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, height+26, KWidth, 30)];
+        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.text = @"Favourite";
+        _titleLabel.font = [UIFont systemFontOfSize:21 weight:UIFontWeightLight];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _titleLabel;
+}
+
+- (UILabel *)remindText {
+    if (nil == _remindText) {
+        CGFloat height = 20;
+        if (iPhoneX) {
+            height = 44;
+        }
+        CGFloat titleH = 26+height+49;
+        CGFloat centerY = (KHeight-titleH)*0.5;
+        _remindText = [[UILabel alloc] initWithFrame:CGRectMake(0, centerY-15, KWidth, 30)];
+        _remindText.textColor = [UIColor grayColor];
+        _remindText.text = @"No Favourite";
+        _remindText.font = [UIFont systemFontOfSize:21 weight:UIFontWeightLight];
+        _remindText.textAlignment = NSTextAlignmentCenter;
+        _remindText.hidden = YES;
+    }
+    return _remindText;
+}
+
 - (UITableView *)tableView {
     if (nil == _tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        CGFloat maxY   = CGRectGetMaxY(self.titleLabel.frame)+13;
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, maxY, KWidth, KHeight-maxY)];
         _tableView.delegate   = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
