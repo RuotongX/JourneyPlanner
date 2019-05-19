@@ -40,6 +40,10 @@
 		8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */; };
 		8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A122854AF800BD0DB2 /* DBManager.m */; };
 		8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A422854B6200BD0DB2 /* FavouriteDao.m */; };
+		A890A60422919C3D002719C9 /* AttractionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60322919C3D002719C9 /* AttractionInformation.swift */; };
+		A890A60622919DAE002719C9 /* CityListInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60522919DAE002719C9 /* CityListInformation.swift */; };
+		A890A6082291A08D002719C9 /* PlanDetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A6072291A08D002719C9 /* PlanDetailInformation.swift */; };
+		A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60C2291A1FB002719C9 /* PlanInformations.swift */; };
 		A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */; };
 		A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */; };
 		A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */; };
@@ -130,6 +134,10 @@
 		8C3236A322854B6200BD0DB2 /* FavouriteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteDao.h; sourceTree = "<group>"; };
 		8C3236A422854B6200BD0DB2 /* FavouriteDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteDao.m; sourceTree = "<group>"; };
 		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A890A60322919C3D002719C9 /* AttractionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInformation.swift; sourceTree = "<group>"; };
+		A890A60522919DAE002719C9 /* CityListInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInformation.swift; sourceTree = "<group>"; };
+		A890A6072291A08D002719C9 /* PlanDetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailInformation.swift; sourceTree = "<group>"; };
+		A890A60C2291A1FB002719C9 /* PlanInformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInformations.swift; sourceTree = "<group>"; };
 		A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewingTableViewController.swift; sourceTree = "<group>"; };
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +321,6 @@
 				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 				A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */,
 				A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */,
-				A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */,
 				A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
@@ -343,6 +350,11 @@
 				8C3236732285235700BD0DB2 /* Header-OCSwift.h */,
 				E1CD9FDD2285B660007A116F /* ShowMoreCell.swift */,
 				E1CD9FDF2285B6D3007A116F /* CuisineCell.swift */,
+				A890A60322919C3D002719C9 /* AttractionInformation.swift */,
+				A890A60522919DAE002719C9 /* CityListInformation.swift */,
+				A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */,
+				A890A6072291A08D002719C9 /* PlanDetailInformation.swift */,
+				A890A60C2291A1FB002719C9 /* PlanInformations.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -534,6 +546,7 @@
 				E1CD9FDE2285B660007A116F /* ShowMoreCell.swift in Sources */,
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
 				8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */,
+				A890A6082291A08D002719C9 /* PlanDetailInformation.swift in Sources */,
 				E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */,
 				8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */,
 				8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */,
@@ -548,11 +561,14 @@
 				E11C2A08227E8FE50076B33B /* ResturantRecommandedController.swift in Sources */,
 				DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */,
 				E11849922279B65100731D9A /* WeatherCellController.swift in Sources */,
+				A890A60622919DAE002719C9 /* CityListInformation.swift in Sources */,
 				8C3236852285248800BD0DB2 /* SWLongPressGestureRecognizer.m in Sources */,
+				A890A60422919C3D002719C9 /* AttractionInformation.swift in Sources */,
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
 				E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */,
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
 				A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */,
+				A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */,
 				E11F14BB2280D74300A36DE9 /* ZomatoWeb.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
