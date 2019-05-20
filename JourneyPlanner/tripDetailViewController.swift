@@ -26,9 +26,7 @@ class tripDetailViewController: UIViewController {
     var oldtrip : SmallTripInformation?
     var oldtripNumber : Int?
     
-    @IBOutlet weak var TimeSpentLabel: UILabel!
-    @IBOutlet weak var RatingLabel: UILabel!
-    
+
     @IBOutlet weak var TripTitle: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var MemoTextField: UITextField!
@@ -70,8 +68,7 @@ class tripDetailViewController: UIViewController {
         StayLengthTextField.text = "\(plan.staylength)"
         MemoTextField.text = plan.memo
         
-        RatingLabel.text = "No Information Available"
-        TimeSpentLabel.text = ""
+
         
         addMapAnnotation(location: plan.location)
     }

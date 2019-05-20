@@ -27,17 +27,17 @@ class RouteListViewController: UIViewController {
         super.viewDidLoad()
         
         //test data
-        if let image = UIImage(named: "Trip-Piha1x"){
-            let infor_1 = RouteInformation(name: "Auckland Explore", time: 3, image: image, citylist: nil)
-        
-            routeInfo.append(infor_1)
-        }
-        
-        if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
-            let infor_2 = RouteInformation(name: "Twin Coast Discovery", time: 7, image: image2, citylist: nil)
-            
-            routeInfo.append(infor_2)
-        }
+//        if let image = UIImage(named: "Trip-Piha1x"){
+//            let infor_1 = RouteInformation(name: "Auckland Explore", time: 3, image: image, citylist: nil)
+//
+//            routeInfo.append(infor_1)
+//        }
+//
+//        if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
+//            let infor_2 = RouteInformation(name: "Twin Coast Discovery", time: 7, image: image2, citylist: nil)
+//
+//            routeInfo.append(infor_2)
+//        }
 
         //tableview 数据
         TripTableView.dataSource = self
