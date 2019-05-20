@@ -46,7 +46,7 @@
 		A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60C2291A1FB002719C9 /* PlanInformations.swift */; };
 		A890A60F22924156002719C9 /* RoutePreviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */; };
 		A890A61322926E02002719C9 /* SelectCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A61222926E02002719C9 /* SelectCityController.swift */; };
-		A890A6172292932B002719C9 /* SelectCityTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A6162292932B002719C9 /* SelectCityTableviewCell.swift */; };
+		A890A6192292AB03002719C9 /* SelectCityTableviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A6182292AB03002719C9 /* SelectCityTableviewCellTableViewCell.swift */; };
 		A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */; };
 		A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */; };
 		A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */; };
@@ -143,7 +143,7 @@
 		A890A60C2291A1FB002719C9 /* PlanInformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInformations.swift; sourceTree = "<group>"; };
 		A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewCellTableViewCell.swift; sourceTree = "<group>"; };
 		A890A61222926E02002719C9 /* SelectCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityController.swift; sourceTree = "<group>"; };
-		A890A6162292932B002719C9 /* SelectCityTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityTableviewCell.swift; sourceTree = "<group>"; };
+		A890A6182292AB03002719C9 /* SelectCityTableviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectCityTableviewCellTableViewCell.swift; path = /Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityTableviewCellTableViewCell.swift; sourceTree = "<absolute>"; };
 		A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewingTableViewController.swift; sourceTree = "<group>"; };
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 				A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */,
 				A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */,
 				A890A61222926E02002719C9 /* SelectCityController.swift */,
-				A890A6162292932B002719C9 /* SelectCityTableviewCell.swift */,
+				A890A6182292AB03002719C9 /* SelectCityTableviewCellTableViewCell.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
@@ -543,7 +543,6 @@
 				8C32369822854A6100BD0DB2 /* FMResultSet.m in Sources */,
 				8C32369E22854AA000BD0DB2 /* Persistent.m in Sources */,
 				8C3236832285248800BD0DB2 /* SWUtilityButtonView.m in Sources */,
-				A890A6172292932B002719C9 /* SelectCityTableviewCell.swift in Sources */,
 				41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */,
 				8C3236872285248800BD0DB2 /* SWTableViewCell.m in Sources */,
 				8C32369422854A6100BD0DB2 /* FMDatabaseQueue.m in Sources */,
@@ -561,6 +560,7 @@
 				8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */,
 				8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
+				A890A6192292AB03002719C9 /* SelectCityTableviewCellTableViewCell.swift in Sources */,
 				8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */,
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
 				A890A61322926E02002719C9 /* SelectCityController.swift in Sources */,
@@ -787,7 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
+				DEVELOPMENT_TEAM = W9V67A55PQ;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -807,7 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
+				DEVELOPMENT_TEAM = W9V67A55PQ;
 				INFOPLIST_FILE = JourneyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
