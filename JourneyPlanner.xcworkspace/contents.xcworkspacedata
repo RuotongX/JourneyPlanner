@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityTableviewCellTableViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:JourneyPlanner.xcodeproj">
    </FileRef>
    <FileRef
