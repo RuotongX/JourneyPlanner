@@ -45,7 +45,6 @@ class RouteListViewController: UIViewController {
         TripTableView.delegate = self
 
         // Do any additional setup after loading the view.
-        
     }
 }
 
