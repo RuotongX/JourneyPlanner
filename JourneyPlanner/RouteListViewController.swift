@@ -27,17 +27,17 @@ class RouteListViewController: UIViewController {
         super.viewDidLoad()
         
         //test data
-//        if let image = UIImage(named: "Trip-Piha1x"){
-//            let infor_1 = RouteInformation(name: "Auckland Explore", time: 3, image: image, citylist: nil)
-//
-//            routeInfo.append(infor_1)
-//        }
-//
-//        if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
-//            let infor_2 = RouteInformation(name: "Twin Coast Discovery", time: 7, image: image2, citylist: nil)
-//
-//            routeInfo.append(infor_2)
-//        }
+        if let image = UIImage(named: "Trip-Piha1x"){
+            let infor_1 = RouteInformation(name: "Auckland Explore", time: 3, image: image)
+        
+            routeInfo.append(infor_1)
+        }
+        
+        if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
+            let infor_2 = RouteInformation(name: "Twin Coast Discovery", time: 7, image: image2)
+            
+            routeInfo.append(infor_2)
+        }
 
         //tableview 数据
         TripTableView.dataSource = self
@@ -55,15 +55,21 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     //connect and set the preview page
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
      
+        //set the index used to get row number of user pressed
+        guard let indexPath = TripTableView.indexPathForRow(at: location),
+            let cell = TripTableView.cellForRow(at: indexPath)
+            else{
+                return nil
+        }
         
+        previewingContext.sourceRect = cell.frame
         
-        
-        let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing")
-        
+        let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing") as! RoutePreviewingTableViewController
+
         return previewing
     }
     
-    //connect to the destination of preview page
+    //Pop actions
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         
         let destination  = storyboard?.instantiateViewController(withIdentifier: "EditRoutePlanPage")

@@ -612,7 +612,7 @@
         <!--Route List View Controller-->
         <scene sceneID="N9v-wT-Vah">
             <objects>
-                <viewController id="rBw-me-iQ7" customClass="RouteListViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RouteSelect" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rBw-me-iQ7" customClass="RouteListViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VzF-aN-UXQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -691,40 +691,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mg5-CD-763" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.40000000000001" y="1017.4876847290641"/>
+            <point key="canvasLocation" x="-2732" y="1742"/>
         </scene>
         <!--RoutePreviewingPage-->
         <scene sceneID="vGp-Ue-glZ">
             <objects>
-                <tableViewController storyboardIdentifier="RoutePreviewing" title="RoutePreviewingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yTR-qo-DtJ" customClass="RoutePreviewingTableViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RoutePeek" title="RoutePreviewingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yTR-qo-DtJ" customClass="RoutePreviewingTableViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zB0-tA-4DK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="46" id="kEw-e4-ZBZ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="46"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="previewCell" rowHeight="100" id="kEw-e4-ZBZ" customClass="RoutePreviewCellTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kEw-e4-ZBZ" id="WCA-hM-oye" customClass="Route">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhR-og-M3D">
-                                            <rect key="frame" x="31" y="6" width="19" height="33"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTF-8Q-h0J">
+                                            <rect key="frame" x="15" y="4" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKq-Ie-wRK">
-                                            <rect key="frame" x="85" y="12" width="223" height="21"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epG-m7-8HC">
+                                            <rect key="frame" x="140" y="29" width="150" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="AttractionName" destination="epG-m7-8HC" id="3uc-Td-zKc"/>
+                                    <outlet property="AttractionsImage" destination="QTF-8Q-h0J" id="K17-xr-xXj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -732,10 +733,13 @@
                             <outlet property="delegate" destination="yTR-qo-DtJ" id="lEe-o5-c3Y"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="AttractionsListTableview" destination="zB0-tA-4DK" id="r6G-8I-6Zq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pj-Dn-Gs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2423.1999999999998" y="1670.6896551724139"/>
+            <point key="canvasLocation" x="-1762.4000000000001" y="1741.6256157635469"/>
         </scene>
         <!--EditRoutePlan-->
         <scene sceneID="U6P-tn-AfN">
@@ -750,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYH-Xm-xp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1412" y="1671"/>
+            <point key="canvasLocation" x="-636" y="1742"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="wg7-f3-ORb">
