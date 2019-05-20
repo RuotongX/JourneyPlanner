@@ -32,6 +32,10 @@ class PlanViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
     // this method is used to load the test date please remove before submit  - Wanfang Zhou 23/04/2019
     // PLEASE REMOVE BEFORE SUBMIT !!!!!!!
     func LoadTestData(){
