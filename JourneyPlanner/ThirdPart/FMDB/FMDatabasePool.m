@@ -3,7 +3,7 @@
 //  fmdb
 //
 //  Created by zhouqichang
-//  Copyright 2011 Flying Meat Inc. All rights reserved.
+//  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 #if FMDB_SQLITE_STANDALONE

@@ -3,7 +3,7 @@
 //  fmdb
 //
 //  Created by zhouqichang on 10/30/05.
-//  Copyright 2005 Flying Meat Inc.. All rights reserved.
+//  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 #import "FMDatabase.h"

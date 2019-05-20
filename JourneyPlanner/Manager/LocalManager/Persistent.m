@@ -3,7 +3,7 @@
 //  EasyEducation
 //
 //  Created by zhouqichang.
-//  Copyright © 2018年 Kario. All rights reserved.
+//  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 #import "Persistent.h"
