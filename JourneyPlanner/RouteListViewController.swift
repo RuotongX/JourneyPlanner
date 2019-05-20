@@ -28,13 +28,13 @@ class RouteListViewController: UIViewController {
         
         //test data
         if let image = UIImage(named: "Trip-Piha1x"){
-            let infor_1 = RouteInformation(routeImage: image, routeName: "Auckland Explore", routeStayPoints: ["Waiheke Island", "Auckland city", "Piha"])
+            let infor_1 = RouteInformation(name: "Auckland Explore", time: 3, image: image, citylist: nil)
         
             routeInfo.append(infor_1)
         }
         
         if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
-            let infor_2 = RouteInformation(routeImage: image2, routeName: "Twin Coast Discovery", routeStayPoints: ["Auckland", "Dargaville", "Hokianga", "Kaitaia", "Doubtless Bay", "Paihia", "Whangarei"])
+            let infor_2 = RouteInformation(name: "Twin Coast Discovery", time: 7, image: image2, citylist: nil)
             
             routeInfo.append(infor_2)
         }
@@ -55,11 +55,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     //connect and set the preview page
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
      
-//        if let cell = previewingContext.sourceView as? UITableViewCell{
-//
-//        }
-//
-//        let indexPath = TripTableView.indexPath(for: cell)
+        
         
         
         let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing")

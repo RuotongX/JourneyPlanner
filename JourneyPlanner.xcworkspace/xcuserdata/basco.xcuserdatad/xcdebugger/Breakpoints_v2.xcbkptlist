@@ -103,7 +103,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteListViewController.swift"
-            timestampString = "579834290.505133"
+            timestampString = "579938961.63036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -119,13 +119,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteListViewController.swift"
-            timestampString = "579834290.505801"
+            timestampString = "579938961.631452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "RouteListViewController"
-            landmarkType = "21">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -135,7 +135,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteListViewController.swift"
-            timestampString = "579834290.506092"
+            timestampString = "579938961.631952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"

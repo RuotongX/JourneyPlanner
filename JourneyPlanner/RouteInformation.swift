@@ -11,13 +11,14 @@ import Foundation
 import UIKit
 class RouteInformation{
     
-    var routeImage : UIImage
     var routeName : String
-    var routeStayPoints : [String]
+    var routeStopTime : Int
+    var routeImage : UIImage
+    var Cities : [CityListInformation]?
     
-    init (routeImage : UIImage, routeName : String, routeStayPoints : [String]){
-        self.routeImage = routeImage
-        self.routeName = routeName
-        self.routeStayPoints = routeStayPoints
+    init (name : String, time : Int, image : UIImage){
+        self.routeName = name
+        self.routeStopTime = time
+        self.routeImage = image
     }
 }
