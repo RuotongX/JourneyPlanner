@@ -44,6 +44,7 @@
 		A890A60622919DAE002719C9 /* CityListInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60522919DAE002719C9 /* CityListInformation.swift */; };
 		A890A6082291A08D002719C9 /* PlanDetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A6072291A08D002719C9 /* PlanDetailInformation.swift */; };
 		A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60C2291A1FB002719C9 /* PlanInformations.swift */; };
+		A890A60F22924156002719C9 /* RoutePreviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */; };
 		A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */; };
 		A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */; };
 		A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */; };
@@ -138,6 +139,7 @@
 		A890A60522919DAE002719C9 /* CityListInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInformation.swift; sourceTree = "<group>"; };
 		A890A6072291A08D002719C9 /* PlanDetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailInformation.swift; sourceTree = "<group>"; };
 		A890A60C2291A1FB002719C9 /* PlanInformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInformations.swift; sourceTree = "<group>"; };
+		A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewCellTableViewCell.swift; sourceTree = "<group>"; };
 		A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewingTableViewController.swift; sourceTree = "<group>"; };
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */,
 				A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */,
 				A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */,
+				A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
@@ -555,6 +558,7 @@
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
 				8C3236842285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				A8D2DC4E228980DD00F490F8 /* RouteInformation.swift in Sources */,
+				A890A60F22924156002719C9 /* RoutePreviewCellTableViewCell.swift in Sources */,
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
 				8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */,
 				8C32369522854A6100BD0DB2 /* FMDatabaseAdditions.m in Sources */,
