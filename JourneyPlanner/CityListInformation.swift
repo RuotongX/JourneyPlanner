@@ -23,4 +23,8 @@ class CityListInformation{
         self.cityLocation = location
         self.cityImage = image
     }
+    convenience init (name : String, time : Int, location : CLLocationCoordinate2D, image : UIImage, attractions : [AttractionInformation]){
+        self.init(name: name, time: time, location: location, image: image)
+        self.Attractions = attractions
+    }
 }
