@@ -66,8 +66,8 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
         
         let previewing = storyboard?.instantiateViewController(withIdentifier: "PreviewController") as! RoutePreviewController
         
-        UserDefaults().setValue(index?.row
-            , forKey: "CompareRoute")
+//        UserDefaults().setValue(index?.row
+//            , forKey: "CompareRoute")
 
         return previewing
     }
