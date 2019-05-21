@@ -13,11 +13,15 @@ import CoreLocation
 class AttractionInformation{
     var attractionName : String
     var attractionLocation : CLLocationCoordinate2D
-    var attractionImage : UIImage
+    var attractionImage : UIImage?
     
-    init(Name : String, Location : CLLocationCoordinate2D, Image : UIImage) {
+    init(Name : String, Location : CLLocationCoordinate2D) {
         self.attractionName = Name
         self.attractionLocation = Location
-        self.attractionImage = Image
+    }
+    
+    convenience init(Name : String, Location : CLLocationCoordinate2D,attractionImage :UIImage){
+        self.init(Name: Name, Location: Location)
+        self.attractionImage = attractionImage
     }
 }
