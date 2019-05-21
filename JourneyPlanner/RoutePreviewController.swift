@@ -19,13 +19,13 @@ class RoutePreviewController: UIViewController {
         super.viewDidLoad()
         
         if let image = UIImage(named: "Trip-Piha_90_2x"){
-            let infor_1 = AttractionInformation.init(Name: "Piha", Location: CLLocationCoordinate2D(latitude: -36.954 , longitude: 174.471), Image: image)
+            let infor_1 = AttractionInformation.init(Name: "Piha", Location: CLLocationCoordinate2D(latitude: -36.954 , longitude: 174.471), attractionImage: image)
             
             attractionsInfor.append(infor_1)
         }
         
         if let image2 = UIImage(named: "Trip-SkyTower-90-1x"){
-            let infor_2 = AttractionInformation.init(Name: "Sky Tower", Location: CLLocationCoordinate2D(latitude: -36.848461 , longitude: 174.762183), Image: image2)
+            let infor_2 = AttractionInformation.init(Name: "Sky Tower", Location: CLLocationCoordinate2D(latitude: -36.848461 , longitude: 174.762183), attractionImage: image2)
             
             attractionsInfor.append(infor_2)
         }
