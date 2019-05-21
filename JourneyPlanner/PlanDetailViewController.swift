@@ -225,9 +225,6 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
             }
         }
         
-        
         return cell
     }
-    
-    
 }

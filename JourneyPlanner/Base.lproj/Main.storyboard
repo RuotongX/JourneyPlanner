@@ -694,53 +694,75 @@
             </objects>
             <point key="canvasLocation" x="-2732" y="1742"/>
         </scene>
-        <!--RoutePreviewingPage-->
-        <scene sceneID="vGp-Ue-glZ">
+        <!--Route Preview Controller-->
+        <scene sceneID="VQd-ld-78z">
             <objects>
-                <tableViewController storyboardIdentifier="RoutePeek" title="RoutePreviewingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yTR-qo-DtJ" customClass="RoutePreviewingTableViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zB0-tA-4DK">
+                <viewController storyboardIdentifier="PreviewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3o3-2s-zev" customClass="RoutePreviewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2mG-VE-y1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ElH-5N-ySc">
+                                <rect key="frame" x="0.0" y="144" width="375" height="634"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutePreviewCell" rowHeight="100" id="Rd3-Pa-nRZ" customClass="RoutePreviewCellTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rd3-Pa-nRZ" id="Yf9-Ox-gL1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TpV-SK-Uxj">
+                                                    <rect key="frame" x="24" y="0.0" width="100" height="99.666666666666671"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="15u-s0-vhD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neh-lN-2Xq">
+                                                    <rect key="frame" x="154" y="31" width="200" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="kGu-kW-Dqi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="neh-lN-2Xq" firstAttribute="top" secondItem="Yf9-Ox-gL1" secondAttribute="topMargin" constant="20" id="0r1-NO-W4E"/>
+                                                <constraint firstItem="TpV-SK-Uxj" firstAttribute="top" secondItem="Yf9-Ox-gL1" secondAttribute="top" id="76E-TK-iE7"/>
+                                                <constraint firstItem="TpV-SK-Uxj" firstAttribute="leading" secondItem="Yf9-Ox-gL1" secondAttribute="leading" constant="24" id="Ppt-De-jhK"/>
+                                                <constraint firstAttribute="bottom" secondItem="TpV-SK-Uxj" secondAttribute="bottom" id="YH1-bW-NtT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="neh-lN-2Xq" secondAttribute="trailing" constant="6" id="cgt-zb-quj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="neh-lN-2Xq" secondAttribute="bottom" constant="20" id="eyY-89-nAm"/>
+                                                <constraint firstItem="neh-lN-2Xq" firstAttribute="leading" secondItem="TpV-SK-Uxj" secondAttribute="trailing" constant="30" id="lmu-2j-SNr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="AttractionsImage" destination="TpV-SK-Uxj" id="LHl-Nn-cqx"/>
+                                            <outlet property="AttractionsName" destination="neh-lN-2Xq" id="M5i-G3-Aea"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="previewCell" rowHeight="100" id="kEw-e4-ZBZ" customClass="RoutePreviewCellTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kEw-e4-ZBZ" id="WCA-hM-oye" customClass="Route">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trip-Piha_90_2x" translatesAutoresizingMaskIntoConstraints="NO" id="QTF-8Q-h0J">
-                                            <rect key="frame" x="15" y="4" width="90" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epG-m7-8HC">
-                                            <rect key="frame" x="140" y="29" width="150" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="AttractionName" destination="epG-m7-8HC" id="3uc-Td-zKc"/>
-                                    <outlet property="AttractionsImage" destination="QTF-8Q-h0J" id="K17-xr-xXj"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="yTR-qo-DtJ" id="fQ3-55-9uq"/>
-                            <outlet property="delegate" destination="yTR-qo-DtJ" id="lEe-o5-c3Y"/>
-                        </connections>
-                    </tableView>
+                        <constraints>
+                            <constraint firstItem="ElH-5N-ySc" firstAttribute="leading" secondItem="1xQ-s9-1mp" secondAttribute="leading" id="L7m-wJ-bT9"/>
+                            <constraint firstItem="ElH-5N-ySc" firstAttribute="trailing" secondItem="1xQ-s9-1mp" secondAttribute="trailing" id="fGw-q3-DGj"/>
+                            <constraint firstItem="ElH-5N-ySc" firstAttribute="bottom" secondItem="1xQ-s9-1mp" secondAttribute="bottom" id="kQz-di-c1O"/>
+                            <constraint firstItem="ElH-5N-ySc" firstAttribute="top" secondItem="1xQ-s9-1mp" secondAttribute="top" constant="100" id="rRt-Nb-gw3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1xQ-s9-1mp"/>
+                    </view>
                     <connections>
-                        <outlet property="AttractionsListTableview" destination="zB0-tA-4DK" id="r6G-8I-6Zq"/>
+                        <outlet property="PreviewTableview" destination="ElH-5N-ySc" id="Kab-qN-5sS"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8pj-Dn-Gs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uFz-bv-k9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1762.4000000000001" y="1741.6256157635469"/>
+            <point key="canvasLocation" x="-1671.2" y="1741.6256157635469"/>
         </scene>
         <!--Select city page-->
         <scene sceneID="U6P-tn-AfN">
@@ -776,7 +798,7 @@
                                     <constraint firstAttribute="height" constant="674" id="w5I-1d-r6k"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectCityCell" rowHeight="120" id="aGH-tG-n4L" customClass="SelectCityTableviewCellTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectCityCell" rowHeight="120" id="aGH-tG-n4L" customClass="SelectCityCell" customModule="JourneyPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aGH-tG-n4L" id="CW9-Kx-XgL">
@@ -873,9 +895,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="Background" destination="gmK-Z8-ByP" id="VIP-up-VuA"/>
-                                            <outlet property="CityImage" destination="w5g-xn-Isz" id="N4h-bq-7xb"/>
-                                            <outlet property="CityName" destination="Y5U-MH-zt3" id="SdH-F2-Abb"/>
+                                            <outlet property="background" destination="gmK-Z8-ByP" id="hvC-9I-wn9"/>
+                                            <outlet property="cityName" destination="Y5U-MH-zt3" id="kCb-4u-nQI"/>
+                                            <outlet property="imagePath" destination="w5g-xn-Isz" id="3PZ-Ez-dFI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1864,7 +1886,6 @@
         <image name="Tab - User" width="25" height="25"/>
         <image name="Trip-DarkBackground-345*110-1x" width="115" height="36.666667938232422"/>
         <image name="Trip-Piha1x" width="363" height="192"/>
-        <image name="Trip-Piha_90_2x" width="30" height="30"/>
         <image name="User-About" width="296" height="72"/>
         <image name="User-History Plan" width="296" height="72"/>
         <image name="User-Preference" width="296" height="72"/>
@@ -1878,7 +1899,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="D8Q-su-MS0"/>
         <segue reference="eIA-MW-uKx"/>
-        <segue reference="NMq-7Q-mdJ"/>
+        <segue reference="7lf-2y-feD"/>
         <segue reference="lPE-xR-MhK"/>
         <segue reference="20Y-3l-nNd"/>
     </inferredMetricsTieBreakers>
