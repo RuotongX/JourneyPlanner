@@ -13,7 +13,7 @@ import CoreLocation
 class PlanViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var plan : [TripPlan]?
+    var plan : [PlanInformations]?
     
     // when this view is loaded, this will be displayed at the first time - Wanfang Zhou 23/04/2019
     override func viewDidLoad() {
@@ -39,39 +39,49 @@ class PlanViewController: UIViewController {
     // this method is used to load the test date please remove before submit  - Wanfang Zhou 23/04/2019
     // PLEASE REMOVE BEFORE SUBMIT !!!!!!!
     func LoadTestData(){
-        let coor1 = CLLocation(latitude: -38.1387009, longitude: 176.2528075)
-        let trip1 = SmallTripInformation(name: "Awesome Thai food", location: coor1, staylength: 60, arrangement: 1)
-        trip1.memo = "this is memo"
         
-        let coor2 = CLLocation(latitude: -38.1347549, longitude: 176.2517591)
-        let trip2 = SmallTripInformation(name: "Fat Dog Cafe & Bar", location: coor2, staylength: 70, arrangement: 2)
+        if let image = UIImage(named: "Trip-Piha_90_2x"){
+            
+            var plandetails : [PlanDetailInformation] = []
+            var citylists : [CityListInformation] = []
+            var citylists2 : [CityListInformation] = []
+
+            var attractions : [AttractionInformation] = []
+            
+            attractions.append(AttractionInformation(Name: "Test attraction", Location: CLLocationCoordinate2D(latitude: -38.13874, longitude: 176.24516)))
+            attractions.append(AttractionInformation(Name: "Awesome Thai food", Location: CLLocationCoordinate2D(latitude: -38.1387009, longitude: 176.2528075)))
+            
+            citylists.append(CityListInformation(name: "Auckland", time: 2, location: CLLocationCoordinate2D(latitude: -36.848461, longitude: 174.763336), image: image, attractions: attractions))
+            
+            
+            citylists2.append(CityListInformation(name: "Hamilton", time: 3, location: CLLocationCoordinate2D(latitude: -36.848461, longitude: 174.763336), image: image, attractions: attractions))
+            
+     
+            plandetails.append(PlanDetailInformation(citylist:  citylists, memo: "Test Memo"))
+            plandetails.append(PlanDetailInformation(citylist: citylists2, memo: "Memo 2"))
+            
+            plan?.append(PlanInformations(name: "TestPlan1", smallPlan: plandetails))
+        }
         
-        var testTrip :  [SmallTripInformation] = []
-        testTrip.append(trip1)
-        testTrip.append(trip2)
-        
-        let testCityInfo = LocationInformation(cityName: "test", lontitude: 0.00, latitude: 0.00, zipCode: "123")
-        
-        self.plan?.append(TripPlan(trips: testTrip, firstCity: testCityInfo, distances: 123, PlanName: "my trip to wellington"))
     }
     
     
     // this method is used to create the bridge beteen this class and the plan detail view controller - Wanfang Zhou 23/04/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // View Plan detail
-        if segue.identifier == "PlanDetailSegue"{
-            if let plandetailViewController = segue.destination as?
-                PlanDetailViewController{
-                
-                if let cell = sender as? UITableViewCell{
-                    if let indexPath = tableView.indexPath(for: cell){
-                        let planDetail = plan?[indexPath.row]
-                        plandetailViewController.plan = planDetail
-                    }
-                }
-                plandetailViewController.delegate = self
-            }
-        }
+//        if segue.identifier == "PlanDetailSegue"{
+//            if let plandetailViewController = segue.destination as?
+//                PlanDetailViewController{
+//
+//                if let cell = sender as? UITableViewCell{
+//                    if let indexPath = tableView.indexPath(for: cell){
+//                        let planDetail = plan?[indexPath.row]
+//                        plandetailViewController.plan = planDetail
+//                    }
+//                }
+//                plandetailViewController.delegate = self
+//            }
+//        }
         
         
         // if user would likely to create a new trip, it will bring user to an emptry page - Wanfang Zhou 23/04/2019
@@ -101,13 +111,35 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as? PlanTableViewCell else{ fatalError("The dequeued cell is not an instance of PlanTableViewCell.") }
+        
+        if let planCellInformation = self.plan?[indexPath.row]{
+            
+            var stopTime = 0
+            var cities = ""
+            
+            
+            //calculate the spent time and cities for a trip
+            for plan in planCellInformation.smallPlan{
+                for city in plan.City{
+                    
+                    // count stop time
+                    stopTime = city.cityStopTime + stopTime
+                    cities = cities + city.cityName + " "
+                    
+                }
+            }
+            
 
-        if let item = self.plan?[indexPath.row]{
-            cell.cityNameLabel.text = item.firstCity.cityName
-            cell.distanceLabel.text = "\(String(describing: item.distances)) Km"
-            cell.planNameLabel.text = "\(String(describing: item.PlanName))"
+            cell.planNameLabel.text = planCellInformation.planName
+            cell.dayDurationLabel.text = "\(stopTime) day"
+            cell.CitiesLabel.text = cities
+            
+            if stopTime > 1 {
+                cell.dayDurationLabel.text = cell.dayDurationLabel.text! + "s"
+            }
+            
         }
-
+        
         return cell
     }
     

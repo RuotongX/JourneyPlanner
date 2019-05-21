@@ -13,10 +13,9 @@ class PlanTableViewCell: UITableViewCell {
 
     
     // this class contains three different labels which will be used on the cell - Dalton 24/04/2019
-    @IBOutlet weak var planNameLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var cityNameLabel: UILabel!
-    
+    @IBOutlet weak var planNameLabel: UILabel!    
+    @IBOutlet weak var dayDurationLabel: UILabel!
+    @IBOutlet weak var CitiesLabel: UILabel!
     // this method is equivelent as the viewdidload information
     override func awakeFromNib() {
         super.awakeFromNib()
