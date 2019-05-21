@@ -45,7 +45,6 @@ class RouteListViewController: UIViewController {
         TripTableView.delegate = self
 
         // Do any additional setup after loading the view.
-        
     }
 }
 
@@ -56,7 +55,8 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
      
         //set the index used to get row number of user pressed
-        guard let indexPath = TripTableView.indexPathForRow(at: location),
+        let index = TripTableView.indexPathForRow(at: location)
+        guard let indexPath = index,
             let cell = TripTableView.cellForRow(at: indexPath)
             else{
                 return nil
@@ -64,7 +64,10 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
         
         previewingContext.sourceRect = cell.frame
         
-        let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing") as! RoutePreviewingTableViewController
+        let previewing = storyboard?.instantiateViewController(withIdentifier: "PreviewController") as! RoutePreviewController
+        
+        UserDefaults().setValue(index?.row
+            , forKey: "CompareRoute")
 
         return previewing
     }
@@ -72,7 +75,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     //Pop actions
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         
-        let destination  = storyboard?.instantiateViewController(withIdentifier: "EditRoutePlanPage")
+        let destination  = storyboard?.instantiateViewController(withIdentifier: "SelectCityViewController")
         
         show(destination!, sender: self)
     }

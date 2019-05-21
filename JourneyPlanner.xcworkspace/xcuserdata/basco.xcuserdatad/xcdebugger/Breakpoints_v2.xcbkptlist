@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteSelectTableViewCell.swift"
-            timestampString = "579832441.7564"
+            timestampString = "580105948.638887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -103,7 +103,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteListViewController.swift"
-            timestampString = "580051948.644464"
+            timestampString = "580108894.001477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -119,11 +119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteListViewController.swift"
-            timestampString = "580051948.644558"
+            timestampString = "580108894.001573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -131,16 +131,156 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JourneyPlanner/RouteListViewController.swift"
-            timestampString = "580051948.644629"
+            filePath = "JourneyPlanner/SelectCityViewController.swift"
+            timestampString = "580079221.8333631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/SelectCityViewController.swift"
+            timestampString = "580079221.833432"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SelectCityViewControllerDelegate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/SelectCityViewController.swift"
+            timestampString = "580079221.833496"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "SelectCityViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.SelectCityViewController.delegate.getter : Swift.Optional&lt;JourneyPlanner.SelectCityViewControllerDelegate&gt;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityViewController.swift"
+                  timestampString = "580108894.357815"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "123">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.SelectCityViewController.delegate.setter : Swift.Optional&lt;JourneyPlanner.SelectCityViewControllerDelegate&gt;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityViewController.swift"
+                  timestampString = "580108894.359957"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.SelectCityViewController.delegate.modify : Swift.Optional&lt;JourneyPlanner.SelectCityViewControllerDelegate&gt;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityViewController.swift"
+                  timestampString = "580108894.362085"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.SelectCityViewController.delegate.modify : Swift.Optional&lt;JourneyPlanner.SelectCityViewControllerDelegate&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityViewController.swift"
+                  timestampString = "580108894.364182"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.SelectCityViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; JourneyPlanner.SelectCityViewController"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityViewController.swift"
+                  timestampString = "580108894.3663369"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JourneyPlanner.SelectCityViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;JourneyPlanner.SelectCityViewController&gt;"
+                  moduleName = "JourneyPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/basco/Documents/JourneyPlanner/JourneyPlanner/SelectCityViewController.swift"
+                  timestampString = "580108894.368436"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "137">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JourneyPlanner/MapViewController.swift"
+            timestampString = "580079889.465048"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "showActionSheet()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

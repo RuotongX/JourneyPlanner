@@ -9,10 +9,6 @@
 import UIKit
 import CoreLocation
 
-protocol SelectCityControllerDelegate {
-    
-}
-
 class SelectCityController: UIViewController {
 
     
@@ -22,7 +18,6 @@ class SelectCityController: UIViewController {
     
     @IBOutlet weak var SelectCity: UITableView!
     
-    var delegate: SelectCityControllerDelegate?
     var cityInformation : [CityListInformation] = []
     
     override func viewDidLoad() {
@@ -44,20 +39,19 @@ extension SelectCityController : UITableViewDelegate, UITableViewDataSource{
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(cityInformation.count)
         return cityInformation.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SelectCityCell", for: indexPath) as? SelectCityTableviewCellTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SelectCityCell", for: indexPath) as? SelectCityCell else {
             fatalError("The dequeued cell is not an instance of SelectCityTableviewCellTableViewCell.")
         }
         
-        cell.CityName.text = cityInformation[indexPath.row].cityName
-        cell.CityImage.image = cityInformation[indexPath.row].cityImage
+        cell.cityName.text = cityInformation[indexPath.row].cityName
+        cell.imagePath.image = cityInformation[indexPath.row].cityImage
         
-        cell.CityImage.layer.cornerRadius = 10
-        cell.Background.layer.cornerRadius = 10
+        cell.imagePath.layer.cornerRadius = 10
+        cell.background.layer.cornerRadius = 10
         
         return cell
     }
