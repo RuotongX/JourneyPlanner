@@ -59,6 +59,11 @@ extension SelectCityController : UITableViewDelegate, UITableViewDataSource{
             cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
         }
         
+        cell.DecreaseButton = {
+            self.cityInformation[indexPath.row].cityStopTime = self.cityInformation[indexPath.row].cityStopTime - 1
+             cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
+        }
+        
         return cell
     }
 }

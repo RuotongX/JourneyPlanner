@@ -837,16 +837,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbh-fK-hGv">
-                                                    <rect key="frame" x="251" y="83" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="cav-Qq-gmW"/>
-                                                        <constraint firstAttribute="height" constant="20" id="gPT-pn-c9A"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button" image="Home-plan_designer_minus 1x">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8e-Eb-0qb">
                                                     <rect key="frame" x="278" y="83" width="30" height="20"/>
                                                     <constraints>
@@ -865,6 +855,19 @@
                                                     <state key="normal" title="Button" image="Home-plan_designer_add 1x"/>
                                                     <connections>
                                                         <action selector="TimeIncrease:" destination="aGH-tG-n4L" eventType="touchUpInside" id="Sqs-pl-37K"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbh-fK-hGv">
+                                                    <rect key="frame" x="250" y="83" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="cav-Qq-gmW"/>
+                                                        <constraint firstAttribute="height" constant="20" id="gPT-pn-c9A"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Home-plan_designer_minus 1x">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="TimeDecrease:" destination="aGH-tG-n4L" eventType="touchUpInside" id="nxv-4J-mpg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
