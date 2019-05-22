@@ -50,6 +50,8 @@ extension RoutePreviewController : UITableViewDelegate, UITableViewDataSource{
         cell.AttractionsName.text = attractionsInfor[indexPath.row].attractionName
         cell.AttractionsImage.image = attractionsInfor[indexPath.row].attractionImage
         
+        cell.AttractionsImage.layer.cornerRadius = cell.AttractionsImage.frame.height / 2
+        
         return cell
     }
 }

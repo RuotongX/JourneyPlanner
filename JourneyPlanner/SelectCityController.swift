@@ -9,9 +9,8 @@
 import UIKit
 import CoreLocation
 
-class SelectCityController: UIViewController {
+class SelectCityController: UIViewController{
 
-    
     @IBAction func ReturnButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -36,7 +35,7 @@ class SelectCityController: UIViewController {
 }
     
 extension SelectCityController : UITableViewDelegate, UITableViewDataSource{
-        
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return cityInformation.count
@@ -49,9 +48,21 @@ extension SelectCityController : UITableViewDelegate, UITableViewDataSource{
         
         cell.cityName.text = cityInformation[indexPath.row].cityName
         cell.imagePath.image = cityInformation[indexPath.row].cityImage
+        cell.DaysTIme.text = String(cityInformation[indexPath.row].cityStopTime)
+       
+        cell.imagePath.layer.cornerRadius = 20
+        cell.background.layer.cornerRadius = 20
         
-        cell.imagePath.layer.cornerRadius = 10
-        cell.background.layer.cornerRadius = 10
+        //Define the empty function taht used to set tha action for the increase button - ZHE WANG
+        cell.IncreaseButton = {
+            self.cityInformation[indexPath.row].cityStopTime = self.cityInformation[indexPath.row].cityStopTime + 1
+            cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
+        }
+        
+        cell.DecreaseButton = {
+            self.cityInformation[indexPath.row].cityStopTime = self.cityInformation[indexPath.row].cityStopTime - 1
+             cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
+        }
         
         return cell
     }
