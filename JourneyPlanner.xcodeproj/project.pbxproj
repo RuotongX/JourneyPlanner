@@ -40,6 +40,8 @@
 		8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */; };
 		8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A122854AF800BD0DB2 /* DBManager.m */; };
 		8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236A422854B6200BD0DB2 /* FavouriteDao.m */; };
+		A86E8BE622957A1D00AA1346 /* SelectAttractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E8BE522957A1D00AA1346 /* SelectAttractionController.swift */; };
+		A86E8BE822957A4000AA1346 /* SelectAttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E8BE722957A4000AA1346 /* SelectAttractionCell.swift */; };
 		A890A60422919C3D002719C9 /* AttractionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60322919C3D002719C9 /* AttractionInformation.swift */; };
 		A890A60622919DAE002719C9 /* CityListInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60522919DAE002719C9 /* CityListInformation.swift */; };
 		A890A6082291A08D002719C9 /* PlanDetailInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A6072291A08D002719C9 /* PlanDetailInformation.swift */; };
@@ -137,6 +139,8 @@
 		8C3236A322854B6200BD0DB2 /* FavouriteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteDao.h; sourceTree = "<group>"; };
 		8C3236A422854B6200BD0DB2 /* FavouriteDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteDao.m; sourceTree = "<group>"; };
 		A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourneyPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A86E8BE522957A1D00AA1346 /* SelectAttractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAttractionController.swift; sourceTree = "<group>"; };
+		A86E8BE722957A4000AA1346 /* SelectAttractionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAttractionCell.swift; sourceTree = "<group>"; };
 		A890A60322919C3D002719C9 /* AttractionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInformation.swift; sourceTree = "<group>"; };
 		A890A60522919DAE002719C9 /* CityListInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInformation.swift; sourceTree = "<group>"; };
 		A890A6072291A08D002719C9 /* PlanDetailInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailInformation.swift; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				A8BC91F22293BA9700AECA42 /* RoutePreviewController.swift */,
 				A8BC91F02293B2B100AECA42 /* SelectCityCell.swift */,
 				A890A61222926E02002719C9 /* SelectCityController.swift */,
+				A86E8BE522957A1D00AA1346 /* SelectAttractionController.swift */,
+				A86E8BE722957A4000AA1346 /* SelectAttractionCell.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
@@ -556,10 +562,12 @@
 				E1CD9FDE2285B660007A116F /* ShowMoreCell.swift in Sources */,
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
 				8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */,
+				A86E8BE622957A1D00AA1346 /* SelectAttractionController.swift in Sources */,
 				A890A6082291A08D002719C9 /* PlanDetailInformation.swift in Sources */,
 				E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */,
 				8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */,
 				8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */,
+				A86E8BE822957A4000AA1346 /* SelectAttractionCell.swift in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
 				8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */,
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,

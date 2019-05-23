@@ -55,13 +55,29 @@ extension SelectCityController : UITableViewDelegate, UITableViewDataSource{
         
         //Define the empty function taht used to set tha action for the increase button - ZHE WANG
         cell.IncreaseButton = {
+
+            let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .light)
+            impactFeedBackGenerator.prepare()
+            impactFeedBackGenerator.impactOccurred()
+            
             self.cityInformation[indexPath.row].cityStopTime = self.cityInformation[indexPath.row].cityStopTime + 1
             cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
+           
         }
         
         cell.DecreaseButton = {
-            self.cityInformation[indexPath.row].cityStopTime = self.cityInformation[indexPath.row].cityStopTime - 1
-             cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
+
+            if self.cityInformation[indexPath.row].cityStopTime > 1{
+                let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .light)
+                impactFeedBackGenerator.prepare()
+                impactFeedBackGenerator.impactOccurred()
+                
+                self.cityInformation[indexPath.row].cityStopTime = self.cityInformation[indexPath.row].cityStopTime - 1
+                cell.DaysTIme.text = String(self.cityInformation[indexPath.row].cityStopTime)
+            } else{
+                let error = UINotificationFeedbackGenerator()
+                error.notificationOccurred(.error)
+            }
         }
         
         return cell
