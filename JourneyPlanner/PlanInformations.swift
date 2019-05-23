@@ -10,10 +10,12 @@ import Foundation
 
 class PlanInformations{
     var planName : String
-    var smallPlan : [PlanDetailInformation]
+    var City : [CityListInformation]
+    var memo : String
     
-    init(name : String, smallPlan : [PlanDetailInformation]) {
+    init(name : String, citylist : [CityListInformation], memo : String) {
         self.planName = name
-        self.smallPlan = smallPlan
+        self.City = citylist
+        self.memo = memo
     }
 }

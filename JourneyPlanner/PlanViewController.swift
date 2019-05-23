@@ -42,25 +42,20 @@ class PlanViewController: UIViewController {
         
         if let image = UIImage(named: "Trip-Piha_90_2x"){
             
-            var plandetails : [PlanDetailInformation] = []
             var citylists : [CityListInformation] = []
-            var citylists2 : [CityListInformation] = []
 
             var attractions : [AttractionInformation] = []
             
-            attractions.append(AttractionInformation(Name: "Test attraction", Location: CLLocationCoordinate2D(latitude: -38.13874, longitude: 176.24516)))
+            attractions.append(AttractionInformation(Name: "Cape Reinga Lighthouse", Location: CLLocationCoordinate2D(latitude: -34.426639, longitude: 172.677639)))
+            attractions[0].attractionImage = UIImage(named: "Tripe-Cape_Reinga_1x")
             attractions.append(AttractionInformation(Name: "Awesome Thai food", Location: CLLocationCoordinate2D(latitude: -38.1387009, longitude: 176.2528075)))
             
-            citylists.append(CityListInformation(name: "Auckland", time: 2, location: CLLocationCoordinate2D(latitude: -36.848461, longitude: 174.763336), image: image, attractions: attractions))
+            citylists.append(CityListInformation(name: "Cape Reinga", time: 1, location: CLLocationCoordinate2D(latitude: -34.428788, longitude: 172.681003), image: image, attractions: attractions))
+            
+            citylists.append(CityListInformation(name: "Auckland", time: 1, location: CLLocationCoordinate2D(latitude: -36.848461, longitude: 174.763336), image: image, attractions: attractions))
             
             
-            citylists2.append(CityListInformation(name: "Hamilton", time: 3, location: CLLocationCoordinate2D(latitude: -36.848461, longitude: 174.763336), image: image, attractions: attractions))
-            
-     
-            plandetails.append(PlanDetailInformation(citylist:  citylists, memo: "Test Memo"))
-            plandetails.append(PlanDetailInformation(citylist: citylists2, memo: "Memo 2"))
-            
-            plan?.append(PlanInformations(name: "TestPlan1", smallPlan: plandetails))
+            plan?.append(PlanInformations(name: "Test Plan", citylist: citylists, memo: "memo"))
         }
         
     }
@@ -68,20 +63,19 @@ class PlanViewController: UIViewController {
     
     // this method is used to create the bridge beteen this class and the plan detail view controller - Wanfang Zhou 23/04/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // View Plan detail
-//        if segue.identifier == "PlanDetailSegue"{
-//            if let plandetailViewController = segue.destination as?
-//                PlanDetailViewController{
-//
-//                if let cell = sender as? UITableViewCell{
-//                    if let indexPath = tableView.indexPath(for: cell){
-//                        let planDetail = plan?[indexPath.row]
-//                        plandetailViewController.plan = planDetail
-//                    }
-//                }
-//                plandetailViewController.delegate = self
-//            }
-//        }
+  
+        if segue.identifier == "viewPlanCity"{
+            if let planCityViewController = segue.destination as? PlanCityViewController{
+                planCityViewController.delegate = self
+                
+                if let cell = sender as? UITableViewCell{
+                    if let indexPath = tableView.indexPath(for: cell),
+                        let plan = self.plan{
+                        planCityViewController.cities = plan[indexPath.row].City
+                    }
+                }
+            }
+        }
         
         
         // if user would likely to create a new trip, it will bring user to an emptry page - Wanfang Zhou 23/04/2019
@@ -119,14 +113,11 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
             
             
             //calculate the spent time and cities for a trip
-            for plan in planCellInformation.smallPlan{
-                for city in plan.City{
-                    
-                    // count stop time
-                    stopTime = city.cityStopTime + stopTime
-                    cities = cities + city.cityName + " "
-                    
-                }
+            for city in planCellInformation.City{
+                
+                // count stop time
+                stopTime = city.cityStopTime + stopTime
+                cities = cities + city.cityName + " "
             }
             
 
@@ -158,5 +149,9 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
 
 // this extentsion creates the bridge between the this class and plan detail view class  - Wanfang Zhou 23/04/2019
 extension PlanViewController : PlanDetailViewControllerDelegate{
+    
+}
+
+extension PlanViewController : PlanCityViewControllerDelegate {
     
 }
