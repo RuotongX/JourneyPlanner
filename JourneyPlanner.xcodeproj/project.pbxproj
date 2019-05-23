@@ -55,6 +55,8 @@
 		A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */; };
 		A8D2DC4E228980DD00F490F8 /* RouteInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */; };
 		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
+		DB70F64B22969DD40053DA50 /* PerferenceDao.m in Sources */ = {isa = PBXBuildFile; fileRef = DB70F64A22969DD40053DA50 /* PerferenceDao.m */; };
+		DB70F64E2296A1470053DA50 /* Perference.m in Sources */ = {isa = PBXBuildFile; fileRef = DB70F64D2296A1470053DA50 /* Perference.m */; };
 		DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */; };
 		E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118498D2279B5CA00731D9A /* WeatherForcastController.swift */; };
 		E11849922279B65100731D9A /* WeatherCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11849912279B65100731D9A /* WeatherCellController.swift */; };
@@ -154,6 +156,10 @@
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
 		A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInformation.swift; sourceTree = "<group>"; };
+		DB70F64922969DD40053DA50 /* PerferenceDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerferenceDao.h; sourceTree = "<group>"; };
+		DB70F64A22969DD40053DA50 /* PerferenceDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerferenceDao.m; sourceTree = "<group>"; };
+		DB70F64C2296A1470053DA50 /* Perference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Perference.h; sourceTree = "<group>"; };
+		DB70F64D2296A1470053DA50 /* Perference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Perference.m; sourceTree = "<group>"; };
 		DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceViewController.swift; sourceTree = "<group>"; };
 		E118498D2279B5CA00731D9A /* WeatherForcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastController.swift; sourceTree = "<group>"; };
 		E11849912279B65100731D9A /* WeatherCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellController.swift; sourceTree = "<group>"; };
@@ -289,6 +295,10 @@
 				8C32369D22854AA000BD0DB2 /* NSObject+SQL.m */,
 				8C3236A322854B6200BD0DB2 /* FavouriteDao.h */,
 				8C3236A422854B6200BD0DB2 /* FavouriteDao.m */,
+				DB70F64922969DD40053DA50 /* PerferenceDao.h */,
+				DB70F64A22969DD40053DA50 /* PerferenceDao.m */,
+				DB70F64C2296A1470053DA50 /* Perference.h */,
+				DB70F64D2296A1470053DA50 /* Perference.m */,
 			);
 			path = LocalManager;
 			sourceTree = "<group>";
@@ -567,7 +577,9 @@
 				8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				E118498E2279B5CA00731D9A /* WeatherForcastController.swift in Sources */,
 				8C3236A222854AF800BD0DB2 /* DBManager.m in Sources */,
+				DB70F64E2296A1470053DA50 /* Perference.m in Sources */,
 				8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */,
+				DB70F64B22969DD40053DA50 /* PerferenceDao.m in Sources */,
 				419DCFF0229622C800468509 /* PlanDetailMapTableViewCell.swift in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
 				4153C452229347CC00DBA4CD /* SelectCityTableviewCellTableViewCell.swift in Sources */,
