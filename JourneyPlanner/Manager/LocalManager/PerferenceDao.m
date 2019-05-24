@@ -7,8 +7,9 @@
 //
 
 #import "PerferenceDao.h"
-#define NAME_THIS_TABLE @"NameTable"
 #import "Perference.h"
+#define NAME_THIS_TABLE @"NameTable"
+#define PERFERENCEID @"perferenceid"
 
 @implementation PerferenceDao
 
@@ -20,19 +21,19 @@
 }
 
 + (void)addPerferenceModel:(Perference *)model {
-    NSString *selectStr = [NSString stringWithFormat:@"SELECT * FROM '%@' WHERE perferenceid ='%@' ",NAME_THIS_TABLE,model.perferenceid];
+    NSString *selectStr = [NSString stringWithFormat:@"SELECT * FROM '%@' WHERE perferenceid ='%@' ",NAME_THIS_TABLE,PERFERENCEID];
     NSArray *results    = [[Persistent getInstance] query:selectStr];
     if (results && results.count > 0) {
-        NSString *updateStr = [NSString stringWithFormat:@"UPDATE '%@' SET name = '%@',perferenceid = '%@'  ",NAME_THIS_TABLE,model.perferenceid,model.name];
+        NSString *updateStr = [NSString stringWithFormat:@"UPDATE '%@' SET name = '%@',perferenceid = '%@'  ",NAME_THIS_TABLE,PERFERENCEID,model.name];
         [[Persistent getInstance] update:updateStr];
     } else {
-        NSString *insertStr = [NSString stringWithFormat:@"INSERT OR REPLACE INTO '%@'(perferenceid,name)values('%@','%@')",NAME_THIS_TABLE,model.perferenceid,model.name];
+        NSString *insertStr = [NSString stringWithFormat:@"INSERT OR REPLACE INTO '%@'(perferenceid,name)values('%@','%@')",NAME_THIS_TABLE,PERFERENCEID,model.name];
         [[Persistent getInstance] update:insertStr];
     }
 }
 
 + (Perference *)searchPerferenceName {
-    NSString *sqlString = [NSString stringWithFormat:@"SELECT * FROM %@ ",NAME_THIS_TABLE];
+    NSString *sqlString = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE perferenceid = '%@'",NAME_THIS_TABLE,PERFERENCEID];
     NSArray *results    = [[Persistent getInstance] query:sqlString];
     if (results && results.count >0) {
         Perference *model = [Perference getModelWithData:results[0]];

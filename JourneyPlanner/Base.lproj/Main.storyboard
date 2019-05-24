@@ -743,6 +743,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uqg-t3-Qg1"/>
                     </view>
+                    <connections>
+                        <outlet property="DoneButton" destination="WE5-pR-SCX" id="Kre-73-iPk"/>
+                        <outlet property="NameTextField" destination="SUF-96-bEU" id="XLY-ex-yT0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXk-gf-ys9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1615,12 +1619,20 @@
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-Vw-7d8" userLabel="Name Label">
+                                <rect key="frame" x="170" y="133" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NFA-f1-2fg"/>
                     </view>
                     <connections>
                         <outlet property="MapTypeTextField" destination="Zwl-rj-iRE" id="F14-ov-KRC"/>
+                        <outlet property="NameLabel" destination="aMs-Vw-7d8" id="XaA-sS-49z"/>
                         <outlet property="RangeTextField" destination="Xl3-QI-aJt" id="5L1-3S-aXB"/>
                     </connections>
                 </viewController>

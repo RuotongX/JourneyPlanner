@@ -10,10 +10,23 @@ import UIKit
 
 class NameViewController: UIViewController {
 
+    
+    @IBOutlet weak var DoneButton: UIButton!
+    @IBOutlet weak var NameTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DoneButton.addTarget(self, action: #selector(doneClick), for: .touchUpInside)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func doneClick() {
+        let manager = DBManager.sharedInstance()
+        manager?.savePerferenceName(NameTextField.text)
+        NameTextField.text = ""
+        NameTextField.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
     }
     
 
