@@ -18,6 +18,7 @@ class SelectCityCell: UITableViewCell {
     
     @IBOutlet weak var CityNmae: UILabel!
     
+    @IBOutlet weak var DarkCoverForImage: UIImageView!
     @IBOutlet weak var TimeLabel: UILabel!
     
     @IBOutlet weak var Background: UIImageView!
