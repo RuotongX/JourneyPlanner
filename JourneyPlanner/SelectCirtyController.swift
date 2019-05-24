@@ -54,8 +54,9 @@ extension SelectCirtyController : UITableViewDelegate, UITableViewDataSource{
         
         cell.TimeLabel.text = String(cityInformation[indexPath.row].cityStopTime)
         
-        cell.CityImage.layer.cornerRadius = 20
-        cell.Background.layer.cornerRadius = 20
+        cell.CityImage.layer.cornerRadius = 8
+        cell.Background.layer.cornerRadius = 8
+//        cell.DarkCoverForImage.layer.cornerRadius = 8
         
         //Define the empty function taht used to set tha action for the increase button - ZHE WANG
         cell.IncreaseButton = {
