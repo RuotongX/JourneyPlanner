@@ -1,18 +1,20 @@
 //
-//  RoutePreviewCellTableViewCell.swift
+//  SelectAttractionsCell.swift
 //  JourneyPlanner
 //
-//  Created by ZHE WANG on 20/05/19.
+//  Created by ZHE WANG on 24/05/19.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 import UIKit
 
-class RoutePreviewCellTableViewCell: UITableViewCell {
+class SelectAttractionsCell: UITableViewCell {
     
     @IBOutlet weak var AttractionsImage: UIImageView!
     
     @IBOutlet weak var AttractionName: UILabel!
+    
+    @IBOutlet weak var Background: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

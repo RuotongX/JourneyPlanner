@@ -50,30 +50,30 @@ class RouteListViewController: UIViewController {
 }
 
 //inherence 3D touch preview delgate
-extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate{
+extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
     
     //connect and set the preview page
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-     
+
         //set the index used to get row number of user pressed
         guard let indexPath = TripTableView.indexPathForRow(at: location),
             let cell = TripTableView.cellForRow(at: indexPath)
             else{
                 return nil
         }
-        
+
         previewingContext.sourceRect = cell.frame
-        
-        let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing") as! RoutePreviewingTableViewController
+
+        let previewing = storyboard?.instantiateViewController(withIdentifier: "PreviewController") as! RoutePreviewController
 
         return previewing
     }
-    
+
     //Pop actions
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
+
         let destination  = storyboard?.instantiateViewController(withIdentifier: "EditRoutePlanPage")
-        
+
         show(destination!, sender: self)
     }
     
