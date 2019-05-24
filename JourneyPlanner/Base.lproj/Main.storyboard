@@ -1181,8 +1181,8 @@
                                     <action selector="returnButtonPressed:" destination="gMV-bu-1a6" eventType="touchUpInside" id="Fau-hG-o9d"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EyY-7d-lFN">
-                                <rect key="frame" x="0.0" y="158" width="375" height="653.33333333333326"/>
+                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EyY-7d-lFN" userLabel="TableView">
+                                <rect key="frame" x="0.0" y="158.66666666666669" width="375" height="653.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="P9R-6d-w2j" customClass="PlanTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
@@ -1203,7 +1203,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-iz-hvl" userLabel="PlanLength">
-                                                    <rect key="frame" x="24" y="46.666666666666664" width="292" height="30.333333333333336"/>
+                                                    <rect key="frame" x="24" y="46.666666666666664" width="238" height="30.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Ultralight" family="PingFang SC" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1214,6 +1214,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29H-VA-0Ci">
+                                                    <rect key="frame" x="292" y="48" width="24" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="Plan-memo 1x"/>
+                                                    <connections>
+                                                        <segue destination="fM3-mV-WrH" kind="show" identifier="ShowMemo" id="Xid-ls-HiP"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ydf-iz-hvl" firstAttribute="top" secondItem="m0X-3V-YcC" secondAttribute="bottom" constant="4.6666666666667211" id="4Dz-FA-ZAN"/>
@@ -1228,7 +1236,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="cell"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ydf-iz-hvl" secondAttribute="trailing" constant="59" id="HTo-32-rbz"/>
+                                            <constraint firstAttribute="trailing" secondItem="ydf-iz-hvl" secondAttribute="trailing" constant="113" id="HTo-32-rbz"/>
                                             <constraint firstAttribute="trailing" secondItem="cKf-ki-AVY" secondAttribute="trailing" constant="59" id="S9b-sv-AXa"/>
                                             <constraint firstAttribute="trailing" secondItem="m0X-3V-YcC" secondAttribute="trailing" constant="59" id="axc-if-5O4"/>
                                         </constraints>
@@ -1264,7 +1272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zH7-Tf-fwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3444" y="-251"/>
+            <point key="canvasLocation" x="3444" y="-251.23152709359607"/>
         </scene>
         <!--PlanDetailViewController-->
         <scene sceneID="4Ix-4S-8YV">
@@ -1620,6 +1628,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBC-5O-U8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="825" y="1132"/>
+        </scene>
+        <!--Memo View Controller-->
+        <scene sceneID="TQf-Ru-ATv">
+            <objects>
+                <viewController id="fM3-mV-WrH" customClass="MemoViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0iK-eN-eak">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanBackground 1x" translatesAutoresizingMaskIntoConstraints="NO" id="ffu-Q6-Av1">
+                                <rect key="frame" x="0.0" y="-7" width="375" height="825"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="71Z-0D-Hcw">
+                                <rect key="frame" x="16" y="107" width="343" height="635"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOK-ye-Gjg">
+                                <rect key="frame" x="313" y="58" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="DoneButtonPressed:" destination="fM3-mV-WrH" eventType="touchUpInside" id="FRM-kd-SMU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6z-8h-1gl">
+                                <rect key="frame" x="163" y="63" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5rY-1u-mII"/>
+                    </view>
+                    <connections>
+                        <outlet property="memoText" destination="71Z-0D-Hcw" id="gss-VT-LOX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxL-nB-FDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4712.8000000000002" y="-995.32019704433503"/>
         </scene>
         <!--Plan City View Controller-->
         <scene sceneID="DaW-Ti-KBY">
@@ -2088,6 +2145,7 @@
         <image name="Name(1)" width="352" height="51"/>
         <image name="Plan-White Whiteadd new 1x" width="20" height="20"/>
         <image name="Plan-White Whitereturn key 1x" width="20" height="20"/>
+        <image name="Plan-memo 1x" width="24" height="24"/>
         <image name="Plan-return key 1x" width="14" height="23"/>
         <image name="PlanBackground 1x" width="375" height="812"/>
         <image name="PlanCellBackground 1x" width="337" height="122"/>

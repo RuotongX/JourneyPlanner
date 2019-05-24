@@ -89,6 +89,29 @@ class PlanViewController: UIViewController {
                 planDetailViewController.delegate = self
             }
         }
+        
+        if segue.identifier == "ShowMemo"{
+            if let memoViewController = segue.destination as? MemoViewController{
+                
+                // obtain current row
+                if let button = sender as? UIButton{
+                    let fingerLocation = button.convert(CGPoint.zero, to: tableView)
+                    
+                    if let indexPath = tableView.indexPathForRow(at: fingerLocation){
+                        
+                        if let plans = self.plan{
+                            let selectedPlan = plans[indexPath.row]
+                            
+                            memoViewController.memo = selectedPlan.memo
+                            memoViewController.indexNumber = indexPath.row
+                            memoViewController.delegate = self
+
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
 
 }
@@ -153,5 +176,16 @@ extension PlanViewController : PlanDetailViewControllerDelegate{
 }
 
 extension PlanViewController : PlanCityViewControllerDelegate {
+    
+}
+
+extension PlanViewController : MemoViewControllerDelegate {
+    func updateMemoInformation(_ controller: MemoViewController, memo: String, indexNumber: Int) {
+        
+        if let plans = self.plan{
+            plans[indexNumber].memo = memo
+        }
+    }
+    
     
 }
