@@ -8,6 +8,7 @@
 
 #import "DBManager.h"
 #import "FavouriteDao.h"
+#import "PerferenceDao.h"
 #define DATABASE @"JourneyPlanner_Sqlite_One.db"
 @implementation DBManager
 
@@ -28,6 +29,7 @@
 
 - (void)initLocalDatas {
     [FavouriteDao init:DATABASE];
+    [PerferenceDao init:DATABASE];
 }
 
 - (void)addMyFavourite:(Favourite *)favourite {
@@ -41,6 +43,18 @@
 
 - (NSArray *)favourites {
   return [FavouriteDao getAllMyFavourites];
+}
+
+- (void)savePerferenceName:(NSString *)text {
+    if (text && text.length > 0) {
+        Perference *perference = [[Perference alloc] init];
+        perference.name = text;
+        [PerferenceDao addPerferenceModel:perference];
+    }
+}
+
+- (Perference *)archivePerferenceModel {
+    return [PerferenceDao searchPerferenceName];
 }
 
 @end

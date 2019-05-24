@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Favourite.h"
+#import "Perference.h"
 @interface DBManager : NSObject
 
 + (DBManager*)sharedInstance;
@@ -17,6 +18,10 @@
 - (void)deleteMyFavourite:(Favourite*)favourite;
 
 - (NSArray*)favourites;
+
+- (void)savePerferenceName:(NSString*)name;
+
+- (Perference*)archivePerferenceModel;
 
 @end
 

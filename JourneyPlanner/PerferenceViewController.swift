@@ -13,6 +13,9 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @IBOutlet weak var RangeTextField: UITextField!
     @IBOutlet weak var MapTypeTextField: UITextField!
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    
     let range_arr = ["off","5km","10km","15km","20km","25km"]
     let mapType_arr = ["Standerd","Setellite","Hybrid"]
     var active_textField : UITextField!
@@ -36,6 +39,14 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         creat_toolbar()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let manager = DBManager.sharedInstance()
+        let perfrence = manager?.archivePerferenceModel();
+        if (perfrence != nil && ((perfrence?.name) != nil))  {
+            NameLabel.text = perfrence?.name
+        }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
