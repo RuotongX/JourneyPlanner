@@ -57,6 +57,7 @@
 		A8F66BA12297902300B7118E /* RoutePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F66BA02297902300B7118E /* RoutePreviewController.swift */; };
 		A8F66BA32297908E00B7118E /* RoutePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F66BA22297908E00B7118E /* RoutePreviewCell.swift */; };
 		B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E12DA0876B1D62D6A3C436 /* Pods_JourneyPlanner.framework */; };
+		DB2B63852297DB7400028D96 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B63842297DB7400028D96 /* NameViewController.swift */; };
 		DB70F64B22969DD40053DA50 /* PerferenceDao.m in Sources */ = {isa = PBXBuildFile; fileRef = DB70F64A22969DD40053DA50 /* PerferenceDao.m */; };
 		DB70F64E2296A1470053DA50 /* Perference.m in Sources */ = {isa = PBXBuildFile; fileRef = DB70F64D2296A1470053DA50 /* Perference.m */; };
 		DB7D5EA8227FDFCE005911F5 /* PerferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */; };
@@ -158,12 +159,13 @@
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
 		A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInformation.swift; sourceTree = "<group>"; };
+		A8F66BA02297902300B7118E /* RoutePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewController.swift; sourceTree = "<group>"; };
+		A8F66BA22297908E00B7118E /* RoutePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewCell.swift; sourceTree = "<group>"; };
+		DB2B63842297DB7400028D96 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		DB70F64922969DD40053DA50 /* PerferenceDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerferenceDao.h; sourceTree = "<group>"; };
 		DB70F64A22969DD40053DA50 /* PerferenceDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PerferenceDao.m; sourceTree = "<group>"; };
 		DB70F64C2296A1470053DA50 /* Perference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Perference.h; sourceTree = "<group>"; };
 		DB70F64D2296A1470053DA50 /* Perference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Perference.m; sourceTree = "<group>"; };
-		A8F66BA02297902300B7118E /* RoutePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewController.swift; sourceTree = "<group>"; };
-		A8F66BA22297908E00B7118E /* RoutePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewCell.swift; sourceTree = "<group>"; };
 		DB7D5EA7227FDFCE005911F5 /* PerferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceViewController.swift; sourceTree = "<group>"; };
 		E118498D2279B5CA00731D9A /* WeatherForcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForcastController.swift; sourceTree = "<group>"; };
 		E11849912279B65100731D9A /* WeatherCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */,
 				419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */,
 				419DCFF1229623FE00468509 /* AttractionDetailTableViewCell.swift */,
+				DB2B63842297DB7400028D96 /* NameViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				8C32369622854A6100BD0DB2 /* FMDatabase.m in Sources */,
 				419DCFF2229623FE00468509 /* AttractionDetailTableViewCell.swift in Sources */,
 				E1CD9FDE2285B660007A116F /* ShowMoreCell.swift in Sources */,
+				DB2B63852297DB7400028D96 /* NameViewController.swift in Sources */,
 				4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */,
 				4135DD2D22956F6500467DD0 /* PlanDetailViewController.swift in Sources */,
 				8C3236862285248800BD0DB2 /* NSMutableArray+SWUtilityButtons.m in Sources */,
