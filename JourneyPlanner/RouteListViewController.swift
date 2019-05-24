@@ -50,32 +50,32 @@ class RouteListViewController: UIViewController {
 }
 
 //inherence 3D touch preview delgate
-extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate{
+extension RouteListViewController : UITableViewDelegate, UITableViewDataSource {
     
     //connect and set the preview page
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-     
-        //set the index used to get row number of user pressed
-        guard let indexPath = TripTableView.indexPathForRow(at: location),
-            let cell = TripTableView.cellForRow(at: indexPath)
-            else{
-                return nil
-        }
-        
-        previewingContext.sourceRect = cell.frame
-        
-        let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing") as! RoutePreviewingTableViewController
-
-        return previewing
-    }
-    
-    //Pop actions
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-        let destination  = storyboard?.instantiateViewController(withIdentifier: "EditRoutePlanPage")
-        
-        show(destination!, sender: self)
-    }
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+//
+//        //set the index used to get row number of user pressed
+//        guard let indexPath = TripTableView.indexPathForRow(at: location),
+//            let cell = TripTableView.cellForRow(at: indexPath)
+//            else{
+//                return nil
+//        }
+//
+//        previewingContext.sourceRect = cell.frame
+//
+//        let previewing = storyboard?.instantiateViewController(withIdentifier: "RoutePreviewing") as! RoutePreviewingTableViewController
+//
+//        return previewing
+//    }
+//
+//    //Pop actions
+//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+//
+//        let destination  = storyboard?.instantiateViewController(withIdentifier: "EditRoutePlanPage")
+//
+//        show(destination!, sender: self)
+//    }
     
     //返回cell的数量
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,10 +93,10 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
         cell.RouteName.text = routeInfo[indexPath.row].routeName
         cell.Auckland_Explore.image = routeInfo[indexPath.row].routeImage
         
-        //check whether the device work for 3D touch
-        if traitCollection.forceTouchCapability == .available{
-            registerForPreviewing(with: self, sourceView: cell)
-        }
+//        //check whether the device work for 3D touch
+//        if traitCollection.forceTouchCapability == .available{
+//            registerForPreviewing(with: self, sourceView: cell)
+//        }
         
         cell.Auckland_Explore.layer.cornerRadius = 10
         cell.BlackCover.layer.cornerRadius = 10

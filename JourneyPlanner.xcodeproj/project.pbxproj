@@ -13,7 +13,6 @@
 		4135DD29229553B000467DD0 /* PlanCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD28229553B000467DD0 /* PlanCityViewController.swift */; };
 		4135DD2B22955AE600467DD0 /* PlanCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD2A22955AE600467DD0 /* PlanCityTableViewCell.swift */; };
 		4135DD2D22956F6500467DD0 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD2C22956F6500467DD0 /* PlanDetailViewController.swift */; };
-		4153C452229347CC00DBA4CD /* SelectCityTableviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153C451229347CC00DBA4CD /* SelectCityTableviewCellTableViewCell.swift */; };
 		415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */; };
 		416AF92E226F1ECE00FF4FF6 /* SmallPlanInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */; };
 		416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92F226F21F700FF4FF6 /* TripPlan.swift */; };
@@ -48,9 +47,8 @@
 		A890A60422919C3D002719C9 /* AttractionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60322919C3D002719C9 /* AttractionInformation.swift */; };
 		A890A60622919DAE002719C9 /* CityListInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60522919DAE002719C9 /* CityListInformation.swift */; };
 		A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60C2291A1FB002719C9 /* PlanInformations.swift */; };
-		A890A60F22924156002719C9 /* RoutePreviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */; };
-		A890A61322926E02002719C9 /* SelectCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A61222926E02002719C9 /* SelectCityController.swift */; };
-		A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */; };
+		A8A17607229774F300C39C33 /* SelectCirtyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A17606229774F300C39C33 /* SelectCirtyController.swift */; };
+		A8A176092297751D00C39C33 /* SelectCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A176082297751D00C39C33 /* SelectCityCell.swift */; };
 		A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */; };
 		A8D2DC4822890C0700F490F8 /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */; };
 		A8D2DC4E228980DD00F490F8 /* RouteInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */; };
@@ -91,7 +89,6 @@
 		4135DD28229553B000467DD0 /* PlanCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCityViewController.swift; sourceTree = "<group>"; };
 		4135DD2A22955AE600467DD0 /* PlanCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCityTableViewCell.swift; sourceTree = "<group>"; };
 		4135DD2C22956F6500467DD0 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
-		4153C451229347CC00DBA4CD /* SelectCityTableviewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCityTableviewCellTableViewCell.swift; sourceTree = "<group>"; };
 		415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapTableViewController.swift; sourceTree = "<group>"; };
 		416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlanInformation.swift; sourceTree = "<group>"; };
 		416AF92F226F21F700FF4FF6 /* TripPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlan.swift; sourceTree = "<group>"; };
@@ -148,9 +145,8 @@
 		A890A60322919C3D002719C9 /* AttractionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInformation.swift; sourceTree = "<group>"; };
 		A890A60522919DAE002719C9 /* CityListInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInformation.swift; sourceTree = "<group>"; };
 		A890A60C2291A1FB002719C9 /* PlanInformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInformations.swift; sourceTree = "<group>"; };
-		A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewCellTableViewCell.swift; sourceTree = "<group>"; };
-		A890A61222926E02002719C9 /* SelectCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityController.swift; sourceTree = "<group>"; };
-		A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePreviewingTableViewController.swift; sourceTree = "<group>"; };
+		A8A17606229774F300C39C33 /* SelectCirtyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCirtyController.swift; sourceTree = "<group>"; };
+		A8A176082297751D00C39C33 /* SelectCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityCell.swift; sourceTree = "<group>"; };
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
 		A8D2DC4D228980DD00F490F8 /* RouteInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInformation.swift; sourceTree = "<group>"; };
@@ -333,10 +329,8 @@
 				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 				A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */,
 				A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */,
-				A8C14C9E228D2BFB003D081E /* RoutePreviewingTableViewController.swift */,
-				A890A60E22924156002719C9 /* RoutePreviewCellTableViewCell.swift */,
-				4153C451229347CC00DBA4CD /* SelectCityTableviewCellTableViewCell.swift */,
-				A890A61222926E02002719C9 /* SelectCityController.swift */,
+				A8A17606229774F300C39C33 /* SelectCirtyController.swift */,
+				A8A176082297751D00C39C33 /* SelectCityCell.swift */,
 				E14265FB22421C06006399D2 /* SecondViewController.swift */,
 				E14265FD22421C06006399D2 /* Main.storyboard */,
 				E142660022421C06006399D2 /* Assets.xcassets */,
@@ -570,14 +564,11 @@
 				8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */,
 				419DCFF0229622C800468509 /* PlanDetailMapTableViewCell.swift in Sources */,
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
-				4153C452229347CC00DBA4CD /* SelectCityTableviewCellTableViewCell.swift in Sources */,
 				8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */,
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
 				419DCFEE2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift in Sources */,
-				A890A61322926E02002719C9 /* SelectCityController.swift in Sources */,
 				8C3236842285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				A8D2DC4E228980DD00F490F8 /* RouteInformation.swift in Sources */,
-				A890A60F22924156002719C9 /* RoutePreviewCellTableViewCell.swift in Sources */,
 				E14265FA22421C06006399D2 /* Home_ViewController.swift in Sources */,
 				8C3236A522854B6200BD0DB2 /* FavouriteDao.m in Sources */,
 				8C32369522854A6100BD0DB2 /* FMDatabaseAdditions.m in Sources */,
@@ -590,13 +581,14 @@
 				410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */,
 				E11C2A09227E8FE50076B33B /* ResturantCellController.swift in Sources */,
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
-				A8C14C9F228D2BFB003D081E /* RoutePreviewingTableViewController.swift in Sources */,
 				A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */,
 				4135DD2B22955AE600467DD0 /* PlanCityTableViewCell.swift in Sources */,
+				A8A176092297751D00C39C33 /* SelectCityCell.swift in Sources */,
 				E11F14BB2280D74300A36DE9 /* ZomatoWeb.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
+				A8A17607229774F300C39C33 /* SelectCirtyController.swift in Sources */,
 				41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */,
 				416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */,
 			);
