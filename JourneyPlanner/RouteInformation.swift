@@ -21,4 +21,9 @@ class RouteInformation{
         self.routeStopTime = time
         self.routeImage = image
     }
+    
+    convenience init(name : String, time : Int, image : UIImage, city : [CityListInformation]){
+        self.init(name: name, time: time, image: image)
+        self.Cities = city
+    }
 }

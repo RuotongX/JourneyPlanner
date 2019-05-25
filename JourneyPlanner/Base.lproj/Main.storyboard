@@ -631,7 +631,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeOptionCell_1" rowHeight="187" id="Sso-Gt-dpb" customClass="RouteSelectTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="routeOptionCell_1" rowHeight="187" id="Sso-Gt-dpb" customClass="RouteSelectTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="187"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sso-Gt-dpb" id="RO6-XF-Pj2" customClass="RouteSelectTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
@@ -661,7 +661,7 @@
                                             <outlet property="Auckland_Explore" destination="YDI-nH-KaN" id="YdO-H0-YT9"/>
                                             <outlet property="BlackCover" destination="xo9-FE-p7I" id="HoA-qy-ZFy"/>
                                             <outlet property="RouteName" destination="qVN-KS-pnZ" id="Zpx-BN-3ef"/>
-                                            <segue destination="S3L-Ed-jEf" kind="show" id="3UG-gP-hbb"/>
+                                            <segue destination="S3L-Ed-jEf" kind="show" identifier="RouteSegue" id="3UG-gP-hbb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1787,7 +1787,7 @@
         <!--Select city page-->
         <scene sceneID="h0W-pj-FLH">
             <objects>
-                <viewController storyboardIdentifier="SelectCityViewController" title="Select city page" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S3L-Ed-jEf" customClass="SelectCirtyController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCityViewController" title="Select city page" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S3L-Ed-jEf" customClass="RouteSelectCityController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yM-Bi-LfK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1821,7 +1821,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectCityCell" rowHeight="232" id="O5K-ak-Un9" customClass="SelectCityCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectCityCell" rowHeight="232" id="O5K-ak-Un9" customClass="RouteSelectCityCell" customModule="JourneyPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O5K-ak-Un9" id="WNS-Ca-kTz">
@@ -1852,7 +1852,7 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="Waz-bC-lCF" kind="show" id="R7o-7W-Wwk"/>
+                                                        <segue destination="Waz-bC-lCF" kind="show" identifier="AttractionController" id="R7o-7W-Wwk"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-6M-tG1">
@@ -2021,7 +2021,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBM-DF-z2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="1741.6256157635469"/>
+            <point key="canvasLocation" x="-754" y="1742"/>
         </scene>
         <!--Route Preview Controller-->
         <scene sceneID="FFs-EP-juD">
@@ -2156,7 +2156,7 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D8Q-su-MS0"/>
+        <segue reference="r8F-8r-GSp"/>
         <segue reference="lPE-xR-MhK"/>
         <segue reference="20Y-3l-nNd"/>
     </inferredMetricsTieBreakers>

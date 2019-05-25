@@ -9,7 +9,11 @@
 import UIKit
 import CoreLocation
 
-class SelectCirtyController: UIViewController {
+protocol RouteSelectCityControllerDelgate {
+    
+}
+
+class RouteSelectCityController: UIViewController {
     
     
     @IBAction func ReturnButton(_ sender: UIButton) {
@@ -17,6 +21,7 @@ class SelectCirtyController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    var delgate : RouteSelectCityControllerDelgate?
     var cityInformation : [CityListInformation] = []
     
     @IBOutlet weak var SelectCityTableview: UITableView!
@@ -24,19 +29,29 @@ class SelectCirtyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let image = UIImage(named: "Trip-Skytower-150*110-1x"){
-            let location = CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609)
-            let infor_1 = CityListInformation(name: "Auckland", time: 1, location: location, image: image)
-            
-            cityInformation.append(infor_1)
-        }
-        
         SelectCityTableview.dataSource = self
         SelectCityTableview.delegate = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AttractionController"{
+            if let selsectAttraction = segue.destination as? SelectAttractionsController{
+                selsectAttraction.delgate = self
+                
+                if let cell = sender as? UITableViewCell{
+                    if let indexPath = SelectCityTableview.indexPath(for: cell){
+                        if let attraction = cityInformation[indexPath.row].Attractions{
+                            selsectAttraction.AttractionData = attraction
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-extension SelectCirtyController : UITableViewDelegate, UITableViewDataSource{
+extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource, SelectAttractionsControllerDelgate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -44,7 +59,7 @@ extension SelectCirtyController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SelectCityCell", for: indexPath) as? SelectCityCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SelectCityCell", for: indexPath) as? RouteSelectCityCell else {
             fatalError("The dequeued cell is not an instance of SelectCityTableviewCellTableViewCell.")
         }
         
