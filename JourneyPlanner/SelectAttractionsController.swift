@@ -9,14 +9,19 @@
 import UIKit
 import CoreLocation
 
+protocol SelectAttractionsControllerDelgate {
+    
+}
+
 class SelectAttractionsController: UIViewController {
 
     @IBOutlet weak var CityName: UILabel!
     
-    
     @IBAction func ReturnButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    var delgate : SelectAttractionsControllerDelgate?
     
     @IBOutlet weak var AttractionTableview: UITableView!
     

@@ -48,8 +48,8 @@
 		A890A60422919C3D002719C9 /* AttractionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60322919C3D002719C9 /* AttractionInformation.swift */; };
 		A890A60622919DAE002719C9 /* CityListInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60522919DAE002719C9 /* CityListInformation.swift */; };
 		A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890A60C2291A1FB002719C9 /* PlanInformations.swift */; };
-		A8A17607229774F300C39C33 /* SelectCirtyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A17606229774F300C39C33 /* SelectCirtyController.swift */; };
-		A8A176092297751D00C39C33 /* SelectCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A176082297751D00C39C33 /* SelectCityCell.swift */; };
+		A8A17607229774F300C39C33 /* RouteSelectCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A17606229774F300C39C33 /* RouteSelectCityController.swift */; };
+		A8A176092297751D00C39C33 /* RouteSelectCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A176082297751D00C39C33 /* RouteSelectCityCell.swift */; };
 		A8A1760B229780FF00C39C33 /* SelectAttractionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1760A229780FF00C39C33 /* SelectAttractionsCell.swift */; };
 		A8A1760D2297812100C39C33 /* SelectAttractionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1760C2297812100C39C33 /* SelectAttractionsController.swift */; };
 		A8D2DC44228840D200F490F8 /* RouteSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */; };
@@ -154,8 +154,8 @@
 		A890A60322919C3D002719C9 /* AttractionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInformation.swift; sourceTree = "<group>"; };
 		A890A60522919DAE002719C9 /* CityListInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInformation.swift; sourceTree = "<group>"; };
 		A890A60C2291A1FB002719C9 /* PlanInformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanInformations.swift; sourceTree = "<group>"; };
-		A8A17606229774F300C39C33 /* SelectCirtyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCirtyController.swift; sourceTree = "<group>"; };
-		A8A176082297751D00C39C33 /* SelectCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityCell.swift; sourceTree = "<group>"; };
+		A8A17606229774F300C39C33 /* RouteSelectCityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectCityController.swift; sourceTree = "<group>"; };
+		A8A176082297751D00C39C33 /* RouteSelectCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectCityCell.swift; sourceTree = "<group>"; };
 		A8A1760A229780FF00C39C33 /* SelectAttractionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAttractionsCell.swift; sourceTree = "<group>"; };
 		A8A1760C2297812100C39C33 /* SelectAttractionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAttractionsController.swift; sourceTree = "<group>"; };
 		A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -351,8 +351,8 @@
 				41B448B0226C39E600763AE4 /* SelectCityViewController.swift */,
 				A8D2DC43228840D200F490F8 /* RouteSelectTableViewCell.swift */,
 				A8D2DC4722890C0700F490F8 /* RouteListViewController.swift */,
-				A8A17606229774F300C39C33 /* SelectCirtyController.swift */,
-				A8A176082297751D00C39C33 /* SelectCityCell.swift */,
+				A8A17606229774F300C39C33 /* RouteSelectCityController.swift */,
+				A8A176082297751D00C39C33 /* RouteSelectCityCell.swift */,
 				A8A1760A229780FF00C39C33 /* SelectAttractionsCell.swift */,
 				A8A1760C2297812100C39C33 /* SelectAttractionsController.swift */,
 				A8F66BA02297902300B7118E /* RoutePreviewController.swift */,
@@ -618,13 +618,13 @@
 				41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */,
 				A890A60D2291A1FB002719C9 /* PlanInformations.swift in Sources */,
 				4135DD2B22955AE600467DD0 /* PlanCityTableViewCell.swift in Sources */,
-				A8A176092297751D00C39C33 /* SelectCityCell.swift in Sources */,
+				A8A176092297751D00C39C33 /* RouteSelectCityCell.swift in Sources */,
 				A8A1760D2297812100C39C33 /* SelectAttractionsController.swift in Sources */,
 				E11F14BB2280D74300A36DE9 /* ZomatoWeb.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
-				A8A17607229774F300C39C33 /* SelectCirtyController.swift in Sources */,
+				A8A17607229774F300C39C33 /* RouteSelectCityController.swift in Sources */,
 				41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */,
 				416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */,
 			);

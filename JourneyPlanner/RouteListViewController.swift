@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol RouteListViewControllerDelegate {
     
@@ -16,6 +17,8 @@ class RouteListViewController: UIViewController {
 
     var delegate: RouteListViewControllerDelegate?
     @IBOutlet weak var TripTableView: UITableView!
+    
+    //access the routeInformation class to store the test data, and set it to global variable - ZHE WANG
     var routeInfo : [RouteInformation] = []
     
     //Return to home page
@@ -26,19 +29,8 @@ class RouteListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //test data
-        if let image = UIImage(named: "Trip-Piha1x"){
-            let infor_1 = RouteInformation(name: "Auckland Explore", time: 3, image: image)
+        LoadData()
         
-            routeInfo.append(infor_1)
-        }
-        
-        if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
-            let infor_2 = RouteInformation(name: "Twin Coast Discovery", time: 7, image: image2)
-            
-            routeInfo.append(infor_2)
-        }
-
         //tableview 数据
         TripTableView.dataSource = self
         //tableview 的代理(操作)
@@ -47,10 +39,75 @@ class RouteListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    
+    func LoadData(){
+        
+        //access those two class that used to store the section's data of route - ZHE WANG
+        var citylist : [CityListInformation] = []
+        var attractionList : [AttractionInformation] = []
+        
+        if let RouteImage = UIImage(named: "Trip-Piha1x"){
+            
+            if let AttractionImage_1 = UIImage(named: "Trip-Piha_90_2x"){
+                attractionList.append(AttractionInformation.init(Name: "Piha Beach", Location: CLLocationCoordinate2D(latitude: 174.471, longitude: -36.954), attractionImage: AttractionImage_1))
+            }
+            
+            if let AttractionImage_2 = UIImage(named: "Trip-SkyTower-90-1x"){
+                attractionList.append(AttractionInformation.init(Name: "Auckland Skytower", Location: CLLocationCoordinate2D(latitude: 174.76, longitude: -36.85), attractionImage: AttractionImage_2))
+            }
+            
+            if let AttractionImage_3 = UIImage(named: "Trip-Waihike-90-1x"){
+                attractionList.append(AttractionInformation.init(Name: "Waihike Island", Location: CLLocationCoordinate2D(latitude: 175.1, longitude: -16.8), attractionImage: AttractionImage_3))
+            }
+            
+            if let CityImage = UIImage(named: "Trip-Skytower-150*110-1x"){
+                citylist.append(CityListInformation.init(name: "Auckland", time: 3, location: CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609), image : CityImage, attractions: attractionList))
+            }
+            
+            routeInfo.append(RouteInformation.init(name: "Auckland Explore", time: 3, image : RouteImage, city: citylist))
+        }
+        
+        if let RouteImage = UIImage(named: "Tripe-Cape_Reinga_1x"){
+            
+            if let AttractionImage_1 = UIImage(named: "Trip-Dargaville-Attraction-1"){
+                attractionList.append(AttractionInformation.init(Name: "Kai Iwi Lakes", Location: CLLocationCoordinate2D(latitude: 173.6375828, longitude: -35.9382609), attractionImage: AttractionImage_1))
+            }
+            
+            if let AttractionImage_2 = UIImage(named: "Trip-SkyTower-90-1x"){
+                attractionList.append(AttractionInformation.init(Name: "Auckland Skytower", Location: CLLocationCoordinate2D(latitude: 174.76, longitude: -36.85), attractionImage: AttractionImage_2))
+            }
+            
+            if let AttractionImage_3 = UIImage(named: "Trip-Waihike-90-1x"){
+                attractionList.append(AttractionInformation.init(Name: "Waihike Island", Location: CLLocationCoordinate2D(latitude: 175.1, longitude: -16.8), attractionImage: AttractionImage_3))
+            }
+            
+            if let CityImage = UIImage(named: "Trip-Dargaville-City"){
+                citylist.append(CityListInformation.init(name: "Dargaville", time: 3, location: CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609), image : CityImage, attractions: attractionList))
+            }
+            
+            routeInfo.append(RouteInformation.init(name: "Auckland Explore", time: 3, image : RouteImage, city: citylist))
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if segue.identifier == "RouteSegue"{
+            if let selectCityController = segue.destination as? RouteSelectCityController{
+                selectCityController.delgate = self
+                
+                if let cell = sender as? UITableViewCell{
+                    if let indexPath = TripTableView.indexPath(for: cell),
+                        let city = routeInfo[indexPath.row].Cities{
+                            selectCityController.cityInformation = city
+                    }
+                }
+            }
+        }
+    }
 }
 
 //inherence 3D touch preview delgate
-extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, RouteSelectCityControllerDelgate{
     
     //connect and set the preview page
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {

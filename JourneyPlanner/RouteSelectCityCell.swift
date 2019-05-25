@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectCityCell: UITableViewCell {
+class RouteSelectCityCell: UITableViewCell {
     
     //Create two empty function that can be accessed in view controller page - ZHE WANG
     var IncreaseButton : (() -> ()) = {}

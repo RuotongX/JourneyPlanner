@@ -20,7 +20,7 @@ class AttractionInformation{
         self.attractionLocation = Location
     }
     
-    convenience init(Name : String, Location : CLLocationCoordinate2D,attractionImage :UIImage){
+    convenience init(Name : String, Location : CLLocationCoordinate2D, attractionImage :UIImage){
         self.init(Name: Name, Location: Location)
         self.attractionImage = attractionImage
     }
