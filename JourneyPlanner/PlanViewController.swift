@@ -31,6 +31,29 @@ class PlanViewController: UIViewController {
     @IBAction func returnButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func addButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Plan Name", message: "Please enter plan name to continue", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Plan Name"
+        }
+        let confirm = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            if let textfields = alert.textFields{
+                if let text = textfields.first?.text{
+                    if text.isEmpty == false{
+                        let cityList : [CityListInformation] = []
+                        self.plan?.append(PlanInformations(name: text, citylist: cityList, memo: ""))
+                        self.tableView.reloadData()
+
+                    }
+                }
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        self.present(alert,animated: true)
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
@@ -71,6 +94,7 @@ class PlanViewController: UIViewController {
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = tableView.indexPath(for: cell),
                         let plan = self.plan{
+                        planCityViewController.planIndexNumber = indexPath.row
                         planCityViewController.cities = plan[indexPath.row].City
                     }
                 }
@@ -79,16 +103,7 @@ class PlanViewController: UIViewController {
         
         
         // if user would likely to create a new trip, it will bring user to an emptry page - Wanfang Zhou 23/04/2019
-        if segue.identifier == "newPlanSegue"{
-            if let planDetailViewController = segue.destination as? PlanDetailViewController{
-                
-                //using taptic engine to make vibration
-                let impactFeedBackGenerator = UIImpactFeedbackGenerator(style: .medium)
-                impactFeedBackGenerator.prepare()
-                impactFeedBackGenerator.impactOccurred()
-                planDetailViewController.delegate = self
-            }
-        }
+
         
         if segue.identifier == "ShowMemo"{
             if let memoViewController = segue.destination as? MemoViewController{
@@ -171,12 +186,16 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
 }
 
 // this extentsion creates the bridge between the this class and plan detail view class  - Wanfang Zhou 23/04/2019
-extension PlanViewController : PlanDetailViewControllerDelegate{
-    
-}
-
 extension PlanViewController : PlanCityViewControllerDelegate {
-    
+    func updateDestinations(_ controller: PlanCityViewController, cities: [CityListInformation], indexNum: Int) {
+        
+        print("iNDEX number : \(indexNum)")
+        if let plan = self.plan?[indexNum]{
+            plan.City = cities
+            print("reach")
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension PlanViewController : MemoViewControllerDelegate {

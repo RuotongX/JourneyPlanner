@@ -9,15 +9,14 @@
 import UIKit
 
 protocol PlanCityViewControllerDelegate{
-    
+    func updateDestinations(_ controller: PlanCityViewController, cities: [CityListInformation],indexNum:Int)
 }
-
-
 
 class PlanCityViewController: UIViewController {
     
     var cities : [CityListInformation]?
     var delegate : PlanCityViewControllerDelegate?
+    var planIndexNumber : Int?
     @IBOutlet weak var cityTableView: UITableView!
     
     override func viewDidLoad() {
@@ -34,7 +33,14 @@ class PlanCityViewController: UIViewController {
     
     
     @IBAction func returnButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            
+            if let cities = self.cities,
+                let delegate = self.delegate,
+                let indexNum = self.planIndexNumber{
+                delegate.updateDestinations(self, cities: cities,indexNum: indexNum)
+            }
+        }
     }
     
     
