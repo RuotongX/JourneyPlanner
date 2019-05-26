@@ -18,14 +18,14 @@ class RoutePreviewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let image = UIImage(named: "Trip-Piha_90_2x"){
-            let infor_1 = AttractionInformation.init(Name: "Piha", Location: CLLocationCoordinate2D(latitude: -36.954 , longitude: 174.471), attractionImage: image)
+        if let image = UIImage(named: "Trip-Dargaville-City"){
+            let infor_1 = AttractionInformation.init(Name: "Dargaville", Location: CLLocationCoordinate2D(latitude: -36.954 , longitude: 174.471), attractionImage: image)
             
             previewData.append(infor_1)
         }
         
-        if let image2 = UIImage(named: "Trip-SkyTower-90-1x"){
-            let infor_2 = AttractionInformation.init(Name: "Sky Tower", Location: CLLocationCoordinate2D(latitude: -36.848461 , longitude: 174.762183), attractionImage: image2)
+        if let image2 = UIImage(named: "Tripe-Cape_Reinga_1x"){
+            let infor_2 = AttractionInformation.init(Name: "Cape Reinga", Location: CLLocationCoordinate2D(latitude: -36.848461 , longitude: 174.762183), attractionImage: image2)
             
             previewData.append(infor_2)
         }
@@ -51,7 +51,9 @@ extension RoutePreviewController : UITableViewDataSource, UITableViewDelegate{
         
         cell.PreviewImage.image = previewData[indexPath.row].attractionImage
         
-    cell.PreviewImage.layer.cornerRadius = cell.PreviewImage.frame.height / 2
+        cell.PreviewImage.layer.cornerRadius = 8
+        cell.DarkCover.layer.cornerRadius = 8
+
         
         return cell
     }

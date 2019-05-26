@@ -12,7 +12,7 @@ class RoutePreviewCell: UITableViewCell {
     
     
     @IBOutlet weak var PreviewImage: UIImageView!
-    
+    @IBOutlet weak var DarkCover: UIImageView!
     @IBOutlet weak var PreviewName: UILabel!
     
     override func awakeFromNib() {
