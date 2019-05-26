@@ -12,13 +12,15 @@ import CoreLocation
 
 // this method is created to allow the information passing from this page to another detail page - Wanfang Zhou  30/04/2019
 protocol tripDetailViewControllerDelagate : class{
-    
+    func didupdateAttraction(_ controller: tripDetailViewController,attraction:AttractionInformation,indexNumber:Int)
+    func didAddAttraction(_ controller: tripDetailViewController, attraction: AttractionInformation)
 }
 
 class tripDetailViewController: UIViewController {
     
     var delegate : tripDetailViewControllerDelagate?
     var attraction : AttractionInformation?
+    var indexNumber : Int?
 
     @IBOutlet weak var TripTitle: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -28,6 +30,8 @@ class tripDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    override func viewDidAppear(_ animated: Bool) {
         loadInformation()
 
     }
@@ -47,19 +51,18 @@ class tripDetailViewController: UIViewController {
     
     // this function is designed to passing value to another class - Wanfang Zhou  30/04/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "searchTripOnMap"{
-//            if let uiNavigationController = segue.destination as? UINavigationController{
-//                if let mapViewController = uiNavigationController.viewControllers.first as? MapViewController{
-//                    mapViewController.delegate = self
-//                    mapViewController.mapsource = .PLANDETAIL_ADDNEW
-//                    if let plan = trip{
-//                        mapViewController.planDetail_planInformation = plan.location
-//                        mapViewController.mapsource = .PLANDETAIL_VIEW
-//                    }
-//                }
-//
-//            }
-//        }
+        if segue.identifier == "searchTripOnMap"{
+            if let uiNavigationController = segue.destination as? UINavigationController{
+                if let mapViewController = uiNavigationController.viewControllers.first as? MapViewController{
+                    mapViewController.delegate = self
+                    mapViewController.mapsource = .PLANDETAIL
+                    if let attractionInfo = attraction{
+                        mapViewController.plandetail_attractionInformation = attractionInfo
+                    }
+                }
+
+            }
+        }
     }
     
     // this function is used to load the trip, to set up all essential labels - Wanfang Zhou  30/04/2019
@@ -81,7 +84,20 @@ class tripDetailViewController: UIViewController {
         mapView.setRegion(region, animated: true)
     }
     
-
+    @IBAction func DoneButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true) {
+            
+            if let delegate = self.delegate,
+                let attraction = self.attraction{
+                if let indexnumber = self.indexNumber{
+                    delegate.didupdateAttraction(self, attraction: attraction, indexNumber: indexnumber)
+                } else{
+                    delegate.didAddAttraction(self, attraction: attraction)
+                }
+            }
+        }
+    }
+    
 
     
     // if user presee the return button, it will return to the previous page - Wanfang Zhou  30/04/2019
@@ -91,3 +107,16 @@ class tripDetailViewController: UIViewController {
 
 }
 
+extension tripDetailViewController: MapViewControllerDelegate{
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        //
+    }
+    
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
+        let newAttraction = AttractionInformation(Name: nameOfLocation, Location: CLLocationCoordinate2D(latitude: selectedLocation.coordinate.latitude, longitude: selectedLocation.coordinate.longitude))
+        
+        self.attraction = newAttraction
+    }
+    
+    
+}

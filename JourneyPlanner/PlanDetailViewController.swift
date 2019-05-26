@@ -45,11 +45,21 @@ class PlanDetailViewController: UIViewController {
                         if let cityInfo = self.city{
                             TripdetailViewController.delegate = self
                             TripdetailViewController.attraction = cityInfo.Attractions?[indexPath.row-2]
+                            TripdetailViewController.indexNumber = indexPath.row - 2
                         }
                     }
                 }
             }
         }
+        
+        if segue.identifier == "attractionNew"{
+            if let  TripdetailNewViewController = segue.destination as? tripDetailViewController{
+                TripdetailNewViewController.delegate = self
+
+            }
+        }
+    }
+    @IBAction func StartButtonPressed(_ sender: Any) {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -77,6 +87,29 @@ class PlanDetailViewController: UIViewController {
     
 }
 extension PlanDetailViewController : tripDetailViewControllerDelagate{
+    func didupdateAttraction(_ controller: tripDetailViewController, attraction: AttractionInformation, indexNumber: Int) {
+        
+        if let cityInfo = self.city{
+            cityInfo.Attractions?.remove(at: indexNumber)
+            cityInfo.Attractions?.insert(attraction, at: indexNumber)
+        }
+        self.detailTableview.reloadData()
+    }
+    
+    func didAddAttraction(_ controller: tripDetailViewController, attraction: AttractionInformation) {
+        
+        if let cityinfo = self.city{
+            
+            if cityinfo.Attractions == nil{
+                cityinfo.Attractions = []
+            }
+            
+            cityinfo.Attractions?.append(attraction)
+        }
+        self.detailTableview.reloadData()
+
+    }
+    
     
 }
 

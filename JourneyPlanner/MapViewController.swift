@@ -25,8 +25,7 @@ protocol MapViewControllerDelegate: class{
 enum MapSource{
     case HOMEPAGE_MAP
     case HOMEPAGE_SEARCH
-    case PLANDETAIL_VIEW
-    case PLANDETAIL_ADDNEW
+    case PLANDETAIL
     case CHANGECITY
     case EXPLOREPAGE
 }
@@ -48,7 +47,7 @@ class MapViewController: UIViewController {
     var explorePage_Suggestionkeyword : String?
     var explorePage_UserLocation : CLLocation?
     var homePage_CurrentOrSelectedCity : LocationInformation?
-    var planDetail_planInformation : CLLocation?
+    var plandetail_attractionInformation : AttractionInformation?
     
     //the user can select their preferred maptype from the setting page - Dalton 12/May/2019
     var userPreferedMapType: MapType?
@@ -71,19 +70,19 @@ class MapViewController: UIViewController {
             
             if preferredMAP == .HYBRID{
                 mapView.mapType = .hybrid
-                mapTypeSegment.selectedSegmentIndex = 3
+                mapTypeSegment.selectedSegmentIndex = 2
             } else if preferredMAP == .SATELLITE{
                 mapView.mapType = .satellite
-                mapTypeSegment.selectedSegmentIndex = 2
+                mapTypeSegment.selectedSegmentIndex = 1
             } else if preferredMAP == .STANDARD{
                 mapView.mapType = .standard
-                mapTypeSegment.selectedSegmentIndex = 1
+                mapTypeSegment.selectedSegmentIndex = 0
             }
             
             
         } else{
             mapView.mapType = .standard
-            mapTypeSegment.selectedSegmentIndex = 1
+            mapTypeSegment.selectedSegmentIndex = 0
         }
         
         addSearchController()
@@ -164,8 +163,8 @@ class MapViewController: UIViewController {
                 alertSheet.addAction(favoriteAction)
                 
                 // when user select this from the plandetail page, it will allow user to place the current location with the selected new loadtion  - Dalton 25/Apr/2019
-            } else if mapsource == .PLANDETAIL_VIEW{
-                let replaceLocation = UIAlertAction(title: "Replace with existing Location", style: .default) { (action) in
+            } else if mapsource == .PLANDETAIL{
+                let replaceLocation = UIAlertAction(title: "Add/Change with selected Location", style: .default) { (action) in
                     if let annotation = self.selectedAnnotation{
                         let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
                         if let locationName = annotation.title{
@@ -176,18 +175,7 @@ class MapViewController: UIViewController {
                 }
                 alertSheet.addAction(replaceLocation)
                 // When user is deciding to create a new from the plan interface, it will allow user to add this location to trip. - Dalton 25/Apr/2019
-            } else if mapsource == .PLANDETAIL_ADDNEW{
-                let addThisPlace = UIAlertAction(title:"Add this location to my trip", style: .default) { (action) in
-                    if let annotation = self.selectedAnnotation{
-                        let location = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-                        if let locationName = annotation.title{
-                            self.delegate?.didSelectANewLocation(self, selectedLocation: location, nameOfLocation: locationName!)
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                    }
-                }
-                alertSheet.addAction(addThisPlace)
-            }
+            } 
             
             // this also allow user to select cancel, when user select cancel, nothing will happened  - Dalton 25/Apr/2019
             let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
@@ -272,32 +260,13 @@ class MapViewController: UIViewController {
                 }
             }
             
-            // if the map source is from the plan detail page, which user want to new the plan, it will display the annotation for user  - Dalton 03/May/2019
-            if mapsource == .PLANDETAIL_VIEW{
-                if let annotationInfo = planDetail_planInformation{
-                    
-                    let coder = CLGeocoder()
-                    let location = CLLocation(latitude: annotationInfo.coordinate.latitude, longitude: annotationInfo.coordinate.longitude)
-                 
-                    coder.reverseGeocodeLocation(location) { (placemarks, error) in
-                        if let error = error{
-                            print(error.localizedDescription)
-                        } else{
-                            if let placemark = placemarks?.first{
-                                let mkplacemark = MKPlacemark.init(placemark: placemark)
-                                self.dropPinZoomIn(placemark: mkplacemark)
-                            }
-                        }
-                    }
-                }
-            }
             
             // if user want to add new location to the plan, it will also dispaly the annotation for user
-            if mapsource == .PLANDETAIL_ADDNEW{
-                if let annotationInfo = planDetail_planInformation{
+            if mapsource == .PLANDETAIL{
+                if let attraciton = plandetail_attractionInformation{
                     
                     let coder = CLGeocoder()
-                    let location = CLLocation(latitude: annotationInfo.coordinate.latitude, longitude: annotationInfo.coordinate.longitude)
+                    let location = CLLocation(latitude: attraciton.attractionLocation.latitude, longitude: attraciton.attractionLocation.longitude)
                     
                     coder.reverseGeocodeLocation(location) { (placemarks, error) in
                         if let error = error{
