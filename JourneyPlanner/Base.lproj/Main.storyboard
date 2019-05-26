@@ -1687,7 +1687,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxL-nB-FDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4712.8000000000002" y="-995.32019704433503"/>
+            <point key="canvasLocation" x="3873" y="-1397"/>
+        </scene>
+        <!--Select Destination View Controller-->
+        <scene sceneID="YjN-0m-g6C">
+            <objects>
+                <viewController id="HT4-sS-O74" customClass="SelectDestinationViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aw9-CG-s50">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanBackground 1x" translatesAutoresizingMaskIntoConstraints="NO" id="k20-r8-UqX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asc-i5-j6T">
+                                <rect key="frame" x="16" y="62" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plan-White Whitereturn key 1x"/>
+                                <connections>
+                                    <action selector="ReturnButtonPressed:" destination="HT4-sS-O74" eventType="touchUpInside" id="sBk-Sn-ncs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBN-rZ-oKH">
+                                <rect key="frame" x="16" y="92" width="308" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="122" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DOf-1o-BTh">
+                                <rect key="frame" x="0.0" y="152" width="375" height="660"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="destination_city" rowHeight="122" id="qsB-FL-bTz" customClass="SelectDestinationTableViewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="122"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qsB-FL-bTz" id="ju0-o8-Cpx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="City-auckland" translatesAutoresizingMaskIntoConstraints="NO" id="hyS-D9-1Xu">
+                                                    <rect key="frame" x="26" y="5" width="322" height="112"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="darkCover 1x" translatesAutoresizingMaskIntoConstraints="NO" id="bss-ff-DJg">
+                                                    <rect key="frame" x="26" y="5" width="322" height="112"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ka-xm-aPS">
+                                                    <rect key="frame" x="43" y="44" width="288" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="CityImangeDarkCover" destination="bss-ff-DJg" id="gGN-Ec-Mer"/>
+                                            <outlet property="CityName" destination="3Ka-xm-aPS" id="4vN-db-Iwr"/>
+                                            <outlet property="cityImage" destination="hyS-D9-1Xu" id="nds-XJ-VKc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zVU-rs-Ijp"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="DOf-1o-BTh" id="viK-Bq-FW9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pBk-gU-NMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5280.8000000000002" y="-960.59113300492618"/>
         </scene>
         <!--Plan City View Controller-->
         <scene sceneID="DaW-Ti-KBY">
@@ -1760,6 +1837,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-qa-G59">
+                                <rect key="frame" x="339" y="61" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plan-White Whiteadd new 1x"/>
+                                <connections>
+                                    <segue destination="HT4-sS-O74" kind="show" identifier="createPlanCity" id="hj1-j6-1oy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2031,44 +2116,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CpH-Gw-vbu">
-                                <rect key="frame" x="0.0" y="144" width="375" height="634"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="h36-zN-SfM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="darkCover 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Zfh-yp-8To">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="111" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CpH-Gw-vbu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RoutePreviewCell" rowHeight="100" id="b7o-vR-tMV" customClass="RoutePreviewCell" customModule="JourneyPlanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RoutePreviewCell" rowHeight="111" id="b7o-vR-tMV" customClass="RoutePreviewCell" customModule="JourneyPlanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b7o-vR-tMV" id="2wM-AS-0MU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-gp-7cD">
-                                                    <rect key="frame" x="24" y="0.0" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="EV8-9k-kge"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trip-Piha1x" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-gp-7cD">
+                                                    <rect key="frame" x="15" y="5" width="345" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqi-Fn-paM">
-                                                    <rect key="frame" x="154" y="31" width="200" height="38"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="38" id="IDJ-jH-NNb"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <nil key="textColor"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="darkCover 1x" translatesAutoresizingMaskIntoConstraints="NO" id="wrj-ij-oBk">
+                                                    <rect key="frame" x="15" y="5" width="345" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqi-Fn-paM">
+                                                    <rect key="frame" x="25" y="36" width="325" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Ftv-gp-7cD" firstAttribute="leading" secondItem="2wM-AS-0MU" secondAttribute="leading" constant="24" id="3NM-JG-du5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Kqi-Fn-paM" secondAttribute="trailing" constant="6" id="5Cu-5E-kRK"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Kqi-Fn-paM" secondAttribute="bottom" constant="20" id="CrA-z4-9aa"/>
-                                                <constraint firstItem="Ftv-gp-7cD" firstAttribute="top" secondItem="2wM-AS-0MU" secondAttribute="top" id="Le5-AI-Aix"/>
-                                                <constraint firstItem="Kqi-Fn-paM" firstAttribute="leading" secondItem="Ftv-gp-7cD" secondAttribute="trailing" constant="30" id="NG9-Gx-bE0"/>
-                                                <constraint firstItem="Kqi-Fn-paM" firstAttribute="top" secondItem="2wM-AS-0MU" secondAttribute="topMargin" constant="20" id="W6p-Uq-SPG"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ftv-gp-7cD" secondAttribute="bottom" id="ubI-2i-vWD"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="DarkCover" destination="wrj-ij-oBk" id="OwE-ym-2at"/>
                                             <outlet property="PreviewImage" destination="Ftv-gp-7cD" id="hI2-QF-kVp"/>
                                             <outlet property="PreviewName" destination="Kqi-Fn-paM" id="nVC-3U-7ba"/>
                                         </connections>
@@ -2077,12 +2165,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="CpH-Gw-vbu" firstAttribute="leading" secondItem="Hem-fZ-mOL" secondAttribute="leading" id="PiT-bJ-Dzz"/>
-                            <constraint firstItem="CpH-Gw-vbu" firstAttribute="trailing" secondItem="Hem-fZ-mOL" secondAttribute="trailing" id="dKG-pA-5OQ"/>
-                            <constraint firstItem="CpH-Gw-vbu" firstAttribute="top" secondItem="Hem-fZ-mOL" secondAttribute="top" constant="100" id="gfi-XD-Pex"/>
-                            <constraint firstItem="CpH-Gw-vbu" firstAttribute="bottom" secondItem="Hem-fZ-mOL" secondAttribute="bottom" id="iUc-hn-zID"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hem-fZ-mOL"/>
                     </view>
                     <connections>
@@ -2091,10 +2173,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWs-DY-4ir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2732" y="2503"/>
+            <point key="canvasLocation" x="-2732" y="2501.231527093596"/>
         </scene>
     </scenes>
     <resources>
+        <image name="City-auckland" width="5472" height="3648"/>
         <image name="Explore-Background 1x" width="379" height="817"/>
         <image name="Explore-Map" width="41" height="39"/>
         <image name="Explore-Nearby-Bank 1x" width="58" height="58"/>
@@ -2156,7 +2239,7 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r8F-8r-GSp"/>
+        <segue reference="D8Q-su-MS0"/>
         <segue reference="lPE-xR-MhK"/>
         <segue reference="20Y-3l-nNd"/>
     </inferredMetricsTieBreakers>

@@ -53,6 +53,11 @@ class PlanCityViewController: UIViewController {
             
             
         }
+        
+        if segue.identifier == "createPlanCity"{
+            guard let CreatedestinationsViewController = segue.destination as?SelectDestinationViewController else {fatalError("Create Destination wrong!")}
+            CreatedestinationsViewController.delegate = self
+        }
     }
     
     
@@ -100,5 +105,15 @@ extension PlanCityViewController : UITableViewDelegate, UITableViewDataSource{
 }
 
 extension PlanCityViewController : PlanDetailViewControllerDelegate{
+    
+}
+extension PlanCityViewController : SelectDestinationViewControllerDelegate{
+    func didSelectNewDestination(_ controller: SelectDestinationViewController, selectedCity: CityListInformation) {
+
+        self.cities?.append(selectedCity)
+        self.cityTableView.reloadData()
+
+    }
+    
     
 }
