@@ -35,8 +35,8 @@ class RouteSelectCityController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "AttractionController"{
-            if let selsectAttraction = segue.destination as? SelectAttractionsController{
+        if segue.identifier == "AttractionData"{
+            if let selsectAttraction = segue.destination as? RouteAttractionController{
                 selsectAttraction.delgate = self
                 
                 if let cell = sender as? UITableViewCell{
@@ -51,7 +51,7 @@ class RouteSelectCityController: UIViewController {
     }
 }
 
-extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource, SelectAttractionsControllerDelgate{
+extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource, RouteAttractionControllerDelgate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
