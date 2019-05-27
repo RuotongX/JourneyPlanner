@@ -14,6 +14,8 @@ protocol PlanCityViewControllerDelegate{
 
 class PlanCityViewController: UIViewController {
     
+    @IBOutlet weak var addButton: UIButton!
+    var PlanType : planType = .NORMAL
     var cities : [CityListInformation]?
     var delegate : PlanCityViewControllerDelegate?
     var planIndexNumber : Int?
@@ -24,6 +26,11 @@ class PlanCityViewController: UIViewController {
 
         cityTableView.delegate = self
         cityTableView.dataSource = self
+        
+        if PlanType == .HISTORY{
+            self.addButton.isHidden = true
+        }
+        
         
     }
     
@@ -54,6 +61,10 @@ class PlanCityViewController: UIViewController {
                     let cities = self.cities{
                     planDetailViewController.city = cities[indexPath.row]
                     planDetailViewController.delegate = self
+                    
+                    if PlanType == .HISTORY{
+                        planDetailViewController.PlanType = .HISTORY
+                    }
                 }
             }
             

@@ -13,6 +13,7 @@
 		4135DD29229553B000467DD0 /* PlanCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD28229553B000467DD0 /* PlanCityViewController.swift */; };
 		4135DD2B22955AE600467DD0 /* PlanCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD2A22955AE600467DD0 /* PlanCityTableViewCell.swift */; };
 		4135DD2D22956F6500467DD0 /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD2C22956F6500467DD0 /* PlanDetailViewController.swift */; };
+		41469839229BF09E004AB978 /* Tab_UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41469838229BF09E004AB978 /* Tab_UserViewController.swift */; };
 		415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */; };
 		416391DC229A402600EC9636 /* SelectDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416391DB229A402600EC9636 /* SelectDestinationViewController.swift */; };
 		416391DE229A511700EC9636 /* SelectDestinationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416391DD229A511700EC9636 /* SelectDestinationTableViewCell.swift */; };
@@ -99,6 +100,7 @@
 		4135DD28229553B000467DD0 /* PlanCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCityViewController.swift; sourceTree = "<group>"; };
 		4135DD2A22955AE600467DD0 /* PlanCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCityTableViewCell.swift; sourceTree = "<group>"; };
 		4135DD2C22956F6500467DD0 /* PlanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
+		41469838229BF09E004AB978 /* Tab_UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab_UserViewController.swift; sourceTree = "<group>"; };
 		415FFF25227020C0003394B3 /* SearchMapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapTableViewController.swift; sourceTree = "<group>"; };
 		416391DB229A402600EC9636 /* SelectDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDestinationViewController.swift; sourceTree = "<group>"; };
 		416391DD229A511700EC9636 /* SelectDestinationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDestinationTableViewCell.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				41D06C8C229809D900A7584C /* MemoViewController.swift */,
 				416391DB229A402600EC9636 /* SelectDestinationViewController.swift */,
 				416391DD229A511700EC9636 /* SelectDestinationTableViewCell.swift */,
+				41469838229BF09E004AB978 /* Tab_UserViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				4135DD2B22955AE600467DD0 /* PlanCityTableViewCell.swift in Sources */,
 				A8A176092297751D00C39C33 /* RouteSelectCityCell.swift in Sources */,
 				E11F14BB2280D74300A36DE9 /* ZomatoWeb.swift in Sources */,
+				41469839229BF09E004AB978 /* Tab_UserViewController.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,

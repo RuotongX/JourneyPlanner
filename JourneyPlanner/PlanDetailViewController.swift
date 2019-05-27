@@ -15,11 +15,14 @@ protocol PlanDetailViewControllerDelegate {
 
 class PlanDetailViewController: UIViewController {
     
+    var PlanType : planType = .NORMAL
     var city: CityListInformation?
     var delegate : PlanDetailViewControllerDelegate?
     @IBOutlet weak var CityNameLabel: UILabel!
     @IBOutlet weak var detailTableview: UITableView!
     
+    @IBOutlet weak var StartButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,11 @@ class PlanDetailViewController: UIViewController {
         
         if let cityInfo = city{
             CityNameLabel.text = cityInfo.cityName
+        }
+        
+        if PlanType == .HISTORY{
+            StartButton.isHidden = true
+            addButton.isHidden = true
         }
 
         // Do any additional setup after loading the view.
@@ -46,6 +54,10 @@ class PlanDetailViewController: UIViewController {
                             TripdetailViewController.delegate = self
                             TripdetailViewController.attraction = cityInfo.Attractions?[indexPath.row-2]
                             TripdetailViewController.indexNumber = indexPath.row - 2
+                            
+                            if PlanType == .HISTORY{
+                                TripdetailViewController.planType = .HISTORY
+                            }
                         }
                     }
                 }

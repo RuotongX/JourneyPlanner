@@ -28,6 +28,7 @@ enum MapSource{
     case PLANDETAIL
     case CHANGECITY
     case EXPLOREPAGE
+    case EXPLORE_CANTEEN
 }
 
 enum MapType{
@@ -46,6 +47,8 @@ class MapViewController: UIViewController {
     var changeCity_ReturnValue : LocationInformation?
     var explorePage_Suggestionkeyword : String?
     var explorePage_UserLocation : CLLocation?
+    var explorePage_canteenLocation : CLLocation?
+    var explorePage_canteenName : String?
     var homePage_CurrentOrSelectedCity : LocationInformation?
     var homePage_SearchBarContent : String?
     var plandetail_attractionInformation : AttractionInformation?
@@ -145,7 +148,7 @@ class MapViewController: UIViewController {
                 alertSheet.addAction(changeCtiyAction)
                 
                 // when user selected from the button on the homepage or from the explorepage, it will showed up the add to plan and favorite button, which will first add it to the plan or add it to the favorite list.  - Dalton 25/Apr/2019
-            } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE || mapsource == .HOMEPAGE_SEARCH{
+            } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE || mapsource == .HOMEPAGE_SEARCH || mapsource == .EXPLORE_CANTEEN{
                 
                 let saveAction = UIAlertAction(title: "👌🏻 Add to Plan", style: .default) { (action) in
         
@@ -291,6 +294,28 @@ class MapViewController: UIViewController {
             }
             
             // if user is select this page from explore page, it will display all types of information for user  - Dalton 03/May/2019
+            
+            if mapsource == .EXPLORE_CANTEEN{
+                
+                if let canteenLocation = self.explorePage_canteenLocation{
+                    let coder = CLGeocoder()
+                    let location = canteenLocation
+                    
+                    coder.reverseGeocodeLocation(location) { (placemarks, error) in
+                        if let error = error{
+                            print(error.localizedDescription)
+                        } else{
+                            if let placemark = placemarks?.first{
+                                let mkplacemark = MKPlacemark.init(placemark: placemark)
+                                self.dropPinZoomIn(placemark: mkplacemark)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
             if mapsource == .EXPLOREPAGE{
                 if let keyword = explorePage_Suggestionkeyword,
                     let selectedCity = explorePage_UserLocation{
@@ -432,6 +457,13 @@ extension MapViewController : HandleMapSearch{
         
         if let annotationName = placemark.name{
             annotation.title = annotationName
+            
+            if self.mapsource == .EXPLORE_CANTEEN{
+                if let canteenName = self.explorePage_canteenName{
+                    annotation.title = canteenName
+                }
+            }
+            
         } else {
             annotation.title = "Selected Place"
         }

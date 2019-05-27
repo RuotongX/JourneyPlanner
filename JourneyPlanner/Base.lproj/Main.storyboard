@@ -372,7 +372,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DE-lO-Gyq">
-                                        <rect key="frame" x="29" y="25" width="16" height="37"/>
+                                        <rect key="frame" x="29" y="25" width="14" height="37"/>
                                         <state key="normal" image="PlanDetail-return key 1x"/>
                                         <connections>
                                             <action selector="Return:" destination="D1R-PD-hoZ" eventType="touchUpInside" id="a3F-YN-GKg"/>
@@ -505,6 +505,9 @@
                                                     <rect key="frame" x="315" y="32" width="55" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="Explore-Map"/>
+                                                    <connections>
+                                                        <segue destination="lmG-BS-7tZ" kind="show" identifier="showCanteenAtMap" id="bgW-kf-six"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -829,20 +832,20 @@
         <!--User-->
         <scene sceneID="hZa-t9-sc4">
             <objects>
-                <viewController id="axa-gT-Hwq" sceneMemberID="viewController">
+                <viewController id="axa-gT-Hwq" customClass="Tab_UserViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWY-sM-wdr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-85-Ve0" userLabel="Preference">
-                                <rect key="frame" x="39" y="153.66666666666666" width="296" height="22"/>
+                                <rect key="frame" x="39" y="209.66666666666666" width="296" height="71.999999999999972"/>
                                 <state key="normal" image="User-Preference"/>
                                 <connections>
                                     <segue destination="sZT-pM-JJI" kind="show" id="x2G-JL-PQR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocU-XZ-TpY" userLabel="About">
-                                <rect key="frame" x="39" y="195.66666666666666" width="296" height="22"/>
+                                <rect key="frame" x="39" y="301.66666666666669" width="296" height="72"/>
                                 <state key="normal" image="User-About"/>
                                 <connections>
                                     <segue destination="JEn-oB-1U8" kind="show" id="XbO-da-q4b"/>
@@ -855,8 +858,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-dj-FYT" userLabel="History Plan">
-                                <rect key="frame" x="39" y="117" width="296" height="22"/>
+                                <rect key="frame" x="39" y="117" width="296" height="72"/>
                                 <state key="normal" image="User-History Plan"/>
+                                <connections>
+                                    <action selector="historyPlanPressed:" destination="axa-gT-Hwq" eventType="touchUpInside" id="3oe-9y-8ec"/>
+                                    <segue destination="gMV-bu-1a6" kind="show" identifier="viewHistoryPlan" id="ShX-cb-Qms"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1179,14 +1186,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k81-L9-vnd">
-                                <rect key="frame" x="343" y="61" width="16" height="22"/>
+                                <rect key="frame" x="339" y="61" width="20" height="22"/>
                                 <state key="normal" image="Plan-White Whiteadd new 1x"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="gMV-bu-1a6" eventType="touchUpInside" id="9IL-GR-IH1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-o9-dBe">
-                                <rect key="frame" x="16" y="62" width="16" height="16"/>
+                                <rect key="frame" x="16" y="62" width="20" height="20"/>
                                 <state key="normal" backgroundImage="Plan-White Whitereturn key 1x"/>
                                 <connections>
                                     <action selector="returnButtonPressed:" destination="gMV-bu-1a6" eventType="touchUpInside" id="Fau-hG-o9d"/>
@@ -1278,6 +1285,7 @@
                         <viewLayoutGuide key="safeArea" id="gB0-2c-wIv"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="k81-L9-vnd" id="oEr-uL-ByO"/>
                         <outlet property="tableView" destination="EyY-7d-lFN" id="lKQ-TJ-2RF"/>
                     </connections>
                 </viewController>
@@ -1304,14 +1312,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdj-tO-bxd">
-                                <rect key="frame" x="16" y="62" width="16" height="22"/>
+                                <rect key="frame" x="16" y="62" width="20" height="22"/>
                                 <state key="normal" image="Plan-White Whitereturn key 1x"/>
                                 <connections>
                                     <action selector="retunButtonPressed:" destination="c8T-pT-BZM" eventType="touchUpInside" id="ila-Gq-Ibt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5Y-Ov-ZPc">
-                                <rect key="frame" x="343" y="61" width="16" height="22"/>
+                                <rect key="frame" x="339" y="61" width="20" height="22"/>
                                 <state key="normal" image="Plan-White Whiteadd new 1x"/>
                                 <connections>
                                     <segue destination="kdT-Rb-d3C" kind="show" identifier="attractionNew" id="Qya-DG-mOx"/>
@@ -1443,6 +1451,8 @@
                     <navigationItem key="navigationItem" id="3L3-qN-2D6"/>
                     <connections>
                         <outlet property="CityNameLabel" destination="eak-hd-6cH" id="J13-Ev-Zeo"/>
+                        <outlet property="StartButton" destination="6vK-tz-LLH" id="oTb-u4-Pjz"/>
+                        <outlet property="addButton" destination="x5Y-Ov-ZPc" id="rBS-V3-OAl"/>
                         <outlet property="detailTableview" destination="007-Yk-jZj" id="iUy-6R-lMO"/>
                     </connections>
                 </viewController>
@@ -1516,6 +1526,7 @@
                         <viewLayoutGuide key="safeArea" id="zLy-pe-gR4"/>
                     </view>
                     <connections>
+                        <outlet property="SearchOnMapButton" destination="bKS-RX-D1l" id="rlU-eg-vqZ"/>
                         <outlet property="TripNameTextField" destination="1ag-7s-BMp" id="9GG-LK-MMV"/>
                         <outlet property="TripTitle" destination="mAQ-rm-pQ0" id="OQE-Vh-11M"/>
                         <outlet property="mapView" destination="QWV-l2-fqY" id="Qy7-hh-56C"/>
@@ -1885,6 +1896,7 @@
                         <viewLayoutGuide key="safeArea" id="mhe-sJ-A5v"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="0nb-qa-G59" id="3ob-nX-hfb"/>
                         <outlet property="cityTableView" destination="SIc-Ku-Qtf" id="cPl-dx-ZVS"/>
                     </connections>
                 </viewController>
@@ -2254,8 +2266,9 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jgz-Qf-Cjf"/>
-        <segue reference="Qya-DG-mOx"/>
+        <segue reference="iYu-EO-y6d"/>
+        <segue reference="sPO-wn-v6r"/>
+        <segue reference="ShX-cb-Qms"/>
         <segue reference="lPE-xR-MhK"/>
         <segue reference="20Y-3l-nNd"/>
     </inferredMetricsTieBreakers>
