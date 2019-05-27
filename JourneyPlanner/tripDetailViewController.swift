@@ -29,7 +29,7 @@ class tripDetailViewController: UIViewController {
     // this method is called after this view is loaded - Wanfang Zhou  30/04/2019
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        TripNameTextField.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
@@ -81,7 +81,7 @@ class tripDetailViewController: UIViewController {
         
         let span = CLLocationDistance(1000.0)
         let region = MKCoordinateRegion(center: location, latitudinalMeters: span, longitudinalMeters: span)
-        mapView.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: false)
     }
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
@@ -90,6 +90,7 @@ class tripDetailViewController: UIViewController {
             if let delegate = self.delegate,
                 let attraction = self.attraction{
                 if let indexnumber = self.indexNumber{
+                    attraction.attractionName = self.TripNameTextField.text!
                     delegate.didupdateAttraction(self, attraction: attraction, indexNumber: indexnumber)
                 } else{
                     delegate.didAddAttraction(self, attraction: attraction)
@@ -105,6 +106,18 @@ class tripDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension tripDetailViewController:UITextFieldDelegate{
+    // when press return, the keyboard will automatically hide
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        TripNameTextField.resignFirstResponder()
+        return true
+    }
+    // when press background, keyboard will hide
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension tripDetailViewController: MapViewControllerDelegate{
