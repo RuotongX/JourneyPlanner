@@ -47,6 +47,7 @@ class MapViewController: UIViewController {
     var explorePage_Suggestionkeyword : String?
     var explorePage_UserLocation : CLLocation?
     var homePage_CurrentOrSelectedCity : LocationInformation?
+    var homePage_SearchBarContent : String?
     var plandetail_attractionInformation : AttractionInformation?
     
     //the user can select their preferred maptype from the setting page - Dalton 12/May/2019
@@ -144,7 +145,7 @@ class MapViewController: UIViewController {
                 alertSheet.addAction(changeCtiyAction)
                 
                 // when user selected from the button on the homepage or from the explorepage, it will showed up the add to plan and favorite button, which will first add it to the plan or add it to the favorite list.  - Dalton 25/Apr/2019
-            } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE{
+            } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE || mapsource == .HOMEPAGE_SEARCH{
                 
                 let saveAction = UIAlertAction(title: "👌🏻 Add to Plan", style: .default) { (action) in
         
@@ -245,7 +246,7 @@ class MapViewController: UIViewController {
             
             
             // if the mapsource is from the home page, this allow user to select a single location to add / like it to a plan - Dalton 02/May/2019
-            if mapsource == .HOMEPAGE_MAP{
+            if mapsource == .HOMEPAGE_MAP || mapsource == .HOMEPAGE_SEARCH{
                 if let seletedCity = homePage_CurrentOrSelectedCity{
                     
                     if seletedCity.cityName == "Unknown"{
@@ -256,6 +257,14 @@ class MapViewController: UIViewController {
                         let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
                         
                         mapView.setRegion(region, animated: true)
+                    }
+                }
+                
+                if mapsource == .HOMEPAGE_SEARCH{
+                    self.resultSearchController?.isActive = true
+                    
+                    if let searchContent = self.homePage_SearchBarContent{
+                        self.resultSearchController?.searchBar.text = searchContent
                     }
                 }
             }

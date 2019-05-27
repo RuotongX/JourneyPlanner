@@ -137,6 +137,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnb-vR-cYk">
                                 <rect key="frame" x="336" y="230" width="16" height="25"/>
                                 <state key="normal" image="Home - Search Icon 1x"/>
+                                <connections>
+                                    <segue destination="lmG-BS-7tZ" kind="show" identifier="searchButtonPressed" id="Jgz-Qf-Cjf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mgH-Il-X8V">
                                 <rect key="frame" x="30" y="231" width="298" height="19"/>
@@ -228,6 +231,8 @@
                         <outlet property="PlanDesignerAdd" destination="WFP-aZ-0xE" id="4kQ-Mq-rsf"/>
                         <outlet property="PlanDesignerDay" destination="IFK-7V-YWN" id="IE6-N2-Aa9"/>
                         <outlet property="PlanDesignerMinus" destination="xYZ-B1-Yxk" id="cut-KQ-0ln"/>
+                        <outlet property="SearchBar" destination="mgH-Il-X8V" id="uB1-f7-q7M"/>
+                        <outlet property="SearchButton" destination="Lnb-vR-cYk" id="bWA-eG-2Kg"/>
                         <outlet property="WeatherIcon" destination="HX5-LH-IUe" id="joO-HY-RZU"/>
                         <outlet property="WeatherLabel" destination="ULa-ze-bRx" id="kOn-N1-19B"/>
                     </connections>
@@ -2249,7 +2254,7 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RKU-2m-fz8"/>
+        <segue reference="Jgz-Qf-Cjf"/>
         <segue reference="Qya-DG-mOx"/>
         <segue reference="lPE-xR-MhK"/>
         <segue reference="20Y-3l-nNd"/>
