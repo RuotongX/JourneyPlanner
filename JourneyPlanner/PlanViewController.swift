@@ -9,12 +9,24 @@
 import UIKit
 import CoreLocation
 
+enum planType{
+    case NORMAL
+    case HISTORY
+}
+
+protocol PlanViewControllerDelegate {
+    
+}
+
+
 //This class is design to control the plan view controller - Wanfang Zhou 23/04/2019
 class PlanViewController: UIViewController {
 
+    var delegate : PlanViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
     var plan : [PlanInformations]?
-    
+    var PlanType : planType = .NORMAL
+    @IBOutlet weak var addButton: UIButton!
     // when this view is loaded, this will be displayed at the first time - Wanfang Zhou 23/04/2019
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +35,11 @@ class PlanViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        if PlanType == .HISTORY{
+            self.addButton.isHidden = true
+        }
+        
 
 //        tableView.register(PlanTableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -96,6 +113,10 @@ class PlanViewController: UIViewController {
                         let plan = self.plan{
                         planCityViewController.planIndexNumber = indexPath.row
                         planCityViewController.cities = plan[indexPath.row].City
+                        
+                        if PlanType == .HISTORY{
+                            planCityViewController.PlanType = .HISTORY
+                        }
                     }
                 }
             }

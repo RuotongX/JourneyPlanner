@@ -21,6 +21,8 @@ class Home_ViewController: ViewController{
 
     //Obtain the location manager, which provide the location services (Dalton 16/Apr/2019, last modified 27/Apr/2019)
     @IBOutlet weak var TravelTimeSelect: UITableView!
+    @IBOutlet weak var SearchBar: UITextField!
+    @IBOutlet weak var SearchButton: UIButton!
     
     
     var selectedPlanDate : Int!
@@ -52,6 +54,7 @@ class Home_ViewController: ViewController{
     override func viewDidLoad() {
         // used to load the view, after loading, it can customize items - Dalton Chen
         super.viewDidLoad()
+        SearchBar.delegate = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
@@ -90,7 +93,7 @@ class Home_ViewController: ViewController{
             }
         }
         
-        if segue.identifier == "transferCityInfo"{
+        if segue.identifier == "transferCityInfo" || segue.identifier == "searchButtonPressed"{
             // the mapview controller got a navigation controller which helps to handle the search request Dalton 28/Apr/2019
             // therefore if we'd likely to access the mapview, we need to obtain it from the navigation controller Dalton 29/Apr/2019
             if let mapNavigationviewController = segue.destination as? UINavigationController{
@@ -108,6 +111,12 @@ class Home_ViewController: ViewController{
                 }
                 mapviewController?.mapsource = .HOMEPAGE_MAP
                 mapviewController?.delegate = self
+                
+                if segue.identifier == "searchButtonPressed"{
+                    mapviewController?.mapsource = .HOMEPAGE_SEARCH
+                    mapviewController?.homePage_SearchBarContent = self.SearchBar.text
+                }
+                
             }
         }
     }
@@ -374,6 +383,15 @@ extension Home_ViewController : SelectCityViewControllerDelegate{
         self.selectedCity = city
         self.City_Name.text = self.selectedCity?.cityName
         
+    }
+}
+extension Home_ViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        SearchBar.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

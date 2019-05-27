@@ -30,7 +30,7 @@ class PlanDetailMapTableViewCell: UITableViewCell {
         let regionRadius : CLLocationDistance = 2000.0
         let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
-        map.setRegion(region, animated: true)
+        map.setRegion(region, animated: false)
     }
 
     func loadAnnotations(coordinates: [CLLocationCoordinate2D]){

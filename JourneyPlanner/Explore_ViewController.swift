@@ -72,6 +72,24 @@ class Explore_ViewController: UIViewController {
             }
         }
     }
+        if segue.identifier == "showCanteenAtMap"{
+            if let navigationController = segue.destination as? UINavigationController{
+                if let mapViewController = navigationController.viewControllers.first as?
+                    MapViewController{
+                    // passing a number which indicate the canteens information, then pass the coordinate to the mapview class
+                    //test data, remove when actualy data arrive
+                    let testLocation = CLLocation(latitude: -36.868914, longitude: 174.775109)
+                    let testLocationName = "Bang and Olufsen"
+                    
+                    mapViewController.mapsource = .EXPLORE_CANTEEN
+                    mapViewController.delegate = self
+                    mapViewController.explorePage_canteenLocation = testLocation
+                    mapViewController.explorePage_canteenName = testLocationName
+                }
+            }
+        }
+        
+        
     }
     
     // this function is used to obtain the current user location information and passing it to the mapview controller - Qichang Zhou 04/May/2019
