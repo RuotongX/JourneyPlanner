@@ -44,24 +44,28 @@ class RouteListViewController: UIViewController {
         
         //access those two class that used to store the section's data of route - ZHE WANG
         var citylist : [CityListInformation] = []
-        var attractionList : [AttractionInformation] = []
+        var citylist2 : [CityListInformation] = []
+
+        var attraction_Auckland : [AttractionInformation] = []
+        var attraction_Dargville : [AttractionInformation] = []
+        var attraction_Kaitaia : [AttractionInformation] = []
         
         if let RouteImage = UIImage(named: "Trip-Piha1x"){
             
-            if let AttractionImage_1 = UIImage(named: "Trip-Piha_90_2x"){
-                attractionList.append(AttractionInformation.init(Name: "Piha Beach", Location: CLLocationCoordinate2D(latitude: 174.471, longitude: -36.954), attractionImage: AttractionImage_1))
+            if let AttractionImage_1 = UIImage(named: "Trip-Piha1x"){
+                attraction_Auckland.append(AttractionInformation.init(Name: "Piha Beach", Location: CLLocationCoordinate2D(latitude: 174.471, longitude: -36.954), attractionImage: AttractionImage_1))
             }
             
             if let AttractionImage_2 = UIImage(named: "Trip-SkyTower-90-1x"){
-                attractionList.append(AttractionInformation.init(Name: "Auckland Skytower", Location: CLLocationCoordinate2D(latitude: 174.76, longitude: -36.85), attractionImage: AttractionImage_2))
+                attraction_Auckland.append(AttractionInformation.init(Name: "Auckland Skytower", Location: CLLocationCoordinate2D(latitude: 174.76, longitude: -36.85), attractionImage: AttractionImage_2))
             }
             
-            if let AttractionImage_3 = UIImage(named: "Trip-Waihike-90-1x"){
-                attractionList.append(AttractionInformation.init(Name: "Waihike Island", Location: CLLocationCoordinate2D(latitude: 175.1, longitude: -16.8), attractionImage: AttractionImage_3))
+            if let AttractionImage_3 = UIImage(named: "Trip-Waiheke-Island"){
+                attraction_Auckland.append(AttractionInformation.init(Name: "Waihike Island", Location: CLLocationCoordinate2D(latitude: 175.1, longitude: -16.8), attractionImage: AttractionImage_3))
             }
             
             if let CityImage = UIImage(named: "Trip-Skytower-150*110-1x"){
-                citylist.append(CityListInformation.init(name: "Auckland", time: 3, location: CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609), image : CityImage, attractions: attractionList))
+                citylist.append(CityListInformation.init(name: "Auckland", time: 3, location: CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609), image : CityImage, attractions: attraction_Auckland))
             }
             
             routeInfo.append(RouteInformation.init(name: "Auckland Explore", time: 3, image : RouteImage, city: citylist))
@@ -70,22 +74,22 @@ class RouteListViewController: UIViewController {
         if let RouteImage = UIImage(named: "Tripe-Cape_Reinga_1x"){
             
             if let AttractionImage_1 = UIImage(named: "Trip-Dargaville-Attraction-1"){
-                attractionList.append(AttractionInformation.init(Name: "Kai Iwi Lakes", Location: CLLocationCoordinate2D(latitude: 173.6375828, longitude: -35.9382609), attractionImage: AttractionImage_1))
+                attraction_Dargville.append(AttractionInformation.init(Name: "Kai Iwi Lakes", Location: CLLocationCoordinate2D(latitude: -35.8094, longitude: 173.6461 ), attractionImage: AttractionImage_1))
             }
             
-            if let AttractionImage_2 = UIImage(named: "Trip-SkyTower-90-1x"){
-                attractionList.append(AttractionInformation.init(Name: "Auckland Skytower", Location: CLLocationCoordinate2D(latitude: 174.76, longitude: -36.85), attractionImage: AttractionImage_2))
+            if let CityImage = UIImage(named: "City-dargaville"){
+                citylist2.append(CityListInformation.init(name: "Dargaville", time: 1, location: CLLocationCoordinate2D(latitude: -36.8484609, longitude: 174.7619066), image : CityImage, attractions: attraction_Dargville))
             }
             
-            if let AttractionImage_3 = UIImage(named: "Trip-Waihike-90-1x"){
-                attractionList.append(AttractionInformation.init(Name: "Waihike Island", Location: CLLocationCoordinate2D(latitude: 175.1, longitude: -16.8), attractionImage: AttractionImage_3))
+            if let AttractionImage_1 = UIImage(named: "City-kaitaia"){
+                attraction_Kaitaia.append(AttractionInformation.init(Name: "Kai Iwi Lakes", Location: CLLocationCoordinate2D(latitude: -35.8094, longitude: 173.6461 ), attractionImage: AttractionImage_1))
             }
             
-            if let CityImage = UIImage(named: "Trip-Dargaville-City"){
-                citylist.append(CityListInformation.init(name: "Dargaville", time: 3, location: CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609), image : CityImage, attractions: attractionList))
+            if let CityImage = UIImage(named: "City-kaitaia"){
+                citylist2.append(CityListInformation.init(name: "Kaitaia", time: 1, location: CLLocationCoordinate2D(latitude: -35.0782671, longitude: 173.3789389), image : CityImage, attractions: attraction_Kaitaia))
             }
             
-            routeInfo.append(RouteInformation.init(name: "Auckland Explore", time: 3, image : RouteImage, city: citylist))
+            routeInfo.append(RouteInformation.init(name: "Twin Cost Discovery", time: 6, image : RouteImage, city: citylist2))
         }
     }
     
@@ -129,7 +133,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     //Pop actions
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
 
-        let destination  = storyboard?.instantiateViewController(withIdentifier: "EditRoutePlanPage")
+        let destination  = storyboard?.instantiateViewController(withIdentifier: "SelectCityViewController")
 
         show(destination!, sender: self)
     }
