@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		410AED48226EE51300998F9E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AED47226EE51200998F9E /* MapViewController.swift */; };
 		410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AED49226F13A400998F9E /* PlanViewController.swift */; };
+		410B17EF229D30D800CB219E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410B17ED229D30D700CB219E /* Realm.framework */; };
+		410B17F0229D30D800CB219E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 410B17ED229D30D700CB219E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		410B17F1229D30D800CB219E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410B17EE229D30D700CB219E /* RealmSwift.framework */; };
+		410B17F2229D30D800CB219E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 410B17EE229D30D700CB219E /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		410B17F6229D322200CB219E /* DatabaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B17F5229D322200CB219E /* DatabaseControl.swift */; };
 		4124D20F226C8335001CD1F2 /* LocationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4124D20E226C8335001CD1F2 /* LocationInformation.swift */; };
 		4135DD29229553B000467DD0 /* PlanCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD28229553B000467DD0 /* PlanCityViewController.swift */; };
 		4135DD2B22955AE600467DD0 /* PlanCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135DD2A22955AE600467DD0 /* PlanCityTableViewCell.swift */; };
@@ -93,10 +98,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		410B17F3229D30D800CB219E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				410B17F2229D30D800CB219E /* RealmSwift.framework in Embed Frameworks */,
+				410B17F0229D30D800CB219E /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		19305341977E0C9D7C33E2EC /* Pods-JourneyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourneyPlanner.release.xcconfig"; path = "Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		410AED47226EE51200998F9E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		410AED49226F13A400998F9E /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		410B17ED229D30D700CB219E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		410B17EE229D30D700CB219E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		410B17F5229D322200CB219E /* DatabaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseControl.swift; sourceTree = "<group>"; };
 		4124D20E226C8335001CD1F2 /* LocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInformation.swift; sourceTree = "<group>"; };
 		4135DD28229553B000467DD0 /* PlanCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCityViewController.swift; sourceTree = "<group>"; };
 		4135DD2A22955AE600467DD0 /* PlanCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCityTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,7 +232,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410B17EF229D30D800CB219E /* Realm.framework in Frameworks */,
 				B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */,
+				410B17F1229D30D800CB219E /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +248,14 @@
 				19305341977E0C9D7C33E2EC /* Pods-JourneyPlanner.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		410B17F4229D31F700CB219E /* DatabaseRealm */ = {
+			isa = PBXGroup;
+			children = (
+				410B17F5229D322200CB219E /* DatabaseControl.swift */,
+			);
+			path = DatabaseRealm;
 			sourceTree = "<group>";
 		};
 		41FFC1E1227FEFF600AED351 /* JourneyPlannerTests */ = {
@@ -330,6 +363,8 @@
 		E14265EB22421C05006399D2 = {
 			isa = PBXGroup;
 			children = (
+				410B17ED229D30D700CB219E /* Realm.framework */,
+				410B17EE229D30D700CB219E /* RealmSwift.framework */,
 				E14265F622421C05006399D2 /* JourneyPlanner */,
 				41FFC1E1227FEFF600AED351 /* JourneyPlannerTests */,
 				E14265F522421C05006399D2 /* Products */,
@@ -350,6 +385,7 @@
 		E14265F622421C05006399D2 /* JourneyPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				410B17F4229D31F700CB219E /* DatabaseRealm */,
 				8C3236742285247900BD0DB2 /* ThirdPart */,
 				8C3236692285230B00BD0DB2 /* Manager */,
 				8C323668228522CC00BD0DB2 /* Favourite */,
@@ -441,6 +477,7 @@
 				E14265F122421C05006399D2 /* Frameworks */,
 				E14265F222421C05006399D2 /* Resources */,
 				851061EC85F9D3916C744742 /* [CP] Embed Pods Frameworks */,
+				410B17F3229D30D800CB219E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -614,6 +651,7 @@
 				E14265F822421C06006399D2 /* AppDelegate.swift in Sources */,
 				8C32369722854A6100BD0DB2 /* FMDatabasePool.m in Sources */,
 				E11C2A0A227E8FE50076B33B /* Resturant.swift in Sources */,
+				410B17F6229D322200CB219E /* DatabaseControl.swift in Sources */,
 				419DCFEE2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift in Sources */,
 				8C3236842285248800BD0DB2 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				A8F66BA12297902300B7118E /* RoutePreviewController.swift in Sources */,

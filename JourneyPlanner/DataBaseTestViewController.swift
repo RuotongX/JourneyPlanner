@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class DataBaseTestViewController: UIViewController {
 
@@ -15,10 +16,19 @@ class DataBaseTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let array = NSArray(objects: "1","2","3")
-        let filePath: String = NSHomeDirectory() + "/Documents/webs.plist"
-        array.write(toFile: filePath, atomically: true)
-        print(filePath)
+        let testHistory = SelectCityInformation_Database()
+        testHistory.cityName = "Test city 1"
+        testHistory.cityZipCode = "Test Zip Code"
+        testHistory.cityLocation_Latitude = 25.364444444
+        testHistory.cityLocation_Longitude = 218.33333333
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(testHistory)
+            print(Realm.Configuration.defaultConfiguration.fileURL)
+        }
+        
         
         // Do any additional setup after loading the view.
     }

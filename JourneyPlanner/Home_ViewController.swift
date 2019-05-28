@@ -39,7 +39,6 @@ class Home_ViewController: ViewController{
     let WeatherApiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
     let locationManager = CLLocationManager()
     var preferredMapType: MapType?
-    var cityHistory : [LocationInformation]? = []
     var CurrentCity : LocationInformation?
     var selectedCity : LocationInformation?
     @IBOutlet weak var City_Name: UILabel!
@@ -58,8 +57,6 @@ class Home_ViewController: ViewController{
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
-        //FOR TEST USE ONLY, DELETE BEFORE SUBMIT!   27/Apr/2019
-        preparetestHistoryData()
         selectedPlanDate = 0;
         PlanDesignerDay.text = "1 - 3 Days"
     }
@@ -81,7 +78,7 @@ class Home_ViewController: ViewController{
                     selectCityController.selectedCity = SelectedCity
                     self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
-                selectCityController.cityHistories = self.cityHistory
+//                selectCityController.cityHistories = self.cityHistory
                 // set up the delegate is used to passing the value between target and this class Dalton 27/Apr/2019
                 selectCityController.delegate = self
             }
@@ -140,7 +137,7 @@ class Home_ViewController: ViewController{
                 // when user have selected city, it will display the selected information 20/Apr/2019
                 if let selectedCity = self.selectedCity{
                     self.City_Name.text = selectedCity.cityName
-                    self.CheckWeather(_location: (self.selectedCity?.location)!)
+                    self.CheckWeather(_location: selectedCity.location)
                 }
             }
         }
@@ -149,8 +146,6 @@ class Home_ViewController: ViewController{
         if status == .authorizedWhenInUse{
             // request single location (Dalton 27/Apr/2019)
             locationManager.requestLocation()
-//            locationManager.startUpdatingLocation()
-            
         }
         
     }
@@ -187,25 +182,7 @@ class Home_ViewController: ViewController{
     }
     
     
-    
-    
-    // this method is used to load history data for the testing purposes Dalton 23/Apr/2019
-    func preparetestHistoryData(){
-        
-        var cityList : [LocationInformation] = []
-        
-        let welinfo : LocationInformation = LocationInformation(cityName: "Wellington", lontitude: 174.772996908, latitude: -41.28666552, zipCode: "5010")
-        let rotoruainfo : LocationInformation = LocationInformation(cityName: "Rotorua", lontitude: 176.24516, latitude: -38.13874, zipCode: "3010")
-        let christChurchInfo : LocationInformation = LocationInformation(cityName: "Christchurch", lontitude: 172.639847, latitude: -43.525650, zipCode: "7670")
-        let hamilton : LocationInformation = LocationInformation (cityName: "Hamilton", lontitude: 175.28333, latitude: -37.78333, zipCode: "3200")
-        
-        cityList.append(welinfo)
-        cityList.append(rotoruainfo)
-        cityList.append(christChurchInfo)
-        cityList.append(hamilton)
-        
-        cityHistory = cityList
-    }
+
 
 	
     // if user does not give the permission to the map project, it will display relevant error message to the user to ask them to provide this authrization dalton 23/Apr/2019
@@ -378,12 +355,15 @@ extension Home_ViewController : RouteListViewControllerDelegate{
 
 // protocol information from the select city view controller, when user change the city, it will being here and change the relevant data - Zhe Wang 26/Apr/2019
 extension Home_ViewController : SelectCityViewControllerDelegate{
-    func didSelectNewCity(_ controller: SelectCityViewController, newCity city: LocationInformation, historyCity: [LocationInformation]) {
-        self.cityHistory = historyCity
+    func didSelectNewCity(_ controller: SelectCityViewController, newCity city: LocationInformation) {
         self.selectedCity = city
         self.City_Name.text = self.selectedCity?.cityName
-        
     }
+    
+    func didSelectCurrentCity(_ controller: SelectCityViewController) {
+        self.selectedCity = nil
+    }
+    
 }
 extension Home_ViewController : UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
