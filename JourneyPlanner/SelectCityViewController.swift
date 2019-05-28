@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 // this protocol is write to tranfer data between this class and home class, when user select a new city, it will bring back to the home view controller and do the relevant jobs - Zhe Wang 24/Apr/2019
 protocol SelectCityViewControllerDelegate : class{
-    func didSelectNewCity(_ controller: SelectCityViewController, newCity city:LocationInformation, historyCity : [LocationInformation])
+    func didSelectNewCity(_ controller: SelectCityViewController, newCity city:LocationInformation)
+    func didSelectCurrentCity(_ controller: SelectCityViewController)
 }
 
 // this class is used to maintain the select city page - Zhe Wang 21 Apr 2019
@@ -39,6 +41,7 @@ class SelectCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFromDatabase()
         setImages()
         loadHistoryInformation()
         
@@ -101,12 +104,58 @@ class SelectCityViewController: UIViewController {
         // return to the previous view controller - Zhe Wang 21 Apr 2019
         dismiss(animated: true, completion: nil)
 
-        if let selectedCity = selectedCity,
-            let history = cityHistories{
-            delegate?.didSelectNewCity(self, newCity: selectedCity, historyCity: history)
+        if let selectedCity = selectedCity{
+            delegate?.didSelectNewCity(self, newCity: selectedCity)
+        } else if selectedCity == nil{
+            delegate?.didSelectCurrentCity(self)
         }
         
+        saveToDatabase()
+        
     }
+    
+    private func loadFromDatabase(){
+        
+        cityHistories = []
+        
+        let realm = try! Realm()
+        let historyResult = realm.objects(SelectCityInformation_Database.self)
+        
+        for result in historyResult{
+         
+            let locationInfo = LocationInformation(cityName: result.cityName, lontitude: result.cityLocation_Longitude, latitude: result.cityLocation_Latitude, zipCode: result.cityZipCode)
+            cityHistories?.append(locationInfo)
+        }
+    }
+    
+    
+    
+    private func saveToDatabase(){
+        //save data on database
+        
+        let realm = try! Realm()
+        let historyDB = realm.objects(SelectCityInformation_Database.self)
+        
+        try! realm.write {
+            realm.delete(historyDB)
+            
+            if let histories = self.cityHistories{
+                for history in histories{
+                    
+                    let updateHistoryDB = SelectCityInformation_Database()
+                    updateHistoryDB.cityName = history.cityName
+                    updateHistoryDB.cityZipCode = history.zipCode
+                    updateHistoryDB.cityLocation_Longitude = history.location.coordinate.longitude
+                    updateHistoryDB.cityLocation_Latitude = history.location.coordinate.latitude
+                    
+                    realm.add(updateHistoryDB)
+                }
+            }
+            
+        }
+    }
+    
+    
     // when user click the calcel button, return to the previous view controller and do nothin - Zhe Wang 21/Apr/2019
     @IBAction func CancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

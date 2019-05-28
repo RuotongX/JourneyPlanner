@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/SelectCityViewController.swift"
-            timestampString = "578752957.922794"
+            timestampString = "580730572.873643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "didSelectANewcity(_:selectedCity:)"
             landmarkType = "7">
          </BreakpointContent>
