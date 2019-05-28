@@ -56,7 +56,7 @@ class PlanDetailViewController: UIViewController {
                             TripdetailViewController.indexNumber = indexPath.row - 2
                             
                             if PlanType == .HISTORY{
-                                TripdetailViewController.planType = .HISTORY
+                                TripdetailViewController.Plantype = .HISTORY
                             }
                         }
                     }

@@ -20,8 +20,10 @@ class tripDetailViewController: UIViewController {
     
     var delegate : tripDetailViewControllerDelagate?
     var attraction : AttractionInformation?
+    var Plantype : planType = .NORMAL
     var indexNumber : Int?
 
+    @IBOutlet weak var SearchOnMapButton: UIButton!
     @IBOutlet weak var TripTitle: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var TripNameTextField: UITextField!
@@ -30,6 +32,11 @@ class tripDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TripNameTextField.delegate = self
+        
+        if Plantype == .HISTORY{
+            self.TripNameTextField.isEnabled = false
+            self.SearchOnMapButton.isEnabled = false
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
