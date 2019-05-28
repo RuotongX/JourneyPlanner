@@ -358,6 +358,9 @@
                                                     <rect key="frame" x="315" y="32" width="55" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="Explore-Map"/>
+                                                    <connections>
+                                                        <segue destination="lmG-BS-7tZ" kind="show" identifier="showCuisineMap" id="hm9-eL-DVV"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -2299,10 +2302,10 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jgz-Qf-Cjf"/>
+        <segue reference="hm9-eL-DVV"/>
         <segue reference="sPO-wn-v6r"/>
         <segue reference="jtB-T4-VBj"/>
         <segue reference="lPE-xR-MhK"/>
-        <segue reference="20Y-3l-nNd"/>
+        <segue reference="abb-WG-SCY"/>
     </inferredMetricsTieBreakers>
 </document>

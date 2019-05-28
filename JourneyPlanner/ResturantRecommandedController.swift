@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Foundation
 import SwiftyJSON
+import CoreLocation
 // This class is used to showing the nearby resturant rank.
 class ResturantRecommandedController: UIViewController {
     
@@ -24,6 +25,31 @@ class ResturantRecommandedController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getResturants()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCuisineMap"{
+            if let navigationController = segue.destination as? UINavigationController{
+                if let mapViewController = navigationController.viewControllers.first as?
+                    MapViewController{
+                    // passing a number which indicate the canteens information, then pass the coordinate to the mapview class
+                    
+                    if let button = sender as? UIButton{
+                        let fingerLocation = button.convert(CGPoint.zero, to: Table)
+                        
+                        if let indexPath = Table.indexPathForRow(at: fingerLocation){
+                            
+                            mapViewController.mapsource = .EXPLORE_CANTEEN
+                            mapViewController.delegate = self
+                            mapViewController.explorePage_canteenLocation = CLLocation(latitude:resturants[indexPath.row].Rlat, longitude: resturants[indexPath.row].Rlon)
+                            mapViewController.explorePage_canteenName = resturants[indexPath.row].RName
+ 
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
    
  
@@ -114,6 +140,17 @@ extension  ResturantRecommandedController: UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "resturantcell", for: indexPath) as! ResturantCellController
         cell.setResturant(resturant: resturant)
         return cell
+    }
+    
+    
+}
+extension ResturantRecommandedController : MapViewControllerDelegate{
+    func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
+        // do not implement, it does not relate to this class
+    }
+    
+    func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
+        // do not implement, it does not relate to this class
     }
     
     
