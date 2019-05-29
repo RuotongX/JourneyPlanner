@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 enum planType{
     case NORMAL
@@ -88,6 +89,9 @@ class PlanViewController: UIViewController {
             
             attractions.append(AttractionInformation(Name: "Cape Reinga Lighthouse", Location: CLLocationCoordinate2D(latitude: -34.426639, longitude: 172.677639)))
             attractions[0].attractionImage = UIImage(named: "Tripe-Cape_Reinga_1x")
+            attractions[0].attractionImageName = "Tripe-Cape_Reinga_1x"
+            
+            
             attractions.append(AttractionInformation(Name: "Awesome Thai food", Location: CLLocationCoordinate2D(latitude: -38.1387009, longitude: 176.2528075)))
             
             citylists.append(CityListInformation(name: "Cape Reinga", time: 1, location: CLLocationCoordinate2D(latitude: -34.428788, longitude: 172.681003), image: image, attractions: attractions))
@@ -97,6 +101,65 @@ class PlanViewController: UIViewController {
             
             plan?.append(PlanInformations(name: "Test Plan", citylist: citylists, memo: "memo"))
         }
+        
+    }
+    
+    private func saveData(){
+//        if let plans = self.plan{
+//            
+//            var plan_Full_DB : [PlanInformation_Database] = []
+//            
+//            for plan in plans{
+//                
+//                let cityList : [CityInformation_Database] = []
+//                
+//                for city in plan.City{
+//                    var attactionList : [AttractionInformation_Database] = []
+//
+//                    // save attraction information
+//                    if let attractions = city.Attractions{
+//                        for attraction in attractions{
+//                            
+//                            let attraction_DB = AttractionInformation_Database()
+//                            
+//                            attraction_DB.AttractionName = attraction.attractionName
+//                            attraction_DB.AttractionLocation_Lon = attraction.attractionLocation.longitude
+//                            attraction_DB.AttractionLocation_Lan = attraction.attractionLocation.latitude
+//                            
+//                            if let attraction_IMG = attraction.attractionImageName{
+//                                attraction_DB.AttractionImg = attraction_IMG
+//                            } else {
+//                                attraction_DB.AttractionImg = "attraction_default"
+//                            }
+//                            attactionList.append(attraction_DB)
+//                        }
+//                    }
+//                    
+//                    let cityDB = CityInformation_Database()
+//                    cityDB.CityName = city.cityName
+//                    cityDB.StopTime = city.cityStopTime
+//                    cityDB.CityLocation_Lat = city.cityLocation.latitude
+//                    cityDB.CityLocation_Lon = city.cityLocation.longitude
+//                    cityDB.CityImgName = "City-\(city.cityName.lowercased())"
+//                    
+//                    for at in attactionList{
+//                        cityDB.attractionList.append(at)
+//                    }
+//                }
+//                
+//                let planDB = PlanInformation_Database()
+//                planDB.PlanMemo = plan.memo
+//                planDB.PlanName = plan.planName
+//                
+//                for city in cityList{
+//                    planDB.cities.append(city)
+//                }
+//                plan_Full_DB.append(planDB)
+//            }
+//        }
+        
+        
+        
         
     }
     

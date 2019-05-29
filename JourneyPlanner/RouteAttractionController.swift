@@ -30,9 +30,44 @@ class RouteAttractionController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
 
         CollectionView.delegate = self
         CollectionView.dataSource = self
+    }
+    
+    private func loadData(){
+        let CityName = "Auckland"
+        AttractionData = []
+        
+        let path = Bundle.main.path(forResource: "AttractionList", ofType: "plist")!
+        let cityArray = NSArray(contentsOfFile: path)!
+        
+        for city in cityArray{
+            let cityDict = city as! NSDictionary
+            
+            let attractionCityName = cityDict["cityName"] as! String
+            
+            if attractionCityName == CityName{
+                let attractionArray = cityDict["Attraction"] as! NSArray
+                
+                for attraction in attractionArray{
+                    
+                    let attractionDict = attraction as! NSDictionary
+                    let attractionName = attractionDict["AttractionName"] as! String
+                    let attractionIMGname = attractionDict["AttractionImageName"] as! String
+                    let attractionLocationLon = attractionDict["AttractionLocation_Lon"] as! Double
+                    let attractionLocationLat = attractionDict["AttractionLocation_Lat"] as! Double
+
+                    
+                    if let attImage = UIImage(named: attractionIMGname){
+                        let newAtt = AttractionInformation(Name: attractionName, Location: CLLocationCoordinate2D(latitude: attractionLocationLat, longitude: attractionLocationLon), attractionImage: attImage)
+                        AttractionData.append(newAtt)
+                    }
+                    
+                }
+            }
+        }
     }
 }
 

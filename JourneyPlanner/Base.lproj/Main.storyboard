@@ -2178,7 +2178,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Jd8-R5-v45">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Jd8-R5-v45">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -2186,17 +2186,21 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="205"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defalut Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-NN-QRO">
-                                                    <rect key="frame" x="20" y="208" width="134" height="40"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Nlk-Cl-0ed">
+                                                    <rect key="frame" x="0.0" y="194" width="170" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-mark -Unselected" translatesAutoresizingMaskIntoConstraints="NO" id="USO-tM-VeB">
+                                                    <rect key="frame" x="141" y="4" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defalut Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-NN-QRO">
+                                                    <rect key="frame" x="18" y="200" width="134" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-mark -Unselected" translatesAutoresizingMaskIntoConstraints="NO" id="USO-tM-VeB">
-                                                    <rect key="frame" x="141" y="4" width="25" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="170" height="250"/>
@@ -2302,7 +2306,7 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ohn-x0-Zeu"/>
+        <segue reference="iYu-EO-y6d"/>
         <segue reference="sPO-wn-v6r"/>
         <segue reference="jtB-T4-VBj"/>
         <segue reference="lPE-xR-MhK"/>

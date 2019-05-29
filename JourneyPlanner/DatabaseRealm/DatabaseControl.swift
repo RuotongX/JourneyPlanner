@@ -16,13 +16,24 @@ class SelectCityInformation_Database : Object{
     @objc dynamic var cityLocation_Longitude : Double = 0.0
 }
 
-class Cities_Name : Object{
-    @objc dynamic var cities_Name : String = ""
+class AttractionInformation_Database : Object{
+    @objc dynamic var AttractionName : String = ""
+    @objc dynamic var AttractionLocation_Lan : Double = 0.0
+    @objc dynamic var AttractionLocation_Lon : Double = 0.0
+    @objc dynamic var AttractionImg : String = ""
 }
 
-class RouteInformation_Database : Object{
-    @objc dynamic var routeName : String = ""
-    @objc dynamic var routeStopTime : Int = 0
-    @objc dynamic var routeImageName : String = ""
-    let citie_names = List<Cities_Name>()
+class CityInformation_Database : Object {
+    @objc dynamic var CityName : String = ""
+    @objc dynamic var StopTime : Int = 0
+    @objc dynamic var CityLocation_Lon : Double = 0.0
+    @objc dynamic var CityLocation_Lat : Double = 0.0
+    @objc dynamic var CityImgName : String = ""
+    let attractionList = List<AttractionInformation_Database>()
+}
+
+class PlanInformation_Database : Object{
+    @objc dynamic var PlanName : String = ""
+    @objc dynamic var PlanMemo : String = ""
+    let cities = List<CityInformation_Database>()
 }
