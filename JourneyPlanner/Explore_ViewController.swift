@@ -24,12 +24,12 @@ class Explore_ViewController: UIViewController {
     var obtainedLocation: CLLocation?
     var keyword : String?
     @IBOutlet weak var Table: UITableView!
-
+    
     @IBOutlet weak var shoppingButton: UIButton!
     @IBOutlet weak var bankButton: UIButton!
     @IBOutlet weak var gasButton: UIButton!
     @IBOutlet weak var hotelButton: UIButton!
-
+    
     
     
     var tableViewData = [cellData]()
@@ -38,14 +38,14 @@ class Explore_ViewController: UIViewController {
         
         tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),
                          cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60),
-            cellData(opened: false, cuisine: "Korean",sectionData:[],cuisineN:67),
-            cellData(opened: false, cuisine: "American",sectionData:[],cuisineN:1),
-            cellData(opened: false, cuisine: "Fast Food",sectionData:[],cuisineN:40),
-            cellData(opened: false, cuisine: "French",sectionData:[],cuisineN:45),
-            cellData(opened: false, cuisine: "Mexican",sectionData:[],cuisineN:73),
-            cellData(opened: false, cuisine: "Healthy Food",sectionData:[],cuisineN:143),
-            cellData(opened: false, cuisine: "Indian",sectionData:[],cuisineN:148),
-            cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
+                         cellData(opened: false, cuisine: "Korean",sectionData:[],cuisineN:67),
+                         cellData(opened: false, cuisine: "American",sectionData:[],cuisineN:1),
+                         cellData(opened: false, cuisine: "Fast Food",sectionData:[],cuisineN:40),
+                         cellData(opened: false, cuisine: "French",sectionData:[],cuisineN:45),
+                         cellData(opened: false, cuisine: "Mexican",sectionData:[],cuisineN:73),
+                         cellData(opened: false, cuisine: "Healthy Food",sectionData:[],cuisineN:143),
+                         cellData(opened: false, cuisine: "Indian",sectionData:[],cuisineN:148),
+                         cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
         ]
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -59,32 +59,38 @@ class Explore_ViewController: UIViewController {
     // this method will load when passing data from this class to another class - Qichang Zhou 04/May/2019
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "exploreShowSuggestions" {
-        
-        if let navigationController = segue.destination as? UINavigationController{
-            if let mapViewController = navigationController.viewControllers.first as? MapViewController{
-                
-                if let location = obtainedLocation,
-                    let keyword = keyword{
-                    mapViewController.mapsource = .EXPLOREPAGE
-                    mapViewController.explorePage_UserLocation = location
-                    mapViewController.explorePage_Suggestionkeyword = keyword
+            
+            if let navigationController = segue.destination as? UINavigationController{
+                if let mapViewController = navigationController.viewControllers.first as? MapViewController{
+                    
+                    if let location = obtainedLocation,
+                        let keyword = keyword{
+                        mapViewController.mapsource = .EXPLOREPAGE
+                        mapViewController.explorePage_UserLocation = location
+                        mapViewController.explorePage_Suggestionkeyword = keyword
+                    }
                 }
             }
         }
-    }
         if segue.identifier == "showCanteenAtMap"{
             if let navigationController = segue.destination as? UINavigationController{
                 if let mapViewController = navigationController.viewControllers.first as?
                     MapViewController{
                     // passing a number which indicate the canteens information, then pass the coordinate to the mapview class
                     //test data, remove when actualy data arrive
-                    let testLocation = CLLocation(latitude: -36.868914, longitude: 174.775109)
-                    let testLocationName = "Bang and Olufsen"
-                    
-                    mapViewController.mapsource = .EXPLORE_CANTEEN
-                    mapViewController.delegate = self
-                    mapViewController.explorePage_canteenLocation = testLocation
-                    mapViewController.explorePage_canteenName = testLocationName
+                    if let button = sender as? UIButton{
+                        let fingerLocation = button.convert(CGPoint.zero, to: Table)
+                        if let indexPath = Table.indexPathForRow(at: fingerLocation){
+                            let restaurant = self.tableViewData[indexPath.section].sectionData[indexPath.row-1]
+                            let testLocation = CLLocation(latitude: restaurant.Rlat, longitude: restaurant.Rlon)
+                            let testLocationName = restaurant.RName
+                            
+                            mapViewController.mapsource = .EXPLORE_CANTEEN
+                            mapViewController.delegate = self
+                            mapViewController.explorePage_canteenLocation = testLocation
+                            mapViewController.explorePage_canteenName = testLocationName
+                        }
+                    }
                 }
             }
         }
@@ -124,12 +130,12 @@ class Explore_ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         disableButtons()
     }
-
+    
     // thereafter, when user click the button, show the nearby locations- Qichang Zhou 04/May/2019
-
+    
     
     @IBAction func Shopping(_ sender: Any) {
-         self.keyword = "shopping"
+        self.keyword = "shopping"
     }
     
     @IBAction func Gas(_ sender: Any) {
@@ -138,16 +144,16 @@ class Explore_ViewController: UIViewController {
     @IBAction func Bank(_ sender: Any) {
         self.keyword = "bank"
     }
-
+    
     @IBAction func Hotel(_ sender: Any) {
-         self.keyword = "hotel"
+        self.keyword = "hotel"
     }
-
+    
     
     // disable all the button if user could not provide the location information - Qichang Zhou 04/May/2019
     private func disableButtons(){
         // this class is used to disable all buttons
-
+        
         gasButton.isEnabled = false
         shoppingButton.isEnabled = false
         hotelButton.isEnabled = false
@@ -161,8 +167,8 @@ class Explore_ViewController: UIViewController {
     
     func getResturants(index:Int){
         let header = "b4a1b65c2bd7e6ca955092af1da11545"
-//        let lat = UserDefaults().string(forKey: "lat")
-//        let lon = UserDefaults().string(forKey: "lon")
+        //        let lat = UserDefaults().string(forKey: "lat")
+        //        let lon = UserDefaults().string(forKey: "lon")
         let cuisine = tableViewData[index].cuisineN
         
         if let lat = UserDefaults().string(forKey: "lat"),
@@ -205,7 +211,7 @@ class Explore_ViewController: UIViewController {
                             resturant.Rlon = lon
                             resturant.RUrl = Url
                             resturant.votes = votes
-//                            resturant.Rank = i+1
+                            //                            resturant.Rank = i+1
                             self.tableViewData[index].sectionData.append(resturant)
                         }
                     } else{
@@ -223,23 +229,23 @@ class Explore_ViewController: UIViewController {
         
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 // this section is provide information when exchange with the mapview controller- Qichang Zhou 04/May/2019
 extension Explore_ViewController:MapViewControllerDelegate{
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
-         // do not implement this method, it does not relate to this class Dalton 4/May/2019
+        // do not implement this method, it does not relate to this class Dalton 4/May/2019
     }
     
     func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
@@ -264,7 +270,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
         return 120
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-       
+        
         return tableViewData.count
     }
     
@@ -334,7 +340,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             return cell
         }
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             if tableViewData[indexPath.section].opened == true{
@@ -351,6 +357,6 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
         } else{
             
         }
+        
     }
-    
 }

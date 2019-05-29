@@ -18,6 +18,10 @@ class RouteAttractionController: UIViewController {
     @IBAction func ReturnButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
 
     @IBOutlet weak var CityName: UILabel!
     @IBOutlet weak var CollectionView: UICollectionView!
