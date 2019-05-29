@@ -28,12 +28,48 @@ class RouteSelectCityController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadCityInformation()
 
         SelectCityTableview.dataSource = self
         SelectCityTableview.delegate = self
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
+    }
+    
+    
+    private func loadCityInformation(){
+        
+        // load from bundle (left hand side)
+        let plistPath = Bundle.main.path(forResource: "CityInformation", ofType: "plist")!
+        let cityList = NSArray(contentsOfFile: plistPath)!
+        
+        cityInformation = []
+        
+        for cityDict in cityList{
+            
+            let cityInfo = cityDict as! NSDictionary
+            
+            let cityName = cityInfo["cityName"] as! String
+            let cityStopTime = cityInfo["cityStopTime"] as! Int
+            let cityLocation_Lon = cityInfo["cityLocation_lon"] as! Double
+            let cityLocation_lat = cityInfo["cityLocation_lat"] as! Double
+            let cityImageName = cityInfo["cityImage_Name"] as! String
+            
+            if let cityImage = UIImage(named: cityImageName){
+            
+                let city = CityListInformation(name: cityName, time: cityStopTime, location: CLLocationCoordinate2D(latitude: cityLocation_lat, longitude: cityLocation_Lon), image: cityImage)
+                cityInformation.append(city)
+            } else {
+                
+                if let defaultImage = UIImage(named: "City-default"){
+                    let city = CityListInformation(name: cityName, time: cityStopTime, location: CLLocationCoordinate2D(latitude: cityLocation_lat, longitude: cityLocation_lat), image: defaultImage)
+                    cityInformation.append(city)
+                }
+            }
+            
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

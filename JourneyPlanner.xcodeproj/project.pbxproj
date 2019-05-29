@@ -25,6 +25,7 @@
 		416AF92E226F1ECE00FF4FF6 /* SmallPlanInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */; };
 		416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92F226F21F700FF4FF6 /* TripPlan.swift */; };
 		416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */; };
+		4170FFA0229E894600117657 /* CityInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4170FF9F229E894600117657 /* CityInformation.plist */; };
 		419508DB229CE6E6006C6365 /* DataBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419508DA229CE6E6006C6365 /* DataBaseTestViewController.swift */; };
 		419DCFEE2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */; };
 		419DCFF0229622C800468509 /* PlanDetailMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
 		41E058342277172700BFF264 /* tripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E058332277172700BFF264 /* tripDetailViewController.swift */; };
 		41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E05837227931BC00BFF264 /* AboutViewController.swift */; };
+		41F74ADD229EA93D0050B085 /* AttractionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41F74ADC229EA93D0050B085 /* AttractionList.plist */; };
 		41FFC1ED227FF33300AED351 /* TripPlanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EC227FF33300AED351 /* TripPlanTest.swift */; };
 		41FFC1EF227FFBE400AED351 /* 111.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EE227FFBE400AED351 /* 111.swift */; };
 		8C32366F2285230B00BD0DB2 /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32366C2285230B00BD0DB2 /* Favourite.m */; };
@@ -131,6 +133,7 @@
 		416AF92D226F1ECE00FF4FF6 /* SmallPlanInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlanInformation.swift; sourceTree = "<group>"; };
 		416AF92F226F21F700FF4FF6 /* TripPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlan.swift; sourceTree = "<group>"; };
 		416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		4170FF9F229E894600117657 /* CityInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CityInformation.plist; sourceTree = "<group>"; };
 		419508DA229CE6E6006C6365 /* DataBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseTestViewController.swift; sourceTree = "<group>"; };
 		419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailStayLengthTableViewCell.swift; sourceTree = "<group>"; };
 		419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
 		41E058332277172700BFF264 /* tripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripDetailViewController.swift; sourceTree = "<group>"; };
 		41E05837227931BC00BFF264 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		41F74ADC229EA93D0050B085 /* AttractionList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AttractionList.plist; sourceTree = "<group>"; };
 		41FFC1E0227FEFF600AED351 /* JourneyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourneyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FFC1E4227FEFF600AED351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41FFC1EC227FF33300AED351 /* TripPlanTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanTest.swift; sourceTree = "<group>"; };
@@ -443,6 +447,8 @@
 				416391DD229A511700EC9636 /* SelectDestinationTableViewCell.swift */,
 				41469838229BF09E004AB978 /* Tab_UserViewController.swift */,
 				419508DA229CE6E6006C6365 /* DataBaseTestViewController.swift */,
+				4170FF9F229E894600117657 /* CityInformation.plist */,
+				41F74ADC229EA93D0050B085 /* AttractionList.plist */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -539,8 +545,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F74ADD229EA93D0050B085 /* AttractionList.plist in Resources */,
 				E142660422421C06006399D2 /* LaunchScreen.storyboard in Resources */,
 				E142660122421C06006399D2 /* Assets.xcassets in Resources */,
+				4170FFA0229E894600117657 /* CityInformation.plist in Resources */,
 				E14265FF22421C06006399D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

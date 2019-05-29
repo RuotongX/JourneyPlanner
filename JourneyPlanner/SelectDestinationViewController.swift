@@ -90,6 +90,11 @@ class SelectDestinationViewController: UIViewController {
             let palmerston = CityListInformation(name: "Palmerston North", time: 0, location: CLLocationCoordinate2D(latitude: -40.35636 , longitude: 175.61113), image: palmerstonImage)
             availableCities.append(palmerston)
         }
+        
+        if let rotoruaImage = UIImage(named: "City-rotorua"){
+            let rotorua = CityListInformation(name: "Rotorua", time: 0, location: CLLocationCoordinate2D(latitude: -38.13874, longitude: 176.24516), image: rotoruaImage)
+            availableCities.append(rotorua)
+        }
     }
     
     @IBAction func ReturnButtonPressed(_ sender: Any) {
