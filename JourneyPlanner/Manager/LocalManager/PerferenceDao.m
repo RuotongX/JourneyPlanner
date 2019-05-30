@@ -24,7 +24,7 @@
     NSString *selectStr = [NSString stringWithFormat:@"SELECT * FROM '%@' WHERE perferenceid ='%@' ",NAME_THIS_TABLE,PERFERENCEID];
     NSArray *results    = [[Persistent getInstance] query:selectStr];
     if (results && results.count > 0) {
-        NSString *updateStr = [NSString stringWithFormat:@"UPDATE '%@' SET name = '%@',perferenceid = '%@'  ",NAME_THIS_TABLE,PERFERENCEID,model.name];
+        NSString *updateStr = [NSString stringWithFormat:@"UPDATE '%@' SET perferenceid = '%@' ,name = '%@' ",NAME_THIS_TABLE,PERFERENCEID,model.name];
         [[Persistent getInstance] update:updateStr];
     } else {
         NSString *insertStr = [NSString stringWithFormat:@"INSERT OR REPLACE INTO '%@'(perferenceid,name)values('%@','%@')",NAME_THIS_TABLE,PERFERENCEID,model.name];

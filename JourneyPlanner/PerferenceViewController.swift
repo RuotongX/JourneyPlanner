@@ -11,12 +11,10 @@ import UIKit
 class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
-    @IBOutlet weak var RangeTextField: UITextField!
     @IBOutlet weak var MapTypeTextField: UITextField!
     @IBOutlet weak var NameLabel: UILabel!
     
     
-    let range_arr = ["off","5km","10km","15km","20km","25km"]
     let mapType_arr = ["Standerd","Setellite","Hybrid"]
     var active_textField : UITextField!
     
@@ -27,13 +25,11 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RangeTextField.delegate = self
         MapTypeTextField.delegate = self
         
         my_pickerView.delegate = self
         my_pickerView.dataSource = self
-        
-        RangeTextField.inputView = my_pickerView
+
         MapTypeTextField.inputView = my_pickerView
         
         creat_toolbar()
@@ -53,8 +49,6 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         active_textField = textField
         
         switch textField {
-        case RangeTextField:
-            current_arr = range_arr
         case MapTypeTextField:
             current_arr = mapType_arr
             
@@ -95,7 +89,6 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClick))
         toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         
-        RangeTextField.inputAccessoryView = toolbar
         MapTypeTextField.inputAccessoryView = toolbar
         
 }
