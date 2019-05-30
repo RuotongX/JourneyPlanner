@@ -1651,14 +1651,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIW-Ny-doj" userLabel="MapType">
-                                <rect key="frame" x="16" y="271" width="343" height="51"/>
+                                <rect key="frame" x="16" y="200" width="343" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Map Type(1)"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqn-5Y-wJO" userLabel="RecommandRange">
-                                <rect key="frame" x="16" y="197" width="343" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Range(1)"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk2-s2-g3d" userLabel="Name">
                                 <rect key="frame" x="16" y="123" width="343" height="51"/>
@@ -1668,20 +1663,6 @@
                                     <segue destination="CR5-It-a7u" kind="show" id="MFc-th-tzk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl3-QI-aJt" userLabel="RangeTextField">
-                                <rect key="frame" x="16" y="197" width="315" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-rj-iRE" userLabel="MapTypeTextField">
-                                <rect key="frame" x="16" y="271" width="315" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Perference" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-gn-JWP">
                                 <rect key="frame" x="144" y="56" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1696,6 +1677,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-rj-iRE" userLabel="MapTypeTextField">
+                                <rect key="frame" x="16" y="200" width="315" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NFA-f1-2fg"/>
@@ -1703,7 +1691,6 @@
                     <connections>
                         <outlet property="MapTypeTextField" destination="Zwl-rj-iRE" id="F14-ov-KRC"/>
                         <outlet property="NameLabel" destination="aMs-Vw-7d8" id="XaA-sS-49z"/>
-                        <outlet property="RangeTextField" destination="Xl3-QI-aJt" id="5L1-3S-aXB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBC-5O-U8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2285,7 +2272,6 @@
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-stayLength-bck 1x" width="312" height="49"/>
         <image name="PlanDetail-viewOnMap 1x" width="311" height="62"/>
-        <image name="Range(1)" width="352" height="51"/>
         <image name="Select City-SearchBar 1x" width="298" height="43"/>
         <image name="Select City-unselectedButton 1x" width="306" height="67"/>
         <image name="SelectcityreturnButton 1x" width="10" height="17"/>
