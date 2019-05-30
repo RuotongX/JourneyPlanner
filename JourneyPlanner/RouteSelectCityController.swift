@@ -22,12 +22,20 @@ class RouteSelectCityController: UIViewController {
     }
     
     var delgate : RouteSelectCityControllerDelgate?
+    var routeName : String?
     var cityInformation : [CityListInformation] = []
+    @IBOutlet weak var routeNameLabel: UILabel!
     
     @IBOutlet weak var SelectCityTableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let routeName = routeName{
+            routeNameLabel.text = routeName
+        }
+        
+        
         loadCityInformation()
 
         SelectCityTableview.dataSource = self

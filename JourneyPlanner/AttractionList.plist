@@ -626,5 +626,52 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>cityName</key>
+		<string>Dargaville</string>
+		<key>Attraction</key>
+		<array>
+			<dict>
+				<key>AttractionName</key>
+				<string>Kai Iwi Sand Lake</string>
+				<key>AttractionLocation_Lon</key>
+				<real>173.6620246</real>
+				<key>AttractionLocation_Lat</key>
+				<real>-35.8104283</real>
+				<key>AttractionImageName</key>
+				<string>DGR-1</string>
+			</dict>
+			<dict>
+				<key>AttractionName</key>
+				<string>Dargaville Museum</string>
+				<key>AttractionLocation_Lon</key>
+				<real>173.8640506</real>
+				<key>AttractionLocation_Lat</key>
+				<real>-35.9590197</real>
+				<key>AttractionImageName</key>
+				<string>DGR-2</string>
+			</dict>
+			<dict>
+				<key>AttractionName</key>
+				<string>Trounson Kauri Park</string>
+				<key>AttractionLocation_Lon</key>
+				<real>173.6494494</real>
+				<key>AttractionLocation_Lat</key>
+				<real>-35.7199607</real>
+				<key>AttractionImageName</key>
+				<string>DGR-3</string>
+			</dict>
+			<dict>
+				<key>AttractionName</key>
+				<string>Tokatoka Peak</string>
+				<key>AttractionLocation_Lon</key>
+				<real>173.975149</real>
+				<key>AttractionLocation_Lat</key>
+				<real>-36.0571815</real>
+				<key>AttractionImageName</key>
+				<string>DGR-4</string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
