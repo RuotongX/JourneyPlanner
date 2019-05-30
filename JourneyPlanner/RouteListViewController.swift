@@ -102,12 +102,11 @@ class RouteListViewController: UIViewController {
             if let selectCityController = segue.destination as? RouteSelectCityController{
                 selectCityController.delgate = self
                 
-//                if let cell = sender as? UITableViewCell{
-//                    if let indexPath = TripTableView.indexPath(for: cell),
-//                        let city = routeInfo[indexPath.row].Cities{
-//                            selectCityController.cityInformation = city
-//                    }
-//                }
+                if let cell = sender as? UITableViewCell{
+                    if let indexPath = TripTableView.indexPath(for: cell){
+                        selectCityController.routeName = routeInfo[indexPath.row].routeName
+                    }
+                }
             }
         }
     }
