@@ -84,14 +84,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPI-es-PRQ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPI-es-PRQ">
                                 <rect key="frame" x="13" y="378" width="350" height="292"/>
                                 <state key="normal" image="Home-plan_designer1x"/>
                                 <connections>
                                     <segue destination="rBw-me-iQ7" kind="show" identifier="PlanDesignerSegue" id="IQF-UJ-gS5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLE-HE-uYP" userLabel="Weather">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLE-HE-uYP" userLabel="Weather">
                                 <rect key="frame" x="12" y="117" width="351" height="80"/>
                                 <state key="normal" image="Home-Weather Background 1x"/>
                                 <connections>
@@ -115,54 +115,54 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home-Weather-Partlysunny" translatesAutoresizingMaskIntoConstraints="NO" id="HX5-LH-IUe">
-                                <rect key="frame" x="290" y="131" width="62" height="48"/>
+                                <rect key="frame" x="336" y="131" width="16" height="16"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-uS-BcF" userLabel="Map">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-uS-BcF" userLabel="Map">
                                 <rect key="frame" x="12" y="281" width="164" height="76"/>
                                 <state key="normal" image="Home-map"/>
                                 <connections>
                                     <segue destination="lmG-BS-7tZ" kind="show" identifier="transferCityInfo" id="RKU-2m-fz8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O3-58-5O4">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O3-58-5O4">
                                 <rect key="frame" x="199" y="281" width="164" height="76"/>
                                 <state key="normal" image="Home-plan"/>
                                 <connections>
                                     <segue destination="gMV-bu-1a6" kind="show" id="jtB-T4-VBj"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home-SearchBar 1x" translatesAutoresizingMaskIntoConstraints="NO" id="3bg-AY-q1n">
-                                <rect key="frame" x="12" y="214" width="351" height="52"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Home-SearchBar 1x" translatesAutoresizingMaskIntoConstraints="NO" id="3bg-AY-q1n">
+                                <rect key="frame" x="12" y="214" width="16" height="52"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnb-vR-cYk">
-                                <rect key="frame" x="327" y="230" width="25" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnb-vR-cYk">
+                                <rect key="frame" x="336" y="230" width="16" height="25"/>
                                 <state key="normal" image="Home - Search Icon 1x"/>
                                 <connections>
                                     <segue destination="lmG-BS-7tZ" kind="show" identifier="searchButtonPressed" id="Jgz-Qf-Cjf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mgH-Il-X8V">
-                                <rect key="frame" x="30" y="231" width="289" height="19"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mgH-Il-X8V">
+                                <rect key="frame" x="30" y="231" width="298" height="19"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" textContentType="location"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-ze-bRx">
-                                <rect key="frame" x="30" y="160" width="231" height="28"/>
+                                <rect key="frame" x="30" y="160" width="277" height="28"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFP-aZ-0xE">
-                                <rect key="frame" x="255" y="607" width="36" height="36"/>
+                                <rect key="frame" x="255" y="621" width="16" height="22"/>
                                 <state key="normal" image="Home-plan_designer_add 1x"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="g6o-t3-Qf5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYZ-B1-Yxk">
-                                <rect key="frame" x="84" y="607" width="36" height="36"/>
+                                <rect key="frame" x="104" y="621" width="16" height="22"/>
                                 <state key="normal" image="Home-plan_designer_minus 1x"/>
                                 <connections>
                                     <action selector="minusButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bpv-Fp-yoV"/>
@@ -780,7 +780,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9L-wH-Gab">
-                                <rect key="frame" x="34" y="64" width="17" height="23"/>
+                                <rect key="frame" x="34" y="64" width="17" height="22"/>
                                 <state key="normal" image="Plan-return key 1x"/>
                                 <connections>
                                     <action selector="ReturnButtonPressed:" destination="JEn-oB-1U8" eventType="touchUpInside" id="gTK-Io-DCF"/>
@@ -849,14 +849,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-85-Ve0" userLabel="Preference">
-                                <rect key="frame" x="39" y="209.66666666666666" width="296" height="71.999999999999972"/>
+                                <rect key="frame" x="39" y="153.66666666666666" width="296" height="22"/>
                                 <state key="normal" image="User-Preference"/>
                                 <connections>
                                     <segue destination="sZT-pM-JJI" kind="show" id="x2G-JL-PQR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocU-XZ-TpY" userLabel="About">
-                                <rect key="frame" x="39" y="301.66666666666669" width="296" height="72"/>
+                                <rect key="frame" x="39" y="195.66666666666666" width="296" height="22"/>
                                 <state key="normal" image="User-About"/>
                                 <connections>
                                     <segue destination="JEn-oB-1U8" kind="show" id="XbO-da-q4b"/>
@@ -869,7 +869,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-dj-FYT" userLabel="History Plan">
-                                <rect key="frame" x="39" y="117" width="296" height="72"/>
+                                <rect key="frame" x="39" y="117" width="296" height="22"/>
                                 <state key="normal" image="User-History Plan"/>
                                 <connections>
                                     <action selector="historyPlanPressed:" destination="axa-gT-Hwq" eventType="touchUpInside" id="3oe-9y-8ec"/>
@@ -1030,85 +1030,85 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-Px-zhe">
-                                <rect key="frame" x="88" y="624" width="75" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-Px-zhe">
+                                <rect key="frame" x="88" y="678" width="75" height="22"/>
                                 <state key="normal" image="home-city-choose city-type-confirm(1)"/>
                                 <connections>
                                     <action selector="ConfirmButtonPressed:" destination="tU7-hl-gHq" eventType="touchUpInside" id="fHu-ex-tmK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1N-bM-IJM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1N-bM-IJM">
                                 <rect key="frame" x="120" y="210.66666666666666" width="134" height="24"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wy-mj-PeM">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wy-mj-PeM">
                                 <rect key="frame" x="34" y="242.66666666666663" width="306" height="67"/>
                                 <state key="normal" image="Select City-unselectedButton 1x"/>
                                 <connections>
                                     <action selector="CurrentCityButtonPressed:" destination="tU7-hl-gHq" eventType="touchUpInside" id="32c-1y-Fl4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tg-PK-qBF" userLabel="city Name">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tg-PK-qBF" userLabel="city Name">
                                 <rect key="frame" x="48" y="260" width="279" height="32.333333333333314"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-OV-9PD" userLabel="Recent1Button">
-                                <rect key="frame" x="34" y="373" width="306" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-OV-9PD" userLabel="Recent1Button">
+                                <rect key="frame" x="324" y="373" width="16" height="67"/>
                                 <state key="normal" image="Select City-unselectedButton 1x"/>
                                 <connections>
                                     <action selector="rencent1ButtonPressed:" destination="tU7-hl-gHq" eventType="touchUpInside" id="LuV-pN-jBc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-Kf-HkN" userLabel="Rencet1Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-Kf-HkN" userLabel="Rencet1Label">
                                 <rect key="frame" x="48" y="421.33333333333331" width="279" height="0.0"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-CQ-MI7">
-                                <rect key="frame" x="211" y="624" width="76" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-CQ-MI7">
+                                <rect key="frame" x="211" y="678" width="76" height="22"/>
                                 <state key="normal" image="home-city-choose city-type-cancel(1)"/>
                                 <connections>
                                     <action selector="CancelButtonPressed:" destination="tU7-hl-gHq" eventType="touchUpInside" id="WjW-ei-li3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Viewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abB-gF-b5R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Recently Viewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abB-gF-b5R">
                                 <rect key="frame" x="124" y="341" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPP-YR-Nf5" userLabel="Recent2Button">
-                                <rect key="frame" x="34" y="448" width="306" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPP-YR-Nf5" userLabel="Recent2Button">
+                                <rect key="frame" x="324" y="448" width="16" height="67"/>
                                 <state key="normal" image="Select City-unselectedButton 1x"/>
                                 <connections>
                                     <action selector="rencent2ButtonPressed:" destination="tU7-hl-gHq" eventType="touchUpInside" id="XXu-5j-yLT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v6-e1-SSj" userLabel="Recent2Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v6-e1-SSj" userLabel="Recent2Label">
                                 <rect key="frame" x="48" y="495.33333333333331" width="279" height="0.0"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtZ-Mm-6wj" userLabel="Recent3Button">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtZ-Mm-6wj" userLabel="Recent3Button">
                                 <rect key="frame" x="34" y="523" width="306" height="67"/>
                                 <state key="normal" image="Select City-unselectedButton 1x"/>
                                 <connections>
                                     <action selector="rencent3ButtonPressed:" destination="tU7-hl-gHq" eventType="touchUpInside" id="iyg-2x-XtW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSz-e5-LCB" userLabel="Recent3Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSz-e5-LCB" userLabel="Recent3Label">
                                 <rect key="frame" x="48" y="539" width="279" height="0.0"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEB-iJ-al0">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEB-iJ-al0">
                                 <rect key="frame" x="38" y="136" width="298" height="43"/>
                                 <state key="normal" image="Select City-SearchBar 1x"/>
                                 <connections>
@@ -1197,14 +1197,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k81-L9-vnd">
-                                <rect key="frame" x="339" y="61" width="20" height="22"/>
+                                <rect key="frame" x="343" y="61" width="16" height="22"/>
                                 <state key="normal" image="Plan-White Whiteadd new 1x"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="gMV-bu-1a6" eventType="touchUpInside" id="9IL-GR-IH1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-o9-dBe">
-                                <rect key="frame" x="16" y="62" width="20" height="20"/>
+                                <rect key="frame" x="16" y="62" width="16" height="16"/>
                                 <state key="normal" backgroundImage="Plan-White Whitereturn key 1x"/>
                                 <connections>
                                     <action selector="returnButtonPressed:" destination="gMV-bu-1a6" eventType="touchUpInside" id="Fau-hG-o9d"/>
@@ -1859,11 +1859,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trip-Piha1x" translatesAutoresizingMaskIntoConstraints="NO" id="nMZ-tL-G0m">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trip-Piha1x" translatesAutoresizingMaskIntoConstraints="NO" id="nMZ-tL-G0m">
                                                     <rect key="frame" x="20" y="5" width="334" height="162"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanCity - cell - bck 1x" translatesAutoresizingMaskIntoConstraints="NO" id="KMP-mY-AfR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanCity - cell - bck 1x" translatesAutoresizingMaskIntoConstraints="NO" id="KMP-mY-AfR">
                                                     <rect key="frame" x="20" y="5" width="334" height="162"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -2178,7 +2178,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Jd8-R5-v45">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Jd8-R5-v45">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="250"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -2186,17 +2186,21 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="205"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defalut Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-NN-QRO">
-                                                    <rect key="frame" x="20" y="208" width="134" height="40"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="Nlk-Cl-0ed">
+                                                    <rect key="frame" x="0.0" y="194" width="170" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-mark -Unselected" translatesAutoresizingMaskIntoConstraints="NO" id="USO-tM-VeB">
+                                                    <rect key="frame" x="141" y="4" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defalut Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-NN-QRO">
+                                                    <rect key="frame" x="18" y="200" width="134" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-mark -Unselected" translatesAutoresizingMaskIntoConstraints="NO" id="USO-tM-VeB">
-                                                    <rect key="frame" x="141" y="4" width="25" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="170" height="250"/>
@@ -2302,7 +2306,7 @@
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ohn-x0-Zeu"/>
+        <segue reference="iYu-EO-y6d"/>
         <segue reference="sPO-wn-v6r"/>
         <segue reference="jtB-T4-VBj"/>
         <segue reference="lPE-xR-MhK"/>

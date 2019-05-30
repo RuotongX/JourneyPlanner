@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 enum planType{
     case NORMAL
@@ -30,8 +31,8 @@ class PlanViewController: UIViewController {
     // when this view is loaded, this will be displayed at the first time - Wanfang Zhou 23/04/2019
     override func viewDidLoad() {
         super.viewDidLoad()
-        plan = []
-        LoadTestData()
+        loadData()
+//        LoadTestData()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -47,6 +48,7 @@ class PlanViewController: UIViewController {
     // when the return button is pressed, go back to the previous page  - Wanfang Zhou 23/04/2019
     @IBAction func returnButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        saveData()
     }
     @IBAction func addButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Plan Name", message: "Please enter plan name to continue", preferredStyle: .alert)
@@ -88,6 +90,9 @@ class PlanViewController: UIViewController {
             
             attractions.append(AttractionInformation(Name: "Cape Reinga Lighthouse", Location: CLLocationCoordinate2D(latitude: -34.426639, longitude: 172.677639)))
             attractions[0].attractionImage = UIImage(named: "Tripe-Cape_Reinga_1x")
+            attractions[0].attractionImageName = "Tripe-Cape_Reinga_1x"
+            
+            
             attractions.append(AttractionInformation(Name: "Awesome Thai food", Location: CLLocationCoordinate2D(latitude: -38.1387009, longitude: 176.2528075)))
             
             citylists.append(CityListInformation(name: "Cape Reinga", time: 1, location: CLLocationCoordinate2D(latitude: -34.428788, longitude: 172.681003), image: image, attractions: attractions))
@@ -98,6 +103,159 @@ class PlanViewController: UIViewController {
             plan?.append(PlanInformations(name: "Test Plan", citylist: citylists, memo: "memo"))
         }
         
+    }
+    
+    
+    private func loadData(){
+        
+        plan = []
+        
+        let realm = try! Realm()
+        let planDB = realm.objects(PlanInformation_Database.self)
+        
+        for result in planDB{
+            
+            let cities = city_Decoder(cities: result.cities)
+            let newPL = PlanInformations(name: result.PlanName, citylist: cities, memo: result.PlanMemo)
+            
+            plan?.append(newPL)
+        }
+    }
+    
+    private func city_Decoder(cities: List<CityInformation_Database>) -> [CityListInformation]{
+        var cityList : [CityListInformation] = []
+        
+        for city in cities{
+            let attraction = attraction_Decoder(attractions: city.attractionList)
+            
+            if let CTimg = UIImage(named: city.CityImgName){
+                let newCT = CityListInformation(name: city.CityName, time: city.StopTime, location: CLLocationCoordinate2D(latitude: city.CityLocation_Lat, longitude: city.CityLocation_Lon), image: CTimg, attractions: attraction)
+                cityList.append(newCT)
+            }
+        }
+        
+        return cityList
+    }
+    
+    
+    
+    // get attraction from DB
+    private func attraction_Decoder(attractions : List<AttractionInformation_Database>) -> [AttractionInformation]{
+        
+        var attractionList : [AttractionInformation] = []
+        
+        for attract in attractions{
+            let newAt = AttractionInformation(Name: attract.AttractionName, Location: CLLocationCoordinate2D(latitude: attract.AttractionLocation_Lan, longitude: attract.AttractionLocation_Lon))
+            
+            if let attimage = UIImage(named: attract.AttractionImg){
+                newAt.attractionImage = attimage
+                newAt.attractionImageName = attract.AttractionImg
+            }
+            attractionList.append(newAt)
+        }
+        
+        return attractionList
+    }
+    
+    
+    
+    
+    private func saveData(){
+        
+        let realm = try! Realm()
+        
+        // delete following things
+        
+        let planDB = realm.objects(PlanInformation_Database.self)
+        let cityDB = realm.objects(CityInformation_Database.self)
+        let attractionDB = realm.objects(AttractionInformation_Database.self)
+        
+        if let plan = self.plan{
+            let result = enCoder_PlanInformation(plans: plan)
+            
+            try! realm.write {
+                realm.delete(planDB)
+                realm.delete(cityDB)
+                realm.delete(attractionDB)
+                
+                for plan in result{
+                    realm.add(plan)
+                }
+                print(Realm.Configuration.defaultConfiguration.fileURL)
+            }
+        }
+
+    }
+    
+    
+    
+    private func enCoder_PlanInformation(plans : [PlanInformations]) -> [PlanInformation_Database]{
+        var planDB : [PlanInformation_Database] = []
+        
+        for plan in plans{
+            let newPL = PlanInformation_Database()
+            newPL.PlanName = plan.planName
+            newPL.PlanMemo = plan.memo
+            
+            let result = enCoder_CityInformation(cities: plan.City)
+            
+            for city in result{
+                newPL.cities.append(city)
+            }
+            
+            planDB.append(newPL)
+        }
+        
+        
+        return planDB
+    }
+    
+    
+    private func enCoder_CityInformation(cities: [CityListInformation]) -> [CityInformation_Database]{
+        var cityDB : [CityInformation_Database] = []
+        
+        for city in cities{
+            let newCt = CityInformation_Database()
+            newCt.CityName = city.cityName
+            newCt.StopTime = city.cityStopTime
+            newCt.CityLocation_Lat = city.cityLocation.latitude
+            newCt.CityLocation_Lon = city.cityLocation.longitude
+            newCt.CityImgName = "City-\(city.cityName.lowercased())"
+            
+            if let attractions = city.Attractions{
+                let result = enCoder_AttractionInformation(attractions: attractions)
+                
+                for att in result{
+                    newCt.attractionList.append(att)
+                }
+            }
+            cityDB.append(newCt)
+        }
+        
+        return cityDB
+    }
+    
+    
+    private func enCoder_AttractionInformation(attractions : [AttractionInformation]) -> [AttractionInformation_Database]{
+        
+        var attractionsDB : [AttractionInformation_Database] = []
+        
+        for attractionsmall in attractions{
+            
+            let newAtt = AttractionInformation_Database()
+            newAtt.AttractionName = attractionsmall.attractionName
+            newAtt.AttractionLocation_Lan = attractionsmall.attractionLocation.latitude
+            newAtt.AttractionLocation_Lon = attractionsmall.attractionLocation.longitude
+            
+            if let image = attractionsmall.attractionImageName{
+                newAtt.AttractionImg = image
+            } else {
+                newAtt.AttractionImg = "attraction_default"
+            }
+            attractionsDB.append(newAtt)
+        }
+        
+        return attractionsDB
     }
     
     

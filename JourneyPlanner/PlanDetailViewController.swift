@@ -196,6 +196,10 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
                 
                 if let attractionImage = attraction.attractionImage{
                     cell.AttractionImage.image = attractionImage
+                } else{
+                    if let defaultImg = UIImage(named: "attraction_default"){
+                        cell.AttractionImage.image = defaultImg
+                    }
                 }
                 
                 let geocoder : CLGeocoder = CLGeocoder()

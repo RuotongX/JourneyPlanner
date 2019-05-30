@@ -14,6 +14,7 @@ class AttractionInformation{
     var attractionName : String
     var attractionLocation : CLLocationCoordinate2D
     var attractionImage : UIImage?
+    var attractionImageName : String?
     
     init(Name : String, Location : CLLocationCoordinate2D) {
         self.attractionName = Name

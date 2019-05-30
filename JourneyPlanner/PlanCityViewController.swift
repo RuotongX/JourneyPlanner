@@ -104,9 +104,8 @@ extension PlanCityViewController : UITableViewDelegate, UITableViewDataSource{
         if let city = self.cities?[indexPath.row]{
             cell.CityNameLabel.text = city.cityName
             cell.dayLabel.text = "City \(indexPath.row + 1)"
-            
-            
             cell.City_BackgroundImage.layer.cornerRadius = 8
+            cell.City_BackgroundImage.image = city.cityImage
         }
         
         return cell
