@@ -14,6 +14,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var MapTypeTextField: UITextField!
     @IBOutlet weak var NameLabel: UILabel!
     
+    var selectedMapType = UserDefaults.standard.integer(forKey: "MapType")
     
     let mapType_arr = ["Standerd","Setellite","Hybrid"]
     var active_textField : UITextField!
@@ -33,6 +34,8 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         MapTypeTextField.inputView = my_pickerView
         
         creat_toolbar()
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -75,7 +78,9 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(" ", current_arr[row])
+        
+        self.selectedMapType = row
+        
         active_textField.text = current_arr[row]
     }
     
@@ -95,6 +100,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @objc func doneClick() {
         active_textField.resignFirstResponder()
+        UserDefaults.standard.set(selectedMapType, forKey: "MapType")
     }
     
     @objc func cancelClick() {

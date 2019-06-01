@@ -17,6 +17,8 @@ class RouteListViewController: UIViewController {
 
     var delegate: RouteListViewControllerDelegate?
     @IBOutlet weak var TripTableView: UITableView!
+    var StopTimeA : Int!
+    var StopTimeB : Int!
     
     //access the routeInformation class to store the test data, and set it to global variable - ZHE WANG
     var routeInfo : [RouteInformation] = []
@@ -29,7 +31,7 @@ class RouteListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LoadData()
+        loadDataFromPlist()
         
         //tableview 数据
         TripTableView.dataSource = self
@@ -43,58 +45,39 @@ class RouteListViewController: UIViewController {
         return .lightContent
     }
     
-    func LoadData(){
+    func loadDataFromPlist(){
         
-        //access those two class that used to store the section's data of route - ZHE WANG
-        var citylist : [CityListInformation] = []
-        var citylist2 : [CityListInformation] = []
-
-        var attraction_Auckland : [AttractionInformation] = []
-        var attraction_Dargville : [AttractionInformation] = []
-        var attraction_Kaitaia : [AttractionInformation] = []
+        let plistPath = Bundle.main.path(forResource: "RouteInformation", ofType: "plist")!
+        let routes = NSArray(contentsOfFile: plistPath)!
         
-        if let RouteImage = UIImage(named: "Trip-Piha1x"){
-            
-            if let AttractionImage_1 = UIImage(named: "Trip-Piha1x"){
-                attraction_Auckland.append(AttractionInformation.init(Name: "Piha Beach", Location: CLLocationCoordinate2D(latitude: 174.471, longitude: -36.954), attractionImage: AttractionImage_1))
-            }
-            
-            if let AttractionImage_2 = UIImage(named: "Trip-SkyTower-90-1x"){
-                attraction_Auckland.append(AttractionInformation.init(Name: "Auckland Skytower", Location: CLLocationCoordinate2D(latitude: 174.76, longitude: -36.85), attractionImage: AttractionImage_2))
-            }
-            
-            if let AttractionImage_3 = UIImage(named: "Trip-Waiheke-Island"){
-                attraction_Auckland.append(AttractionInformation.init(Name: "Waihike Island", Location: CLLocationCoordinate2D(latitude: 175.1, longitude: -16.8), attractionImage: AttractionImage_3))
-            }
-            
-            if let CityImage = UIImage(named: "Trip-Skytower-150*110-1x"){
-                citylist.append(CityListInformation.init(name: "Auckland", time: 3, location: CLLocationCoordinate2D(latitude: 174.7619066, longitude: -36.8484609), image : CityImage, attractions: attraction_Auckland))
-            }
-            
-            routeInfo.append(RouteInformation.init(name: "Auckland Explore", time: 3, image : RouteImage, city: citylist))
-        }
+        routeInfo = []
         
-        if let RouteImage = UIImage(named: "Tripe-Cape_Reinga_1x"){
+        for singleRoute in routes{
             
-            if let AttractionImage_1 = UIImage(named: "Trip-Dargaville-Attraction-1"){
-                attraction_Dargville.append(AttractionInformation.init(Name: "Kai Iwi Lakes", Location: CLLocationCoordinate2D(latitude: -35.8094, longitude: 173.6461 ), attractionImage: AttractionImage_1))
+            let rt = singleRoute as! NSDictionary
+            
+            let routeName = rt["RouteName"] as! String
+            let routeStopTime = rt["RouteStopTime"] as! Int
+            let routeImageName = rt["RouteImageName"] as! String
+            
+            var cities : [String] = []
+            let cityList = rt["CityList"] as! NSArray
+            
+            for city in cityList{
+                let cityName = city as! String
+                cities.append(cityName)
             }
             
-            if let CityImage = UIImage(named: "City-dargaville"){
-                citylist2.append(CityListInformation.init(name: "Dargaville", time: 1, location: CLLocationCoordinate2D(latitude: -36.8484609, longitude: 174.7619066), image : CityImage, attractions: attraction_Dargville))
+            if routeStopTime > StopTimeA && routeStopTime <= StopTimeB{
+                if let image = UIImage(named: routeImageName){
+                    let newRT = RouteInformation(name: routeName, time: routeStopTime, image: image)
+                    newRT.CitieName = cities
+                    self.routeInfo.append(newRT)
+                }
             }
-            
-            if let AttractionImage_1 = UIImage(named: "City-kaitaia"){
-                attraction_Kaitaia.append(AttractionInformation.init(Name: "Kai Iwi Lakes", Location: CLLocationCoordinate2D(latitude: -35.8094, longitude: 173.6461 ), attractionImage: AttractionImage_1))
-            }
-            
-            if let CityImage = UIImage(named: "City-kaitaia"){
-                citylist2.append(CityListInformation.init(name: "Kaitaia", time: 1, location: CLLocationCoordinate2D(latitude: -35.0782671, longitude: 173.3789389), image : CityImage, attractions: attraction_Kaitaia))
-            }
-            
-            routeInfo.append(RouteInformation.init(name: "Twin Cost Discovery", time: 6, image : RouteImage, city: citylist2))
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
@@ -105,6 +88,7 @@ class RouteListViewController: UIViewController {
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = TripTableView.indexPath(for: cell){
                         selectCityController.routeName = routeInfo[indexPath.row].routeName
+                        selectCityController.SelectedCityList = routeInfo[indexPath.row].CitieName
                     }
                 }
             }

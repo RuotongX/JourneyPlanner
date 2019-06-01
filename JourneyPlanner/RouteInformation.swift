@@ -15,6 +15,7 @@ class RouteInformation{
     var routeStopTime : Int
     var routeImage : UIImage
     var Cities : [CityListInformation]?
+    var CitieName : [String]?
     
     init (name : String, time : Int, image : UIImage){
         self.routeName = name
