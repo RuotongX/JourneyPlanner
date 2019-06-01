@@ -16,10 +16,11 @@ class RouteSelectCityCell: UITableViewCell {
 
     @IBOutlet weak var CityImage: UIImageView!
     
-    @IBOutlet weak var CityNmae: UILabel!
+    @IBOutlet weak var CityName: UILabel!
     
     @IBOutlet weak var DarkCoverForImage: UIImageView!
     @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var AttractionNumber: UILabel!
     
     @IBOutlet weak var Background: UIImageView!
     

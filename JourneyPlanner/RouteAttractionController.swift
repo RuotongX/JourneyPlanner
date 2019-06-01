@@ -11,12 +11,19 @@ import CoreLocation
 
 protocol RouteAttractionControllerDelgate {
     
+    func didSelectAttractionFromList(_ controller: RouteAttractionController, SelectedAttraction : [AttractionInformation], indexNumber : Int)
+    
 }
 
 class RouteAttractionController: UIViewController {
 
     @IBAction func ReturnButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            if let delegate = self.delegate,
+                let indexNumber = self.cityIndexNumber{
+                delegate.didSelectAttractionFromList(self, SelectedAttraction: self.SelectedData, indexNumber: indexNumber)
+            }
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -26,12 +33,15 @@ class RouteAttractionController: UIViewController {
     @IBOutlet weak var CityName: UILabel!
     @IBOutlet weak var CollectionView: UICollectionView!
     var AttractionData : [AttractionInformation] = []
+    var SelectedData : [AttractionInformation] = []
+    var cityIndexNumber : Int?
     var cityName : String?
-    var delgate : RouteAttractionControllerDelgate?
+    var delegate : RouteAttractionControllerDelgate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        tickData()
 
         CollectionView.delegate = self
         CollectionView.dataSource = self
@@ -40,6 +50,18 @@ class RouteAttractionController: UIViewController {
             self.CityName.text = cityname
         }
     }
+    
+    private func tickData(){
+        
+        for newAtt in AttractionData{
+            for selectedAtt in SelectedData{
+                if newAtt.attractionName == selectedAtt.attractionName{
+                    newAtt.isSelectedFromPage = true
+                }
+            }
+        }
+    }
+    
     
     private func loadData(){
         if let CityName = self.cityName{
@@ -78,6 +100,19 @@ class RouteAttractionController: UIViewController {
 }
 
 extension RouteAttractionController : UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        AttractionData[indexPath.row].isSelectedFromPage = !AttractionData[indexPath.row].isSelectedFromPage
+        
+        collectionView.reloadData()
+        
+        SelectedData = []
+        for attraction in self.AttractionData{
+            if attraction.isSelectedFromPage {
+                SelectedData.append(attraction)
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -95,8 +130,10 @@ extension RouteAttractionController : UICollectionViewDelegate, UICollectionView
         cell.CellBackground.layer.cornerRadius = 10
         cell.AttractionImage.layer.cornerRadius = 10
         
-        cell.toggleSelected()
+        cell.updateCheckMark(selected: AttractionData[indexPath.row].isSelectedFromPage)
         
         return cell
     }
+    
+    
 }

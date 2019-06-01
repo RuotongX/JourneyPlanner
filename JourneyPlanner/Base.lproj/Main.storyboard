@@ -79,7 +79,7 @@
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="Home_ViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homevController" id="9pv-A4-QxB" customClass="Home_ViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrK-jf-aPp" userLabel="Change City">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrK-jf-aPp" userLabel="Change City">
                                 <rect key="frame" x="107" y="131" width="16" height="22"/>
                                 <state key="normal" image="Home-Change City 1x"/>
                                 <connections>
@@ -792,10 +792,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-N5-Amy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-N5-Amy">
                                 <rect key="frame" x="34" y="132" width="307" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Journey planner is a journey manage app. It will help people design his own trip and lead them explore the wonderful world.
+
+Journey Planner is free software and comes with ABSOLUTELY NO WARRANTY.
+
+Product Owner: 
+Qijin Chen
+Scrum Master: 
+Ruotong Xu
+Team Member: 
+Zhe Wang, QiChang Zhou, Wanfang Zhou
+
+
+Copyright Information 
+Zomato
+Zomato is a service provider for our nearby restaurant functions.
+Zomato is also a well-known food rating service, It provides information and reviews of restaurants.
+Copyright © 2008-2019 - Zomato
+
+Apple Map API
+Apple Map is a service provider for our map view.
+Apple Map is a web mapping service developed by Apple, Apple map uses ‘Vector Graphics” which allows the application to use less data than competitor Google Map.
+Copyright © 2019 Apple Inc.
+
+OpenWeatherMap
+OpenWeatherMap is a service provider for our weather forecasting.
+OpenWeatherMap is a n online service that provides weather data which is include current weather data, forecast and historical data.
+Copyright © 2012 — 2019 OpenWeather 
+
+Realm (Database)
+Realm is the database we use in this project.
+Realm is an open source object database management system.
+Copyright © Realm 2014- 2019 Realm
+
+The destination data collect from © Pure NZ
+
+Special thanks to:
+Photo provider
+Nathan Xue, Amber Chang, Xianghong Li
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1181,7 +1219,7 @@
         <!--Plan-->
         <scene sceneID="Qi4-aC-9XM">
             <objects>
-                <viewController title="Plan" id="gMV-bu-1a6" customClass="PlanViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="planviewcontroller" title="Plan" id="gMV-bu-1a6" customClass="PlanViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I4T-id-u6R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1987,14 +2025,6 @@
                                                     <rect key="frame" x="45" y="160" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ym-aF-4ON">
-                                                    <rect key="frame" x="78" y="156" width="84" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Attractions">
-                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-6M-tG1">
                                                     <rect key="frame" x="200" y="161" width="33" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2032,13 +2062,21 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LF4-Lh-kGD">
+                                                    <rect key="frame" x="78" y="163" width="41" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Light" family="PingFang SC" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="AttractionNumber" destination="LF4-Lh-kGD" id="RUg-te-UBL"/>
                                             <outlet property="Background" destination="fY7-wn-UzY" id="T1Z-Ly-gPz"/>
                                             <outlet property="CityImage" destination="i8d-aM-Nc6" id="7bg-g2-87Y"/>
-                                            <outlet property="CityNmae" destination="SXS-Aj-hLH" id="1cq-Hh-ZMH"/>
+                                            <outlet property="CityName" destination="SXS-Aj-hLH" id="1cq-Hh-ZMH"/>
                                             <outlet property="DarkCoverForImage" destination="adH-IN-11f" id="c4Y-bd-iXO"/>
                                             <outlet property="TimeLabel" destination="vSS-RI-Sny" id="9g5-32-g58"/>
                                             <segue destination="7ck-cr-tPO" kind="show" identifier="AttractionData" id="0Nr-BJ-J1e"/>
@@ -2050,6 +2088,9 @@
                                 <rect key="frame" x="31" y="724" width="312" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="PlanDesign-CreateButton 1x"/>
+                                <connections>
+                                    <action selector="CreateButtonPressed:" destination="S3L-Ed-jEf" eventType="touchUpInside" id="rEe-mH-Sdp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2178,10 +2219,6 @@
                                                     <rect key="frame" x="0.0" y="194" width="170" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-mark -Unselected" translatesAutoresizingMaskIntoConstraints="NO" id="USO-tM-VeB">
-                                                    <rect key="frame" x="141" y="4" width="25" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defalut Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PDk-NN-QRO">
                                                     <rect key="frame" x="18" y="200" width="134" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2189,6 +2226,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check-mark -Unselected" translatesAutoresizingMaskIntoConstraints="NO" id="USO-tM-VeB">
+                                                    <rect key="frame" x="138" y="8" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="170" height="250"/>

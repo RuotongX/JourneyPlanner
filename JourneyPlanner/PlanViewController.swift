@@ -26,6 +26,7 @@ class PlanViewController: UIViewController {
     var delegate : PlanViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
     var plan : [PlanInformations]?
+    var planCreatorData : PlanInformations?
     var PlanType : planType = .NORMAL
     @IBOutlet weak var addButton: UIButton!
     // when this view is loaded, this will be displayed at the first time - Wanfang Zhou 23/04/2019
@@ -41,13 +42,20 @@ class PlanViewController: UIViewController {
             self.addButton.isHidden = true
         }
         
+        
+        if let newPlan = planCreatorData{
+            plan?.append(newPlan)
+            self.tableView.reloadData()
+        }
 
 //        tableView.register(PlanTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     // when the return button is pressed, go back to the previous page  - Wanfang Zhou 23/04/2019
     @IBAction func returnButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+        self.dismiss(animated: true, completion: nil)
+        
         saveData()
     }
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -76,33 +84,6 @@ class PlanViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
-    }
-    
-    // this method is used to load the test date please remove before submit  - Wanfang Zhou 23/04/2019
-    // PLEASE REMOVE BEFORE SUBMIT !!!!!!!
-    func LoadTestData(){
-        
-        if let image = UIImage(named: "Trip-Piha_90_2x"){
-            
-            var citylists : [CityListInformation] = []
-
-            var attractions : [AttractionInformation] = []
-            
-            attractions.append(AttractionInformation(Name: "Cape Reinga Lighthouse", Location: CLLocationCoordinate2D(latitude: -34.426639, longitude: 172.677639)))
-            attractions[0].attractionImage = UIImage(named: "Tripe-Cape_Reinga_1x")
-            attractions[0].attractionImageName = "Tripe-Cape_Reinga_1x"
-            
-            
-            attractions.append(AttractionInformation(Name: "Awesome Thai food", Location: CLLocationCoordinate2D(latitude: -38.1387009, longitude: 176.2528075)))
-            
-            citylists.append(CityListInformation(name: "Cape Reinga", time: 1, location: CLLocationCoordinate2D(latitude: -34.428788, longitude: 172.681003), image: image, attractions: attractions))
-            
-            citylists.append(CityListInformation(name: "Auckland", time: 1, location: CLLocationCoordinate2D(latitude: -36.848461, longitude: 174.763336), image: image, attractions: attractions))
-            
-            
-            plan?.append(PlanInformations(name: "Test Plan", citylist: citylists, memo: "memo"))
-        }
-        
     }
     
     
@@ -181,7 +162,6 @@ class PlanViewController: UIViewController {
                 for plan in result{
                     realm.add(plan)
                 }
-                print(Realm.Configuration.defaultConfiguration.fileURL)
             }
         }
 
