@@ -89,24 +89,69 @@ class RouteSelectCityController: UIViewController {
         }
         
     }
+    @IBAction func CreateButtonPressed(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Plan Name", message: "What is your plan name", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Plan Name"
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            if (alert.textFields?.first?.text!.isEmpty)!{
+                let erroralert = UIAlertController(title: "Error", message: "Please enter plan name!", preferredStyle: .alert)
+                let errorAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                erroralert.addAction(errorAction)
+                self.present(erroralert,animated: true)
+            }
+            
+            let newPlan = PlanInformations(name: (alert.textFields?.first?.text!)!, citylist: self.cityInformation, memo: "")
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let planViewController = storyBoard.instantiateViewController(withIdentifier: "planviewcontroller") as? PlanViewController
+            
+            planViewController?.planCreatorData = newPlan
+            
+            self.present(planViewController!, animated: true,completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert,animated: true)
+
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "AttractionData"{
-            if let selsectAttraction = segue.destination as? RouteAttractionController{
-                selsectAttraction.delgate = self
+            if let selectAttraction = segue.destination as? RouteAttractionController{
+                selectAttraction.delegate = self
                 
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = SelectCityTableview.indexPath(for: cell){
-                        selsectAttraction.cityName = self.cityInformation[indexPath.row].cityName
+                        selectAttraction.cityName = self.cityInformation[indexPath.row].cityName
+                        selectAttraction.cityIndexNumber = indexPath.row
+                        
+                        
+                        if let attractions = self.cityInformation[indexPath.row].Attractions{
+                            selectAttraction.SelectedData = attractions
+                        }
                     }
                 }
             }
         }
+        
     }
 }
+extension RouteSelectCityController : RouteAttractionControllerDelgate{
+    func didSelectAttractionFromList(_ controller: RouteAttractionController, SelectedAttraction: [AttractionInformation], indexNumber: Int) {
+        cityInformation[indexNumber].Attractions = SelectedAttraction
+        self.SelectCityTableview.reloadData()
+    }
+    
+}
 
-extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource, RouteAttractionControllerDelgate{
+extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -118,11 +163,17 @@ extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource
             fatalError("The dequeued cell is not an instance of SelectCityTableviewCellTableViewCell.")
         }
         
-        cell.CityNmae.text = cityInformation[indexPath.row].cityName
+        cell.CityName.text = cityInformation[indexPath.row].cityName
         
         cell.CityImage.image = cityInformation[indexPath.row].cityImage
         
         cell.TimeLabel.text = String(cityInformation[indexPath.row].cityStopTime)
+        
+        if let attraction = cityInformation[indexPath.row].Attractions{
+            cell.AttractionNumber.text = "\(attraction.count)"
+        } else {
+            cell.AttractionNumber.text = "0"
+        }
         
         cell.CityImage.layer.cornerRadius = 8
         cell.Background.layer.cornerRadius = 8
@@ -158,3 +209,4 @@ extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource
         return cell
     }
 }
+

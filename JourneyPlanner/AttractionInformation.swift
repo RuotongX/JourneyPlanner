@@ -15,6 +15,7 @@ class AttractionInformation{
     var attractionLocation : CLLocationCoordinate2D
     var attractionImage : UIImage?
     var attractionImageName : String?
+    var isSelectedFromPage : Bool = false
     
     init(Name : String, Location : CLLocationCoordinate2D) {
         self.attractionName = Name

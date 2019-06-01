@@ -12,23 +12,25 @@ class RouteAttractionCell: UICollectionViewCell {
     
     @IBOutlet weak var AttractionImage: UIImageView!
     @IBOutlet weak var AttractionName: UILabel!
-    
     @IBOutlet weak var CellBackground: UIImageView!
     @IBOutlet weak var CheckMark: UIImageView!
     
-    func toggleSelected ()
+    func updateCheckMark (selected : Bool)
     {
         //If image is selected.
-        if (isSelected)
+        if (selected)
         {
             //Show check mark image.
-            self.CheckMark.image = UIImage(named: "Check-mark -Selected")
+            self.CheckMark.image = UIImage(named: "Check-mark -Unselected")
+            self.CheckMark.isHidden = false
         }
             
         else
         {
             //Hide check mark image.
-            self.CheckMark.image = UIImage(named: "Check-mark -Unselected")
+//            self.CheckMark.image = UIImage(named: "Check-mark -Unselected")
+            self.CheckMark.isHidden = true
+
         }
     }
 }
