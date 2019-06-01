@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>RouteName</key>
+		<string>Auckland Explore</string>
+		<key>RouteStopTime</key>
+		<integer>2</integer>
+		<key>RouteImageName</key>
+		<string>Route-Auckland</string>
+		<key>CityList</key>
+		<array>
+			<string>Auckland</string>
+		</array>
+	</dict>
+	<dict>
+		<key>RouteName</key>
+		<string>Twin Coast Discovery</string>
+		<key>RouteStopTime</key>
+		<integer>5</integer>
+		<key>RouteImageName</key>
+		<string>Route-Reinga</string>
+		<key>CityList</key>
+		<array>
+			<string>Dargaville</string>
+			<string>Kaitaia</string>
+			<string>Paihia</string>
+			<string>Whangarei</string>
+		</array>
+	</dict>
+	<dict>
+		<key>RouteName</key>
+		<string>North Island</string>
+		<key>RouteStopTime</key>
+		<integer>9</integer>
+		<key>RouteImageName</key>
+		<string>Route-North</string>
+		<key>CityList</key>
+		<array>
+			<string>Auckland</string>
+			<string>Hamilton</string>
+			<string>Tauranga</string>
+			<string>Rotorua</string>
+			<string>Gisborne</string>
+			<string>Napier</string>
+			<string>Palmerston North</string>
+			<string>Wellington</string>
+		</array>
+	</dict>
+</array>
+</plist>

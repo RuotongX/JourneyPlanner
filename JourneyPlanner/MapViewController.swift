@@ -31,12 +31,6 @@ enum MapSource{
     case EXPLORE_CANTEEN
 }
 
-enum MapType{
-    case HYBRID
-    case SATELLITE
-    case STANDARD
-}
-
 class MapViewController: UIViewController {
     
     // all necessary data which used to drop the annotation or display the current location - Dalton 25/Apr/2019
@@ -53,9 +47,6 @@ class MapViewController: UIViewController {
     var homePage_SearchBarContent : String?
     var plandetail_attractionInformation : AttractionInformation?
     
-    //the user can select their preferred maptype from the setting page - Dalton 12/May/2019
-    var userPreferedMapType: MapType?
-    
 
 //    var selectedAnnotation : MKPlacemark? = nil
     var annotationPin : MKPlacemark? = nil
@@ -69,25 +60,23 @@ class MapViewController: UIViewController {
         // change the current location icon to black Dalton 23/Apr/2019
 
         
-        
-        if let preferredMAP = userPreferedMapType{
+        let preferredMapID = UserDefaults.standard.integer(forKey: "MapType")
+
+        if preferredMapID == 0 {
+            mapView.mapType = .standard
+            mapTypeSegment.selectedSegmentIndex = 0
+        } else if preferredMapID == 1{
+            mapView.mapType = .satellite
+            mapTypeSegment.selectedSegmentIndex = 1
+        } else if preferredMapID == 2{
             
-            if preferredMAP == .HYBRID{
-                mapView.mapType = .hybrid
-                mapTypeSegment.selectedSegmentIndex = 2
-            } else if preferredMAP == .SATELLITE{
-                mapView.mapType = .satellite
-                mapTypeSegment.selectedSegmentIndex = 1
-            } else if preferredMAP == .STANDARD{
-                mapView.mapType = .standard
-                mapTypeSegment.selectedSegmentIndex = 0
-            }
-            
-            
-        } else{
+            mapView.mapType = .hybrid
+            mapTypeSegment.selectedSegmentIndex = 2
+        } else {
             mapView.mapType = .standard
             mapTypeSegment.selectedSegmentIndex = 0
         }
+        
         
         addSearchController()
         

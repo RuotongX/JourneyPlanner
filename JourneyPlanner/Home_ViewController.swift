@@ -38,7 +38,6 @@ class Home_ViewController: ViewController{
     
     let WeatherApiKey = "d1580a5eaffdf2ae907ca97ceaff0235"
     let locationManager = CLLocationManager()
-    var preferredMapType: MapType?
     var CurrentCity : LocationInformation?
     var selectedCity : LocationInformation?
     @IBOutlet weak var City_Name: UILabel!
@@ -87,6 +86,14 @@ class Home_ViewController: ViewController{
         if segue.identifier == "PlanDesignerSegue"{
             if let planDesignerViewController = segue.destination as? RouteListViewController{
                 planDesignerViewController.delegate = self
+                
+                if self.selectedPlanDate == 0{
+                    planDesignerViewController.StopTimeA = 1
+                    planDesignerViewController.StopTimeB = 3
+                } else {
+                    planDesignerViewController.StopTimeA = 4
+                    planDesignerViewController.StopTimeB = 9
+                }
             }
         }
         
@@ -103,9 +110,7 @@ class Home_ViewController: ViewController{
                     
                     self.CheckWeather(_location: (self.selectedCity?.location)!)
                 }
-                if let preferredMap = preferredMapType{
-                    mapviewController?.userPreferedMapType = preferredMap
-                }
+                
                 mapviewController?.mapsource = .HOMEPAGE_MAP
                 mapviewController?.delegate = self
                 
@@ -158,7 +163,7 @@ class Home_ViewController: ViewController{
             impactFeedBackGenerator.impactOccurred()
             
             
-            PlanDesignerDay.text = "4 - 7 Days"
+            PlanDesignerDay.text = "4 - 9 Days"
             selectedPlanDate = 1
         } else {
             let error = UINotificationFeedbackGenerator()

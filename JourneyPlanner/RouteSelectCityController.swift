@@ -23,6 +23,7 @@ class RouteSelectCityController: UIViewController {
     
     var delgate : RouteSelectCityControllerDelgate?
     var routeName : String?
+    var SelectedCityList : [String]?
     var cityInformation : [CityListInformation] = []
     @IBOutlet weak var routeNameLabel: UILabel!
     
@@ -59,22 +60,31 @@ class RouteSelectCityController: UIViewController {
             let cityInfo = cityDict as! NSDictionary
             
             let cityName = cityInfo["cityName"] as! String
-            let cityStopTime = cityInfo["cityStopTime"] as! Int
-            let cityLocation_Lon = cityInfo["cityLocation_lon"] as! Double
-            let cityLocation_lat = cityInfo["cityLocation_lat"] as! Double
-            let cityImageName = cityInfo["cityImage_Name"] as! String
             
-            if let cityImage = UIImage(named: cityImageName){
-            
-                let city = CityListInformation(name: cityName, time: cityStopTime, location: CLLocationCoordinate2D(latitude: cityLocation_lat, longitude: cityLocation_Lon), image: cityImage)
-                cityInformation.append(city)
-            } else {
-                
-                if let defaultImage = UIImage(named: "City-default"){
-                    let city = CityListInformation(name: cityName, time: cityStopTime, location: CLLocationCoordinate2D(latitude: cityLocation_lat, longitude: cityLocation_lat), image: defaultImage)
-                    cityInformation.append(city)
+            if let selectedCity = self.SelectedCityList{
+                for city in selectedCity{
+                    if cityName == city{
+                        
+                        let cityStopTime = cityInfo["cityStopTime"] as! Int
+                        let cityLocation_Lon = cityInfo["cityLocation_lon"] as! Double
+                        let cityLocation_lat = cityInfo["cityLocation_lat"] as! Double
+                        let cityImageName = cityInfo["cityImage_Name"] as! String
+                        
+                        if let cityImage = UIImage(named: cityImageName){
+                            
+                            let city = CityListInformation(name: cityName, time: cityStopTime, location: CLLocationCoordinate2D(latitude: cityLocation_lat, longitude: cityLocation_Lon), image: cityImage)
+                            cityInformation.append(city)
+                        } else {
+                            
+                            if let defaultImage = UIImage(named: "City-default"){
+                                let city = CityListInformation(name: cityName, time: cityStopTime, location: CLLocationCoordinate2D(latitude: cityLocation_lat, longitude: cityLocation_lat), image: defaultImage)
+                                cityInformation.append(city)
+                            }
+                        }
+                    }
                 }
             }
+            
             
         }
         
@@ -88,9 +98,7 @@ class RouteSelectCityController: UIViewController {
                 
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = SelectCityTableview.indexPath(for: cell){
-                        if let attraction = cityInformation[indexPath.row].Attractions{
-                            selsectAttraction.AttractionData = attraction
-                        }
+                        selsectAttraction.cityName = self.cityInformation[indexPath.row].cityName
                     }
                 }
             }
