@@ -466,10 +466,16 @@ extension MapViewController : HandleMapSearch{
             subtitle.append("\(streetNo)")
         }
         if let street = placemark.thoroughfare{
-            subtitle.append(" \(street)")
+            if subtitle.isEmpty == false{
+                subtitle.append(" ")
+            }
+            subtitle.append("\(street)")
         }
         if let city = placemark.subLocality{
-            subtitle.append(", \(city)")
+            if subtitle.isEmpty == false{
+                subtitle.append(" ,")
+            }
+            subtitle.append("\(city)")
         }
         
         annotation.subtitle = subtitle
