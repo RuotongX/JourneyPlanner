@@ -51,8 +51,6 @@ class RouteSelectCityController: UIViewController {
         self.SelectCityTableview.isEditing = !self.SelectCityTableview.isEditing
     }
     
-    
-    
     private func loadCityInformation(){
         
         // load from bundle (left hand side)

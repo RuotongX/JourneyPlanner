@@ -139,9 +139,6 @@ class MapViewController: UIViewController {
                 // when user selected from the button on the homepage or from the explorepage, it will showed up the add to plan and favorite button, which will first add it to the plan or add it to the favorite list.  - Dalton 25/Apr/2019
             } else if mapsource == .HOMEPAGE_MAP || mapsource == .EXPLOREPAGE || mapsource == .HOMEPAGE_SEARCH || mapsource == .EXPLORE_CANTEEN{
                 
-                let saveAction = UIAlertAction(title: "👌🏻 Add to Plan", style: .default) { (action) in
-        
-                }
                 let favoriteAction = UIAlertAction(title: "😍 Favorite", style: .default) { (action) in
                     let model = Favourite.init()
                     let now = Date()
@@ -152,7 +149,6 @@ class MapViewController: UIViewController {
                     manager?.addMyFavourite(model)
                 }
         
-                alertSheet.addAction(saveAction)
                 alertSheet.addAction(favoriteAction)
                 
                 // when user select this from the plandetail page, it will allow user to place the current location with the selected new loadtion  - Dalton 25/Apr/2019

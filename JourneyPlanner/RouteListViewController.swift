@@ -19,6 +19,8 @@ class RouteListViewController: UIViewController {
     @IBOutlet weak var TripTableView: UITableView!
     var StopTimeA : Int!
     var StopTimeB : Int!
+
+    var RowAtPreview : Int?
     
     //access the routeInformation class to store the test data, and set it to global variable - ZHE WANG
     var routeInfo : [RouteInformation] = []
@@ -94,7 +96,6 @@ class RouteListViewController: UIViewController {
             }
         }
     }
-    
 }
 
 //inherence 3D touch preview delgate
@@ -103,25 +104,32 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     //connect and set the preview page
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
 
-        //set the index used to get row number of user pressed
-        guard let indexPath = TripTableView.indexPathForRow(at: location),
-            let cell = TripTableView.cellForRow(at: indexPath)
-            else{
-                return nil
+        guard let cell = previewingContext.sourceView as? UITableViewCell else{
+            return UIViewController()
         }
+        
+        let indexPath = TripTableView.indexPath(for: cell)
 
         previewingContext.sourceRect = cell.frame
-
+    
+        self.RowAtPreview = indexPath?.row
+    
         let previewing = storyboard?.instantiateViewController(withIdentifier: "PreviewController") as! RoutePreviewController
-
+        
+        previewing.routeName = routeInfo[RowAtPreview!].routeName
+        previewing.cityName = routeInfo[RowAtPreview!].CitieName
+    
         return previewing
     }
 
     //Pop actions
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController){
 
-        let destination  = storyboard?.instantiateViewController(withIdentifier: "SelectCityViewController")
-
+        let destination  = storyboard?.instantiateViewController(withIdentifier: "SelectCityViewController") as? RouteSelectCityController
+        
+        destination?.routeName = routeInfo[RowAtPreview!].routeName
+        destination?.SelectedCityList = routeInfo[RowAtPreview!].CitieName
+        
         show(destination!, sender: self)
     }
     
