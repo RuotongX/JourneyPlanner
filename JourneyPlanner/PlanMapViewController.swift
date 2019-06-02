@@ -36,6 +36,9 @@ class PlanMapViewController: UIViewController {
         AddRoute()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     
     private func displayRegion(){
         

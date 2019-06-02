@@ -1484,6 +1484,14 @@ Nathan Xue, Amber Chang, Xianghong Li
                                     <segue destination="ZW9-fd-I7c" kind="show" identifier="getDirection" id="dTJ-O5-iFy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9g3-OR-nqF">
+                                <rect key="frame" x="266" y="56" width="31" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PlanDetail-swap 1x"/>
+                                <connections>
+                                    <action selector="SwapButtonPressed:" destination="c8T-pT-BZM" eventType="touchUpInside" id="XWe-jz-yKW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2364,6 +2372,7 @@ Nathan Xue, Amber Chang, Xianghong Li
         <image name="PlanDetail-mapview-bck 1x" width="345" height="179"/>
         <image name="PlanDetail-return key 1x" width="14" height="23"/>
         <image name="PlanDetail-stayLength-bck 1x" width="312" height="49"/>
+        <image name="PlanDetail-swap 1x" width="31" height="31"/>
         <image name="PlanDetail-viewOnMap 1x" width="311" height="62"/>
         <image name="PlanMap-Control bar 1x" width="348" height="96"/>
         <image name="PlanMap-Direction 1x" width="223" height="35"/>
@@ -2389,8 +2398,8 @@ Nathan Xue, Amber Chang, Xianghong Li
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hm9-eL-DVV"/>
-        <segue reference="sPO-wn-v6r"/>
+        <segue reference="D8Q-su-MS0"/>
+        <segue reference="Qya-DG-mOx"/>
         <segue reference="jtB-T4-VBj"/>
         <segue reference="lPE-xR-MhK"/>
         <segue reference="abb-WG-SCY"/>

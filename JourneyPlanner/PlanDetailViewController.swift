@@ -18,6 +18,7 @@ class PlanDetailViewController: UIViewController {
     var PlanType : planType = .NORMAL
     var city: CityListInformation?
     var delegate : PlanDetailViewControllerDelegate?
+    var editingMode : Bool = false
     @IBOutlet weak var CityNameLabel: UILabel!
     @IBOutlet weak var detailTableview: UITableView!
     
@@ -112,6 +113,11 @@ class PlanDetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func SwapButtonPressed(_ sender: Any) {
+        
+        self.detailTableview.isEditing = !self.detailTableview.isEditing
+        
+    }
     
 
     
@@ -148,6 +154,42 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        if let cities = self.city{
+            
+            guard let att = cities.Attractions?[sourceIndexPath.row-2] else { return }
+            
+            cities.Attractions?.remove(at: sourceIndexPath.row-2)
+            cities.Attractions?.insert(att, at: destinationIndexPath.row-2)
+        }
+    }
+    // row 1 and row 2 cannot move around
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == 0 || indexPath.row == 1{
+            return false
+        }
+        return true
+    }
+    
+    
+    
+    // do not cell to move to the first and second row
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        
+        if proposedDestinationIndexPath.row == 0  || proposedDestinationIndexPath.row == 1{
+            return sourceIndexPath
+        }
+        
+        return proposedDestinationIndexPath
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
