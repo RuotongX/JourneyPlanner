@@ -70,6 +70,24 @@ class PlanDetailViewController: UIViewController {
 
             }
         }
+        
+        if segue.identifier == "getDirection"{
+            if let planMapViewController = segue.destination as? PlanMapViewController{
+                if let city = self.city{
+                    if let attractions = city.Attractions{
+                        
+                        if attractions.count == 0 {
+                            let alert = UIAlertController(title: "Cannot Start", message: "Please add some attraction to continue", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(okAction)
+                            self.present(alert,animated: true)
+                        } else {
+                            planMapViewController.attractionInformations = attractions
+                        }
+                    }
+                }
+            }
+        }
     }
     @IBAction func StartButtonPressed(_ sender: Any) {
     }
