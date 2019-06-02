@@ -180,14 +180,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-MY-vkX">
-                                <rect key="frame" x="165" y="678" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="yzQ-fx-FMo" kind="show" id="JVN-Wl-LTk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1655,31 +1647,6 @@ Nathan Xue, Amber Chang, Xianghong Li
             </objects>
             <point key="canvasLocation" x="-255.19999999999999" y="-700.49261083743841"/>
         </scene>
-        <!--Data Base Test View Controller-->
-        <scene sceneID="c2v-UY-0Mb">
-            <objects>
-                <viewController id="yzQ-fx-FMo" customClass="DataBaseTestViewController" customModule="JourneyPlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5ua-IP-N0O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czq-NL-KQY">
-                                <rect key="frame" x="164" y="103" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Return"/>
-                                <connections>
-                                    <action selector="ReturnButtonPressed:" destination="yzQ-fx-FMo" eventType="touchUpInside" id="ajg-Xg-C94"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="T4w-iO-LM1"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yx-hr-8j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-326" y="937"/>
-        </scene>
         <!--Perference View Controller-->
         <scene sceneID="GP5-UN-eMy">
             <objects>
@@ -2020,6 +1987,7 @@ Nathan Xue, Amber Chang, Xianghong Li
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="fY7-wn-UzY">
                                                     <rect key="frame" x="15" y="5" width="345" height="208"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trip-Piha1x" translatesAutoresizingMaskIntoConstraints="NO" id="i8d-aM-Nc6">
                                                     <rect key="frame" x="15" y="5" width="345" height="136"/>
@@ -2098,6 +2066,14 @@ Nathan Xue, Amber Chang, Xianghong Li
                                 <state key="normal" image="PlanDesign-CreateButton 1x"/>
                                 <connections>
                                     <action selector="CreateButtonPressed:" destination="S3L-Ed-jEf" eventType="touchUpInside" id="rEe-mH-Sdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTP-57-P1z">
+                                <rect key="frame" x="328" y="57" width="31" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PlanDetail-swap 1x"/>
+                                <connections>
+                                    <action selector="swapButtonPressed:" destination="S3L-Ed-jEf" eventType="touchUpInside" id="jLC-Mp-FGc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2398,7 +2374,7 @@ Nathan Xue, Amber Chang, Xianghong Li
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D8Q-su-MS0"/>
+        <segue reference="RKU-2m-fz8"/>
         <segue reference="Qya-DG-mOx"/>
         <segue reference="jtB-T4-VBj"/>
         <segue reference="lPE-xR-MhK"/>
