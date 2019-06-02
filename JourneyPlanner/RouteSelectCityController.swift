@@ -160,7 +160,7 @@ extension RouteSelectCityController : RouteAttractionControllerDelgate{
 extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+        return .delete
     }
     
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
@@ -168,11 +168,15 @@ extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .delete{
-            self.cityInformation.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
+        self.cityInformation.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         let data = self.cityInformation[sourceIndexPath.row]
