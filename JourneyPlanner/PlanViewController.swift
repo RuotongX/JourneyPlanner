@@ -338,8 +338,12 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
     
     // this method is allow user to swipe to delete function  - Wanfang Zhou 23/04/2019
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        self.plan?.remove(at: indexPath.row)
-        tableView.reloadData()
+        
+        if editingStyle == .delete{
+            self.plan?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
+        }
     }
 
 }

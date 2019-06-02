@@ -155,9 +155,20 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            
+            if let city = self.city{
+                city.Attractions?.remove(at: indexPath.row-2)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
+        }
     }
+    
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .none
+//    }
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
