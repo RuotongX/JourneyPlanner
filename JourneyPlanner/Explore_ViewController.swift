@@ -78,13 +78,19 @@ class Explore_ViewController: UIViewController {
                     MapViewController{
                     // passing a number which indicate the canteens information, then pass the coordinate to the mapview class
                     //test data, remove when actualy data arrive
-                    let testLocation = CLLocation(latitude: -36.868914, longitude: 174.775109)
-                    let testLocationName = "Bang and Olufsen"
-                    
-                    mapViewController.mapsource = .EXPLORE_CANTEEN
-                    mapViewController.delegate = self
-                    mapViewController.explorePage_canteenLocation = testLocation
-                    mapViewController.explorePage_canteenName = testLocationName
+                    if let button = sender as? UIButton{
+                        let fingerLocation = button.convert(CGPoint.zero, to: Table)
+                        if let indexPath = Table.indexPathForRow(at: fingerLocation){
+                            let restaurant = self.tableViewData[indexPath.section].sectionData[indexPath.row-1]
+                            let testLocation = CLLocation(latitude: restaurant.Rlat, longitude: restaurant.Rlon)
+                            let testLocationName = restaurant.RName
+                            
+                            mapViewController.mapsource = .EXPLORE_CANTEEN
+                            mapViewController.delegate = self
+                            mapViewController.explorePage_canteenLocation = testLocation
+                            mapViewController.explorePage_canteenName = testLocationName
+                        }
+                    }
                 }
             }
         }
@@ -351,6 +357,6 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
         } else{
             
         }
-    }
     
+    }
 }

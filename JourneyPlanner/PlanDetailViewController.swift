@@ -55,9 +55,6 @@ class PlanDetailViewController: UIViewController {
                             TripdetailViewController.attraction = cityInfo.Attractions?[indexPath.row-2]
                             TripdetailViewController.indexNumber = indexPath.row - 2
                             
-                            if PlanType == .HISTORY{
-                                TripdetailViewController.planType = .HISTORY
-                            }
                         }
                     }
                 }
