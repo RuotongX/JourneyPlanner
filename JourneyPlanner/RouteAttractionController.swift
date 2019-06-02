@@ -89,6 +89,7 @@ class RouteAttractionController: UIViewController {
                         
                         if let attImage = UIImage(named: attractionIMGname){
                             let newAtt = AttractionInformation(Name: attractionName, Location: CLLocationCoordinate2D(latitude: attractionLocationLat, longitude: attractionLocationLon), attractionImage: attImage)
+                            newAtt.attractionImageName = attractionIMGname
                             AttractionData.append(newAtt)
                         }
                         

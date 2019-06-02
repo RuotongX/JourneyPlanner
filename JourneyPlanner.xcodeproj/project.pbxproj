@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410A2B1122A38493005FF424 /* PlanMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A2B1022A38493005FF424 /* PlanMapViewController.swift */; };
 		410AED48226EE51300998F9E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AED47226EE51200998F9E /* MapViewController.swift */; };
 		410AED4A226F13A400998F9E /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AED49226F13A400998F9E /* PlanViewController.swift */; };
 		410B17EF229D30D800CB219E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410B17ED229D30D700CB219E /* Realm.framework */; };
@@ -118,6 +119,7 @@
 
 /* Begin PBXFileReference section */
 		19305341977E0C9D7C33E2EC /* Pods-JourneyPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourneyPlanner.release.xcconfig"; path = "Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		410A2B1022A38493005FF424 /* PlanMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanMapViewController.swift; sourceTree = "<group>"; };
 		410AED47226EE51200998F9E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		410AED49226F13A400998F9E /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		410B17ED229D30D700CB219E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				4170FF9F229E894600117657 /* CityInformation.plist */,
 				41F74ADC229EA93D0050B085 /* AttractionList.plist */,
 				4194EEC322A2022D00370440 /* RouteInformation.plist */,
+				410A2B1022A38493005FF424 /* PlanMapViewController.swift */,
 			);
 			path = JourneyPlanner;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				41469839229BF09E004AB978 /* Tab_UserViewController.swift in Sources */,
 				415FFF26227020C0003394B3 /* SearchMapTableViewController.swift in Sources */,
 				8C32369F22854AA000BD0DB2 /* NSObject+SQL.m in Sources */,
+				410A2B1122A38493005FF424 /* PlanMapViewController.swift in Sources */,
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
 				A8A17607229774F300C39C33 /* RouteSelectCityController.swift in Sources */,
 				41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */,
