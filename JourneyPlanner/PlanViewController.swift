@@ -348,10 +348,8 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
 extension PlanViewController : PlanCityViewControllerDelegate {
     func updateDestinations(_ controller: PlanCityViewController, cities: [CityListInformation], indexNum: Int) {
         
-        print("iNDEX number : \(indexNum)")
         if let plan = self.plan?[indexNum]{
             plan.City = cities
-            print("reach")
             self.tableView.reloadData()
         }
     }

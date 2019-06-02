@@ -74,7 +74,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1127.2" y="-700.49261083743841"/>
+            <point key="canvasLocation" x="-1145" y="-700"/>
         </scene>
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
@@ -2334,7 +2334,7 @@ Nathan Xue, Amber Chang, Xianghong Li
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RKU-2m-fz8"/>
+        <segue reference="iYu-EO-y6d"/>
         <segue reference="sPO-wn-v6r"/>
         <segue reference="jtB-T4-VBj"/>
         <segue reference="lPE-xR-MhK"/>

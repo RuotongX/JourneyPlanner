@@ -27,7 +27,7 @@ class PlanDetailMapTableViewCell: UITableViewCell {
     
     func displayRegion(coordinates: CLLocationCoordinate2D){
         
-        let regionRadius : CLLocationDistance = 2000.0
+        let regionRadius : CLLocationDistance = 8000.0
         let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
         map.setRegion(region, animated: false)
