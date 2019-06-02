@@ -2020,6 +2020,7 @@ Nathan Xue, Amber Chang, Xianghong Li
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlanDesign-City-Background 1x" translatesAutoresizingMaskIntoConstraints="NO" id="fY7-wn-UzY">
                                                     <rect key="frame" x="15" y="5" width="345" height="208"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trip-Piha1x" translatesAutoresizingMaskIntoConstraints="NO" id="i8d-aM-Nc6">
                                                     <rect key="frame" x="15" y="5" width="345" height="136"/>
@@ -2098,6 +2099,14 @@ Nathan Xue, Amber Chang, Xianghong Li
                                 <state key="normal" image="PlanDesign-CreateButton 1x"/>
                                 <connections>
                                     <action selector="CreateButtonPressed:" destination="S3L-Ed-jEf" eventType="touchUpInside" id="rEe-mH-Sdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTP-57-P1z">
+                                <rect key="frame" x="328" y="57" width="31" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PlanDetail-swap 1x"/>
+                                <connections>
+                                    <action selector="swapButtonPressed:" destination="S3L-Ed-jEf" eventType="touchUpInside" id="jLC-Mp-FGc"/>
                                 </connections>
                             </button>
                         </subviews>

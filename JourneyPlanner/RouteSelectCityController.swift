@@ -47,6 +47,12 @@ class RouteSelectCityController: UIViewController {
     }
     
     
+    @IBAction func swapButtonPressed(_ sender: Any) {
+        self.SelectCityTableview.isEditing = !self.SelectCityTableview.isEditing
+    }
+    
+    
+    
     private func loadCityInformation(){
         
         // load from bundle (left hand side)
@@ -152,6 +158,29 @@ extension RouteSelectCityController : RouteAttractionControllerDelgate{
 }
 
 extension RouteSelectCityController : UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete{
+            self.cityInformation.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        let data = self.cityInformation[sourceIndexPath.row]
+        self.cityInformation.remove(at: sourceIndexPath.row)
+        self.cityInformation.insert(data, at: destinationIndexPath.row)
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

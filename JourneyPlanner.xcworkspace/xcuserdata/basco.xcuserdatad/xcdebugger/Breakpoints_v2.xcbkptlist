@@ -119,12 +119,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteSelectCityController.swift"
-            timestampString = "580627471.015241"
+            timestampString = "581159713.963196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "loadCityInformation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -135,12 +135,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteSelectCityController.swift"
-            timestampString = "580627471.015303"
+            timestampString = "581159713.963634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "loadCityInformation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -151,12 +151,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JourneyPlanner/RouteSelectCityController.swift"
-            timestampString = "580627471.015357"
+            timestampString = "581159713.9639339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "loadCityInformation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -172,7 +172,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "LoadData()"
+            landmarkName = "loadDataFromPlist()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -188,7 +188,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "LoadData()"
+            landmarkName = "loadDataFromPlist()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -204,7 +204,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "LoadData()"
+            landmarkName = "loadDataFromPlist()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
