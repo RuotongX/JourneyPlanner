@@ -14,7 +14,8 @@
 
 @property(nonatomic, readwrite) NSString* defaultDataBase;
 
-// 初始化
+// Initialize
+
 + (void)init:(NSString *)dataBase;
 
 + (void)addFavouriteWithFavouriteModel:(Favourite*)favourite;

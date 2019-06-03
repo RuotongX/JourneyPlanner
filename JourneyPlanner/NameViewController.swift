@@ -6,6 +6,7 @@
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
+// This class is control all the action in name view page.
 import UIKit
 
 class NameViewController: UIViewController {
@@ -13,7 +14,7 @@ class NameViewController: UIViewController {
     @IBOutlet weak var DoneButton: UIButton!
     @IBOutlet weak var NameTextField: UITextField!
     
-    
+// control done button
     override func viewDidLoad() {
         super.viewDidLoad()
         DoneButton.addTarget(self, action: #selector(doneClick), for: .touchUpInside)
@@ -28,7 +29,7 @@ class NameViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
+// return to top-level menue
     @IBAction func `return`(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

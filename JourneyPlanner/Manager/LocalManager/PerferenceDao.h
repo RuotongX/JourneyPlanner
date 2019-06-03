@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+// Initialize
 @interface PerferenceDao : NSObject
 
 + (void)init:(NSString *)dataBase;

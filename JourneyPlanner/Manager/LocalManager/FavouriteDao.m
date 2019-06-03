@@ -11,6 +11,8 @@
 #define NAME_THIS_TABLE @"FavouriteTable"
 @implementation FavouriteDao
 
+// creat favourite database tabel
+
 + (void)init:(NSString *)dataBase {
     [[Persistent getInstance] setDefaultDataBase:dataBase];
     NSString *sql;

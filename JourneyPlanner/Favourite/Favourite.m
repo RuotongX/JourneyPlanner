@@ -6,6 +6,7 @@
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
+// This is favourite Model View Controller 
 #import "Favourite.h"
 
 @implementation Favourite

@@ -11,6 +11,8 @@
 #define NAME_THIS_TABLE @"NameTable"
 #define PERFERENCEID @"perferenceid"
 
+
+// creat perference database tabel 
 @implementation PerferenceDao
 
 + (void)init:(NSString *)dataBase {

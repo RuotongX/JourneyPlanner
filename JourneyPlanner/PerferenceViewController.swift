@@ -6,6 +6,8 @@
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
+// his class is used to display perference view page allow user to set as their perfer including nickname and three different map type
+
 import UIKit
 
 class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -16,6 +18,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     var selectedMapType = UserDefaults.standard.integer(forKey: "MapType")
     
+// add three different option of map type
     let mapType_arr = ["Standerd","Setellite","Hybrid"]
     var active_textField : UITextField!
     
@@ -84,6 +87,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         active_textField.text = current_arr[row]
     }
     
+// creat toolbar allow user to choose three different map type
     func creat_toolbar() {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
@@ -97,12 +101,13 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
         MapTypeTextField.inputAccessoryView = toolbar
         
 }
-    
+
+// done click
     @objc func doneClick() {
         active_textField.resignFirstResponder()
         UserDefaults.standard.set(selectedMapType, forKey: "MapType")
     }
-    
+// cancel click
     @objc func cancelClick() {
         active_textField.text = ""
         active_textField.resignFirstResponder()
