@@ -13,8 +13,10 @@ protocol PlanDetailViewControllerDelegate {
     
 }
 
+// this class is used to define the plan deail vie controller
 class PlanDetailViewController: UIViewController {
     
+    // the plan type is used to maintain the status of a view controller, if the status is set to normal then the add button will be avaible, otherwise it will be hide
     var PlanType : planType = .NORMAL
     var city: CityListInformation?
     var delegate : PlanDetailViewControllerDelegate?
@@ -25,6 +27,7 @@ class PlanDetailViewController: UIViewController {
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
+    // this method is called when user first enter this view controller
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,8 +46,10 @@ class PlanDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // this method is used when pass value from this class to the next view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // when user want to see the attraction detail, or pressed the button, it will display the relavent page for user
         if segue.identifier == "attractionDetail"{
             if let  TripdetailViewController = segue.destination as? tripDetailViewController{
                 
@@ -65,6 +70,7 @@ class PlanDetailViewController: UIViewController {
             }
         }
         
+        // if user want to create new attraction on the plan, it will allow user to a viewpage and fill information
         if segue.identifier == "attractionNew"{
             if let  TripdetailNewViewController = segue.destination as? tripDetailViewController{
                 TripdetailNewViewController.delegate = self
@@ -72,6 +78,7 @@ class PlanDetailViewController: UIViewController {
             }
         }
         
+        // this method is used when user pressed the start button and entering the direction page
         if segue.identifier == "getDirection"{
             if let planMapViewController = segue.destination as? PlanMapViewController{
                 if let city = self.city{
@@ -90,39 +97,30 @@ class PlanDetailViewController: UIViewController {
             }
         }
     }
+    // when statr button is pressed, do the following action, in here thiere is nothing to do, see prepare for more information
     @IBAction func StartButtonPressed(_ sender: Any) {
     }
     
+    // this method is used to request the light content to the complier
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // this method is used when the return button pressed, it will goback to the previous page1
     @IBAction func retunButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // when user pressed the swap button, it will change the status of tableview to editing mode
     @IBAction func SwapButtonPressed(_ sender: Any) {
         
         self.detailTableview.isEditing = !self.detailTableview.isEditing
         
     }
-    
-
-    
 }
+// this method is used to passing value between this view controller and trip detail view controller
 extension PlanDetailViewController : tripDetailViewControllerDelagate{
+    // user update attraction
     func didupdateAttraction(_ controller: tripDetailViewController, attraction: AttractionInformation, indexNumber: Int) {
         
         if let cityInfo = self.city{
@@ -132,6 +130,7 @@ extension PlanDetailViewController : tripDetailViewControllerDelagate{
         self.detailTableview.reloadData()
     }
     
+    // user add new attraction
     func didAddAttraction(_ controller: tripDetailViewController, attraction: AttractionInformation) {
         
         if let cityinfo = self.city{
@@ -149,12 +148,14 @@ extension PlanDetailViewController : tripDetailViewControllerDelagate{
     
 }
 
-
+// this extension is used to maintain everything about the tableview
 extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
+    // when user pressed the tableview, it will not stuck on the selected mode
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // this method is used to allow user to swipe to delete city information
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             
@@ -166,12 +167,11 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .none
-//    }
+    // this method is return about wether this class can be modified or not
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
+    // this method is used to allow user to swap the arrangement of cells
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if let cities = self.city{
             
@@ -201,7 +201,7 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
         return proposedDestinationIndexPath
     }
     
-    
+    // this method is used to return how many items available in the table, in here,first 2 is fixed and cannot be changed.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let cityinfo = self.city{
@@ -212,6 +212,7 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
         
         return 2
     }
+    // this method is used to return the tableview height, the height is different for each component, it can be identified in here
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
             return 65
@@ -222,8 +223,10 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
         return 128
     }
     
+    // this method is used to customize the cell type.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // first cell is the length of a single trip
         if indexPath.row == 0{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "stayLength", for: indexPath) as? PlanDetailStayLengthTableViewCell else {fatalError("Unable to convert to stayLengthCell")}
             
@@ -233,6 +236,7 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
             }
             
             return cell
+            // second cell will display relavent map information
         } else if indexPath.row == 1{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "planDetailMap", for: indexPath) as? PlanDetailMapTableViewCell else {fatalError("Unable to convert to plandetailmaptableviewcell")}
             
@@ -255,7 +259,8 @@ extension PlanDetailViewController : UITableViewDelegate, UITableViewDataSource{
             
             return cell
         }
-            
+        
+        // following method will be normal attraction information.
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "attractions", for: indexPath) as? AttractionDetailTableViewCell else {fatalError("Unable to convert to AttractionDetailTableViewCell")}
         
         

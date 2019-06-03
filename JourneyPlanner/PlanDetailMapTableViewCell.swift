@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
+// this method is used to define the map cell in the trip view page
 class PlanDetailMapTableViewCell: UITableViewCell {
 
     @IBOutlet weak var map: MKMapView!
@@ -19,12 +20,14 @@ class PlanDetailMapTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    // this method i scalled to diaplay the region of a certain city
     func displayRegion(coordinates: CLLocationCoordinate2D){
         
         let regionRadius : CLLocationDistance = 8000.0
@@ -33,6 +36,7 @@ class PlanDetailMapTableViewCell: UITableViewCell {
         map.setRegion(region, animated: false)
     }
 
+    // this method is called to load annotation from location coordinate to the annotation and drop on the map 
     func loadAnnotations(coordinates: [CLLocationCoordinate2D]){
         map.removeAnnotations(map.annotations)
         

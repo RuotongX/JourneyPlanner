@@ -8,14 +8,17 @@
 
 import UIKit
 
+// this view controller is hold the information for the 4th tab view controller
 class Tab_UserViewController: UIViewController {
 
+    // this method is used every time when user pressed into this view controller
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    // this method is called when passing value around
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewHistoryPlan"{
             if let planViewController = segue.destination as? PlanViewController{
@@ -27,6 +30,7 @@ class Tab_UserViewController: UIViewController {
         }
     }
     
+    // when history button pressed, do the following action 
     @IBAction func historyPlanPressed(_ sender: Any) {
         
     }
@@ -43,6 +47,7 @@ class Tab_UserViewController: UIViewController {
 
 }
 
+// this method is used to create connection between this one and the plan
 extension Tab_UserViewController: PlanViewControllerDelegate{
     
 }

@@ -26,6 +26,7 @@ class Home_ViewController: ViewController{
     
     
     var selectedPlanDate : Int!
+    // this section is designed to provide the necessay materials for the plan creator
     @IBOutlet weak var PlanDesignerAdd: UIButton!
     @IBOutlet weak var PlanDesignerMinus: UIButton!
     @IBOutlet weak var PlanDesignerDay: UILabel!
@@ -49,6 +50,7 @@ class Home_ViewController: ViewController{
         
     }
     
+    // when user open the software, this viewdidload will be automatically called
     override func viewDidLoad() {
         // used to load the view, after loading, it can customize items - Dalton Chen
         super.viewDidLoad()
@@ -83,6 +85,7 @@ class Home_ViewController: ViewController{
             }
         }
         
+        // if user clicked the plan designer button, it will jump to that page and passing the value for it, it will need two value, first is the minimum time and second is maximum time
         if segue.identifier == "PlanDesignerSegue"{
             if let planDesignerViewController = segue.destination as? RouteListViewController{
                 planDesignerViewController.delegate = self
@@ -155,6 +158,7 @@ class Home_ViewController: ViewController{
         
     }
     
+    // if the add button is pressed, this method will be called, when there is no more date less, it will using taptic engine to notify user, same as there is reached maximum duration.
     @IBAction func addButtonPressed(_ sender: Any) {
         if selectedPlanDate == 0{
             //using taptic engine to generate vibrate
@@ -171,6 +175,7 @@ class Home_ViewController: ViewController{
         }
     }
     
+    // same as previous one, but this time it will become minus
     @IBAction func minusButtonPressed(_ sender: Any) {
         if selectedPlanDate == 1{
             //using taptic engine to generate vibrate
@@ -354,27 +359,42 @@ class Home_ViewController: ViewController{
         }
     }
 }
+// method is implemented to pass the value
 extension Home_ViewController : RouteListViewControllerDelegate{
-    
+    // no method is list out.
 }
 
 // protocol information from the select city view controller, when user change the city, it will being here and change the relevant data - Zhe Wang 26/Apr/2019
 extension Home_ViewController : SelectCityViewControllerDelegate{
+    // if user has selected new city
     func didSelectNewCity(_ controller: SelectCityViewController, newCity city: LocationInformation) {
         self.selectedCity = city
         self.City_Name.text = self.selectedCity?.cityName
     }
     
+    // if user has deselect new city
     func didSelectCurrentCity(_ controller: SelectCityViewController) {
         self.selectedCity = nil
+        self.City_Name.text = CurrentCity?.cityName
+        
+        if let currentcity = self.CurrentCity{
+            CheckWeather(_location: currentcity.location)
+
+        }
+        
     }
     
 }
+// settings about the textfield on homepage is defined here
 extension Home_ViewController : UITextFieldDelegate{
+    
+    //when user press return, the keyboard will be dismiss
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         SearchBar.resignFirstResponder()
         return true
     }
+    
+    //when user prees anywhere else, the keboard will dismiss
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

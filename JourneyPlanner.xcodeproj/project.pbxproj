@@ -28,7 +28,6 @@
 		416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */; };
 		4170FFA0229E894600117657 /* CityInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4170FF9F229E894600117657 /* CityInformation.plist */; };
 		4194EEC422A2022D00370440 /* RouteInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4194EEC322A2022D00370440 /* RouteInformation.plist */; };
-		419508DB229CE6E6006C6365 /* DataBaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419508DA229CE6E6006C6365 /* DataBaseTestViewController.swift */; };
 		419DCFEE2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */; };
 		419DCFF0229622C800468509 /* PlanDetailMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */; };
 		419DCFF2229623FE00468509 /* AttractionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFF1229623FE00468509 /* AttractionDetailTableViewCell.swift */; };
@@ -138,7 +137,6 @@
 		416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		4170FF9F229E894600117657 /* CityInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CityInformation.plist; sourceTree = "<group>"; };
 		4194EEC322A2022D00370440 /* RouteInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RouteInformation.plist; sourceTree = "<group>"; };
-		419508DA229CE6E6006C6365 /* DataBaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseTestViewController.swift; sourceTree = "<group>"; };
 		419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailStayLengthTableViewCell.swift; sourceTree = "<group>"; };
 		419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailMapTableViewCell.swift; sourceTree = "<group>"; };
 		419DCFF1229623FE00468509 /* AttractionDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -450,7 +448,6 @@
 				416391DB229A402600EC9636 /* SelectDestinationViewController.swift */,
 				416391DD229A511700EC9636 /* SelectDestinationTableViewCell.swift */,
 				41469838229BF09E004AB978 /* Tab_UserViewController.swift */,
-				419508DA229CE6E6006C6365 /* DataBaseTestViewController.swift */,
 				4170FF9F229E894600117657 /* CityInformation.plist */,
 				41F74ADC229EA93D0050B085 /* AttractionList.plist */,
 				4194EEC322A2022D00370440 /* RouteInformation.plist */,
@@ -695,7 +692,6 @@
 				410AED48226EE51300998F9E /* MapViewController.swift in Sources */,
 				A8A17607229774F300C39C33 /* RouteSelectCityController.swift in Sources */,
 				41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */,
-				419508DB229CE6E6006C6365 /* DataBaseTestViewController.swift in Sources */,
 				416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

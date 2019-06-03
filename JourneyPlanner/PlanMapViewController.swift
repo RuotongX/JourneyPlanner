@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
+// this class is used to design the plan map view controller, whcih user can jump to another map application and do the direction service
 class PlanMapViewController: UIViewController {
 
     @IBOutlet weak var mapview: MKMapView!
@@ -19,6 +20,7 @@ class PlanMapViewController: UIViewController {
     var selectedLocationName : String?
     var attractionInformations : [AttractionInformation]?
     
+    // this method is used when this class is opened
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,15 +33,18 @@ class PlanMapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // each time when user reenter this page, the information will be refreshed
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AddRoute()
     }
     
+    // this method is telling the compiler that the status bar need to be white color
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
+    // this method is used to display the region of the map, in here, it will be the 2000 memters of the first attraction
     private func displayRegion(){
         
         if let attractions = self.attractionInformations{
@@ -54,6 +59,7 @@ class PlanMapViewController: UIViewController {
         
     }
     
+    // this method is used to add route to the plan
     private func AddRoute(){
         
         if let attractions = self.attractionInformations{
@@ -93,6 +99,7 @@ class PlanMapViewController: UIViewController {
     }
     
     
+    // this method is used to load user preference
     private func loadUserPreffredMap(){
         
         let preferredMapID = UserDefaults.standard.integer(forKey: "MapType")
@@ -107,6 +114,7 @@ class PlanMapViewController: UIViewController {
             mapview.mapType = .standard
         }
     }
+    // this method is used to drop annotations
     private func dropAnnotations(){
         
         self.mapview.removeAnnotations(mapview.annotations)
@@ -122,9 +130,11 @@ class PlanMapViewController: UIViewController {
         }
     }
     
+    // when user pressed the exit button, back to the previous page
     @IBAction func ExitButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    // when user pressed the direction button, jump to apple map
     @IBAction func DirectionButtonPressed(_ sender: Any) {
         
         if let coordinate = self.selectedLocationCoordinate,
@@ -141,21 +151,12 @@ class PlanMapViewController: UIViewController {
             self.present(alert,animated: true)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// this method is used to maintain the mapview in this class
 extension PlanMapViewController : MKMapViewDelegate{
     
+    // when user select a annotation, update the label
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation{
             self.AttractionNameLabel.text = annotation.title!
@@ -164,6 +165,7 @@ extension PlanMapViewController : MKMapViewDelegate{
         }
     }
     
+    // draw the route, using following option
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.orange
@@ -173,6 +175,7 @@ extension PlanMapViewController : MKMapViewDelegate{
     }
     
     
+    // annotation information
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if let _ = annotation as? MKUserLocation{

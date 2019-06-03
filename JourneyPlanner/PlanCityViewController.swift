@@ -8,6 +8,7 @@
 
 import UIKit
 
+// this class is design to display the city information in the plan detail view page
 protocol PlanCityViewControllerDelegate{
     func updateDestinations(_ controller: PlanCityViewController, cities: [CityListInformation],indexNum:Int)
 }
@@ -21,6 +22,7 @@ class PlanCityViewController: UIViewController {
     var planIndexNumber : Int?
     @IBOutlet weak var cityTableView: UITableView!
     
+    // this method will be called when user pressed the button
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,11 +36,13 @@ class PlanCityViewController: UIViewController {
         
     }
     
+    // this method will tell the complier that the status bar should be white
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
     
+    // this method is called when the return button pressed, it will update the destination information in the previous page
     @IBAction func returnButton(_ sender: Any) {
         self.dismiss(animated: true) {
             
@@ -51,8 +55,11 @@ class PlanCityViewController: UIViewController {
     }
     
     
+    // this method is used to passing value from this view controller to the next controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
+        // if user want to see the destinations of a city, it will passing the value by this way
         if segue.identifier == "displayCityDestinations"{
             guard let planDetailViewController = segue.destination as? PlanDetailViewController else{fatalError("Unable to reach displayCityDestinations")}
             
@@ -71,33 +78,25 @@ class PlanCityViewController: UIViewController {
             
         }
         
+        // if user want to create new city, it will display the next viewcontroller
         if segue.identifier == "createPlanCity"{
             guard let CreatedestinationsViewController = segue.destination as?SelectDestinationViewController else {fatalError("Create Destination wrong!")}
             CreatedestinationsViewController.delegate = self
         }
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// this extension is including the value that used to define the tableview information
 extension PlanCityViewController : UITableViewDelegate, UITableViewDataSource{
 
+
+    // this method will return how many city are available in this viewcontroller, if there is no city or cannot found any city, it will return 0
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities?.count ?? 0
     }
     
-    
+    // when user swipe, delete the city
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             
@@ -107,6 +106,7 @@ extension PlanCityViewController : UITableViewDelegate, UITableViewDataSource{
         }
     }
 
+    // customize each cell and display in the tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "plan_city_view_cell") as? PlanCityTableViewCell else {fatalError("The dequeued cell is not an instance of PlanCityTableViewCell.")}
@@ -120,14 +120,14 @@ extension PlanCityViewController : UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
-
-
-
 }
 
+// this extension is used to connect two different view controller
 extension PlanCityViewController : PlanDetailViewControllerDelegate{
     
 }
+
+// when user select a new city, it will be added to this class.
 extension PlanCityViewController : SelectDestinationViewControllerDelegate{
     func didSelectNewDestination(_ controller: SelectDestinationViewController, selectedCity: CityListInformation) {
 

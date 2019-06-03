@@ -787,7 +787,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-N5-Amy">
                                 <rect key="frame" x="34" y="132" width="307" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Readme
+                                <string key="text">Readme
 
 Journey planner is a journey manage app. It will help people design his own trip and lead them explore the wonderful world.
 
@@ -849,7 +849,7 @@ For more information, please visit: material.io
 
 Special thanks to:
 Photo provider
-Nathan Xue, Amber Chang, Xianghong Li</mutableString>
+Nathan Xue, Amber Chang, Xianghong Li</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
