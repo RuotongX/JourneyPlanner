@@ -1,14 +1,14 @@
 //
-//  111.swift
+//  JourneyPlannerTests.swift
 //  JourneyPlannerTests
 //
-//  Created by Dalton Chen on 6/05/19.
+//  Created by Dalton Chen on 3/06/19.
 //  Copyright © 2019 RuotongX. All rights reserved.
 //
 
 import XCTest
 
-class _11: XCTestCase {
+class JourneyPlannerTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

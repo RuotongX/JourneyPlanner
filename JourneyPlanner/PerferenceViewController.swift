@@ -16,7 +16,7 @@ class PerferenceViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     var selectedMapType = UserDefaults.standard.integer(forKey: "MapType")
     
-    let mapType_arr = ["Standerd","Setellite","Hybrid"]
+    let mapType_arr = ["Standard","Setellite","Hybrid"]
     var active_textField : UITextField!
     
     let my_pickerView = UIPickerView()
