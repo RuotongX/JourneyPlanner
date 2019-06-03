@@ -4,7 +4,7 @@
 //
 //  Created by RuotongX on 2019/5/7.
 //  Copyright © 2019 RuotongX. All rights reserved.
-//
+// This class is used to display the web page by using Safari.
 
 import UIKit
 import Foundation
@@ -14,7 +14,7 @@ class ViewController2: UIViewController, SFSafariViewControllerDelegate {}
 
 class ZomatoWeb: ViewController2 {
 
-    
+    // This function is to recognize user click, once user touch the screen it will load Safari to display the website. The URL is from restaurant cell.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         let ZomatoUrl = UserDefaults().string(forKey: "ZomatoUrl")
         guard let url = URL(string: ZomatoUrl!)
@@ -33,7 +33,7 @@ class ZomatoWeb: ViewController2 {
 //        dismiss(animated: true, completion: nil)
     }
     
-
+// Go back to previous page.
     @IBAction func `return`(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
