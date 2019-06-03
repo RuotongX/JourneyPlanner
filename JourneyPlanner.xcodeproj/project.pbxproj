@@ -87,12 +87,20 @@
 		E14265FF22421C06006399D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14265FD22421C06006399D2 /* Main.storyboard */; };
 		E142660122421C06006399D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E142660022421C06006399D2 /* Assets.xcassets */; };
 		E142660422421C06006399D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E142660222421C06006399D2 /* LaunchScreen.storyboard */; };
+		E1B7AA4322A567CE00D2CDB7 /* JourneyPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B7AA4222A567CE00D2CDB7 /* JourneyPlannerUITests.swift */; };
 		E1CD9FDE2285B660007A116F /* ShowMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD9FDD2285B660007A116F /* ShowMoreCell.swift */; };
 		E1CD9FE02285B6D3007A116F /* CuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD9FDF2285B6D3007A116F /* CuisineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		41FFC1E5227FEFF600AED351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E14265EC22421C05006399D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14265F322421C05006399D2;
+			remoteInfo = JourneyPlanner;
+		};
+		E1B7AA4522A567CE00D2CDB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E14265EC22421C05006399D2 /* Project object */;
 			proxyType = 1;
@@ -221,6 +229,9 @@
 		E142660022421C06006399D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E142660322421C06006399D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E142660522421C06006399D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B7AA4022A567CD00D2CDB7 /* JourneyPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourneyPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1B7AA4222A567CE00D2CDB7 /* JourneyPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyPlannerUITests.swift; sourceTree = "<group>"; };
+		E1B7AA4422A567CE00D2CDB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CD9FDD2285B660007A116F /* ShowMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreCell.swift; sourceTree = "<group>"; };
 		E1CD9FDF2285B6D3007A116F /* CuisineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineCell.swift; sourceTree = "<group>"; };
 		EFA350BB1C3D190A14111C95 /* Pods-JourneyPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourneyPlanner.debug.xcconfig"; path = "Target Support Files/Pods-JourneyPlanner/Pods-JourneyPlanner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +252,13 @@
 				410B17EF229D30D800CB219E /* Realm.framework in Frameworks */,
 				B9254E81144302AFF69F0DBA /* Pods_JourneyPlanner.framework in Frameworks */,
 				410B17F1229D30D800CB219E /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1B7AA3D22A567CD00D2CDB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +391,7 @@
 				410B17EE229D30D700CB219E /* RealmSwift.framework */,
 				E14265F622421C05006399D2 /* JourneyPlanner */,
 				41FFC1E1227FEFF600AED351 /* JourneyPlannerTests */,
+				E1B7AA4122A567CE00D2CDB7 /* JourneyPlannerUITests */,
 				E14265F522421C05006399D2 /* Products */,
 				09D51488F12E1CECAB2ED7A4 /* Pods */,
 				A6569F2B4170D6685F746ACD /* Frameworks */,
@@ -384,6 +403,7 @@
 			children = (
 				E14265F422421C05006399D2 /* JourneyPlanner.app */,
 				41FFC1E0227FEFF600AED351 /* JourneyPlannerTests.xctest */,
+				E1B7AA4022A567CD00D2CDB7 /* JourneyPlannerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,6 +476,15 @@
 			path = JourneyPlanner;
 			sourceTree = "<group>";
 		};
+		E1B7AA4122A567CE00D2CDB7 /* JourneyPlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E1B7AA4222A567CE00D2CDB7 /* JourneyPlannerUITests.swift */,
+				E1B7AA4422A567CE00D2CDB7 /* Info.plist */,
+			);
+			path = JourneyPlannerUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -497,13 +526,31 @@
 			productReference = E14265F422421C05006399D2 /* JourneyPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E1B7AA3F22A567CD00D2CDB7 /* JourneyPlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1B7AA4722A567CE00D2CDB7 /* Build configuration list for PBXNativeTarget "JourneyPlannerUITests" */;
+			buildPhases = (
+				E1B7AA3C22A567CD00D2CDB7 /* Sources */,
+				E1B7AA3D22A567CD00D2CDB7 /* Frameworks */,
+				E1B7AA3E22A567CD00D2CDB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1B7AA4622A567CE00D2CDB7 /* PBXTargetDependency */,
+			);
+			name = JourneyPlannerUITests;
+			productName = JourneyPlannerUITests;
+			productReference = E1B7AA4022A567CD00D2CDB7 /* JourneyPlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E14265EC22421C05006399D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = RuotongX;
 				TargetAttributes = {
@@ -514,6 +561,10 @@
 					};
 					E14265F322421C05006399D2 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					E1B7AA3F22A567CD00D2CDB7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E14265F322421C05006399D2;
 					};
 				};
 			};
@@ -532,6 +583,7 @@
 			targets = (
 				E14265F322421C05006399D2 /* JourneyPlanner */,
 				41FFC1DF227FEFF600AED351 /* JourneyPlannerTests */,
+				E1B7AA3F22A567CD00D2CDB7 /* JourneyPlannerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -554,6 +606,13 @@
 				4194EEC422A2022D00370440 /* RouteInformation.plist in Resources */,
 				4170FFA0229E894600117657 /* CityInformation.plist in Resources */,
 				E14265FF22421C06006399D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1B7AA3E22A567CD00D2CDB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +755,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1B7AA3C22A567CD00D2CDB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1B7AA4322A567CE00D2CDB7 /* JourneyPlannerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -703,6 +770,11 @@
 			isa = PBXTargetDependency;
 			target = E14265F322421C05006399D2 /* JourneyPlanner */;
 			targetProxy = 41FFC1E5227FEFF600AED351 /* PBXContainerItemProxy */;
+		};
+		E1B7AA4622A567CE00D2CDB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14265F322421C05006399D2 /* JourneyPlanner */;
+			targetProxy = E1B7AA4522A567CE00D2CDB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -732,7 +804,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				INFOPLIST_FILE = JourneyPlannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -755,7 +827,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				INFOPLIST_FILE = JourneyPlannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -893,7 +965,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W9V67A55PQ;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -903,7 +975,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerBasco;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;
@@ -917,7 +989,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W9V67A55PQ;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -927,11 +999,49 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerBasco;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JourneyPlanner/Header-OCSwift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E1B7AA4822A567CE00D2CDB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
+				INFOPLIST_FILE = JourneyPlannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JourneyPlanner;
+			};
+			name = Debug;
+		};
+		E1B7AA4922A567CE00D2CDB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NSSMPHWC2A;
+				INFOPLIST_FILE = JourneyPlannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JourneyPlanner;
 			};
 			name = Release;
 		};
@@ -961,6 +1071,15 @@
 			buildConfigurations = (
 				E142660922421C06006399D2 /* Debug */,
 				E142660A22421C06006399D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1B7AA4722A567CE00D2CDB7 /* Build configuration list for PBXNativeTarget "JourneyPlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1B7AA4822A567CE00D2CDB7 /* Debug */,
+				E1B7AA4922A567CE00D2CDB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -50,11 +50,14 @@ class Explore_ViewController: UIViewController {
                          cellData(opened: false, cuisine: "Indian",sectionData:[],cuisineN:148),
                          cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
         ]
+        for i in 0...tableViewData.count-1{
+            getResturants(index: i)
+        }
     }
     //This function is used to refresh page information, if the current location is not same as the previous location, the restaurant will be loaded again by using the new location.
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
-        if(self.lat != UserDefaults().string(forKey: "lat")&&self.lon != UserDefaults().string(forKey: "lon")){
+        if(self.lat != UserDefaults().string(forKey: "lat")||self.lon != UserDefaults().string(forKey: "lon")){
             for i in 0...tableViewData.count-1{
                 tableViewData[i].sectionData.removeAll()
                 getResturants(index: i)
