@@ -9,13 +9,19 @@
 import UIKit
 import CoreLocation
 
+//Protocol which using to transfer the data for his superior class - ZHE WANG
 protocol RouteListViewControllerDelegate {
     
 }
 
+//UIViewController which used to manage UI interface for select route page
+//Contain the load data method, 3D touch jump bridge, user selected method - ZHE WANG
 class RouteListViewController: UIViewController {
 
+    //Delgate that used to connect the protocol from SelectCity Controller - ZHE WANG
     var delegate: RouteListViewControllerDelegate?
+    
+    //Necessary materials for the Select Route
     @IBOutlet weak var TripTableView: UITableView!
     var StopTimeA : Int!
     var StopTimeB : Int!
@@ -30,6 +36,7 @@ class RouteListViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // when user open the software, this viewdidload will be automatically called
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,17 +50,22 @@ class RouteListViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    
+    //Set the color of loading bar which at the top of screen
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
+    //Load data method, that will connect and receive the data from Properity List - ZHE WANG
     func loadDataFromPlist(){
         
+        //Connect bridge for Properity List
         let plistPath = Bundle.main.path(forResource: "RouteInformation", ofType: "plist")!
         let routes = NSArray(contentsOfFile: plistPath)!
         
         routeInfo = []
         
+        //Choice which data need to load
         for singleRoute in routes{
             
             let rt = singleRoute as! NSDictionary
@@ -70,6 +82,8 @@ class RouteListViewController: UIViewController {
                 cities.append(cityName)
             }
             
+            //Write the data to our data constructor that can easy transfer to the sub class by protocol - ZHE WANG
+            //Also include the analyzing conditions that determine wheather the data compare to the user selected. - ZHE WANG
             if routeStopTime > StopTimeA && routeStopTime <= StopTimeB{
                 if let image = UIImage(named: routeImageName){
                     let newRT = RouteInformation(name: routeName, time: routeStopTime, image: image)
@@ -80,13 +94,17 @@ class RouteListViewController: UIViewController {
         }
     }
     
-    
+    //Connect to the correspond segue that transfer the data by protocol - ZHE WANG
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
+        //Compare the correspond segue
         if segue.identifier == "RouteSegue"{
+            
+            //Compare the segue desentation
             if let selectCityController = segue.destination as? RouteSelectCityController{
                 selectCityController.delgate = self
                 
+                //Access the delgate and set the correspond data
                 if let cell = sender as? UITableViewCell{
                     if let indexPath = TripTableView.indexPath(for: cell){
                         selectCityController.routeName = routeInfo[indexPath.row].routeName
@@ -98,22 +116,26 @@ class RouteListViewController: UIViewController {
     }
 }
 
-//inherence 3D touch preview delgate
+//inherence 3D touch preview delgate, UITableview delgate and data source
+//Inclues the paramters setting on UI page, connect the peak and pop controller for 3D touch API - ZHE WANG
 extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, RouteSelectCityControllerDelgate{
     
-    //connect and set the preview page
+    //connect and set the preview page (Peak function)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
 
+        //get the number of cell that user touched
         guard let cell = previewingContext.sourceView as? UITableViewCell else{
             return UIViewController()
         }
         
+        //Set the gloable variabel RowAtPreview to the indexPaht that user touched, which used to determine which route data should be pass to next controller - ZHE WANG
         let indexPath = TripTableView.indexPath(for: cell)
 
         previewingContext.sourceRect = cell.frame
     
         self.RowAtPreview = indexPath?.row
     
+        //Find and compare peak controller by using storyboard mehtod - ZHE WANG
         let previewing = storyboard?.instantiateViewController(withIdentifier: "PreviewController") as! RoutePreviewController
         
         previewing.routeName = routeInfo[RowAtPreview!].routeName
@@ -122,7 +144,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
         return previewing
     }
 
-    //Pop actions
+    //Pop actions, which connect to the desentaiton of preview page
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController){
 
         let destination  = storyboard?.instantiateViewController(withIdentifier: "SelectCityViewController") as? RouteSelectCityController
@@ -133,7 +155,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
         show(destination!, sender: self)
     }
     
-    //返回cell的数量
+    //Return the number of cell
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return routeInfo.count
@@ -143,7 +165,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
     //Only need to create one cell, other row will reuse the first cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //设置RouteCell_1是一个可循环的table cell
+        //Set the cell to be a reuseable cell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "routeOptionCell_1", for: indexPath)as? RouteSelectTableViewCell else{fatalError("The dequeued cell is not an instance of RouteSelectTableViewCell.") }
 
         cell.RouteName.text = routeInfo[indexPath.row].routeName
@@ -154,6 +176,7 @@ extension RouteListViewController : UITableViewDelegate, UITableViewDataSource, 
             registerForPreviewing(with: self, sourceView: cell)
         }
         
+        //Set the laybout paramters for the items on select city page.
         cell.Auckland_Explore.layer.cornerRadius = 10
         cell.BlackCover.layer.cornerRadius = 10
         
