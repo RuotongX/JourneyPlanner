@@ -11,7 +11,7 @@ import Alamofire
 import Foundation
 import SwiftyJSON
 import CoreLocation
-// This class is used to showing the nearby resturant rank.
+// This class is used to showing more nearby resturants.
 class ResturantRecommandedController: UIViewController {
     
     
@@ -58,6 +58,7 @@ class ResturantRecommandedController: UIViewController {
     }
     
     // Same as I mentioned in weather forcast Controller, this class is to get the api data which is support by Zomato, and take the data value into each restaurant object.
+    // The range for showing more restaurant is 2000 meters.
     func getResturants(){
         //The other api key : 1143149f226cce509acd087c44290754
         let header = "b4a1b65c2bd7e6ca955092af1da11545"

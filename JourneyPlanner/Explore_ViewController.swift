@@ -23,6 +23,8 @@ class Explore_ViewController: UIViewController {
     
     var obtainedLocation: CLLocation?
     var keyword : String?
+    var lat : String?
+    var lon : String?
     @IBOutlet weak var Table: UITableView!
     
     @IBOutlet weak var shoppingButton: UIButton!
@@ -31,11 +33,12 @@ class Explore_ViewController: UIViewController {
     @IBOutlet weak var hotelButton: UIButton!
     
     
-    
+    //This tableViewData is store 10 different cuisine information, sectionData inside is used to store the preview restaurants.
     var tableViewData = [cellData]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lat = UserDefaults().string(forKey: "lat")
+        lon = UserDefaults().string(forKey: "lon")
         tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),
                          cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60),
                          cellData(opened: false, cuisine: "Korean",sectionData:[],cuisineN:67),
@@ -48,11 +51,14 @@ class Explore_ViewController: UIViewController {
                          cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
         ]
     }
+    //This function is used to refresh page information, if the current location is not same as the previous location, the restaurant will be loaded again by using the new location.
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
-        for i in 0...tableViewData.count-1{
-            tableViewData[i].sectionData.removeAll()
-            getResturants(index: i)
+        if(self.lat != UserDefaults().string(forKey: "lat")&&self.lon != UserDefaults().string(forKey: "lon")){
+            for i in 0...tableViewData.count-1{
+                tableViewData[i].sectionData.removeAll()
+                getResturants(index: i)
+            }
         }
     }
     
@@ -79,6 +85,7 @@ class Explore_ViewController: UIViewController {
                     // passing a number which indicate the canteens information, then pass the coordinate to the mapview class
                     //test data, remove when actualy data arrive
                     if let button = sender as? UIButton{
+                        //Get the cell index by checking user click position
                         let fingerLocation = button.convert(CGPoint.zero, to: Table)
                         if let indexPath = Table.indexPathForRow(at: fingerLocation){
                             let restaurant = self.tableViewData[indexPath.section].sectionData[indexPath.row-1]
@@ -164,11 +171,9 @@ class Explore_ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
-    
+    // This function is used to get the previewed 3 restaurant which is locate in the range of 500 meters. API is zomato
     func getResturants(index:Int){
         let header = "b4a1b65c2bd7e6ca955092af1da11545"
-        //        let lat = UserDefaults().string(forKey: "lat")
-        //        let lon = UserDefaults().string(forKey: "lon")
         let cuisine = tableViewData[index].cuisineN
         
         if let lat = UserDefaults().string(forKey: "lat"),
@@ -211,12 +216,12 @@ class Explore_ViewController: UIViewController {
                             resturant.Rlon = lon
                             resturant.RUrl = Url
                             resturant.votes = votes
-                            //                            resturant.Rank = i+1
                             self.tableViewData[index].sectionData.append(resturant)
                         }
                     } else{
                         
                     }
+                    // The reason that I add 1 restaurant object here is because in table view display, we need to have a cell position for showing more, the empty restaurant is used to create that empty position
                     let resturant1 = Resturant()
                     self.tableViewData[index].sectionData.append(resturant1)
                     DispatchQueue.main.async {
@@ -256,24 +261,28 @@ extension Explore_ViewController:MapViewControllerDelegate{
     
 }
 
+// This extension is used to control the table view which inside of this view.
 extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //The cuisine cell height is 50.
         if tableViewData[indexPath.section].sectionData.count == 1{
             if(indexPath.row == 1){
                 return 50
             }
         }
+        //The showmore cell height is 70.
         if(indexPath.row == 4)
         {
             return 70
         }
+        //The other cell like restaurant cell height is 120.
         return 120
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return tableViewData.count
     }
-    
+    // This is used to get how many rows in one section. Section means the cuisine.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened == true{
             return tableViewData[section].sectionData.count + 1
@@ -281,13 +290,15 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             return 1
         }
     }
-    
+    // This function is used to give every cell information by recognize the section index,
+    //and call cell by calling their identifier. One section maximum have 4 cell and normally is 5, which are title, 3 restaurant, and show more, if there is no restaurant in one cuisine, the section will have 2 rows which are title and no restaurant yet cell.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dataIndex = indexPath.row - 1
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cuisine") as! CuisineCell
             cell.CuisineName.text = tableViewData[indexPath.section].cuisine
+            // This is giving each cuisine different picture.
             switch(tableViewData[indexPath.section].cuisineN){
             case 25:
                 cell.CuisinePicture.image = UIImage(named: "Explore-rest-chinese")
@@ -325,11 +336,15 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             }
             
             return cell
-        } else if(indexPath.row == 4){
+        }
+            // When the count is 4 means this is the empty position that I created the empty restaurant, here I replaced it with show more.
+        else if(indexPath.row == 4){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ShowMore") as! ShowMoreCell
             UserDefaults().set(tableViewData[indexPath.section].cuisineN, forKey: "cuisine")
             return cell
-        } else{
+        }
+            // This situation is to avoid there is no restaurant in one cuisine
+        else{
             if tableViewData[indexPath.section].sectionData.count == 1{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "Nothing") else {return UITableViewCell()}
                 return cell
@@ -340,7 +355,7 @@ extension Explore_ViewController: UITableViewDelegate,UITableViewDataSource{
             return cell
         }
     }
-    
+    // This function is used to control the cuisine open and closed.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             if tableViewData[indexPath.section].opened == true{
