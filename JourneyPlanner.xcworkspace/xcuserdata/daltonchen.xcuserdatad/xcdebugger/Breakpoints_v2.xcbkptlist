@@ -207,8 +207,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "didSelectAttractionFromList(_:SelectedAttraction:indexNumber:)"
-            landmarkType = "7">
+            landmarkName = "RouteSelectCityController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "didSelectAttractionFromList(_:SelectedAttraction:indexNumber:)"
-            landmarkType = "7">
+            landmarkName = "RouteSelectCityController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// this method is used to define the cell type for destination view controller
 class SelectDestinationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cityImage: UIImageView!

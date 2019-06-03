@@ -8,17 +8,23 @@
 
 import UIKit
 
+// this class is used to display or allow user to make changes to the memo page
+
+
+// this protocol is used to update the exisiting memo information
 protocol MemoViewControllerDelegate {
     func updateMemoInformation(_ controller: MemoViewController, memo: String,indexNumber: Int)
 }
 
 class MemoViewController: UIViewController {
 
+    // this class is difinin the information inside this view controller
     var memo: String?
     var indexNumber: Int?
     var delegate: MemoViewControllerDelegate?
     @IBOutlet weak var memoText: UITextView!
     
+    // this method is called when user enter this view controller, it will load any exising memo to the textfield
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +35,7 @@ class MemoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // this method is called when user pressed done button, it will pass the memo information back to the previous page
     @IBAction func DoneButtonPressed(_ sender: Any) {
         self.dismiss(animated: true) {
             

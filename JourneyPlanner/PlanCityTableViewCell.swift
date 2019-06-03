@@ -10,7 +10,7 @@ import UIKit
 
 class PlanCityTableViewCell: UITableViewCell {
     
-    
+    // this class is used to define the plan city table view cell, it contains some necessary information for a cell
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var CityNameLabel: UILabel!
     @IBOutlet weak var City_BackgroundImage: UIImageView!

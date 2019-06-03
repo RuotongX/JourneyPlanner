@@ -10,11 +10,13 @@ import UIKit
 import CoreLocation
 import RealmSwift
 
+// this enum define the type of the view page, it can be normal and it also can be history
 enum planType{
     case NORMAL
     case HISTORY
 }
 
+// this method is defined for user to passing the data around
 protocol PlanViewControllerDelegate {
     
 }
@@ -46,6 +48,7 @@ class PlanViewController: UIViewController {
         if let newPlan = planCreatorData{
             plan?.append(newPlan)
             self.tableView.reloadData()
+            self.saveData()
         }
 
 //        tableView.register(PlanTableViewCell.self, forCellReuseIdentifier: "cell")
@@ -58,6 +61,8 @@ class PlanViewController: UIViewController {
         
         saveData()
     }
+    
+    // this method is called when the add button is pressed, it will pop up a windows to ask user to enter the plan name, if the plan name is empty it will send another window to user
     @IBAction func addButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Plan Name", message: "Please enter plan name to continue", preferredStyle: .alert)
         alert.addTextField { (textfield) in
@@ -71,6 +76,7 @@ class PlanViewController: UIViewController {
                         let cityList : [CityListInformation] = []
                         self.plan?.append(PlanInformations(name: text, citylist: cityList, memo: ""))
                         self.tableView.reloadData()
+                        self.saveData()
 
                     }
                 }
@@ -82,11 +88,13 @@ class PlanViewController: UIViewController {
         self.present(alert,animated: true)
     }
     
+    // this method define the status bar color
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
     
+    // this method is called when this page is opened, this method will load data from the database and store it to the local file
     private func loadData(){
         
         plan = []
@@ -103,6 +111,7 @@ class PlanViewController: UIViewController {
         }
     }
     
+    // this method is used to decode the city information from the database, it will convetn the database format of information into the citylist information
     private func city_Decoder(cities: List<CityInformation_Database>) -> [CityListInformation]{
         var cityList : [CityListInformation] = []
         
@@ -120,7 +129,7 @@ class PlanViewController: UIViewController {
     
     
     
-    // get attraction from DB
+    // this method is used to convert the attraction information from the database format to attraction formation
     private func attraction_Decoder(attractions : List<AttractionInformation_Database>) -> [AttractionInformation]{
         
         var attractionList : [AttractionInformation] = []
@@ -141,6 +150,7 @@ class PlanViewController: UIViewController {
     
     
     
+    // this method is used to save the data to the database, it will remove everything and then add it back in order to prevent duplication.
     private func saveData(){
         
         let realm = try! Realm()
@@ -168,7 +178,7 @@ class PlanViewController: UIViewController {
     }
     
     
-    
+    // this method is used to encode the plan information from normal format to the database format
     private func enCoder_PlanInformation(plans : [PlanInformations]) -> [PlanInformation_Database]{
         var planDB : [PlanInformation_Database] = []
         
@@ -190,7 +200,7 @@ class PlanViewController: UIViewController {
         return planDB
     }
     
-    
+    // this method is used to encode the city information from normal format to the database format
     private func enCoder_CityInformation(cities: [CityListInformation]) -> [CityInformation_Database]{
         var cityDB : [CityInformation_Database] = []
         
@@ -215,7 +225,7 @@ class PlanViewController: UIViewController {
         return cityDB
     }
     
-    
+    // this method is used to convert the attraction information to the database format one
     private func enCoder_AttractionInformation(attractions : [AttractionInformation]) -> [AttractionInformation_Database]{
         
         var attractionsDB : [AttractionInformation_Database] = []
@@ -355,10 +365,12 @@ extension PlanViewController : PlanCityViewControllerDelegate {
         if let plan = self.plan?[indexNum]{
             plan.City = cities
             self.tableView.reloadData()
+            
         }
     }
 }
 
+// this extension is allow user to add memo to current plan
 extension PlanViewController : MemoViewControllerDelegate {
     func updateMemoInformation(_ controller: MemoViewController, memo: String, indexNumber: Int) {
         

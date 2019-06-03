@@ -248,6 +248,7 @@ class MapViewController: UIViewController {
                     }
                 }
                 
+                // if user is doing the search on the home page, the content will showed up in the mapview controller with search bar filled
                 if mapsource == .HOMEPAGE_SEARCH{
                     self.resultSearchController?.isActive = true
                     
@@ -300,7 +301,7 @@ class MapViewController: UIViewController {
             }
             
             
-            
+            // this method is called from explore page, which contain some keyword that used to search, it will display all nearby facilities of user's keyword
             if mapsource == .EXPLOREPAGE{
                 if let keyword = explorePage_Suggestionkeyword,
                     let selectedCity = explorePage_UserLocation{
@@ -330,15 +331,6 @@ class MapViewController: UIViewController {
             }
         }
     }
-        //            mapView.removeAnnotations(mapView.annotations)
-            
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate =  singleLocation.coordinate
-//
-//            mapView.addAnnotation(annotation)
-//            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-//            let region = MKCoordinateRegion(center: singleLocation.coordinate, span: span)
-//            mapView.setRegion(region, animated: true)
 
     
     
@@ -400,17 +392,11 @@ extension MapViewController : MKMapViewDelegate{
         } else {
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
-//            view.calloutOffset = CGPoint(x: -5, y: 5)
-//
-//            let smallSquare = CGSize(width: 30, height: 30)
-//            let favoriteButton : UIButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-//            favoriteButton.setBackgroundImage(UIImage(named: "mapview -callOutAddButton 1x"), for: .normal)
             view.clusteringIdentifier = "cluster"
             let detailButton: UIButton = UIButton(type: .detailDisclosure)
             detailButton.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
             view.rightCalloutAccessoryView = detailButton
 
-//            view.glyphText = "🐷"
         }
         return view
     }
@@ -452,9 +438,6 @@ extension MapViewController : HandleMapSearch{
         } else {
             annotation.title = "Selected Place"
         }
-        //        annotation.title = placemark.areasOfInterest?[0]
-        //        // 在这里少了个名字呀 所以他就不能显示callout
-        //            //placemark.name
         
         var subtitle : String = ""
         

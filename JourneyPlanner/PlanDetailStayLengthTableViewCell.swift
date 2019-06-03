@@ -8,6 +8,7 @@
 
 import UIKit
 
+// this method is used to control the content inside tableview cell, this one is for the stay length
 class PlanDetailStayLengthTableViewCell: UITableViewCell {
 
     @IBOutlet weak var StayLength: UILabel!

@@ -9,6 +9,9 @@
 import UIKit
 import CoreLocation
 
+// this class is used to allow user have selection on the destination when they tring to add a new city
+
+// this protocol is called when user want to update their selected destination
 protocol SelectDestinationViewControllerDelegate {
     func didSelectNewDestination(_ controller: SelectDestinationViewController, selectedCity : CityListInformation)
 }
@@ -19,7 +22,8 @@ class SelectDestinationViewController: UIViewController {
     var availableCities : [CityListInformation] = []
     
     @IBOutlet weak var tableview: UITableView!
-    
+
+    // this method will be called when user enter this interface
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCityInformation()
@@ -29,12 +33,8 @@ class SelectDestinationViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-    }
-    
 
-    
+    // this method is used to load city informatrion
     private func loadCityInformation(){
         
         if let aucklandImage = UIImage(named: "City-auckland"){
@@ -97,29 +97,21 @@ class SelectDestinationViewController: UIViewController {
         }
     }
     
+    // when user pressded the return button, back to the previous page.
     @IBAction func ReturnButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// this extension is maintain the information about the tableview
 extension SelectDestinationViewController: UITableViewDelegate, UITableViewDataSource{
+    // this method is used to return how many rows are needed for the tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return availableCities.count
     }
     
+    // this method is used to customize the cell content
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "destination_city", for: indexPath) as? SelectDestinationTableViewCell else {fatalError("The dequeued cell is not an instance of SelectDestinationTableViewCell.")}
@@ -132,6 +124,7 @@ extension SelectDestinationViewController: UITableViewDelegate, UITableViewDataS
         return cell
     }
     
+    // this method is used when user select one of the content from the table, it will ask user how long they want to stay there
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cityInfo = availableCities[indexPath.row]

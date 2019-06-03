@@ -8,6 +8,7 @@
 
 import UIKit
 
+// this method is used to maintain the attraction infromation
 class AttractionDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var DarkCoverforImage: UIImageView!
@@ -19,6 +20,9 @@ class AttractionDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // rounded conor
+        
         AttractionImage.layer.cornerRadius = 8
         DarkCoverforImage.layer.cornerRadius = 8
     }

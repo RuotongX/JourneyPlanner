@@ -10,7 +10,6 @@ import UIKit
 
 class NameViewController: UIViewController {
 
-    
     @IBOutlet weak var DoneButton: UIButton!
     @IBOutlet weak var NameTextField: UITextField!
     

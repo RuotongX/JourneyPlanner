@@ -39,6 +39,7 @@ class SelectCityViewController: UIViewController {
     @IBOutlet weak var RecentCity3: UILabel!
     @IBOutlet weak var RecentCity3Button: UIButton!
     
+    // this method is used when the page is loaded, this method will be automatically called
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFromDatabase()
@@ -114,6 +115,7 @@ class SelectCityViewController: UIViewController {
         
     }
     
+    // this method is used to load information from the database to the application
     private func loadFromDatabase(){
         
         cityHistories = []

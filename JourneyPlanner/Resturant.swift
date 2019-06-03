@@ -9,6 +9,8 @@
 import UIKit
 
 class Resturant {
+    
+    // this class is used to define the data for the canteen page
     var RImage : UIImage
     var RName : String
     var RMark : String

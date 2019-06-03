@@ -38,15 +38,18 @@ class tripDetailViewController: UIViewController {
             self.SearchOnMapButton.isEnabled = false
         }
     }
+    //this method will be called everytime when user enter the viewcontroller
     override func viewDidAppear(_ animated: Bool) {
         loadInformation()
 
     }
+    // this method is change the status bar from the dark content to light content
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
     
+    // this method is used to load the attraction information from the previous page and load it in the current page
     private func loadInformation(){
         
         if let attraction = self.attraction{
@@ -91,6 +94,7 @@ class tripDetailViewController: UIViewController {
         mapView.setRegion(region, animated: false)
     }
     
+    //while the done button is pressed, this attraction information will be saved to the database
     @IBAction func DoneButtonPressed(_ sender: Any) {
         self.dismiss(animated: true) {
             
@@ -129,9 +133,10 @@ extension tripDetailViewController:UITextFieldDelegate{
 
 extension tripDetailViewController: MapViewControllerDelegate{
     func didSelectANewcity(_ controller: MapViewController, selectedCity: LocationInformation) {
-        //
+        // do not implement this method, it does not relate to this class
     }
     
+    // if user select a new location from the mapview controller, it will be update on this class.
     func didSelectANewLocation(_ controller: MapViewController, selectedLocation: CLLocation, nameOfLocation: String) {
         let newAttraction = AttractionInformation(Name: nameOfLocation, Location: CLLocationCoordinate2D(latitude: selectedLocation.coordinate.latitude, longitude: selectedLocation.coordinate.longitude))
         
