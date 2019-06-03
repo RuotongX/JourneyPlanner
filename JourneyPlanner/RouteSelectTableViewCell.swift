@@ -11,6 +11,8 @@ import UIKit
 //Cell controller which to set up the edit for the cells - ZHE WANG
 class RouteSelectTableViewCell: UITableViewCell {
 
+    // this class is used to define the plan city table view cell, it contains some necessary information for a cell - ZHE WANG
+    
     @IBOutlet weak var BlackCover: UIImageView!
     //Only connect the elements that need to do the action later
     //Connect to the image

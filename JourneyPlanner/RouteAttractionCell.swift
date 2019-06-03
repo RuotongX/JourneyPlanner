@@ -8,8 +8,11 @@
 
 import UIKit
 
+//Cell controller which to set up the edit for the cells - ZHE WANG
 class RouteAttractionCell: UICollectionViewCell {
     
+    
+    // this class is used to define the plan attraction collection view cell, it contains some necessary information for a cell - ZHE WANG
     @IBOutlet weak var AttractionImage: UIImageView!
     @IBOutlet weak var AttractionName: UILabel!
     @IBOutlet weak var CellBackground: UIImageView!
