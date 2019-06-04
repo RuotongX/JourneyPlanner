@@ -39,7 +39,7 @@ class ResturantCellController: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+// This function is used to recognize which user click and pass the url information to ZomatoWeb view to display the website.
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         UserDefaults().set(self.Url,forKey: "ZomatoUrl")

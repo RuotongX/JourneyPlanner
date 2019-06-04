@@ -8,12 +8,14 @@
 
 import UIKit
 
+//Cell controller which to set up the edit for the cells - ZHE WANG
 class RouteSelectCityCell: UITableViewCell {
     
     //Create two empty function that can be accessed in view controller page - ZHE WANG
     var IncreaseButton : (() -> ()) = {}
     var DecreaseButton : (() -> ()) = {}
 
+    // this class is used to define the plan city table view cell, it contains some necessary information for a cell - ZHE WANG
     @IBOutlet weak var CityImage: UIImageView!
     
     @IBOutlet weak var CityName: UILabel!

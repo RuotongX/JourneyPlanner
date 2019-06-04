@@ -2072,6 +2072,9 @@ Nathan Xue, Amber Chang, Xianghong Li</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="AttractionNumber" destination="LF4-Lh-kGD" id="RUg-te-UBL"/>
                                             <outlet property="Background" destination="fY7-wn-UzY" id="T1Z-Ly-gPz"/>
@@ -2102,6 +2105,9 @@ Nathan Xue, Amber Chang, Xianghong Li</string>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <viewLayoutGuide key="safeArea" id="3eZ-tw-IZ7"/>
                     </view>
                     <connections>
@@ -2112,7 +2118,7 @@ Nathan Xue, Amber Chang, Xianghong Li</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yS-fN-1uE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MrA-Ih-90e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1751.2" y="1741.6256157635469"/>
+            <point key="canvasLocation" x="-1756" y="1742"/>
         </scene>
         <!--Route Preview Controller-->
         <scene sceneID="FFs-EP-juD">

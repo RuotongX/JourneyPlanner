@@ -10,6 +10,7 @@ import UIKit
 
 class RoutePreviewCell: UITableViewCell {
     
+    // this class is used to define the plan priview table view cell, it contains some necessary information for a cell - ZHE WANG
     
     @IBOutlet weak var PreviewImage: UIImageView!
     @IBOutlet weak var DarkCover: UIImageView!

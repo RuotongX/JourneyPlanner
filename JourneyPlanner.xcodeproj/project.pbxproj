@@ -27,6 +27,8 @@
 		416AF930226F21F700FF4FF6 /* TripPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416AF92F226F21F700FF4FF6 /* TripPlan.swift */; };
 		416CEB98226F3E6F0039F773 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */; };
 		4170FFA0229E894600117657 /* CityInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4170FF9F229E894600117657 /* CityInformation.plist */; };
+		417C0FF922A55AA800F570E7 /* preferrenceuiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C0FF822A55AA800F570E7 /* preferrenceuiTest.swift */; };
+		417C0FFB22A55EA700F570E7 /* DatabaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C0FFA22A55EA700F570E7 /* DatabaseTest.swift */; };
 		4194EEC422A2022D00370440 /* RouteInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4194EEC322A2022D00370440 /* RouteInformation.plist */; };
 		419DCFEE2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */; };
 		419DCFF0229622C800468509 /* PlanDetailMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */; };
@@ -34,12 +36,13 @@
 		41B448B1226C39E600763AE4 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B448B0226C39E600763AE4 /* SelectCityViewController.swift */; };
 		41C818DD227D378300ED125D /* Explore_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C818DC227D378300ED125D /* Explore_ViewController.swift */; };
 		41D06C8D229809D900A7584C /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D06C8C229809D900A7584C /* MemoViewController.swift */; };
+		41D11D3722A53DA000C906B8 /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D11D3422A53D9F00C906B8 /* FavouriteViewController.m */; };
+		41D11D3822A53DA000C906B8 /* FavouriteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D11D3522A53D9F00C906B8 /* FavouriteTest.m */; };
+		41D11D4222A54A2F00C906B8 /* planCreatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D11D4122A54A2F00C906B8 /* planCreatorButton.swift */; };
 		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
 		41E058342277172700BFF264 /* tripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E058332277172700BFF264 /* tripDetailViewController.swift */; };
 		41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E05837227931BC00BFF264 /* AboutViewController.swift */; };
 		41F74ADD229EA93D0050B085 /* AttractionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41F74ADC229EA93D0050B085 /* AttractionList.plist */; };
-		41FFC1ED227FF33300AED351 /* TripPlanTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EC227FF33300AED351 /* TripPlanTest.swift */; };
-		41FFC1EF227FFBE400AED351 /* 111.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFC1EE227FFBE400AED351 /* 111.swift */; };
 		8C32366F2285230B00BD0DB2 /* Favourite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32366C2285230B00BD0DB2 /* Favourite.m */; };
 		8C3236722285232600BD0DB2 /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236712285232600BD0DB2 /* FavouriteViewController.m */; };
 		8C3236822285248800BD0DB2 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3236772285248800BD0DB2 /* SWCellScrollView.m */; };
@@ -92,7 +95,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		41FFC1E5227FEFF600AED351 /* PBXContainerItemProxy */ = {
+		41D11D2A22A53CEE00C906B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E14265EC22421C05006399D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14265F322421C05006399D2;
+			remoteInfo = JourneyPlanner;
+		};
+		41D11D4422A54A2F00C906B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E14265EC22421C05006399D2 /* Project object */;
 			proxyType = 1;
@@ -136,6 +146,8 @@
 		416AF92F226F21F700FF4FF6 /* TripPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlan.swift; sourceTree = "<group>"; };
 		416CEB97226F3E6F0039F773 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		4170FF9F229E894600117657 /* CityInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CityInformation.plist; sourceTree = "<group>"; };
+		417C0FF822A55AA800F570E7 /* preferrenceuiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preferrenceuiTest.swift; sourceTree = "<group>"; };
+		417C0FFA22A55EA700F570E7 /* DatabaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTest.swift; sourceTree = "<group>"; };
 		4194EEC322A2022D00370440 /* RouteInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RouteInformation.plist; sourceTree = "<group>"; };
 		419DCFED2296220C00468509 /* PlanDetailStayLengthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailStayLengthTableViewCell.swift; sourceTree = "<group>"; };
 		419DCFEF229622C800468509 /* PlanDetailMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,14 +155,19 @@
 		41B448B0226C39E600763AE4 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		41C818DC227D378300ED125D /* Explore_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore_ViewController.swift; sourceTree = "<group>"; };
 		41D06C8C229809D900A7584C /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		41D11D2522A53CEE00C906B8 /* JourneyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourneyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D11D2922A53CEE00C906B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41D11D3122A53D1B00C906B8 /* JourneyPlannerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JourneyPlannerTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		41D11D3422A53D9F00C906B8 /* FavouriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteViewController.m; sourceTree = "<group>"; };
+		41D11D3522A53D9F00C906B8 /* FavouriteTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteTest.m; sourceTree = "<group>"; };
+		41D11D3622A53DA000C906B8 /* FavouriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteViewController.h; sourceTree = "<group>"; };
+		41D11D3F22A54A2F00C906B8 /* JourneyPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourneyPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D11D4122A54A2F00C906B8 /* planCreatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planCreatorButton.swift; sourceTree = "<group>"; };
+		41D11D4322A54A2F00C906B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
 		41E058332277172700BFF264 /* tripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripDetailViewController.swift; sourceTree = "<group>"; };
 		41E05837227931BC00BFF264 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		41F74ADC229EA93D0050B085 /* AttractionList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AttractionList.plist; sourceTree = "<group>"; };
-		41FFC1E0227FEFF600AED351 /* JourneyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourneyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41FFC1E4227FEFF600AED351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41FFC1EC227FF33300AED351 /* TripPlanTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanTest.swift; sourceTree = "<group>"; };
-		41FFC1EE227FFBE400AED351 /* 111.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 111.swift; sourceTree = "<group>"; };
 		8C32366A2285230B00BD0DB2 /* Favourite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Favourite.h; sourceTree = "<group>"; };
 		8C32366C2285230B00BD0DB2 /* Favourite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Favourite.m; sourceTree = "<group>"; };
 		8C3236702285232600BD0DB2 /* FavouriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteViewController.h; sourceTree = "<group>"; };
@@ -227,7 +244,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41FFC1DD227FEFF600AED351 /* Frameworks */ = {
+		41D11D2222A53CEE00C906B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D11D3C22A54A2F00C906B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -264,14 +288,27 @@
 			path = DatabaseRealm;
 			sourceTree = "<group>";
 		};
-		41FFC1E1227FEFF600AED351 /* JourneyPlannerTests */ = {
+		41D11D2622A53CEE00C906B8 /* JourneyPlannerTests */ = {
 			isa = PBXGroup;
 			children = (
-				41FFC1E4227FEFF600AED351 /* Info.plist */,
-				41FFC1EC227FF33300AED351 /* TripPlanTest.swift */,
-				41FFC1EE227FFBE400AED351 /* 111.swift */,
+				41D11D3522A53D9F00C906B8 /* FavouriteTest.m */,
+				41D11D3622A53DA000C906B8 /* FavouriteViewController.h */,
+				41D11D3422A53D9F00C906B8 /* FavouriteViewController.m */,
+				41D11D2922A53CEE00C906B8 /* Info.plist */,
+				41D11D3122A53D1B00C906B8 /* JourneyPlannerTests-Bridging-Header.h */,
+				417C0FFA22A55EA700F570E7 /* DatabaseTest.swift */,
 			);
 			path = JourneyPlannerTests;
+			sourceTree = "<group>";
+		};
+		41D11D4022A54A2F00C906B8 /* JourneyPlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				41D11D4122A54A2F00C906B8 /* planCreatorButton.swift */,
+				41D11D4322A54A2F00C906B8 /* Info.plist */,
+				417C0FF822A55AA800F570E7 /* preferrenceuiTest.swift */,
+			);
+			path = JourneyPlannerUITests;
 			sourceTree = "<group>";
 		};
 		8C323668228522CC00BD0DB2 /* Favourite */ = {
@@ -372,7 +409,8 @@
 				410B17ED229D30D700CB219E /* Realm.framework */,
 				410B17EE229D30D700CB219E /* RealmSwift.framework */,
 				E14265F622421C05006399D2 /* JourneyPlanner */,
-				41FFC1E1227FEFF600AED351 /* JourneyPlannerTests */,
+				41D11D2622A53CEE00C906B8 /* JourneyPlannerTests */,
+				41D11D4022A54A2F00C906B8 /* JourneyPlannerUITests */,
 				E14265F522421C05006399D2 /* Products */,
 				09D51488F12E1CECAB2ED7A4 /* Pods */,
 				A6569F2B4170D6685F746ACD /* Frameworks */,
@@ -383,7 +421,8 @@
 			isa = PBXGroup;
 			children = (
 				E14265F422421C05006399D2 /* JourneyPlanner.app */,
-				41FFC1E0227FEFF600AED351 /* JourneyPlannerTests.xctest */,
+				41D11D2522A53CEE00C906B8 /* JourneyPlannerTests.xctest */,
+				41D11D3F22A54A2F00C906B8 /* JourneyPlannerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,23 +498,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		41FFC1DF227FEFF600AED351 /* JourneyPlannerTests */ = {
+		41D11D2422A53CEE00C906B8 /* JourneyPlannerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41FFC1E7227FEFF600AED351 /* Build configuration list for PBXNativeTarget "JourneyPlannerTests" */;
+			buildConfigurationList = 41D11D2C22A53CEE00C906B8 /* Build configuration list for PBXNativeTarget "JourneyPlannerTests" */;
 			buildPhases = (
-				41FFC1DC227FEFF600AED351 /* Sources */,
-				41FFC1DD227FEFF600AED351 /* Frameworks */,
-				41FFC1DE227FEFF600AED351 /* Resources */,
+				41D11D2122A53CEE00C906B8 /* Sources */,
+				41D11D2222A53CEE00C906B8 /* Frameworks */,
+				41D11D2322A53CEE00C906B8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				41FFC1E6227FEFF600AED351 /* PBXTargetDependency */,
+				41D11D2B22A53CEE00C906B8 /* PBXTargetDependency */,
 			);
 			name = JourneyPlannerTests;
 			productName = JourneyPlannerTests;
-			productReference = 41FFC1E0227FEFF600AED351 /* JourneyPlannerTests.xctest */;
+			productReference = 41D11D2522A53CEE00C906B8 /* JourneyPlannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		41D11D3E22A54A2F00C906B8 /* JourneyPlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41D11D4622A54A2F00C906B8 /* Build configuration list for PBXNativeTarget "JourneyPlannerUITests" */;
+			buildPhases = (
+				41D11D3B22A54A2F00C906B8 /* Sources */,
+				41D11D3C22A54A2F00C906B8 /* Frameworks */,
+				41D11D3D22A54A2F00C906B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41D11D4522A54A2F00C906B8 /* PBXTargetDependency */,
+			);
+			name = JourneyPlannerUITests;
+			productName = JourneyPlannerUITests;
+			productReference = 41D11D3F22A54A2F00C906B8 /* JourneyPlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		E14265F322421C05006399D2 /* JourneyPlanner */ = {
 			isa = PBXNativeTarget;
@@ -507,9 +564,13 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = RuotongX;
 				TargetAttributes = {
-					41FFC1DF227FEFF600AED351 = {
+					41D11D2422A53CEE00C906B8 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
+						TestTargetID = E14265F322421C05006399D2;
+					};
+					41D11D3E22A54A2F00C906B8 = {
+						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = E14265F322421C05006399D2;
 					};
 					E14265F322421C05006399D2 = {
@@ -531,13 +592,21 @@
 			projectRoot = "";
 			targets = (
 				E14265F322421C05006399D2 /* JourneyPlanner */,
-				41FFC1DF227FEFF600AED351 /* JourneyPlannerTests */,
+				41D11D2422A53CEE00C906B8 /* JourneyPlannerTests */,
+				41D11D3E22A54A2F00C906B8 /* JourneyPlannerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		41FFC1DE227FEFF600AED351 /* Resources */ = {
+		41D11D2322A53CEE00C906B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D11D3D22A54A2F00C906B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -611,12 +680,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		41FFC1DC227FEFF600AED351 /* Sources */ = {
+		41D11D2122A53CEE00C906B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FFC1ED227FF33300AED351 /* TripPlanTest.swift in Sources */,
-				41FFC1EF227FFBE400AED351 /* 111.swift in Sources */,
+				41D11D3822A53DA000C906B8 /* FavouriteTest.m in Sources */,
+				417C0FFB22A55EA700F570E7 /* DatabaseTest.swift in Sources */,
+				41D11D3722A53DA000C906B8 /* FavouriteViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D11D3B22A54A2F00C906B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41D11D4222A54A2F00C906B8 /* planCreatorButton.swift in Sources */,
+				417C0FF922A55AA800F570E7 /* preferrenceuiTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,10 +778,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		41FFC1E6227FEFF600AED351 /* PBXTargetDependency */ = {
+		41D11D2B22A53CEE00C906B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E14265F322421C05006399D2 /* JourneyPlanner */;
-			targetProxy = 41FFC1E5227FEFF600AED351 /* PBXContainerItemProxy */;
+			targetProxy = 41D11D2A22A53CEE00C906B8 /* PBXContainerItemProxy */;
+		};
+		41D11D4522A54A2F00C906B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14265F322421C05006399D2 /* JourneyPlanner */;
+			targetProxy = 41D11D4422A54A2F00C906B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -726,13 +810,12 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		41FFC1E8227FEFF600AED351 /* Debug */ = {
+		41D11D2D22A53CEE00C906B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
 				INFOPLIST_FILE = JourneyPlannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -740,8 +823,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dtchen.JourneyPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JourneyPlannerTests/JourneyPlannerTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -749,13 +833,12 @@
 			};
 			name = Debug;
 		};
-		41FFC1E9227FEFF600AED351 /* Release */ = {
+		41D11D2E22A53CEE00C906B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF5N7ADSC;
 				INFOPLIST_FILE = JourneyPlannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -763,11 +846,50 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JourneyPlannerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dtchen.JourneyPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JourneyPlannerTests/JourneyPlannerTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JourneyPlanner.app/JourneyPlanner";
+			};
+			name = Release;
+		};
+		41D11D4722A54A2F00C906B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JourneyPlannerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dtchen.JourneyPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JourneyPlanner;
+			};
+			name = Debug;
+		};
+		41D11D4822A54A2F00C906B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JourneyPlannerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dtchen.JourneyPlannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JourneyPlanner;
 			};
 			name = Release;
 		};
@@ -938,11 +1060,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		41FFC1E7227FEFF600AED351 /* Build configuration list for PBXNativeTarget "JourneyPlannerTests" */ = {
+		41D11D2C22A53CEE00C906B8 /* Build configuration list for PBXNativeTarget "JourneyPlannerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41FFC1E8227FEFF600AED351 /* Debug */,
-				41FFC1E9227FEFF600AED351 /* Release */,
+				41D11D2D22A53CEE00C906B8 /* Debug */,
+				41D11D2E22A53CEE00C906B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41D11D4622A54A2F00C906B8 /* Build configuration list for PBXNativeTarget "JourneyPlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41D11D4722A54A2F00C906B8 /* Debug */,
+				41D11D4822A54A2F00C906B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
