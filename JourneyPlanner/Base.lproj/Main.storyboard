@@ -2082,10 +2082,7 @@ Nathan Xue, Amber Chang, Xianghong Li</string>
                                             <outlet property="CityName" destination="SXS-Aj-hLH" id="1cq-Hh-ZMH"/>
                                             <outlet property="DarkCoverForImage" destination="adH-IN-11f" id="c4Y-bd-iXO"/>
                                             <outlet property="TimeLabel" destination="vSS-RI-Sny" id="9g5-32-g58"/>
-                                            <segue destination="7ck-cr-tPO" kind="show" identifier="AttractionData" id="0Nr-BJ-J1e">
-                                                <segue key="commit" inheritsFrom="parent" id="QHI-9W-oVv"/>
-                                                <segue key="preview" inheritsFrom="commit" id="wUN-UT-Cag"/>
-                                            </segue>
+                                            <segue destination="7ck-cr-tPO" kind="show" identifier="AttractionData" id="0Nr-BJ-J1e"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2407,7 +2404,6 @@ Nathan Xue, Amber Chang, Xianghong Li</string>
         <image name="zomato" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Nr-BJ-J1e"/>
         <segue reference="RKU-2m-fz8"/>
         <segue reference="Qya-DG-mOx"/>
         <segue reference="jtB-T4-VBj"/>
