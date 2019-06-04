@@ -24,7 +24,8 @@ class Explore_ViewController: UIViewController {
     var obtainedLocation: CLLocation?
     var keyword : String?
     @IBOutlet weak var Table: UITableView!
-    
+    var lat : String?
+    var lon : String?
     @IBOutlet weak var shoppingButton: UIButton!
     @IBOutlet weak var bankButton: UIButton!
     @IBOutlet weak var gasButton: UIButton!
@@ -35,7 +36,8 @@ class Explore_ViewController: UIViewController {
     var tableViewData = [cellData]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lat = UserDefaults().string(forKey: "lat")
+        lon = UserDefaults().string(forKey: "lon")
         tableViewData = [cellData(opened: false, cuisine: "Chinese",sectionData:[],cuisineN:25),
                          cellData(opened: false, cuisine: "Japanese",sectionData:[],cuisineN:60),
                          cellData(opened: false, cuisine: "Korean",sectionData:[],cuisineN:67),
@@ -47,12 +49,17 @@ class Explore_ViewController: UIViewController {
                          cellData(opened: false, cuisine: "Indian",sectionData:[],cuisineN:148),
                          cellData(opened: false, cuisine: "Malaysian",sectionData:[],cuisineN:69)
         ]
+        for i in 0...tableViewData.count-1{
+            getResturants(index: i)
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         obtainTheCurrentLocationInformation()
-        for i in 0...tableViewData.count-1{
-            tableViewData[i].sectionData.removeAll()
-            getResturants(index: i)
+        if(self.lat != UserDefaults().string(forKey: "lat")||self.lon != UserDefaults().string(forKey: "lon")){
+            for i in 0...tableViewData.count-1{
+                tableViewData[i].sectionData.removeAll()
+                getResturants(index: i)
+            }
         }
     }
     
