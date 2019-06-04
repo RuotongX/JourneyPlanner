@@ -1,5 +1,7 @@
 Readme
 
+This project is using Swift 5.1. Some part Using Objective- c. Platform is IOS.
+
 Journey planner is a journey manage app. It will help people design his own trip and lead them explore the wonderful world.
 
 You would to be able to add trip, delete trip, manage your trip using this application, it also allow you to check the weather, nearby facilities and more
