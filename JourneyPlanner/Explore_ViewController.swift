@@ -26,8 +26,6 @@ class Explore_ViewController: UIViewController {
     var lat : String?
     var lon : String?
     @IBOutlet weak var Table: UITableView!
-    var lat : String?
-    var lon : String?
     @IBOutlet weak var shoppingButton: UIButton!
     @IBOutlet weak var bankButton: UIButton!
     @IBOutlet weak var gasButton: UIButton!
