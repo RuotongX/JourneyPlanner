@@ -353,6 +353,7 @@ extension PlanViewController : UITableViewDataSource, UITableViewDelegate{
             self.plan?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
+            self.saveData()
         }
     }
 

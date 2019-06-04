@@ -39,6 +39,7 @@
 		41D11D3722A53DA000C906B8 /* FavouriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D11D3422A53D9F00C906B8 /* FavouriteViewController.m */; };
 		41D11D3822A53DA000C906B8 /* FavouriteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D11D3522A53D9F00C906B8 /* FavouriteTest.m */; };
 		41D11D4222A54A2F00C906B8 /* planCreatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D11D4122A54A2F00C906B8 /* planCreatorButton.swift */; };
+		41DC9FB622A63D1F0083CAAB /* RestaurantCuisineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DC9FB522A63D1F0083CAAB /* RestaurantCuisineTest.swift */; };
 		41DE7A992268846100CB9D79 /* CityGuideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DE7A982268846100CB9D79 /* CityGuideInfo.swift */; };
 		41E058342277172700BFF264 /* tripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E058332277172700BFF264 /* tripDetailViewController.swift */; };
 		41E05838227931BC00BFF264 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E05837227931BC00BFF264 /* AboutViewController.swift */; };
@@ -164,6 +165,7 @@
 		41D11D3F22A54A2F00C906B8 /* JourneyPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourneyPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D11D4122A54A2F00C906B8 /* planCreatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planCreatorButton.swift; sourceTree = "<group>"; };
 		41D11D4322A54A2F00C906B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41DC9FB522A63D1F0083CAAB /* RestaurantCuisineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCuisineTest.swift; sourceTree = "<group>"; };
 		41DE7A982268846100CB9D79 /* CityGuideInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityGuideInfo.swift; sourceTree = "<group>"; };
 		41E058332277172700BFF264 /* tripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripDetailViewController.swift; sourceTree = "<group>"; };
 		41E05837227931BC00BFF264 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				41D11D4122A54A2F00C906B8 /* planCreatorButton.swift */,
 				41D11D4322A54A2F00C906B8 /* Info.plist */,
 				417C0FF822A55AA800F570E7 /* preferrenceuiTest.swift */,
+				41DC9FB522A63D1F0083CAAB /* RestaurantCuisineTest.swift */,
 			);
 			path = JourneyPlannerUITests;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DC9FB622A63D1F0083CAAB /* RestaurantCuisineTest.swift in Sources */,
 				41D11D4222A54A2F00C906B8 /* planCreatorButton.swift in Sources */,
 				417C0FF922A55AA800F570E7 /* preferrenceuiTest.swift in Sources */,
 			);
@@ -816,6 +820,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DKF5N7ADSC;
 				INFOPLIST_FILE = JourneyPlannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -839,6 +844,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DKF5N7ADSC;
 				INFOPLIST_FILE = JourneyPlannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -859,6 +865,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DKF5N7ADSC;
 				INFOPLIST_FILE = JourneyPlannerUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -878,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DKF5N7ADSC;
 				INFOPLIST_FILE = JourneyPlannerUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
