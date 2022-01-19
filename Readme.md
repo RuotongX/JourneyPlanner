@@ -9,6 +9,13 @@ You would able to add this application through an Apple developer account using 
 
 
 Journey Planner is free application and comes with ABSOLUTELY NO WARRANTY.
+![jp3](https://user-images.githubusercontent.com/37313808/150081830-05b4ea2d-cab8-4435-8c0e-2459d10f79cf.JPG)
+![jp4](https://user-images.githubusercontent.com/37313808/150081835-bfd048fb-87be-4c38-ac1e-4a5b94dc20b5.JPG)
+![jp5](https://user-images.githubusercontent.com/37313808/150081836-d71648e0-a487-4c99-91b6-51cc629c1581.JPG)
+![jp6](https://user-images.githubusercontent.com/37313808/150081838-999275fc-d399-4f77-9049-210e62dce6ce.JPG)
+![jp7](https://user-images.githubusercontent.com/37313808/150081841-21ba12f0-8c97-469f-828e-212f6b7efeff.JPG)
+![jp1](https://user-images.githubusercontent.com/37313808/150081845-90f52004-f79b-40b6-8992-6fbd33c6355d.JPG)
+![jp2](https://user-images.githubusercontent.com/37313808/150081848-aa6e6d6a-8206-4f93-b604-2fc0c90f2b71.JPG)
 
 Authors
 
@@ -63,3 +70,4 @@ For more information, please visit: material.io
 Special thanks to:
 Photo provider
 Nathan Xue, Amber Chang, Xianghong Li
+
